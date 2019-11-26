@@ -13,6 +13,11 @@
 夏炜轩、李沛伦、司涵、侯瑞琪、张晓焕
 
 #### 开发任务
+* 完成日期：11/28
+
+- 前端：前端页面编写
+
+- 后端：基本接口编写collections、login、officialpaint、personal、personalpaint、register、releases、works
 
 * 完成日期：11/26
 
