@@ -1,0 +1,101 @@
+/* mine的样式 */
+.mine_navbar{
+    font-family: "YouYuan";
+    font-weight: 600;
+    top:0px ;
+    background-color:#FF7414;
+    color:#fff;
+    width: 100%;
+    height: 10vw;
+    font-size: 5vw;
+    line-height: 10vw;
+    text-align: center;
+}
+.mine_message{
+    background-color: #fff;
+}
+.mine_message_left{
+    float: left;
+    width: 30vw;
+    margin-top: 5vw;
+    margin-left: 5vw;
+    margin-bottom: 5vw;
+    border-radius: 100%;
+}
+.mine_message_right{
+    float: left;
+    width: 40vw;
+    margin-top: 12vw;
+    margin-left: 10vw;
+}
+.mine_clearfloat{
+    clear:both;
+    height:4vw;
+    width:100%; 
+    overflow:hidden; 
+    margin-top:-1vw;
+}
+.mine_mesage_name{
+    color: black;
+    font-family: "YouYuan";
+    font-size:5vw; 
+    font-weight: 600;
+}
+.mine_mesage_sign{
+    font-family: "YouYuan";
+    color: black;
+    margin-top: 5vw;
+    max-width: 100%;
+    font-size:4vw; 
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+.mine_three{
+    background-color: #fff;
+    padding-bottom:3vw;
+}
+/* 图标 */
+.icon-zuopin{
+    margin: 8vw;
+    font-size: 15vw;
+    color: #FF7414;
+}
+.icon-shoucang{
+    margin: 8vw;
+    font-size: 15vw;
+    color: #FF7414;
+}
+.icon-fabu{
+    margin: 8vw;
+    font-size: 15vw;
+    color: #FF7414;
+}
+.mine_works{
+    font-size: 4vw;
+}
+.mine_works p{
+    font-weight: 600;
+    color: black;
+    font-family: "YouYuan";
+    margin-top: 2vw;
+    margin-left: 7vw;
+}
+.mine_bottom_setup_div{
+    border-bottom:1px solid red;
+}
+.icon-set{
+    margin:2vw 6vw 0 6vw;
+    font-size: 6vw;
+    float: left;
+}
+.mine_bottom_setup{
+    margin-top: 3vw;
+    font-size: 4vw;
+    float: left;
+}
+.mine_bottom_link{
+    color: black;
+    font-family: "YouYuan";
+}

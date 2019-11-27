@@ -1,0 +1,22 @@
+.Undertab_div{
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    text-align: center;
+    background-color: #fff;
+}
+.Undertab_link_content{
+    width:33.3%;
+    padding-top:10px;
+    padding-bottom:10px;
+    float: left;
+    color: #000;
+    font-size:3vw;
+}
+.iconfont{
+    font-size: 5vw;
+}
+.ziliao{
+    font-size: 3vw;
+    font-family: "YouYuan";
+}

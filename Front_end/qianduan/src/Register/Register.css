@@ -1,0 +1,67 @@
+.register_navbar{
+    height: 10vw;
+    background-color: #FF7414;
+}
+.register_navbar_link{
+    margin-left:5vw;
+}
+.icon-fanhui{
+    float: left;
+    margin-top: 2.5vw;
+    margin-left: 4vw;
+    font-size: 4vw;
+    color: #fff;
+}
+.register_navbar_no1{
+    color: #fff;
+    /* text-align: center; */
+    font-size: 5vw;
+    font-family: "YouYuan";
+}
+.register_content_div{
+    margin-top: 10vw;
+}
+.register_content_name{
+    font-family: "YouYuan";
+    font-size: 4vw;
+    width: 90vw;
+    height: 10vw;
+    border: 1px solid #FF7414;
+}
+.register_content_code{
+    font-family: "YouYuan";
+    font-size: 4vw;
+    float: left;
+    width: 55vw;
+    height: 10vw;
+    border: 1px solid #FF7414;
+}
+.register_content_getcode{
+    font-family: "YouYuan";
+    font-size: 4vw;
+    float: left;
+    margin-left: 3vw;
+    height: 7vw;
+    width: 22vw;
+    padding-left: 10vw;
+    padding-top:3vw;
+    background-color: rgb(207, 218, 218);
+    color:#fff;
+    font-size: 3vw;
+}
+.mine_clearfloat{
+    clear:both;
+    height:1vw;
+    width:100%; 
+    overflow:hidden; 
+    margin-top:-1vw;
+}
+.register_content_finish{
+    font-family: "YouYuan";
+    font-size: 4vw;
+    height: 10vw;
+    width: 100%;
+    background-color: #FF7414;
+    color:#fff;
+    border: 0px;
+}

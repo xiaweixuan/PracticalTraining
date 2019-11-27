@@ -1,0 +1,43 @@
+.denglu_header{
+    font-weight: 600;
+    text-align: center;
+    line-height: 6vw;
+    font-size: 4vw;
+    color:#fff;
+    font-family: "YouYuan"; 
+}
+.denglu_name{
+    width:95%;
+    padding:2vw;
+    font-size:3vw;
+    border:1px solid #D5A96C;
+    height:4vw;
+    margin-top:4vw;
+    font-family: "YouYuan"; 
+}
+.denglu_login{
+    width:100%;
+    padding:2vw;
+    font-size:3vw;
+    background-color: #FF7414;
+    height:8vw;
+    margin-top:4vw;
+    border:0;
+    color:#fff;
+    font-family: "YouYuan"; 
+}
+.denglu_zhuce{
+    font-size:3vw;
+    margin-top:4vw;
+    margin-left:50vw;
+    font-family: "YouYuan"; 
+}
+.denglu_zhuce_no2{
+    color:black;
+    float:left;
+}
+.denglu_zhuce_no3{
+    color:black;
+    margin-left:5vw;
+    float:left;
+}
