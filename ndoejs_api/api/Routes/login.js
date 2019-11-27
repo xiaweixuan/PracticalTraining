@@ -1,28 +1,51 @@
 const express = require('express');
+const showdata = require('./showdata');
 const router = express.Router();
 const connection = require('./usemysql');
 const lock = require('./lock');
 
 let  sql = 'SELECT * FROM user_table';
- 
-connection.query(sql, (error,results,fields)=> {
-//error,results,fields:错误对象，json数组，数据信息数组
-    if (error) console.log(error.message);
-    router.post('/',(req,res)=>{
-        //返回前台信息
-        for(let i=0;i<results.length;i++){
-        if(results[i][userid] === req.body.userid && lock(lock(results[i][pwd])) === lock(lock(req.body.pwd))){
-                console.log("Landing successfully");
-                res.end(true);
-                break;
-                // 打印前台数据
-                // console.log('login：');
-                // console.log(req.query);
-            }
+var islogin = false;
+
+router.post('/',(req,res)=>{
+    let user = {
+        userid:'',
+        pwd:''
+    }
+    var data = '';
+    req.on('data',(chunk)=>{
+      data += chunk;
+    });
+    req.on('end',()=>{
+        // console.log(data);
+        data = data.split('&');
+        for(let i= 0 ;i<data.length;i++){
+            data[i]=data[i].split('=');
+            user[data[i][0]]=data[i][1];
         }
-        console.log("Landing failed");
-        res.end(false);
-    })
+        // console.log(data);
+        // console.log(user);
+        connection.query(sql, (error,results,fields)=> {
+        //error,results,fields:错误对象，json数组，数据信息数组
+            // console.log(results[1].userid);
+            islogin = false;
+            if (error) console.log(error.message);
+            for(let i=0;i<results.length;i++){
+                if(results[i].userid === user.userid && results[i].pwd === user.pwd){
+                    islogin = true;
+                    break;
+                }
+            }
+            // if(!islogin){
+            //     console.log("Landing failed");
+            // }else{
+            //     console.log("Landing successfully");
+            // };
+            let db = { state: 200, message: '获取成功', content: islogin };
+            res.json(db);
+        });
+    });
+
 });
 
 module.exports = router;

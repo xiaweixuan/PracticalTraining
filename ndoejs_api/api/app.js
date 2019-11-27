@@ -14,6 +14,19 @@ app.get('/', function(req, res) {
   res.end('hello world');
 });
 
+/**
+ * 接口
+ * 
+ * 登陆:/login
+ * 注册:/register
+ * 个人:/personal
+ * 官方图:/offpaint
+ * 上传图:/perpaint
+ * 社区:/releases
+ * 收藏:/collection
+ * 作品:/work
+ */
+
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/personal', personalRouter);

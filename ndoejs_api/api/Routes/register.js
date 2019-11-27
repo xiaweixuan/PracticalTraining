@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('./usemysql');
-const lock = require('./lock');
+const showdata = require('./showdata');
+// const lock = require('./lock');
+
+// var isregister = ture;
 
 let selectsql = 'SELECT * FROM user_table';
 
@@ -19,25 +22,36 @@ router.post('/',(req,res)=>{
     req.on('data',(chunk)=>{
       data += chunk;
     });
-    req.on('end',()=>{});
+    req.on('end',()=>{
 
-    connection.query(selectsql, (error,results,fields)=> {
-        if (error) res.end(error.message);
-        for(let i=0;i<results.length;i++){
-            if(results[i][userid] === req.body.userid){
-                console.log("register failed");
-                res.end(false);
-                break;
-            }
+        data = data.split('&');
+        for(let i= 0 ;i<data.length;i++){
+            data[i]=data[i].split('=');
+            user[data[i][0]]=data[i][1];
         }
-        user.userid = req.body.userid;
-        user.pwd = lock(lock(req.body.pwd));
-        user.phonenum = req.body.phonenum;
-    });
-    connection.query(insertsql,user, (error,results,fields)=> {
-        if (error) res.end(error.message);
-        console.log("register successfully");
-        res.end(true);
+        console.log(data);
+        console.log(user);
+
+        showdata(res,selectsql);
+        showdata(res,insertsql,user);
+        // showdata(res,selectsql);
+        // connection.query(selectsql, (error,results,fields)=> {
+        //     islogin = false;
+        //     if (error) console.log(error.message);
+        //     for(let i=0;i<results.length;i++){
+        //         if(results[i].userid === user.userid){
+        //             isregister = ture;
+        //         }
+        //     }
+        //     if(isregister){
+        //         console.log("register failed");
+        //     }else{
+        //         console.log("register successfully");
+        //         // showdata(res,insertsql,user);
+        //     };
+        //     let db = { state: 200, message: '获取成功', content: isregister };
+        //     res.json(db);
+        // });
     });
 });
 
