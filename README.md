@@ -13,11 +13,19 @@
 夏炜轩、李沛伦、司涵、侯瑞琪、张晓焕
 
 #### 开发任务
+
+* 完成日期：11/30
+* 前端：核心组件开发
+* 后端：前端数据分析，接口编写
+
+
+
 * 完成日期：11/28
 
 - 前端：前端页面编写
+- 后端：基本接口编写collections、login、officialpaint、personal、personalpaint、register、releases、works架构
 
-- 后端：基本接口编写collections、login、officialpaint、personal、personalpaint、register、releases、works
+
 
 * 完成日期：11/26
 
@@ -27,4 +35,8 @@
 
 #### 功能清单
 
-暂无
+* canvas实现绘制像素功能
+* 将图片转化为对应数字矩阵
+* 响应式
+* 生成对应颜色数字
+
