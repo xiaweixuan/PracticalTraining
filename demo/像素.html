@@ -47,13 +47,6 @@
     <script>
 
 
-
-
-
-
-
-
-
         /**
          * 
          * 注意点
@@ -97,8 +90,6 @@
          * 按照绘图路径自动绘制自动绘制
          * b.automaticPainting
          */
-
-
 
 
         function Picture(drawDataMatrix) {
@@ -248,7 +239,6 @@
             }
             return str
         }
-
         //先具有颜色列表，在根据颜色列表对应数字填满数字矩阵，在根据数字矩阵绘出数字
         Picture.prototype.produceColorList = function () {
             let isExist = false;
@@ -332,6 +322,8 @@
             var btn1 = document.getElementById("btn1");
             btn1.onclick = () => {
                 console.log("数字");
+                a.produceColorList();
+                a.createNumberData();
                 a.drawNumber(context);
             }
             var btn2 = document.getElementById("btn2");
@@ -339,11 +331,6 @@
                 console.log("撤销");
                 a.drawRecall(context);
                 // console.log(a.drawDataMatrix);
-            }
-            var btn2 = document.getElementById("btn2");
-            btn2.onclick = () => {
-                console.log("撤销");
-                a.drawRecall(context);
             }
             var btn3 = document.getElementById("btn3");
             btn3.onclick = () => {
