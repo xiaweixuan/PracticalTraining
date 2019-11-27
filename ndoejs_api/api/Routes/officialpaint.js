@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const showdata = require('./showdata');
 
-var userName = 'sh';
+var userName = 'admin';
 
 router.get('/',(req,res)=>{
     let selectsql = 'select * from paint_table where userid="'+userName+'"';

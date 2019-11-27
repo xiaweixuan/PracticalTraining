@@ -9,6 +9,7 @@ var perpaintRouter = require('./Routes/personalpaint');
 var releasesRouter = require('./Routes/releases');
 var collectionRouter = require('./Routes/collections');
 var workRouter = require('./Routes/works');
+var usrcnkiRouter = require('./Routes/usrcnki');
 
 app.get('/', function(req, res) {
   res.end('hello world');
@@ -35,5 +36,6 @@ app.use('/perpaint', perpaintRouter);
 app.use('/releases', releasesRouter);
 app.use('/collection', collectionRouter);
 app.use('/work', workRouter);
+app.use('/usrcnki', usrcnkiRouter);
 
 app.listen(8080);

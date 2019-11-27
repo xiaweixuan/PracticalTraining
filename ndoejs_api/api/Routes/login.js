@@ -36,12 +36,14 @@ router.post('/',(req,res)=>{
                     break;
                 }
             }
-            // if(!islogin){
-            //     console.log("Landing failed");
-            // }else{
-            //     console.log("Landing successfully");
-            // };
-            let db = { state: 200, message: '获取成功', content: islogin };
+            if(!islogin){
+                console.log("Landing failed");
+                db = { state: 200, message: '登陆失败', content: islogin };
+            }else{
+                console.log("Landing successfully");
+                db = { state: 200, message: '登陆成功', content: islogin };
+            };
+            res.setHeader('Access-Control-Allow-Origin', '*');
             res.json(db);
         });
     });
