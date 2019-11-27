@@ -42,6 +42,8 @@
     <button id="btn">选择颜色</button>
     <button id="btn0">完成</button>
     <button id="btn1">产生数字</button>
+    <button id="btn2">撤销</button>
+    <button id="btn3">画图过程</button>
     <script>
 
 
@@ -78,7 +80,7 @@
          * a.enddraw(context);
          * 
          * 撤回上一步
-         * a.drawRecall(context)  //存在bug
+         * a.drawRecall(context) 
          * 
          * 将图片转化为字符串用于存储于数据库
          * a.toString()
@@ -92,6 +94,8 @@
          * 绘制数字（白色即0除外）
          * a.drawNumber
          * 
+         * 按照绘图路径自动绘制自动绘制
+         * b.automaticPainting
          */
 
 
@@ -109,6 +113,7 @@
                 // arr.push('#' + Math.random().toString(16).slice(-6));
                 this.drawDataMatrix.push("#ffffff");
             }
+            this.history.push([...this.drawDataMatrix]);
         }
         Picture.prototype.inittable = function (context) {
             //绘制网格
@@ -136,6 +141,8 @@
             for (let i = 0; i < 20; i++) {
                 for (let j = 0; j < 20; j++) {
                     context.beginPath();
+                    // console.log(n)
+                    // console.log(this.drawDataMatrix);
                     context.fillStyle = this.drawDataMatrix[n];
                     context.fillRect(j * 20, i * 20, 20, 20)
                     context.closePath();
@@ -148,7 +155,7 @@
         }
         Picture.prototype.todraw = function (context) {
             context.canvas.addEventListener("click", this.event = (e) => {
-                // console.log(e.offsetX,e.offsetY);
+                
                 console.log("click");
                 var row = Math.floor((e.offsetX) / 20);//列
                 var col = Math.floor((e.offsetY) / 20);//排
@@ -159,7 +166,8 @@
 
 
             }, false)
-            context.canvas.addEventListener("mousedown", (e) => {
+            context.canvas.addEventListener("mousedown", this.mousedownEvent=(e) => {
+                context.canvas.removeEventListener("click", this.event, false);
                 console.log("mousedown");
                 var row = Math.floor((e.offsetX) / 20);//列
                 var col = Math.floor((e.offsetY) / 20);//排
@@ -170,7 +178,7 @@
                 this.timer = setTimeout(() => {
                     console.log("1s到");
                     context.canvas.addEventListener("mousemove", this.mousemoveEvent = (e) => {
-                        console.log("触发了滑动事件");
+                        console.log("mousemove");
                         var row = Math.floor((e.offsetX) / 20);//列
                         var col = Math.floor((e.offsetY) / 20);//排
                         var n = col * 20 + row;
@@ -182,15 +190,17 @@
                 }, 1000)
             })
             context.canvas.addEventListener("mouseup", (e) => {
-                console.log("松开");
+                console.log("mouseup");
                 clearTimeout(this.timer);
                 context.canvas.removeEventListener("mousemove", this.mousemoveEvent, false);
-                // var arr=[...this.drawDataMatrix];
-                // this.history.push([...this.drawDataMatrix]);
+
+
+                var arr=[...this.drawDataMatrix];
+                this.history.push([...this.drawDataMatrix]);
                 // console.log(this.drawDataMatrix);
-                // console.log(this.history)
+                console.log(this.history)
             })
-            context.canvas.addEventListener("touchstart", (e) => {
+            context.canvas.addEventListener("touchstart", this.touchstartEvent=(e) => {
                 this.timer = setTimeout(() => {
                     context.canvas.addEventListener("touchmove", this.touchmoveEvent = (e) => {
                         console.log("touchmove");
@@ -221,11 +231,15 @@
         }
         Picture.prototype.drawRecall = function (context) {
             //删除尾部元素
+            if(this.history.length==1){
+                console.log("操作已经全部撤销");
+                return 0;
+            }
             this.history.pop();
-            this.drawDataMatrix = this.history[this.history.length - 1];
+            this.drawDataMatrix = [...this.history[this.history.length - 1]] ;
             this.draw(context);
-            // this.todraw(context);
             this.inittable(context);
+            // console.log([...this.history[this.history.length - 1]]);
         }
         Picture.prototype.toString = function () {
             var str = '';
@@ -281,6 +295,18 @@
                 }
             }
         }
+        Picture.prototype.automaticPainting=function(context){
+            var n=0;
+            var timer=setInterval(()=>{
+                // console.log("画了一次");
+                if(n==this.history.length){
+                    clearInterval(timer);
+                }
+                this.drawDataMatrix=[...this.history[n]];
+                this.draw(context);
+                n++;
+            },400)
+        }
 
 
         function main() {
@@ -291,9 +317,9 @@
             var context0 = canvas0.getContext("2d");
             var arr = [];
             for (var i = 0; i < 400; i++) {
-                // arr.push('#' + Math.random().toString(16).slice(-6));
                 arr.push("#ffffff");
             }
+            /*功能演示*/
             var btn = document.getElementById("btn");
             btn.onclick = () => {
                 a.color = document.getElementById("color").value;
@@ -306,11 +332,27 @@
             var btn1 = document.getElementById("btn1");
             btn1.onclick = () => {
                 console.log("数字");
-                console.log(a.produceColorList());
-                console.log(a.createNumberData());
                 a.drawNumber(context);
             }
+            var btn2 = document.getElementById("btn2");
+            btn2.onclick = () => {
+                console.log("撤销");
+                a.drawRecall(context);
+                // console.log(a.drawDataMatrix);
+            }
+            var btn2 = document.getElementById("btn2");
+            btn2.onclick = () => {
+                console.log("撤销");
+                a.drawRecall(context);
+            }
+            var btn3 = document.getElementById("btn3");
+            btn3.onclick = () => {
+                console.log("自动绘图");
+                b.history=[...a.history];
+                b.automaticPainting(context0);
+            }
 
+            /*初始化演示*/
             var b = new Picture();
             b.inittable(context0);
 
