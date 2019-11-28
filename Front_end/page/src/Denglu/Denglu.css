@@ -9,7 +9,7 @@
 .denglu_name{
     width:95%;
     padding:2vw;
-    font-size:3vw;
+    font-size:4vw;
     border:1px solid #D5A96C;
     height:4vw;
     margin-top:4vw;
@@ -17,10 +17,9 @@
 }
 .denglu_login{
     width:100%;
-    padding:2vw;
-    font-size:3vw;
+    font-size:4vw;
     background-color: #FF7414;
-    height:8vw;
+    height:9vw;
     margin-top:4vw;
     border:0;
     color:#fff;
@@ -29,7 +28,8 @@
 .denglu_zhuce{
     font-size:3vw;
     margin-top:4vw;
-    margin-left:50vw;
+    float: right;
+    /* margin-left:50vw; */
     font-family: "YouYuan"; 
 }
 .denglu_zhuce_no2{
