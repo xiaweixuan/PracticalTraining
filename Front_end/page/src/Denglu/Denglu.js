@@ -58,7 +58,9 @@ export default class Denglu extends Component {
                             <Link to='/regsiter'>
                                 <div className="denglu_zhuce_no2">注册</div>
                             </Link>
-                            <div className="denglu_zhuce_no3">忘记密码</div>
+                            <Link to='/regsiter'>
+                                <div className="denglu_zhuce_no3">忘记密码</div>
+                            </Link>
                             <Link to='/mine'>
                                 <div className="denglu_zhuce_no3">取消登录</div>
                             </Link>
