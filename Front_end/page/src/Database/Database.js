@@ -41,6 +41,7 @@ export default class Database extends Component {
                         <DatabaseBuju/>
                     </div>
                 </Tabs>
+                <div className="database_hight"></div>
                 <Undertab flag="1"/>
             </div>
         )

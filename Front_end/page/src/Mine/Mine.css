@@ -102,3 +102,8 @@
     color: black;
     font-family: "YouYuan";
 }
+.mine_hight{
+    float: left;
+    width: 100%;
+    height: 17vw;
+}

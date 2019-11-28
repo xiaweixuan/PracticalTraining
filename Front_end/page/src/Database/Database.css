@@ -32,12 +32,15 @@
 .database_navbar{
     color:#FF7414;
 }
+.database_hight{
+    height: 10vw;
+}
 .am-tabs-default-bar-tab-active {
     color: #FF7414;
 }
 .am-tabs-default-bar-tab{
     font-family: "YouYuan"; 
-    font-size: 3vw;
+    font-size: 4vw;
     height: 8vw;
 }
 .am-tabs-default-bar-underline{
@@ -106,7 +109,7 @@
     font-size:4vw;
     float:left;
     margin-left: 2vw;
-    margin-top: 0.7vw;
+    margin-top: -1vw;
 }
 .xiangqing_header_i_no2{
     margin-right:3vw;
@@ -117,9 +120,9 @@
     font-size:5vw;
 }
 .xiangqing_header_done{
-    background-color:green;
+    background-color:rgb(28, 199, 28);
     color:#fff;
-    padding:2vw;
+    padding:1.5vw;
     border:0;
     font-size: 2.5vw;
     border-radius: 1vw;

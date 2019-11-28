@@ -17,17 +17,17 @@ export default class Collection extends Component {
                     <WingBlank>
                         <div className="collection_content">
                             <img className="collection_content_img" 
-                            src={require("../images/collection_content_img.jpg")}/>
+                            src="img/collection_content_img.png"/>
                         </div>
 
                         <div className="collection_content">
                             <img className="collection_content_img" 
-                            src={require("../images/collection_content_img.jpg")}/>
+                            src="img/collection_content_img.png"/>
                         </div>
 
                         <div className="collection_content">
                             <img className="collection_content_img" 
-                            src={require("../images/collection_content_img.jpg")}/>
+                            src="img/collection_content_img.png"/>
                         </div>
                     </WingBlank>
                 </div>
