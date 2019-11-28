@@ -25,7 +25,9 @@ class Community extends Component {
                                 <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
                                 <div className='community_chat_talk_pic_box'>
 									<Link to="/collection">
-										<img className='community_chat_talk_pic' src='img/mine_message_img.png'></img>
+                                        <canvas className='community_chat_talk_canvas'>
+
+                                        </canvas>
 									</Link>
                                 </div>
                                 <p className='community_chat_another_time'>五分钟前</p>
@@ -40,7 +42,11 @@ class Community extends Component {
                             <div className='community_chat_talk'>
                                 <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
                                 <div className='community_chat_talk_pic_box'>
-                                    <img className='community_chat_talk_pic' src='img/mine_message_img.png'></img>
+                                    <Link to="/collection">
+                                        <canvas className='community_chat_talk_canvas'>
+                                    
+                                        </canvas>
+                                    </Link>
                                 </div>
                                 <p className='community_chat_another_time'>五分钟前</p>
                             </div>
@@ -54,7 +60,11 @@ class Community extends Component {
                             <div className='community_chat_mine_talk'>
                                 <p className='community_chat_mine_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
                                 <div className='community_chat_mine_talk_pic_box'>
-                                    <img className='community_chat_mine_talk_pic' src='img/mine_message_img.png'></img>
+                                    <Link to="/collection">
+                                        <canvas className='community_chat_talk_canvas'>
+                                    
+                                        </canvas>
+                                    </Link>
                                 </div>
                                 <p className='community_chat_mine_time'>五分钟前</p>
                             </div>
@@ -69,7 +79,11 @@ class Community extends Component {
                             <div className='community_chat_talk'>
                                 <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
                                 <div className='community_chat_talk_pic_box'>
-                                    <img className='community_chat_talk_pic' src='img/mine_message_img.png'></img>
+                                    <Link to="/collection">
+                                        <canvas className='community_chat_talk_canvas'>
+                                    
+                                        </canvas>
+                                    </Link>
                                 </div>
                                 <p className='community_chat_another_time'>五分钟前</p>
                             </div>
@@ -83,7 +97,11 @@ class Community extends Component {
                             <div className='community_chat_talk'>
                                 <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
                                 <div className='community_chat_talk_pic_box'>
-                                    <img className='community_chat_talk_pic' src='img/mine_message_img.png'></img>
+                                    <Link to="/collection">
+                                        <canvas className='community_chat_talk_canvas'>
+                                    
+                                        </canvas>
+                                    </Link>
                                 </div>
                                 <p className='community_chat_another_time'>五分钟前</p>
                             </div>
@@ -97,7 +115,11 @@ class Community extends Component {
                             <div className='community_chat_talk'>
                                 <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
                                 <div className='community_chat_talk_pic_box'>
-                                    <img className='community_chat_talk_pic' src='img/mine_message_img.png'></img>
+                                    <Link to="/collection">
+                                        <canvas className='community_chat_talk_canvas'>
+                                    
+                                        </canvas>
+                                    </Link>
                                 </div>
                                 <p className='community_chat_another_time'>五分钟前</p>
                             </div>
@@ -111,7 +133,11 @@ class Community extends Component {
                             <div className='community_chat_talk'>
                                 <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
                                 <div className='community_chat_talk_pic_box'>
-                                    <img className='community_chat_talk_pic' src='img/mine_message_img.png'></img>
+                                    <Link to="/collection">
+                                        <canvas className='community_chat_talk_canvas'>
+                                    
+                                        </canvas>
+                                    </Link>
                                 </div>
                                 <p className='community_chat_another_time'>五分钟前</p>
                             </div>

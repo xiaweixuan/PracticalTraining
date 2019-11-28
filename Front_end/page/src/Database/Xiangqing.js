@@ -29,7 +29,9 @@ export default class Xiangqing extends Component {
                         </div>
                     </div>
                     <div className="xiangqing_zuoping">
-                        <img src="img/mine_message_img.png"/>
+                        <canvas className="xiangqing_zuoping_canvas">
+
+                        </canvas>
                     </div>
                 </div>
                 <div className="xiangqing_bottom">

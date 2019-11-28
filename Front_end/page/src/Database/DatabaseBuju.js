@@ -6,7 +6,9 @@ const PlaceHolder = ({ className = '', ...restProps })=>(
 		<div className="databaseBuju_views">
 			<Router>
 				<Link to="/xiangqing">
-					<img src="img/mine_message_img.png"/>
+					<canvas className="databaseBuju_views_canvas">
+
+					</canvas>
 				</Link>
 			</Router>
 			<div className="databaseBuju_views_bottom">
