@@ -91,9 +91,6 @@
                     n++;
                 }
             }
-
-
-
         }
         Picture.prototype.todraw = function (context) {
             context.canvas.addEventListener("click", this.event = (e) => {
@@ -248,4 +245,11 @@
                 n++;
             },400)
         }
-
+        Picture.prototype.prase = function (str) {
+            var str0 = str.split("#")
+            str0.shift();
+            for(let i=0;i<str0.length;i++){
+                str0[i]='#'+str0[i];
+            }
+            return str0;
+        }
