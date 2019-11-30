@@ -6,11 +6,13 @@ const PlaceHolder = ({ className = '', ...restProps })=>(
 		<div className="databaseBuju_views">
 			<Router>
 				<Link to="/xiangqing">
-					<img src={require('../images/mine_message_img.jpg')}/>
+					<canvas className="databaseBuju_views_canvas">
+
+					</canvas>
 				</Link>
 			</Router>
 			<div className="databaseBuju_views_bottom">
-				<img src={require('../images/mine_message_img.jpg')}/>
+				<img src="img/mine_message_img.png"/>
 			</div>
 			<div className="databaseBuju_name">xx官方</div>
 			<i className='iconfont icon-shoucang1'></i>

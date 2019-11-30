@@ -7,13 +7,12 @@
     font-family: "YouYuan"; 
 }
 .denglu_name{
-    width:95%;
-    padding:2vw;
-    font-size:4vw;
-    border:1px solid #D5A96C;
-    height:4vw;
-    margin-top:4vw;
-    font-family: "YouYuan"; 
+    font-family: "YouYuan";
+    padding-left:2vw;
+    font-size: 4vw;
+    width: 97%;
+    height: 10vw;
+    border: 1px solid #FF7414;
 }
 .denglu_login{
     width:100%;

@@ -16,18 +16,27 @@ export default class Collection extends Component {
                 <div className="collection_content_div">
                     <WingBlank>
                         <div className="collection_content">
-                            <img className="collection_content_img" 
-                            src={require("../images/collection_content_img.jpg")}/>
+                            <canvas className="collection_content_canvas">
+
+                            </canvas>
                         </div>
 
                         <div className="collection_content">
-                            <img className="collection_content_img" 
-                            src={require("../images/collection_content_img.jpg")}/>
+                            <canvas className="collection_content_canvas">
+                                
+                            </canvas>
                         </div>
 
                         <div className="collection_content">
-                            <img className="collection_content_img" 
-                            src={require("../images/collection_content_img.jpg")}/>
+                            <canvas className="collection_content_canvas">
+
+                            </canvas>
+                        </div>
+
+                        <div className="collection_content">
+                            <canvas className="collection_content_canvas">
+
+                            </canvas>
                         </div>
                     </WingBlank>
                 </div>

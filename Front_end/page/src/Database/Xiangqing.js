@@ -22,14 +22,16 @@ export default class Xiangqing extends Component {
                 <div className="xiangqing_zhong">
                     <div className="xiangqing_xinxi">
                         <div className="xiangqing_touxiang">
-                            <img src={require('../images/mine_message_img.jpg')}/>
+                            <img src="img/mine_message_img.png"/>
                         </div>
                         <div className="xiangqing_name">
                             xx官方
                         </div>
                     </div>
                     <div className="xiangqing_zuoping">
-                        <img src={require('../images/mine_message_img.jpg')}/>
+                        <canvas className="xiangqing_zuoping_canvas">
+
+                        </canvas>
                     </div>
                 </div>
                 <div className="xiangqing_bottom">
