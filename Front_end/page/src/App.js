@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Routes from './routes';
-import R from './draw/ToRelease'
+
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -11,8 +11,7 @@ class App extends Component {
 	render(){
 		return (
 			<div className="App">
-				<R/>
-				{/* <Routes /> */}
+				<Routes />
 			</div>
 		)}
 	}
