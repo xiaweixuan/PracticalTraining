@@ -57,23 +57,26 @@
     padding-bottom:3vw;
 }
 /* 图标 */
+.iconfont{
+    font-size: large;
+}
 .icon-zuopin{
-    margin: 8vw;
-    font-size: 15vw;
+    margin: 10vw;
     color: #FF7414;
 }
 .icon-shoucang{
-    margin: 8vw;
-    font-size: 15vw;
+    margin: 10vw;
     color: #FF7414;
 }
 .icon-fabu{
-    margin: 8vw;
-    font-size: 15vw;
+    margin: 10vw;
     color: #FF7414;
 }
 .mine_works{
     font-size: 4vw;
+}
+.mine_works i{
+    font-size: 11vw;
 }
 .mine_works p{
     font-weight: 600;
