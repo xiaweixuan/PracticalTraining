@@ -10,40 +10,38 @@ const tabs = [
     { title: '植物' },
     { title: '人' },
 ];
-export default class Database extends Component {
-    render() {
-        return (
-            <div className="database">
-                <div>
-                    <div className="database_header">
-                        <div className="database_input_no1">
-                            <i className='iconfont icon-sousuo'></i>
-                            <input className="database_input_no2"></input>
-                            <Router>
-                                <Link to="/search" className="database_search">搜索</Link>
-                            </Router>
-                        </div>
+
+export default function Database(){
+    return (
+        <div className="database">
+            <div>
+                <div className="database_header">
+                    <div className="database_input_no1">
+                        <i className='iconfont icon-sousuo'></i>
+                        <input className="database_input_no2"></input>
+                        <Router>
+                            <Link to="/search" className="database_search">搜索</Link>
+                        </Router>
                     </div>
                 </div>
-                
-                <Tabs className='database_tab' tabs={tabs}
-                initialPage={0}>
-                    <div>
-                        <DatabaseBuju/>
-                    </div>
-                    <div>
-                        <DatabaseBuju/>
-                    </div>
-                    <div>
-                        <DatabaseBuju/>
-                    </div>
-                    <div>
-                        <DatabaseBuju/>
-                    </div>
-                </Tabs>
-                <div className="database_hight"></div>
-                <Undertab flag="1"/>
             </div>
-        )
-    }
+                
+            <Tabs className='database_tab' tabs={tabs} initialPage={0}>
+                <div>
+                    <DatabaseBuju/>
+                </div>
+                <div>
+                    <DatabaseBuju/>
+                </div>
+                <div>
+                    <DatabaseBuju/>
+                </div>
+                <div>
+                    <DatabaseBuju/>
+                </div>
+            </Tabs>
+            <div className="database_hight"></div>
+            <Undertab flag="1"/>
+        </div>
+    )
 }
