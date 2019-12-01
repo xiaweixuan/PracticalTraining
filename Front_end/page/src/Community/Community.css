@@ -18,7 +18,7 @@
     float: right;
     height:5vw;
     margin-top: -7vw;
-    margin-right: 2vw;
+    margin-right: 5vw;
 }
 .community_wingblank{
     height: auto;
@@ -53,7 +53,8 @@
 }
 .community_chat_another_id{
     float: left;
-    margin-left: -14vw;
+    /* margin-left: -14vw; */
+    margin-left: -19vw;
     margin-top: 26vw;
     font-size: 4vw;
     font-family: "YouYuan";
@@ -102,7 +103,8 @@
     background-color: #fff;
     overflow: hidden;
 }
-.community_chat_talk_pic{
+.community_chat_talk_canvas{
+    /* background: black; */
     width: 100%;
     height: 100%;
 }
@@ -138,7 +140,8 @@
 .community_chat_mine_id{
     font-family: "YouYuan";
     float: right;
-    margin-right: -14vw;
+    margin-right: -19vw;
+    /* margin-right: -14vw; */
     margin-top: 26vw;
     font-size: 4vw;
 }
@@ -196,4 +199,9 @@
     float: left;
     margin-top: 5vw;
     margin-left: 0.8vw;
+}
+.community_hight{
+    float: left;
+    width: 100%;
+    height: 17vw;
 }

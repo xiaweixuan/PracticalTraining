@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
-import {WingBlank} from "antd-mobile"
+import {WingBlank,WhiteSpace} from "antd-mobile"
 import {LoginchangeValueName,LoginchangeValuePassword,loginInput} from '../actions';
 
 import store from '../store';
@@ -43,10 +43,12 @@ export default class Denglu extends Component {
                 </div>
                 <WingBlank>
                     {/* <form >  */}
+                    <WhiteSpace size="lg"/>
                         <input type="text" className="denglu_name"
                          onChange={this.handleChangeName} value={this.state.valueName}  
                          name="userid">   
                         </input>
+                        <WhiteSpace size="lg"/>
                         <input type="text" className="denglu_name" 
                         onChange={this.handleChangePassword} value={this.state.valuePassword} 
                         placeholder="密码" name="pwd">   

@@ -1,47 +1,46 @@
-import React from 'react'
-import { SketchPicker } from 'react-color';
+import React,{useEffect} from 'react'
+// import picture from 'module'
 
-export default class ColorSelect extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      color:props.color,
-      key:props.objKey,
-      displayColorPicker: "none",
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
- 
-  handleClick = ()=> {
-    let {displayColorPicker,key,color} =this.state;
-    displayColorPicker = displayColorPicker=="none"?"block":"none";
-    this.setState({displayColorPicker})
-    if(displayColorPicker){
-        this.props.updateColor(key,color)
-    }
-  }
-  handleChange = (value)=>{
-      let color = value.hex;
-      this.setState({color})
-    
-  }
-  render() {
-      let {color,displayColorPicker} = this.state;
-    return (
-      <div>
-        <button onClick={ this.handleClick } style={{background:color,border:"none",lineHeight:"31px",height:31,width:45,verticalAlign: "middle"}}></button>
-        {displayColorPicker=="block"?
-        <div style={{position:"absolute",zIndex:66}}>
-          
-            <SketchPicker color={this.state.color}  onChange={this.handleChange} />
-        </div>
-        :null
+export default function ToRelease() {
+    useEffect(() => {
+        var picture = new window.Picture();
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        picture.initdata();
+        picture.inittable(context);
+        picture.todraw(context);
+        var btn = document.getElementsByClassName("btn");
+        var btn0 = document.getElementById("btn0");
+        var btn1 = document.getElementById("btn1");
+        for(let i = 0 ; i<btn.length; i++){
+            btn[i].onclick = () => {
+                // console.log(btn[i].style.backgroundColor);
+                picture.color =btn[i].style.backgroundColor;
+            }
         }
-      </div>
-    );
-  }
+        btn0.onclick = () => {
+            console.log(picture);
+            picture.produceColorList();
+            picture.createNumberData();
+            picture.automaticPainting(context);
+            // fetch('localhost:8080/')
+        }
+        btn1.onclick = () => {
+            picture.drawRecall(context);
+        }
+    },[]);
+    return (
+        <div className="torelease">
+            <div>
+                <canvas id="canvas" width='400px' height='400px'>
+                    您的浏览器版本过低
+                </canvas>
+            </div>
+            <div className="btn" style={{backgroundColor:'green',width:'30px',height:'30px',borderRadius:'15px'}}></div>
+            <div className="btn" style={{backgroundColor:'red',width:'30px',height:'30px',borderRadius:'15px'}}></div>
+            <div className="btn" style={{backgroundColor:'blue',width:'30px',height:'30px',borderRadius:'15px'}}></div>
+            <button id="btn0">完成</button>
+            <button id="btn1">撤销</button>
+        </div>
+    )
 }
-
-
-
-

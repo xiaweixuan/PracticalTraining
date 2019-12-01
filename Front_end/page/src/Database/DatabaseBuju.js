@@ -1,47 +1,67 @@
 import { Flex, WhiteSpace } from 'antd-mobile';
-import React from 'react'
+import React, { Component,useState,useEffect } from 'react'
 import {HashRouter as Router,Link} from 'react-router-dom';
-const PlaceHolder = ({ className = '', ...restProps })=>(
-	<div className={`${className} placeholder`} {...restProps}>
-		<div className="databaseBuju_views">
-			<Router>
-				<Link to="/xiangqing">
-					<img src={require('../images/mine_message_img.jpg')}/>
-				</Link>
-			</Router>
-			<div className="databaseBuju_views_bottom">
-				<img src={require('../images/mine_message_img.jpg')}/>
-			</div>
-			<div className="databaseBuju_name">xx官方</div>
-			<i className='iconfont icon-shoucang1'></i>
-		</div>
-	</div>
-)
 
-const HomeBuju = () => (
+function PlaceHolder(props,{ className = '', ...restProps }){
+	console.log(props.data);
+	return (<div className={`${className} placeholder`} {...restProps}>
+		{
+			props.data.map((item,idx)=>
+			<div className="databaseBuju_views">
+				<Router>
+					<Link to="/xiangqing">
+						<canvas className="databaseBuju_views_canvas" id={"canvas"+idx} width='100%'height='100%'>
+						
+						</canvas>
+					</Link>
+				</Router>
+				<div className="databaseBuju_views_bottom">
+					<img src="img/mine_message_img.png"/>
+				</div>
+				
+				<div className="databaseBuju_name">xx官方</div>
+				<i className='iconfont icon-shoucang1'></i>
+				</div>
+			)
+        }	
+	</div>
+	)
+}
+
+export default function HomeBuju (){
+	let [data,setData]=useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:8080/releases')
+        .then(res=>res.json())
+        .then(res=>{
+            setData(res.content);
+			console.log(res.content.length);
+			// var aa = res.content.length;
+            for(var i=0;i<res.content.length;i++){
+                var canvas = document.getElementById('canvas'+i);
+                var context=canvas.getContext("2d");
+                var a = new window.Picture;
+            
+                a.prase(res.content[i].paintdata);
+				a.drawDataMatrix=a.prase(res.content[i].paintdata);
+				a.initWH(canvas.width,canvas.height);
+				a.draw(context)
+			} 
+        })
+    },[])
+	return(
 	<div className="databaseBuju_root">
 		<div className="databaseBuju_root_no2">
 			<Flex>
 				<Flex.Item>
-					<PlaceHolder/>
+					<PlaceHolder data={data}/>
 				</Flex.Item>
 
 				<Flex.Item>
-					<PlaceHolder/>
+					<PlaceHolder data={data}/>
 				</Flex.Item>
 			</Flex>
-			<WhiteSpace size="lg" />
-			<Flex>
-				<Flex.Item>
-					<PlaceHolder/>
-				</Flex.Item>
-				
-				<Flex.Item>
-					<PlaceHolder/>
-				</Flex.Item>
-			</Flex>
-			<WhiteSpace size="lg" />
 		</div>
 	</div>
 )
-export default HomeBuju;
+	}

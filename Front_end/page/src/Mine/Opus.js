@@ -3,7 +3,7 @@ import { WingBlank, WhiteSpace } from 'antd-mobile';
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 import './Collection.css'
 
-export default function Collection(){
+export default function Opus(){
     let [data,setData]=useState([]);
     useEffect(()=>{
         fetch('http://localhost:8080/releases')
@@ -32,7 +32,7 @@ export default function Collection(){
                     <i className="iconfont icon-fanhui"></i>
                 </Link>
                 
-                <div className="collection_navbar_no1"><p>我 的 收 藏</p></div>
+                <div className="collection_navbar_no1"><p>我 的 作 品</p></div>
             </div>
             
             <WhiteSpace size="md" />

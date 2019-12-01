@@ -15,7 +15,7 @@ export default function Mine(){
                 <WingBlank>
                     <div className="mine_message">
                         <img className="mine_message_left" 
-                        src={require("../images/mine_message_img.jpg")}/>
+                        src="img/mine_message_img.png"/>
                         <div className="mine_message_right">
                             <div className="mine_mesage_name">大海</div>
                             <div className="mine_mesage_sign">TA还没有个性签名</div>
@@ -31,7 +31,7 @@ export default function Mine(){
                     <div className="mine_three">
                         <Flex>
                             <Flex.Item>
-                                <Link className="mine_works" to="/collection">
+                                <Link className="mine_works" to="/opus">
                                     <i className="iconfont icon-zuopin"></i>
                                     <p>我的作品</p>
                                 </Link>
@@ -45,7 +45,7 @@ export default function Mine(){
                             </Flex.Item>
                             
                             <Flex.Item>
-                                <Link className="mine_works" to="/collection">
+                                <Link className="mine_works" to="/release">
                                     <i className="iconfont icon-fabu"></i>
                                     <p>我的发布</p>
                                 </Link>
@@ -86,6 +86,8 @@ export default function Mine(){
                         </div>
                     </div>
                 </WingBlank>
+            </div>
+            <div className="mine_hight">
             </div>
             <Undertab flag="3"/>
         </div>

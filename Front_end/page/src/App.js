@@ -11,7 +11,6 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
-		// console.log(window.Picture;
 	}
 	render() {
 		return (
