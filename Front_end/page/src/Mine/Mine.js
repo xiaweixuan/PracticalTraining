@@ -31,7 +31,7 @@ export default function Mine(){
                     <div className="mine_three">
                         <Flex>
                             <Flex.Item>
-                                <Link className="mine_works" to="/collection">
+                                <Link className="mine_works" to="/opus">
                                     <i className="iconfont icon-zuopin"></i>
                                     <p>我的作品</p>
                                 </Link>
@@ -45,7 +45,7 @@ export default function Mine(){
                             </Flex.Item>
                             
                             <Flex.Item>
-                                <Link className="mine_works" to="/collection">
+                                <Link className="mine_works" to="/release">
                                     <i className="iconfont icon-fabu"></i>
                                     <p>我的发布</p>
                                 </Link>

@@ -1,10 +1,32 @@
-import React, { Component } from 'react';
+import React, { Component,useState,useEffect } from 'react'
 import {HashRouter as Router,Route,Link,Redirect,Switch,useHistory} from 'react-router-dom'
 import { WingBlank, WhiteSpace } from 'antd-mobile';
 import Undertab from '../undertab/Undertab';
 import './Community.css'
 
 export default function Community(){
+    let [data,setData]=useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:8080/releases')
+        .then(res=>res.json())
+        .then(res=>{
+            setData(res.content);
+
+            console.log(res.content.length);
+            for(var i=0;i<res.content.length;i++){
+                var canvas = document.getElementById('canvas'+i);
+                var context=canvas.getContext("2d");
+                var a = new window.Picture;
+            
+                a.prase(res.content[i].paintdata);
+                a.drawDataMatrix=a.prase(res.content[i].paintdata);
+                a.initWH(canvas.width,canvas.height);
+                a.draw(context)
+                // a.inittable(context)
+                console.log(res.content[i].userid)
+            }
+        })
+    },[])
     return(
         <div className="community_div_no1">
             <div className="community_navbar">
@@ -15,140 +37,54 @@ export default function Community(){
             <WingBlank className="community_wingblank">
                 <div className="community_div_no2">
                     {/* 他人发布 */}
-                    <div className="community_chat_another">
-                        <div className='community_chat_another_headpic_box'>
-                            <img className='community_chat_another_headpic' 
-                            src='img/mine_message_img.png'></img>
-                        </div>
-                        <p className='community_chat_another_id'>小蓝</p>
-                        <div className='community_chat_talk'>
-                            <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
-                            <div className='community_chat_talk_pic_box'>
-                                <Link to="/collection">
-                                    <canvas className='community_chat_talk_canvas'>
-
-                                    </canvas>
-								</Link>
+                    {
+                        data.map((item,idx)=>
+                        <div className="community_chat_another">
+                            <div className='community_chat_another_headpic_box'>
+                                <img className='community_chat_another_headpic' 
+                                src='img/mine_message_img.png'></img>
                             </div>
-                            <p className='community_chat_another_time'>五分钟前</p>
-                        </div>
-                    </div>
-
-                    <div className="community_chat_another">
-                        <div className='community_chat_another_headpic_box'>
-                            <img className='community_chat_another_headpic' 
-                            src='img/mine_message_img.png'></img>
-                        </div>
-                        <p className='community_chat_another_id'>小蓝</p>
-                        <div className='community_chat_talk'>
-                            <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
-                            <div className='community_chat_talk_pic_box'>
-                                <Link to="/collection">
-                                    <canvas className='community_chat_talk_canvas'>
-                                    
-                                    </canvas>
-                                </Link>
+                            <p className='community_chat_another_id'>{data[idx].userid}</p>
+                            <div className='community_chat_talk'>
+                    <p className='community_chat_another_word'>{data[idx].paintid}</p>
+                                <div className='community_chat_talk_pic_box'>
+                                    <Link to="/xiangqing">
+                                        <canvas className='community_chat_talk_canvas' 
+                                        id={"canvas"+idx} width='400px'height='400px'>
+                                            
+                                        </canvas>
+                                    </Link>
+                                </div>
+                                <p className='community_chat_another_time'>五分钟前</p>
                             </div>
-                            <p className='community_chat_another_time'>五分钟前</p>
                         </div>
-                    </div>
-
+                        )
+                    }
+                    
                     {/* 我的发布 */}
-                    <div className="community_chat_mine">
-                        <div className='community_chat_mine_headpic_box'>
-                            <img className='community_chat_mine_headpic' 
-                            src='img/mine_message_img.png'></img>
-                        </div>
-                        <p className='community_chat_mine_id'>小蓝</p>
-                        <div className='community_chat_mine_talk'>
-                            <p className='community_chat_mine_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
-                            <div className='community_chat_mine_talk_pic_box'>
-                                <Link to="/collection">
-                                    <canvas className='community_chat_talk_canvas'>
-                                    
-                                    </canvas>
-                                </Link>
+                    {
+                        data.map((item,idx)=>
+                        <div className="community_chat_mine">
+                            <div className='community_chat_mine_headpic_box'>
+                                <img className='community_chat_mine_headpic' 
+                                src='img/mine_message_img.png'></img>
                             </div>
-                            <p className='community_chat_mine_time'>五分钟前</p>
-                        </div>
-                    </div>
-                    
-                    {/* 他人发布 */}
-                    <div className="community_chat_another">
-                        <div className='community_chat_another_headpic_box'>
-                            <img className='community_chat_another_headpic' 
-                            src='img/mine_message_img.png'></img>
-                        </div>
-                        <p className='community_chat_another_id'>小蓝</p>
-                        <div className='community_chat_talk'>
-                            <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
-                            <div className='community_chat_talk_pic_box'>
-                                <Link to="/collection">
-                                    <canvas className='community_chat_talk_canvas'>
-                                    
-                                    </canvas>
-                                </Link>
+                            <p className='community_chat_mine_id'>{data[idx].userid}</p>
+                            <div className='community_chat_mine_talk'>
+                                <p className='community_chat_mine_word'>{data[idx].paintid}</p>
+                                <div className='community_chat_mine_talk_pic_box'>
+                                    <Link to="/xiangqing">
+                                        <canvas className='community_chat_talk_canvas'
+                                        id={"canvas"+idx} >
+                                            
+                                        </canvas>
+                                    </Link>
+                                </div>
+                                <p className='community_chat_mine_time'>五分钟前</p>
                             </div>
-                            <p className='community_chat_another_time'>五分钟前</p>
                         </div>
-                    </div>
-                    
-                    <div className="community_chat_another">
-                        <div className='community_chat_another_headpic_box'>
-                            <img className='community_chat_another_headpic' 
-                            src='img/mine_message_img.png'></img>
-                        </div>
-                        <p className='community_chat_another_id'>小蓝</p>
-                        <div className='community_chat_talk'>
-                            <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
-                            <div className='community_chat_talk_pic_box'>
-                                <Link to="/collection">
-                                    <canvas className='community_chat_talk_canvas'>
-                                    
-                                    </canvas>
-                                </Link>
-                            </div>
-                            <p className='community_chat_another_time'>五分钟前</p>
-                        </div>
-                    </div>
-
-					<div className="community_chat_another">
-                        <div className='community_chat_another_headpic_box'>
-                            <img className='community_chat_another_headpic' 
-                            src='img/mine_message_img.png'></img>
-                        </div>
-                        <p className='community_chat_another_id'>小蓝</p>
-                        <div className='community_chat_talk'>
-                            <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
-                            <div className='community_chat_talk_pic_box'>
-                                <Link to="/collection">
-                                    <canvas className='community_chat_talk_canvas'>
-                                    
-                                    </canvas>
-                                </Link>
-                            </div>
-                            <p className='community_chat_another_time'>五分钟前</p>
-                        </div>
-                    </div>
-
-                    <div className="community_chat_another">
-                        <div className='community_chat_another_headpic_box'>
-                            <img className='community_chat_another_headpic' 
-                            src='img/mine_message_img.png'></img>
-                        </div>
-                        <p className='community_chat_another_id'>小蓝</p>
-                        <div className='community_chat_talk'>
-                            <p className='community_chat_another_word'>我发布了自己创作的像素图片，快来和我一起填色叭！</p>
-                            <div className='community_chat_talk_pic_box'>
-                                <Link to="/collection">
-                                    <canvas className='community_chat_talk_canvas'>
-                                    
-                                    </canvas>
-                                </Link>
-                            </div>
-                            <p className='community_chat_another_time'>五分钟前</p>
-                        </div>
-                    </div>
+                        )
+                    }
                 </div>
             </WingBlank>
             <div className="community_hight"></div>

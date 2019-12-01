@@ -21,8 +21,7 @@ export default function ShowtheTime(props){
                 // a.inittable(context)
             }
         })
-
-    },[data])
+    },[])
     return <div>
         {
             data.map((item,idx)=>

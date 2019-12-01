@@ -10,6 +10,8 @@ import Regsiter from '../Register/Register';
 import Nomatch from '../Nomatch/Nomatch';
 import Denglu from '../Denglu/Denglu';
 import ShowtheTime from '../ShowtheTime';
+import Opus from '../Mine/Opus';
+import Release from '../Mine/Release';
 
 class Routes extends Component {
 	render() {
@@ -25,6 +27,8 @@ class Routes extends Component {
 					<Route exact path="/regsiter" component={Regsiter}/>
 					<Route exact path='/nomatch' component={Nomatch}/>
 					<Route exact path='/ShowtheTime' component={ShowtheTime}/>
+					<Route exact path='/opus' component={Opus}/>
+					<Route exact path='/release' component={Release}/>
 					<Redirect to='/nomatch'/> 
 				</Switch>
 			</Router>

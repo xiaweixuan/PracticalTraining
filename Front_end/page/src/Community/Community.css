@@ -53,7 +53,8 @@
 }
 .community_chat_another_id{
     float: left;
-    margin-left: -14vw;
+    /* margin-left: -14vw; */
+    margin-left: -19vw;
     margin-top: 26vw;
     font-size: 4vw;
     font-family: "YouYuan";
@@ -103,7 +104,7 @@
     overflow: hidden;
 }
 .community_chat_talk_canvas{
-    background: black;
+    /* background: black; */
     width: 100%;
     height: 100%;
 }
@@ -139,7 +140,8 @@
 .community_chat_mine_id{
     font-family: "YouYuan";
     float: right;
-    margin-right: -14vw;
+    margin-right: -19vw;
+    /* margin-right: -14vw; */
     margin-top: 26vw;
     font-size: 4vw;
 }
