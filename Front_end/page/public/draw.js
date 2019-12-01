@@ -259,7 +259,9 @@ Picture.prototype.automaticPainting = function (context) {
         if (n == this.history.length) {
             clearInterval(timer);
         }
+        // this.drawDataMatrix=[];
         this.drawDataMatrix = [...this.history[n]];
+        // console.log(this.drawDataMatrix)
         this.draw(context);
         n++;
     }, 400)
@@ -287,5 +289,8 @@ Picture.prototype.drawWhite=function(context){
         }
     }
 }
-
-
+Picture.prototype.convertCanvasToImage=function(context) {
+	var image = new Image();
+	image.src = context.canvas.toDataURL("image/png");
+	return image;
+}

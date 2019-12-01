@@ -65,10 +65,16 @@ export default function Drawing() {
         //     method:"POST",
         //     body:JSON.stringify({data:obj.toString})
         // })
+
+
+        obj.clearCanvas(obj.context);
+        obj.draw(obj.context);
+        // obj.automaticPainting(obj.context);
+        console.log(obj)
         console.log(obj.toString())
-
+        var img=obj.convertCanvasToImage(obj.context);
+        document.getElementById("show").appendChild(img)
     }
-
     return (<div className="drawing">
         drawing
         <div className="" style={{ width: "95%", margin: "auto" }}>
@@ -124,7 +130,10 @@ export default function Drawing() {
                 </div>
             </div>
 
-
+                     
+        </div>
+        <div id="show" style={{marginTop:"20px"}}>
+            生成图片保存
         </div>
     </div>)
 }
