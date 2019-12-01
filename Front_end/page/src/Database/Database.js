@@ -25,21 +25,23 @@ export default function Database(){
                     </div>
                 </div>
             </div>
-                
-            <Tabs className='database_tab' tabs={tabs} initialPage={0}>
-                <div>
-                    <DatabaseBuju/>
-                </div>
-                <div>
-                    <DatabaseBuju/>
-                </div>
-                <div>
-                    <DatabaseBuju/>
-                </div>
-                <div>
-                    <DatabaseBuju/>
-                </div>
-            </Tabs>
+            
+            <div className='database_tab'>
+                <Tabs tabs={tabs} initialPage={0}>
+                    <div>
+                        <DatabaseBuju/>
+                    </div>
+                    <div>
+                        <DatabaseBuju/>
+                    </div>
+                    <div>
+                        <DatabaseBuju/>
+                    </div>
+                    <div>
+                        <DatabaseBuju/>
+                    </div>
+                </Tabs>
+            </div>
             <div className="database_hight"></div>
             <Undertab flag="1"/>
         </div>

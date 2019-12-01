@@ -1,9 +1,17 @@
 .database_header{
     background:#FF7414;
-    /* width:100%; */
+    width:100%;
     height:9vw;
     padding-top:1.2vw;
     padding-left:10vw;
+    z-index: 20;
+    position: fixed;
+    top:0;
+}
+.database_tab{
+    margin-top: 11vw;
+    /* z-index: 5; */
+    position: relative;
 }
 .database_input_no1{
     background-color:#fff;
