@@ -1,107 +1,251 @@
 /*drawing.js样式*/
-.drawing{
-    width: 100%;
-}
-.drawing_canvas_div{
-    width: 300px;
-    height: 300px;
-    margin: auto;
-    margin-top: 15px;
-    /* border-radius: 5px; */
-    /* overflow: hidden; */
-}
-
-.drawing_color_div{
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    text-align: center;
-    color: grey;
-}
-.drawing_color_div>span{
-    display: table-caption;
-    margin-top: 5px;
-    margin-left: 10px;
-}
-.drawing_title{
-    display: inline-block;
-    float: left;
-    height: 30px;
-}
-.drawing_main{
-    display: inline-block;
-    float: left;
-    height: 30px;
-    /* margin-left: 15px; */
-}
-
-.drawing_color{
-    width: 30px;
-    height: 30px;
-    /* border: 0.5px solid red; */
-    display: inline-block;
-    float: left;
-    margin-left: 15px;
-}
-.drawing_body{
-    margin-top: 25px;
-    height: 25px;
-    display: block;
-}
-.drawing_palette{
-    background-color:#ffffff;
-    margin-left: 15px;
-    border: 0;
-    height: 30px;
-    width: 30px;
-    overflow: hidden;
-    border-radius: 15px;
-}
-::-webkit-color-swatch-wrapper{
-    background-color:#ffffff;
-    outline: none;
-    border-radius: 15px;
-    overflow: hidden;
-    height: 100px;
-    width: 100px;
-}
-::-webkit-color-swatch{
-    background-color:#ffffff;
-    position: relative;
-    margin-left: -30px;
-    margin-top: -30px;
-    border-radius: 15px;
-    height: 100px;
-    width: 100px;
-}
-.drawing_btn{
-    display: inline-block;
-    float: left;
-    margin-left: 15px;
+@media only screen and (min-width: 600px) {
+    .drawing{
+        width: 100%;
+    }
+    .drawing_canvas_div{
+        width: 800px;
+        height: 800px;
+        margin: auto;
+        background-color: white;
+        /* overflow: hidden; */
+    }
+    .drawing_canvas_div_canvas{
+        width: 100%;
+        height: 100%;
+    }
+    .drawing_word{
+        font-family: "YouYuan";
+        font-size: 5vw;
+        font-weight: bolder;
+    }
+    .drawing_choose{
+        margin-left: 1vw;
+        width: 200px;
+        height: 30px;
+        overflow-x: auto;
+    }
+    .drawing_choose_no2{
+        width: 500px;
+    }
+    .drawing_color_div{
+        line-height: 19px;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        text-align: center;
+        color: grey;
+    }
+    .drawing_color_div>span{
+        display: table-caption;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    .drawing_title{
+        display: inline-block;
+        float: left;
+        height: 30px;
+    }
+    .drawing_main{
+        display: inline-block;
+        float: left;
+        height: 30px;
+        /* margin-left: 15px; */
+    }
     
-}
-.drawing_btn>button{
-    border-radius: 8px;
-    border: 0;
-    /* background-color: rgb(143, 245, 187); */
-}
-.drawing_btn>button>span{
-    margin: 6px 3px;
-}
-
-
-
-
-/*palette.js样式*/
-
-.palette_btn{
+    .drawing_color{
+        width: 30px;
+        height: 30px;
+        /* border: 0.5px solid red; */
+        display: inline-block;
+        float: left;
+        margin-left: 15px;
+    }
+    .drawing_body{
+        margin-top: 25px;
+        height: 25px;
+        display: block;
+    }
+    .drawing_palette{
+        background-color:#ffffff;
+        margin-left: 15px;
+        border: 0;
+        height: 30px;
+        width: 30px;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    ::-webkit-color-swatch-wrapper{
+        background-color:#ffffff;
+        outline: none;
+        border-radius: 15px;
+        overflow: hidden;
+        height: 100px;
+        width: 100px;
+    }
+    ::-webkit-color-swatch{
+        background-color:#ffffff;
+        position: relative;
+        margin-left: -30px;
+        margin-top: -30px;
+        border-radius: 15px;
+        height: 100px;
+        width: 100px;
+    }
+    .drawing_btn{
+        width:16vw;
+        height: 8vw;
+        display: inline-block;
+        float: left;
+        margin-left: 15px;
+    }
+    .drawing_btn button{
+        box-shadow: 2px 2px 2px 2px grey;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 8px;
+        border: 0;
+        background-color: rgb(255,116,20);
+    }
     
-    border:none;
-    border-radius: 15px;
-    line-height:31px;
-    height: 30px;
-    width: 30px;
-    vertical-align: middle;
+    /*palette.js样式*/
+    
+    .palette_btn{
+        border:none;
+        border-radius: 15px;
+        line-height:31px;
+        height: 30px;
+        width: 30px;
+        vertical-align: middle;
+    }
+    .drawing_show{
+        float: left;
+    }
 }
-
-
+@media only screen and (max-width: 600px) {
+    .drawing{
+        width: 100%;
+    }
+    .drawing_canvas_div{
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        background-color: white;
+        /* overflow: hidden; */
+    }
+    .drawing_canvas_div_canvas{
+        width: 100%;
+        height: 100%;
+    }
+    .drawing_word{
+        font-family: "YouYuan";
+        font-size: 5vw;
+        font-weight: bolder;
+    }
+    .drawing_choose{
+        margin-left: 1vw;
+        width: 200px;
+        height: 30px;
+        overflow-x: auto;
+    }
+    .drawing_choose_no2{
+        width: 500px;
+    }
+    .drawing_color_div{
+        line-height: 19px;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        text-align: center;
+        color: grey;
+    }
+    .drawing_color_div>span{
+        display: table-caption;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    .drawing_title{
+        display: inline-block;
+        float: left;
+        height: 30px;
+    }
+    .drawing_main{
+        display: inline-block;
+        float: left;
+        height: 30px;
+        /* margin-left: 15px; */
+    }
+    
+    .drawing_color{
+        width: 30px;
+        height: 30px;
+        /* border: 0.5px solid red; */
+        display: inline-block;
+        float: left;
+        margin-left: 15px;
+    }
+    .drawing_body{
+        margin-top: 25px;
+        height: 25px;
+        display: block;
+    }
+    .drawing_palette{
+        background-color:#ffffff;
+        margin-left: 15px;
+        border: 0;
+        height: 30px;
+        width: 30px;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    ::-webkit-color-swatch-wrapper{
+        background-color:#ffffff;
+        outline: none;
+        border-radius: 15px;
+        overflow: hidden;
+        height: 100px;
+        width: 100px;
+    }
+    ::-webkit-color-swatch{
+        background-color:#ffffff;
+        position: relative;
+        margin-left: -30px;
+        margin-top: -30px;
+        border-radius: 15px;
+        height: 100px;
+        width: 100px;
+    }
+    .drawing_btn{
+        width:16vw;
+        height: 8vw;
+        display: inline-block;
+        float: left;
+        margin-left: 15px;
+    }
+    .drawing_btn button{
+        box-shadow: 2px 2px 2px 2px grey;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 8px;
+        border: 0;
+        background-color: rgb(255,116,20);
+    }
+    
+    /*palette.js样式*/
+    
+    .palette_btn{
+        border:none;
+        border-radius: 15px;
+        line-height:31px;
+        height: 30px;
+        width: 30px;
+        vertical-align: middle;
+    }
+    .drawing_show{
+        float: left;
+    }
+}

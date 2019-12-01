@@ -6,7 +6,6 @@ import Drawing from './draw/drawing'
 
 import ColorSelect from './draw/toRelease'
 
-
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -15,8 +14,8 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				{/* <Routes /> */}
-				<Drawing />
+				<Routes />
+				{/* <Drawing /> */}
 				{/* <ColorSelect
 					style={{ verticalAlign: "middle" }}
 					color={useContent[key].color} //编辑的时候，用于颜色的回显

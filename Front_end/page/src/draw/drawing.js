@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useWindowWidth } from 'react'
 import Palette from './palette'
-
 
 import './draw.css'
 export default function Drawing() {
@@ -30,12 +29,12 @@ export default function Drawing() {
 
         setColorlist(pic.colorList);
         setObj(pic);
-
     }, [])
 
     function changeColor(item) {
         obj.color = item;
     }
+
     function changeColorFree(color) {
         console.log("自由改颜色");
         obj.color = color;
@@ -55,18 +54,14 @@ export default function Drawing() {
         obj.inittable(obj.context);
         obj.drawNumber(obj.context);
         obj.drawRecall(obj.context);
-        
-        
-        
     }
+
     function finishDraw(){
         // //上传数据
         // fetch(url,{
         //     method:"POST",
         //     body:JSON.stringify({data:obj.toString})
         // })
-
-
         obj.clearCanvas(obj.context);
         obj.draw(obj.context);
         // obj.automaticPainting(obj.context);
@@ -75,36 +70,48 @@ export default function Drawing() {
         var img=obj.convertCanvasToImage(obj.context);
         document.getElementById("show").appendChild(img)
     }
-    return (<div className="drawing">
-        drawing
+
+    var aa;
+    // var aa = useState(0);
+    // window.onresize = function(){
+        var w=window.outerWidth;
+        if(w<700){aa=300}
+        else{aa=800}
+    // }
+    return (
+    <div className="drawing">
         <div className="" style={{ width: "95%", margin: "auto" }}>
             <div className="drawing_canvas_div">
-                <canvas id="canvas" width="300px" height="300px">您的浏览器版本过低</canvas>
+                <canvas id="canvas" width={aa} height={aa}>您的浏览器版本过低</canvas>
             </div>
-
+            
             <div className="drawing_body">
-                {/* <div></div> */}
                 <div className="drawing_title">
-                    <h3>推荐色</h3>
+                    <p className="drawing_word">推荐色</p>
                 </div>
                 <div className="drawing_main">
-                    <div>
+                    <div className="drawing_choose">
+                        <div className="drawing_choose_no2">
                         {
                             colorlist/*.filter((item)=>item='#ffffff')*/.map((item, idx) =>
-                                <div key={idx} className="drawing_color">
-                                    <div className="drawing_color_div" onClick={() => { changeColor(item) }} style={{ backgroundColor: item }} key={item} ><span>{idx}</span></div>
+                            <div key={idx} className="drawing_color">
+                                <div className="drawing_color_div" 
+                                onClick={() => { changeColor(item) }} 
+                                style={{ backgroundColor: item }} 
+                                key={item} >
+                                    <span>{idx}</span>
                                 </div>
+                            </div>
                             )
                         }
-                        {/* <button onClick={back}>撤回</button> */}
+                       </div>
                     </div>
                 </div>
             </div>
 
             <div className="drawing_body">
-                {/* <div></div> */}
                 <div className="drawing_title">
-                    <h3>自由选色</h3>
+                    <p className="drawing_word">自由选色</p>
                 </div>
                 <div className="drawing_main">
                     <div className="drawing_color">
@@ -112,30 +119,34 @@ export default function Drawing() {
                     </div>
                 </div>
             </div>
+
             <div className="drawing_body">
-                {/* <div></div> */}
                 <div className="drawing_title">
-                    <h3>绘图设置</h3>
+                <p className="drawing_word">绘图设置</p>
                 </div>
                 <div className="drawing_main">
                     <div className="drawing_btn">
-                        <button onClick={showNumber}><span>显示数字</span></button>
+                        <button onClick={showNumber}>
+                            显示数字
+                        </button>
                     </div>
                     <div className="drawing_btn">
-                        <button onClick={recall}><span>撤回</span></button>
+                        <button onClick={recall}>
+                            撤回
+                        </button>
                     </div>
                     <div className="drawing_btn">
-                        <button onClick={finishDraw}><span>完成</span></button>
+                        <button onClick={finishDraw}>
+                            完成
+                        </button>
                     </div>
                 </div>
             </div>
-
-                     
         </div>
-        <div id="show" style={{marginTop:"20px"}}>
-            生成图片保存
+        <div className="drawing_show" id="show" style={{marginTop:"20px"}}>
+            <p className="drawing_word">生成图片保存</p>
+            
         </div>
-    </div>)
+    </div>
+    )
 }
-
-

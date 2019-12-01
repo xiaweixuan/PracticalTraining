@@ -10,7 +10,7 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 			<div className="databaseBuju_views">
 				<Router>
 					<Link to="/xiangqing">
-						<canvas className="databaseBuju_views_canvas" id={"canvas"+idx} width='100%'height='100%'>
+						<canvas className="databaseBuju_views_canvas" id={"canvas"+idx}>
 						
 						</canvas>
 					</Link>
