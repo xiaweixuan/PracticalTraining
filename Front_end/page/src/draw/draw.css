@@ -1,11 +1,12 @@
 /*drawing.js样式*/
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1000px) {
     .drawing{
         width: 100%;
+        /* overflow-y:scroll; */
     }
     .drawing_canvas_div{
-        width: 800px;
-        height: 800px;
+        width: 850px;
+        height: 850px;
         margin: auto;
         background-color: white;
         /* overflow: hidden; */
@@ -15,32 +16,30 @@
         height: 100%;
     }
     .drawing_word{
+        float: left;
+        /* margin-top: 200px; */
         font-family: "YouYuan";
-        font-size: 5vw;
+        font-size:5vw;
         font-weight: bolder;
     }
     .drawing_choose{
         margin-left: 1vw;
-        width: 200px;
-        height: 30px;
+        width: 64vw;
+        height: 8vw;
         overflow-x: auto;
     }
     .drawing_choose_no2{
-        width: 500px;
+        width: 1000px;
     }
     .drawing_color_div{
-        line-height: 19px;
         cursor: pointer;
-        width: 30px;
-        height: 30px;
-        border-radius: 15px;
-        text-align: center;
+        width: 8vw;
+        height: 8vw;
+        border-radius: 8vw;
+        font-size: 4vw;
         color: grey;
-    }
-    .drawing_color_div>span{
-        display: table-caption;
-        margin-top: 5px;
-        margin-left: 10px;
+        text-align: center;
+        line-height: 7vw;
     }
     .drawing_title{
         display: inline-block;
@@ -51,7 +50,6 @@
         display: inline-block;
         float: left;
         height: 30px;
-        /* margin-left: 15px; */
     }
     
     .drawing_color{
@@ -60,11 +58,13 @@
         /* border: 0.5px solid red; */
         display: inline-block;
         float: left;
-        margin-left: 15px;
+        margin-left: 80px;
     }
     .drawing_body{
-        margin-top: 25px;
-        height: 25px;
+        float: left;
+        width: 100%;
+        margin-top: 70px;
+        height: 40px;
         display: block;
     }
     .drawing_palette{
@@ -98,7 +98,8 @@
         height: 8vw;
         display: inline-block;
         float: left;
-        margin-left: 15px;
+        margin-left: 4vw;
+        font-size: 3.5vw;
     }
     .drawing_btn button{
         box-shadow: 2px 2px 2px 2px grey;
@@ -114,14 +115,134 @@
     
     .palette_btn{
         border:none;
-        border-radius: 15px;
+        border-radius: 8vw;
         line-height:31px;
-        height: 30px;
-        width: 30px;
+        height: 8vw;
+        width: 8vw;
         vertical-align: middle;
     }
-    .drawing_show{
+}
+@media (max-width: 1000px) and (min-width: 600px) {
+    .drawing{
+        width: 100%;
+        /* overflow-y:scroll; */
+    }
+    .drawing_canvas_div{
+        width: 650px;
+        height: 650px;
+        margin: auto;
+        background-color: white;
+        /* overflow: hidden; */
+    }
+    .drawing_canvas_div_canvas{
+        width: 100%;
+        height: 100%;
+    }
+    .drawing_word{
         float: left;
+        /* margin-top: 200px; */
+        font-family: "YouYuan";
+        font-size:5vw;
+        font-weight: bolder;
+    }
+    .drawing_choose{
+        margin-left: 1vw;
+        width: 64vw;
+        height: 8vw;
+        overflow-x: auto;
+    }
+    .drawing_choose_no2{
+        width: 1000px;
+    }
+    .drawing_color_div{
+        cursor: pointer;
+        width: 8vw;
+        height: 8vw;
+        border-radius: 8vw;
+        font-size: 30px;
+        color: grey;
+        text-align: center;
+        line-height: 7vw;
+    }
+    .drawing_title{
+        display: inline-block;
+        float: left;
+        height: 30px;
+    }
+    .drawing_main{
+        display: inline-block;
+        float: left;
+        height: 30px;
+    }
+    
+    .drawing_color{
+        width: 30px;
+        height: 30px;
+        /* border: 0.5px solid red; */
+        display: inline-block;
+        float: left;
+        margin-left: 45px;
+    }
+    .drawing_body{
+        float: left;
+        width: 100%;
+        margin-top: 50px;
+        height: 40px;
+        display: block;
+    }
+    .drawing_palette{
+        background-color:#ffffff;
+        margin-left: 15px;
+        border: 0;
+        height: 30px;
+        width: 30px;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    ::-webkit-color-swatch-wrapper{
+        background-color:#ffffff;
+        outline: none;
+        border-radius: 15px;
+        overflow: hidden;
+        height: 100px;
+        width: 100px;
+    }
+    ::-webkit-color-swatch{
+        background-color:#ffffff;
+        position: relative;
+        margin-left: -30px;
+        margin-top: -30px;
+        border-radius: 15px;
+        height: 100px;
+        width: 100px;
+    }
+    .drawing_btn{
+        width:16vw;
+        height: 8vw;
+        display: inline-block;
+        float: left;
+        margin-left: 4vw;
+        font-size: 3vw;
+    }
+    .drawing_btn button{
+        box-shadow: 2px 2px 2px 2px grey;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 8px;
+        border: 0;
+        background-color: rgb(255,116,20);
+    }
+    
+    /*palette.js样式*/
+    
+    .palette_btn{
+        border:none;
+        border-radius: 8vw;
+        line-height:31px;
+        height: 8vw;
+        width: 8vw;
+        vertical-align: middle;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -154,18 +275,13 @@
         width: 500px;
     }
     .drawing_color_div{
-        line-height: 19px;
+        line-height: 30px;
         cursor: pointer;
         width: 30px;
         height: 30px;
         border-radius: 15px;
         text-align: center;
         color: grey;
-    }
-    .drawing_color_div>span{
-        display: table-caption;
-        margin-top: 5px;
-        margin-left: 10px;
     }
     .drawing_title{
         display: inline-block;

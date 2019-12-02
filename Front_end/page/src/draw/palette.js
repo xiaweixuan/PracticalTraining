@@ -31,12 +31,17 @@ export default function Palette(props){
         props.change(value.hex)
     }
 
+    var aa;
+    var w=window.outerWidth;
+    if(w<700){aa=200}
+    else if(700<w<1000){aa=650}
+    else if(w<1000){aa=800}
 
     return (<div className="palette">
         <div className="palette_btn" onClick={showPalette} style={{background:color}}></div>
         {displayColorPicker=="block"?
         <div style={{position:"absolute"}}>
-            <SketchPicker color={color} onChange={changeColor} />
+            <SketchPicker width={aa} color={color} onChange={changeColor} />
         </div>
         :null
         }

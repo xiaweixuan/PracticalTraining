@@ -76,7 +76,8 @@ export default function Drawing() {
     // window.onresize = function(){
         var w=window.outerWidth;
         if(w<700){aa=300}
-        else{aa=800}
+        else if(700<w&&w<900){aa=650}
+        else if(900<w){aa=850}
     // }
     return (
     <div className="drawing">
@@ -99,11 +100,48 @@ export default function Drawing() {
                                 onClick={() => { changeColor(item) }} 
                                 style={{ backgroundColor: item }} 
                                 key={item} >
-                                    <span>{idx}</span>
+                                    <p>{idx}</p>
                                 </div>
                             </div>
                             )
                         }
+                        {
+                            colorlist/*.filter((item)=>item='#ffffff')*/.map((item, idx) =>
+                            <div key={idx} className="drawing_color">
+                                <div className="drawing_color_div" 
+                                onClick={() => { changeColor(item) }} 
+                                style={{ backgroundColor: item }} 
+                                key={item} >
+                                    <p>{idx}</p>
+                                </div>
+                            </div>
+                            )
+                        }
+                        {
+                            colorlist/*.filter((item)=>item='#ffffff')*/.map((item, idx) =>
+                            <div key={idx} className="drawing_color">
+                                <div className="drawing_color_div" 
+                                onClick={() => { changeColor(item) }} 
+                                style={{ backgroundColor: item }} 
+                                key={item} >
+                                    <p>{idx}</p>
+                                </div>
+                            </div>
+                            )
+                        }
+                        {
+                            colorlist/*.filter((item)=>item='#ffffff')*/.map((item, idx) =>
+                            <div key={idx} className="drawing_color">
+                                <div className="drawing_color_div" 
+                                onClick={() => { changeColor(item) }} 
+                                style={{ backgroundColor: item }} 
+                                key={item} >
+                                    <p>{idx}</p>
+                                </div>
+                            </div>
+                            )
+                        }
+                        
                        </div>
                     </div>
                 </div>
@@ -122,7 +160,7 @@ export default function Drawing() {
 
             <div className="drawing_body">
                 <div className="drawing_title">
-                <p className="drawing_word">绘图设置</p>
+                    <p className="drawing_word">绘图设置</p>
                 </div>
                 <div className="drawing_main">
                     <div className="drawing_btn">
@@ -143,9 +181,8 @@ export default function Drawing() {
                 </div>
             </div>
         </div>
-        <div className="drawing_show" id="show" style={{marginTop:"20px"}}>
+        <div className="drawing_show" id="show" style={{float:'left',marginTop:"10vw"}}>
             <p className="drawing_word">生成图片保存</p>
-            
         </div>
     </div>
     )
