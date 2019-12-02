@@ -49,7 +49,7 @@ export default class Denglu extends Component {
                          name="userid">   
                         </input>
                         <WhiteSpace size="lg"/>
-                        <input type="text" className="denglu_name" 
+                        <input type="text" className="denglu_psw" 
                         onChange={this.handleChangePassword} value={this.state.valuePassword} 
                         placeholder="密码" name="pwd">   
                         </input>
