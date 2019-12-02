@@ -1,6 +1,9 @@
+/**
+ * 加密函数
+ * 传入初始密码，返回加密后密码
+ * */
 var crypto = require("crypto");
 
-//传入初始密码，返回加密后密码
 function lock(initPWD){
 	function my_lock(initPWD){
 		var lock = crypto.createHash('sha256');

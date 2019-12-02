@@ -1,8 +1,11 @@
+/**
+ * 登录接口:(post)
+ * 传入userid；pwd
+ * 返回是否成功登陆信息
+ */
 const express = require('express');
-const showdata = require('./showdata');
 const router = express.Router();
 const connection = require('./usemysql');
-const lock = require('./lock');
 
 let  sql = 'SELECT * FROM user_table';
 var islogin = false;

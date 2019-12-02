@@ -1,8 +1,13 @@
+/**
+ * 注册接口：(post)
+ * 传入用户所有信息
+ * 校验与数据库数据是否冲突
+ * 无冲突，存入数据库
+ * 返回是否注册成功信息
+ */
 const express = require('express');
 const router = express.Router();
 const connection = require('./usemysql');
-const showdata = require('./showdata');
-const lock = require('./lock');
 
 var isregister = false;
 var db={};

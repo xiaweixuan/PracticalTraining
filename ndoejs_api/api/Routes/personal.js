@@ -1,3 +1,8 @@
+/**
+ * 用户个人信息接口：(get)
+ * 传入userid
+ * 返回该用户信息
+ */
 const express = require('express');
 const router = express.Router();
 const showdata = require('./showdata');

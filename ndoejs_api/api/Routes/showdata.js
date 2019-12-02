@@ -1,5 +1,8 @@
-const express = require('express');
-const router = express.Router();
+/**
+ * 显示数据库数据
+ * 根据传入参数sql（select）
+ * 在数据库中查找对应信息并显示
+ */
 const connection = require('./usemysql');
 
 function showdata (res,sql){

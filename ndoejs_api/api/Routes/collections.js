@@ -1,3 +1,9 @@
+/**
+ * 收藏接口：(get)
+ * 传入userid
+ * 返回该用户的收藏图数据
+ */
+
 const express = require('express');
 const router = express.Router();
 const showdata = require('./showdata');

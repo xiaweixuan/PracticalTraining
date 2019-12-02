@@ -1,3 +1,8 @@
+/**
+ * 用户发布图片接口：(post)
+ * 传入图片所有数据
+ * 上传至数据库存储
+ */
 const express = require('express');
 const router = express.Router();
 const connection = require('./usemysql');

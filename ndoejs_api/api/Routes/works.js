@@ -1,3 +1,8 @@
+/**
+ * 作品接口：(get)
+ * 传入userid
+ * 返回该用户的作品图数据
+ */
 const express = require('express');
 const router = express.Router();
 const showdata = require('./showdata');

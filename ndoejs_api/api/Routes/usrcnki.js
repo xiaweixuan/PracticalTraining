@@ -1,3 +1,9 @@
+/**
+ * 用户名校验接口：(get)
+ * 传入userid
+ * 校验是否与数据库数据冲突
+ * 无冲突，返回用户名可用信息
+ */
 const express = require('express');
 const router = express.Router();
 const connection = require('./usemysql');

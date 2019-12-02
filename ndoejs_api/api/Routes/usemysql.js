@@ -1,6 +1,7 @@
+/**
+ * 数据库连接
+ */
 const db = require('mysql');
-const express = require('express');
-const app = express();
  
 let connection = db.createConnection({
     host:'47.94.174.80',
