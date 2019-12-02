@@ -101,6 +101,11 @@
     font-size:4vw;
     margin-top: 2vw;
 }
+.databaseBuju_views{
+    width:47%;
+    float:left;
+    margin-left:2vw;
+}
 .databaseBuju_views i{
     z-index: 10;
     position: absolute;

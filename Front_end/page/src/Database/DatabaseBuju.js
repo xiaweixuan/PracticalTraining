@@ -7,7 +7,7 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 	return (<div className={`${className} placeholder`} {...restProps}>
 		{
 			props.data.map((item,idx)=>
-			<div className="databaseBuju_views">
+			<div className="databaseBuju_views" key={idx}>
 				<Router>
 					<Link to="/xiangqing">
 						<canvas className="databaseBuju_views_canvas" id={"canvas"+idx}>
@@ -52,15 +52,11 @@ export default function HomeBuju (){
 	return(
 	<div className="databaseBuju_root">
 		<div className="databaseBuju_root_no2">
-			<Flex>
-				<Flex.Item>
+			<div>
+				<div >
 					<PlaceHolder data={data}/>
-				</Flex.Item>
-
-				<Flex.Item>
-					<PlaceHolder data={data}/>
-				</Flex.Item>
-			</Flex>
+				</div>
+			</div>
 		</div>
 	</div>
 )
