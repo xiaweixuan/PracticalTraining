@@ -6,7 +6,7 @@ import './Collection.css'
 export default function Opus(){
     let [data,setData]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:8080/releases')
+        fetch('http://xiawx.top:8080/offpaint')
         .then(res=>res.json())
         .then(res=>{
             setData(res.content);

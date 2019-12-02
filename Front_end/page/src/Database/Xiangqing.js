@@ -2,7 +2,7 @@ import React, { Component,useState,useEffect } from 'react'
 import {HashRouter as Router,Link} from 'react-router-dom';
 import Drawing from '../draw/drawing';
 
-export default function Xiangqing(){
+export default function Xiangqing(props){
     // let [data,setData]=useState([]);
     // useEffect(()=>{
     //     console.log(new window.Picture);
@@ -21,15 +21,17 @@ export default function Xiangqing(){
     //             a.draw(context)
     //         })
     //     },[])
+
+    var a = props.location.state.item.paintdata;
+    // console.log(a)
         return (
             <div className="database">
                 <div>
                     <div className="xiangqing_header">
-                        <Router>
-                            <Link to='/' className="xiangqing_header_i">
-                                <i className="iconfont icon-fanhui"></i>
-                            </Link>
-                        </Router>
+                        <Link to='/' className="xiangqing_header_i">
+                            <i className="iconfont icon-fanhui"></i>
+                        </Link>
+                        
                         <div className="xiangqing_header_i_no2">
                             <i className="iconfont icon-shoucang1"></i>
                         </div>
@@ -53,7 +55,7 @@ export default function Xiangqing(){
                                 {/* <canvas className="xiangqing_zuoping_canvas" id={"canvas"} width='100%'height='100%'>
 
                                 </canvas> */}
-                                <Drawing/>
+                                <Drawing data={a}/>
                             </div>
                         </div>
                     </div>
