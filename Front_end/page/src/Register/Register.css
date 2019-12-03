@@ -26,6 +26,7 @@
     font-size: 4vw;
     width: 90vw;
     height: 10vw;
+    margin-bottom:2vw;
     border: 1px solid #FF7414;
 }
 .register_content_code{
@@ -64,4 +65,8 @@
     background-color: #FF7414;
     color:#fff;
     border: 0px;
+}
+.register_user{
+    font-size:3vw;
+    color:red;
 }

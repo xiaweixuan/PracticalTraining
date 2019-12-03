@@ -22,6 +22,13 @@ export const LoginchangeValuePassword = value=>(
     }
 )
 
+export const loginstateflag = value=>(
+    {
+        type: types.LOGIN_FLAG,
+        value
+    }
+)
+
 export const changeValue = value=>(
     {
         type: types.CHANGE_INPUT_VALUE,
@@ -35,7 +42,12 @@ export const changeValuee = value=>(
         value
     }
 )
-
+export const changeValueee = value=>(
+    {
+        type: types.CHANGE_PHONE_VALUE,
+        value
+    }
+)
 export const log = (value)=>(
     {
         type: types.LOGIN_SUCCESS,

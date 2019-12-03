@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component ,useState,useEffect} from 'react'
 import {HashRouter as Router,Link} from 'react-router-dom';
 import { NavBar, Icon ,Tabs} from 'antd-mobile';
 import './Database.css';
@@ -12,6 +12,7 @@ const tabs = [
 ];
 
 export default function Database(){
+    
     return (
         <div className="database">
             <div>

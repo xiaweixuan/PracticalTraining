@@ -35,7 +35,7 @@ export default function HomeBuju (){
         .then(res=>{
             setData(res.content);
 			console.log(res.content.length);
-			// var aa = res.content.length;
+			var aa = res.content.length;
             for(var i=0;i<res.content.length;i++){
                 var canvas = document.getElementById('canvas'+i);
                 var context=canvas.getContext("2d");

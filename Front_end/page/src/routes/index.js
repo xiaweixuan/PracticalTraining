@@ -12,6 +12,7 @@ import Denglu from '../Denglu/Denglu';
 import Opus from '../Mine/Opus';
 import Release from '../Mine/Release';
 import Drawing from '../draw/drawing';
+import New from '../New';
 
 class Routes extends Component {
 	render() {
@@ -28,7 +29,7 @@ class Routes extends Component {
 					<Route exact path='/opus' component={Opus}/>
 					<Route exact path='/release' component={Release}/>
 					<Route exact path='/draw' component={Drawing}/>
-
+					<Route exact path='/new' component={New}/>
 					<Route exact path='/nomatch' component={Nomatch}/>
 					<Redirect to='/nomatch'/> 
 				</Switch>
