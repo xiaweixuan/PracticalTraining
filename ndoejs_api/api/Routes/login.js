@@ -6,6 +6,7 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('./usemysql');
+const qs = require('querystring');
 
 let  sql = 'SELECT * FROM user_table';
 var islogin = false;
@@ -20,14 +21,15 @@ router.post('/',(req,res)=>{
       data += chunk;
     });
     req.on('end',()=>{
-        // console.log(data);
-        data = data.split('&');
-        for(let i= 0 ;i<data.length;i++){
-            data[i]=data[i].split('=');
-            user[data[i][0]]=data[i][1];
-        }
-        // console.log(data);
+        // data = JSON.parse(JSON.stringify(qs.parse(data)));
         // console.log(user);
+        // console.log(data);
+
+        data = JSON.parse(data);
+        
+        user.userid = data.userid;
+        user.pwd = data.pwd;
+
         connection.query(sql, (error,results,fields)=> {
         //error,results,fields:错误对象，json数组，数据信息数组
             // console.log(results[1].userid);

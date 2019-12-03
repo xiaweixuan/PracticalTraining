@@ -26,6 +26,7 @@ app.get('/', function(req, res) {
  * 社区:/releases
  * 收藏:/collection
  * 作品:/work
+ * 用户名校验:/usrcnki
  */
 
 app.use('/login', loginRouter);
