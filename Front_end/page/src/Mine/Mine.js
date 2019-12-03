@@ -96,7 +96,7 @@ export default class Mine extends Component {
                         <div className="mine_bottom_setup_div">
                             <i className="iconfont icon-set"></i>
                             <div className="mine_bottom_setup">
-                                <Link className="mine_bottom_link" to="/regsiter">设置</Link>
+                                <Link className="mine_bottom_link" to="/database">设置</Link>
                             </div>
                             <div className="mine_clearfloat"></div>
                         </div>
