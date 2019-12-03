@@ -3,18 +3,17 @@ import React, { Component,useState,useEffect } from 'react'
 import {HashRouter as Router,Link} from 'react-router-dom';
 
 function PlaceHolder(props,{ className = '', ...restProps }){
-	console.log(props.data);
+	// console.log(props.data);
 	return (<div className={`${className} placeholder`} {...restProps}>
 		{
 			props.data.map((item,idx)=>
-			<div className="databaseBuju_views">
-				<Router>
-					<Link to="/xiangqing">
-						<canvas className="databaseBuju_views_canvas" id={"canvas"+idx}>
+			<div className="databaseBuju_views" key={idx}>
+				<Link to={{pathname:"/xiangqing",state:{item}}}>
+					<canvas className="databaseBuju_views_canvas" id={"canvas"+idx}>
 						
-						</canvas>
-					</Link>
-				</Router>
+					</canvas>
+				</Link>
+				
 				<div className="databaseBuju_views_bottom">
 					<img src="img/mine_message_img.png"/>
 				</div>
@@ -31,7 +30,7 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 export default function HomeBuju (){
 	let [data,setData]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:8080/releases')
+        fetch('http://xiawx.top:8080/offpaint')
         .then(res=>res.json())
         .then(res=>{
             setData(res.content);
@@ -52,15 +51,11 @@ export default function HomeBuju (){
 	return(
 	<div className="databaseBuju_root">
 		<div className="databaseBuju_root_no2">
-			<Flex>
-				<Flex.Item>
+			<div>
+				<div >
 					<PlaceHolder data={data}/>
-				</Flex.Item>
-
-				<Flex.Item>
-					<PlaceHolder data={data}/>
-				</Flex.Item>
-			</Flex>
+				</div>
+			</div>
 		</div>
 	</div>
 )

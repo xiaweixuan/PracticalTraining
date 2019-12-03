@@ -1,9 +1,8 @@
 /**
- * 收藏接口：(get)
+ * 用户个人信息接口：(get)
  * 传入userid
- * 返回该用户的收藏图数据
+ * 返回该用户信息
  */
-
 const express = require('express');
 const router = express.Router();
 const showdata = require('./showdata');
@@ -13,7 +12,9 @@ var userName = '';
 router.get('/',(req,res)=>{
     //获取前端传入的userid
     userName = req.query.userid;
-    let selectsql = 'select * from paint_table where paintid in( select distinct paintid from collections_table where userid="'+userName+'")';
+    console.log(userName);
+    // let selectsql = 'select * from user_table where userid="'+userName+'"';
+    let selectsql = 'select * from user_table';
     showdata(res,selectsql);
 })
 

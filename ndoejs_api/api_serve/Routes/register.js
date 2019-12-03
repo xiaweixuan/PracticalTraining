@@ -36,7 +36,7 @@ router.post('/',(req,res)=>{
         // data = JSON.parse(JSON.stringify(qs.parse(data)));
 
         data = JSON.parse(data);
-        
+
         // console.log(user);
         // console.log(data);
         user.userid = data.userid;
