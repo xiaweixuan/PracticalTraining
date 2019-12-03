@@ -4,14 +4,24 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="http://localhost:8080/perpaint" method="POST">
+    <form>
+        <!-- action="http://xiawx.top:8080/login" method="POST"> -->
         <input type="text" name="userid"/>
-        <input type="text" name="paintid"/>
-        <!-- <input type="text" name="phonenum"/> -->
+        <input type="password" name="pwd"/>
+        <!-- <input type="email" name="phonenum"/> -->
         <input type="submit" value="提交"/>
     </form>
 </body>
 <script>
-// fetch('localhost:8080/').then(res=>res.json()).then((data)=>{console.log(data)})
+    fetch('http://xiawx.top:8080/login',
+    {   
+        method:'POST',
+        body:JSON.stringify({
+            userid:'lipeilun',
+            pwd:'123456789'
+        })
+    })
+    .then(res=>res.json())
+    .then((data)=>{console.log(data)})
 </script>
 </html>

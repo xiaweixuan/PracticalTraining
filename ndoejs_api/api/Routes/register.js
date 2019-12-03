@@ -8,6 +8,8 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('./usemysql');
+const qs = require('querystring');
+
 
 var isregister = false;
 var db={};
@@ -25,20 +27,23 @@ router.post('/',(req,res)=>{
         motto:''
     }
     var data = '';
+    
     req.on('data',(chunk)=>{
       data += chunk;
     });
     req.on('end',()=>{
-
-        data = data.split('&');
-        for(let i= 0 ;i<data.length;i++){
-            data[i]=data[i].split('=');
-            user[data[i][0]]=data[i][1];
-        }
         // console.log(data);
-        console.log(user);
-        // connection.query(insertsql,user);
-        // showdata(res,selectsql);
+        // data = JSON.parse(JSON.stringify(qs.parse(data)));
+
+        data = JSON.parse(data);
+        
+        // console.log(user);
+        // console.log(data);
+        user.userid = data.userid;
+        user.pwd = data.pwd;
+        user.phonenum = data.phonenum;
+        // console.log(user);
+        // console.log(data);
         connection.query(selectsql, (error,results,fields)=> {
             isregister = true;
             if (error) console.log(error.message);
