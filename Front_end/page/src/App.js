@@ -15,7 +15,6 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Routes />
-				{/* <ColorSelect/> */}
 				{/* <Drawing /> */}
 				{/* <ColorSelect
 					style={{ verticalAlign: "middle" }}
