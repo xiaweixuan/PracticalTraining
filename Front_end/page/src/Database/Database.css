@@ -1,41 +1,111 @@
 .database_header{
-    background:#FF7414;
+    background:rgba(15, 167, 154, 0.589);
     width:100%;
-    height:9vw;
+    height:18vw;
     padding-top:1.2vw;
-    padding-left:10vw;
     z-index: 20;
     position: fixed;
     top:0;
+    font-size: 5vw;
 }
 .database_tab{
-    margin-top: 11vw;
+    margin-top: 20vw;
     /* z-index: 5; */
     position: relative;
 }
 .database_input_no1{
-    background-color:#fff;
-    width:80%;
-    height:70%;
+    background:
+    linear-gradient(to left,rgba(15, 167, 154, 0.589),rgba(15, 167, 154, 0.589)) no-repeat left top,
+    linear-gradient(to left,rgba(15, 167, 154, 0.589),rgba(15, 167, 154, 0.589)) no-repeat right top,
+    linear-gradient(to left,rgba(15, 167, 154, 0.589),rgba(15, 167, 154, 0.589)) no-repeat left bottom,
+    linear-gradient(to left,rgba(15, 167, 154, 0.589),rgba(15, 167, 154, 0.589)) no-repeat right bottom,
+    #fff;
+    background-size:1vw 1vw;
+    /* background-color:#fff; */
+    width:75%;
+    height:65%;
     padding-top:1.5vw;
 }
-.database_input_no1 i{
-    margin-left:3vw;
+.database_camera{
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    z-index:200;
+    width:11vw;
+    float: left;
+    margin-top: 3vw;
+    margin-left: 4vw;
+}
+.database_camera:active{
+    box-shadow: none;
+    z-index:200;
+    width:11vw;
+    float: left;
+    margin-top: 3.5vw;
+    margin-left: 4vw;
+}
+.database_sousou{
+    z-index:200;
+    width:8vw;
+    float: left;
+    margin-left: 3vw;
+    margin-top: 1vw;
+}
+.database_input_no1{
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    margin-top: 2vw;
+    margin-left: 20vw;
 }
 .database_input_no2{
+    margin-left: 2vw;
     height:80%;
     border:#fff;
-}
-.icon-sousuo{
-   font-size: 4vw;
+    width: 54%;
 }
 .database_search{
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    background:
+    linear-gradient(to left,#fff,#fff) no-repeat left top,
+    linear-gradient(to left,#fff,#fff) no-repeat right top,
+    linear-gradient(to left,#fff,#fff) no-repeat left bottom,
+    linear-gradient(to left,#fff,#fff) no-repeat right bottom,
+    rgb(236, 234, 234);
+    background-size:1vw 1vw;
+    line-height: 8vw;
+    text-align: center;
+    width: 19.5vw;
+    height: 9.5vw;
+    /* border: #FF7414 solid 1px; */
     font-family: "YouYuan";
     float:right;
-    color:#FF7414;
-    margin-top:0.5vw;
-    margin-right:3vw;
-    font-size:3vw;
+    color:black;
+    margin-top:0vw;
+    margin-right:2vw;
+    font-size:6vw;
+    border-top:0;
+    border-left: 0;
+    /* border-right: 0; */
+}
+.database_search:active{
+    box-shadow:none;
+    background:
+    linear-gradient(to left,#fff,#fff) no-repeat left top,
+    linear-gradient(to left,#fff,#fff) no-repeat right top,
+    linear-gradient(to left,#fff,#fff) no-repeat left bottom,
+    linear-gradient(to left,#fff,#fff) no-repeat right bottom,
+    rgb(236, 234, 234);
+    background-size:1vw 1vw;
+    line-height: 9vw;
+    text-align: center;
+    width: 19.5vw;
+    height: 9.5vw;
+    /* border: #FF7414 solid 1px; */
+    font-family: "YouYuan";
+    float:right;
+    color:black;
+    margin-top:0vw;
+    margin-right:2vw;
+    font-size:6vw;
+    border-top:0;
+    border-left: 0;
 }
 .database_navbar{
     color:#FF7414;
@@ -43,8 +113,13 @@
 .database_hight{
     height: 10vw;
 }
+.am-tabs-default-bar-content{
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    height: 11vw;
+}
 .am-tabs-default-bar-tab-active {
     color: #FF7414;
+    font-size: 1000px;
 }
 .am-tabs-default-bar-tab{
     font-family: "YouYuan"; 
@@ -67,13 +142,27 @@
     padding:2.5vw;
 }
 .databaseBuju_views{
-    margin-top: 2vw;
+    box-shadow: 0px 3vw 3vw -3vw #5E5E5E;
+    margin-top: 4vw;
     position: relative;
     height:50vw;
-    background-color:#fff;
+    /* background-color:#fff; */
+    background:
+    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat left top,
+    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat right top,
+    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat left bottom,
+    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat right bottom,
+    #fff;
+    background-size:2vw 2vw;
     padding-bottom:8vw;
-    border-Radius:2vw;
+    /* border-Radius:2vw; */
     padding-top:2vw;
+}
+.none{
+    float: left;
+    width: 100%;
+    height: 10vw;
+    /* background-color: black; */
 }
 .databaseBuju_views_canvas{
     /* background-color: black; */
@@ -109,8 +198,8 @@
 .databaseBuju_views i{
     z-index: 10;
     position: absolute;
-    left: 39vw;
-    top: 42vw;
+    left: 37vw;
+    top: 43vw;
     color:#FF7414; 
     height:5vw;
     width:5vw;

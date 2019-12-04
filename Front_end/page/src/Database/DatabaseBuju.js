@@ -22,7 +22,8 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 				<i className='iconfont icon-shoucang1'></i>
 				</div>
 			)
-        }	
+        }
+		<div className="none"></div>	
 	</div>
 	)
 }

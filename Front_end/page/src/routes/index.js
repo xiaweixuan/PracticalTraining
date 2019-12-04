@@ -20,14 +20,11 @@ class Routes extends Component {
 		return (
 			<Router>
 				<Switch>
-		 
-					
-					 
-					<Route path="/database" component={Database}/>
+					<Route exact path='/' component={Openscreen}/>
+					<Route exact path="/database" component={Database}/>
 					<Route exact path="/xiangqing" component={Xiangqing}/>
 					<Route exact path="/community" component={Community}/>
-					<Route  path="/mine" component={Mine}/>
-					 
+					<Route exact path="/mine" component={Mine}/>
 					<Route exact path="/collection" component={Collection}/>
 					<Route exact path="/denglu" component={Denglu}/>
 					<Route exact path="/regsiter" component={Regsiter}/>
@@ -35,9 +32,8 @@ class Routes extends Component {
 					<Route exact path='/release' component={Release}/>
 					<Route exact path='/draw' component={Drawing}/>
 					<Route exact path='/new' component={New}/>
-					<Route exact path='/openscreen' component={Openscreen}/>
 					<Route exact path='/nomatch' component={Nomatch}/>
-					<Redirect from='/' to='/openscreen'/>
+					{/* <Redirect from='/' to='/openscreen'/> */}
 					<Redirect to='/nomatch'/> 
 				</Switch>
 			</Router>

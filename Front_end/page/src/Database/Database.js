@@ -17,12 +17,11 @@ export default function Database(){
         <div className="database">
             <div>
                 <div className="database_header">
+                    <img className="database_camera" src="img/xiang.png"></img>
                     <div className="database_input_no1">
-                        <i className='iconfont icon-sousuo'></i>
+                        <img className="database_sousou" src="img/so.png"></img>
                         <input className="database_input_no2"></input>
-                        <Router>
-                            <Link to="/search" className="database_search">搜索</Link>
-                        </Router>
+                        <Link className="database_search">搜索</Link>
                     </div>
                 </div>
             </div>
