@@ -8,7 +8,7 @@ export default class Undertab extends Component {
 			<div className='Undertab_div'>
 				<header>
 					<div>
-						<Link to='/'>
+						<Link to='/database'>
 							<div style={{color:this.props.flag=="1"?"#FF7414":"black"}} 
 							className='Undertab_link_content' onClick={this.changeColor_1}>
 								<i className="iconfont icon-ziliaoku1"></i>

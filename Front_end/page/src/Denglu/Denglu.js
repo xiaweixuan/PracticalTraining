@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 import {WingBlank,WhiteSpace} from "antd-mobile"
-import {LoginchangeValueName,LoginchangeValuePassword,loginInput} from '../actions';
+import {LoginchangeValueName,LoginchangeValuePassword,loginInput,loginstateflag} from '../actions';
 
 import store from '../store';
 import './Denglu.css'
@@ -10,7 +10,9 @@ export default class Denglu extends Component {
         super();
         this.state = {
             valueName: store.getState().LoginchangeValueName,
-            valuePassword:store.getState().LoginchangeValuePassword
+            valuePassword:store.getState().LoginchangeValuePassword,
+            flag:store.getState().loginstateflag,
+            jugde:false
         }
     }
     componentDidMount() {
@@ -28,8 +30,39 @@ export default class Denglu extends Component {
         store.dispatch(LoginchangeValuePassword(e.target.value))
     }
     loginInput = ()=>{
+        // var that = this;
         store.dispatch(loginInput(this.state.valueName,this.state.valuePassword));
-        console.log(store.getState().login);
+        console.log(this.state.valueName);
+        console.log(this.state.valuePassword);
+        fetch('http://xiawx.top:8080/login',{   
+            method:'POST',
+            body:JSON.stringify({
+                userid:this.state.valueName,
+                pwd:this.state.valuePassword
+            })
+        })
+        .then(res=>res.json())
+        .then((data)=>{
+            console.log(data);
+            if(data.content == true){
+                this.setState({
+                    flag:true
+                })
+                store.dispatch(loginstateflag(this.state.flag));
+                console.log(this.props);
+                this.props.history.push('/mine');
+            }
+            else{
+                this.setState({
+                    jugde:true
+                })
+            }
+        })
+    }
+    displayjudge=()=>{
+        this.setState({
+            jugde:false
+        })
     }
     render() {
         return (
@@ -42,20 +75,19 @@ export default class Denglu extends Component {
                     </div>
                 </div>
                 <WingBlank>
-                    {/* <form >  */}
                     <WhiteSpace size="lg"/>
                         <input type="text" className="denglu_name"
-                         onChange={this.handleChangeName} value={this.state.valueName}  
-                         name="userid">   
+                         onChange={this.handleChangeName} 
+                         name="userid"
+                         placeholder="name">   
                         </input>
                         <WhiteSpace size="lg"/>
                         <input type="text" className="denglu_psw" 
-                        onChange={this.handleChangePassword} value={this.state.valuePassword} 
+                        onChange={this.handleChangePassword}
                         placeholder="密码" name="pwd">   
                         </input>
                         <input className="denglu_login" onClick={this.loginInput} 
                         type="submit" value="登 录"></input>
-
                         <div className="denglu_zhuce">
                             <Link to='/regsiter'>
                                 <div className="denglu_zhuce_no2">注册</div>
@@ -67,8 +99,18 @@ export default class Denglu extends Component {
                                 <div className="denglu_zhuce_no3">取消登录</div>
                             </Link>
                         </div>
-                    {/* </form> */}
                 </WingBlank>
+                <div className="denglu_false" style={{display:this.state.jugde?"block":"none"}}>
+                    <p>用户名密码不正确</p>
+                    <div className="denglu_false_but">
+                        <button className="denglu_false_but_no1" onClick={this.displayjudge}>确定</button>
+                        <button className="denglu_false_but_no1" onClick={this.displayjudge}>返回</button>
+                        <div className="denglu_clearfloat"></div>
+                    </div>
+                    
+                </div>
+                <div className="denglu_shadow" style={{display:this.state.jugde?"block":"none"}}></div>
+                
             </div>
         )
     }

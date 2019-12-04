@@ -7,6 +7,16 @@
     font-family: "YouYuan"; 
 }
 .denglu_name{
+    /* width:95%;
+    padding:2vw;
+    font-size:4vw;
+    border:1px solid #D5A96C;
+    height:10vw;
+    margin-top:4vw;
+    font-family: "YouYuan";  */
+    font-family: "YouYuan";
+    font-size: 4vw;
+    width: 90vw;
     margin-top: 10vw;
     font-family: "YouYuan";
     padding-left:2vw;
@@ -48,4 +58,53 @@
     color:black;
     margin-left:5vw;
     float:left;
+}
+.denglu_shadow{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:2;
+    background-color:#000;
+    opacity:0.6;
+    display:block;
+}
+.denglu_false{
+    z-index:999;
+    position: absolute;
+    background-color:#fff;
+    width: 70vw;
+    height: 50vw;
+    top: 40vw;
+    left: 15vw;
+}
+.denglu_false p{
+    font-size: 4vw;
+    font-family: "YouYuan"; 
+    margin-top: 15vw;
+    text-align: center;
+}
+.denglu_clearfloat{
+    clear:both;
+    height:4vw;
+    width:100%; 
+    overflow:hidden; 
+    margin-top:-1vw;
+}
+.denglu_false_but{
+    margin-top: 15vw;
+}
+.denglu_false_but_no1{
+    margin-left: 9vw;
+    margin-right: 9vw;
+    font-size: 3vw;
+    width: 16vw;
+    height: 6vw;
+    background-color: #FF7414;
+    font-family: "YouYuan"; 
+    float: left;
+    border: 0px;
+    color: #fff;
+    border-radius: 4vw;
 }

@@ -41,6 +41,13 @@
     font-size:5vw; 
     font-weight: 600;
 }
+.mine_mesage_none{
+    margin-top: 4vw;
+    color: black;
+    font-family: "YouYuan";
+    font-size:5vw; 
+    font-weight: 600;
+}
 .mine_mesage_sign{
     font-family: "YouYuan";
     color: black;
