@@ -10,7 +10,7 @@
 | /register | 注册        | post | useid,pwd,email | { state: '', message: '', content: true or false } |
 | /personal | 个人信息    | get  | useid | { state: '', message: '', content: json对象 } |
 | /offpaint | 官方发布图片 | get  | 无    | { state: '', message: '', content: json对象 } |
-| /perpaint | 用户发布图片 | post | 无    | { state: '', message: '', content: json对象 } |
+| /perpaint | 用户发布图片 | post | paintid,userid,paintdata,type,describe | { state: '', message: '', content: json对象 } |
 | /releases | 社区        | get  | useid | { state: '', message: '', content: json对象 } |
 | /collection | 收藏      | get  | useid | { state: '', message: '', content: json对象 } |
 | /work     | 作品        | get  | useid | { state: '', message: '', content: json对象 } |
