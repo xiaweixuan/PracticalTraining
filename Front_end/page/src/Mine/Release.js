@@ -50,6 +50,7 @@ export default function Release(){
                     }
                 </WingBlank>
             </div>
+            <div className="none_div"></div>
         </div>
     )
 }

@@ -27,6 +27,7 @@ export default function Opus(){
 
     return(
         <div className="collection">
+            <div>
             <div className="collection_navbar">
                 <Link to="/mine" className="collection_navbar_link">
                     <i className="iconfont icon-fanhui"></i>
@@ -50,6 +51,8 @@ export default function Opus(){
                     }
                 </WingBlank>
             </div>
+            </div>
+            <div className="none_div"></div>
         </div>
     )
 }

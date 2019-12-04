@@ -79,10 +79,10 @@ export default class Denglu extends Component {
                         <input type="text" className="denglu_name"
                          onChange={this.handleChangeName} 
                          name="userid"
-                         placeholder="name">   
+                         placeholder="用户名">   
                         </input>
                         <WhiteSpace size="lg"/>
-                        <input type="text" className="denglu_psw" 
+                        <input type="password" className="denglu_psw" 
                         onChange={this.handleChangePassword}
                         placeholder="密码" name="pwd">   
                         </input>

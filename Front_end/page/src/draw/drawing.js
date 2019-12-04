@@ -84,7 +84,6 @@ export default function Drawing(props) {
         if(w<700){aa=300}
         else if(700<w&&w<900){aa=500}
         else if(900<w){aa=700}
-    // }
     return (
     <div className="drawing">
         <div className="" style={{ width: "95%", margin: "auto" }}>
@@ -93,7 +92,7 @@ export default function Drawing(props) {
             </div>
         </div>
         <div className="drawing_show" id="show" style={{float:'left',marginTop:"10vw"}}>
-            <p className="drawing_word">生成图片保存</p>
+            <p style={{display:'none'}} className="drawing_word">生成图片保存</p>
         </div>
         <div className="drawing_shezhi_no1"  onClick={Tool}>
             <div className="drawing_btn">

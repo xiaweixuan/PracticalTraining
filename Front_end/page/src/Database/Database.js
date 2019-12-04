@@ -21,7 +21,7 @@ export default function Database(){
                     <div className="database_input_no1">
                         <img className="database_sousou" src="img/so.png"></img>
                         <input className="database_input_no2"></input>
-                        <Link className="database_search">搜索</Link>
+                        <Link className="database_search">搜 索</Link>
                     </div>
                 </div>
             </div>

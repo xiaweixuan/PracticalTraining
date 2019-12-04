@@ -14,6 +14,7 @@ import Release from '../Mine/Release';
 import Drawing from '../draw/drawing';
 import New from '../New';
 import Openscreen from '../Openscreen/Openscreen';
+import Fly from '../fly/Fly';
 
 class Routes extends Component {
 	render() {
@@ -33,6 +34,7 @@ class Routes extends Component {
 					<Route exact path='/draw' component={Drawing}/>
 					<Route exact path='/new' component={New}/>
 					<Route exact path='/nomatch' component={Nomatch}/>
+					<Route exact path='/fly' component={Fly}/>
 					{/* <Redirect from='/' to='/openscreen'/> */}
 					<Redirect to='/nomatch'/> 
 				</Switch>

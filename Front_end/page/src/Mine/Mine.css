@@ -1,27 +1,36 @@
 /* mine的样式 */
 .mine_navbar{
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
     font-family: "YouYuan";
     font-weight: 600;
     top:0px ;
-    background-color:#FF7414;
+    background-color:rgb(110,199,194);
+    height:18vw;
     color:#fff;
     width: 100%;
-    height: 15vw;
-    font-size: 5vw;
-    line-height: 15vw;
+    font-size: 8vw;
+    line-height: 18vw;
     text-align: center;
     float: left;
 }
 .mine_navbar_div i{
+    font-size: 9vw;
     color:#fff;
     float: right;
-    margin-top: -10vw;
-    margin-right: 4vw;
+    margin-top: -14vw;
+    margin-right: 5vw;
 }
 .mine_message{
-    background-color: #fff;
-    box-shadow: 0px 1px 1px -1px #5E5E5E;
-    border-radius:0vw 0vw 5vw 5vw;
+    background:
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left top,
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right top,
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left bottom,
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right bottom,
+    #fff;
+    background-size:2vw 2vw;
+    /* background-color: #fff; */
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    /* border-radius:0vw 0vw 5vw 5vw; */
 }
 .mine_message_left{
     float: left;
@@ -47,7 +56,7 @@
 .mine_message_name{
     color: black;
     font-family: "YouYuan";
-    font-size:5vw; 
+    font-size:7vw; 
     font-weight: 600;
 }
 .mine_message_sign{
@@ -55,7 +64,7 @@
     color: black;
     margin-top: 5vw;
     max-width: 100%;
-    font-size:4vw; 
+    font-size:5vw; 
     display: inline-block;
     white-space: nowrap;
     overflow: hidden; 
@@ -65,25 +74,31 @@
     color: black;
 }
 .mine_three{
-    background-color: #fff;
-    padding-bottom:3vw;;
-    box-shadow: 0px 1px 1px -1px #5E5E5E;
-    border-radius:5vw;
+    background:
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left top,
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right top,
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left bottom,
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right bottom,
+    #fff;
+    background-size:2vw 2vw;
+    padding-bottom:3vw;
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    /* border-radius:5vw; */
 }
 /* 图标 */
 .iconfont{
     font-size: large;
 }
 .icon-zuopin{
-    margin: 10vw;
+    margin: 12vw;
     color: #FF7414;
 }
 .icon-shoucang{
-    margin: 10vw;
+    margin: 12vw;
     color: #FF7414;
 }
 .icon-fabu{
-    margin: 10vw;
+    margin: 12vw;
     color: #FF7414;
 }
 .mine_works{
@@ -104,21 +119,31 @@
     color: #000;
 }
 .mine_show_word_no1{
+    font-size: 5vw;
     margin-left: 4vw;
     float: left;
+    margin-top: 1vw;
 }
 .mine_show_word_no2{
+    font-size: 5vw;
     margin-right: 4vw;
     float: right;
     color: #000;
+    margin-top: 1vw;
 }
 .mine_content_canvas{
-    box-shadow: 0px 1px 1px -1px #5E5E5E;
-    border-radius: 5vw;
-    background:white;
+    box-shadow: 0px 3vw 3vw -3vw #5E5E5E;
+    /* border-radius: 5vw; */
+    background:
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left top,
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right top,
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left bottom,
+    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right bottom,
+    #fff;
+    background-size:2vw 2vw;
     width: 43vw;
     height: 43vw;
-    margin-left: 2vw;
+    margin-left: 2.5vw;
     margin-top: 2vw;
     float: left;
 }

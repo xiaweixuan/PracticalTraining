@@ -10,7 +10,7 @@ export default function Xiangqing(props){
             <div className="database">
                 <div>
                     <div className="xiangqing_header">
-                        <Link to='/' className="xiangqing_header_i">
+                        <Link to='/database' className="xiangqing_header_i">
                             <i className="iconfont icon-fanhui"></i>
                         </Link>
                         

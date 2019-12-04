@@ -116,7 +116,7 @@ export default class Mine extends Component {
         return (
         <div className="mine">
             <div className="mine_navbar_div">
-                <p className="mine_navbar">我 的</p>
+                <p className="mine_navbar">我&nbsp;&nbsp;的</p>
                 <i className="iconfont icon-set"></i>
                 <div className="mine_clearfloat"></div>
             </div>
@@ -142,8 +142,8 @@ export default class Mine extends Component {
                         <div className="mine_message_right">
                             <div className="mine_message_name" onClick={this.handle}>未登录</div>
                             <div className="mine_message_sign">
-                                <Link to="/denglu">登录</Link>/
-                                <Link to="/regsiter">注册</Link>
+                                <Link to="/denglu">登录</Link> /
+                                <Link to="/regsiter"> 注册</Link>
                             </div>
                         </div>
                         <div className="mine_clearfloat"></div>

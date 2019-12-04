@@ -17,7 +17,7 @@ export default class Undertab extends Component {
 						</Link>
 						
 						<Link to='/community'>
-							<div style={{color:this.props.flag=="2"?"#FF7414":"black"}} 
+							<div style={{color:this.props.flag=="2"?"rgb(110,199,194)":"black"}} 
 							className='Undertab_link_content' onClick={this.changeColor_2}>
 								<i id="icon" className="iconfont icon-shequxianxing"></i>
 								<p className='ziliao'>社区</p>
@@ -25,7 +25,7 @@ export default class Undertab extends Component {
 						</Link>
 
 						<Link to='/mine'>
-							<div style={{color:this.props.flag=="3"?"#FF7414":"black"}} 
+							<div style={{color:this.props.flag=="3"?"rgb(110,199,194)":"black"}} 
 							className='Undertab_link_content' onClick={this.changeColor_3}>
 								<i id="icon" className="iconfont icon-wode"></i>
 								<p className='ziliao'>我的</p>
