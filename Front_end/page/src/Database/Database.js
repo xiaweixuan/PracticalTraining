@@ -25,7 +25,7 @@ export default function Database(){
                     </div>
                 </div>
             </div>
-            
+            <div className="database_font"></div>
             <div className='database_tab'>
                 <Tabs tabs={tabs} initialPage={0}>
                     <div>
