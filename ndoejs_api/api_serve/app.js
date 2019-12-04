@@ -11,9 +11,24 @@ var collectionRouter = require('./Routes/collections');
 var workRouter = require('./Routes/works');
 var usrcnkiRouter = require('./Routes/usrcnki');
 var imgRouter = require('./Routes/splashimg');
+var setallRouter = require('./Routes/setall');
+var addcollectRouter = require('./Routes/addcollection');
 
 app.get('/', function(req, res) {
-  res.end('hello world');
+  res.setHeader('Content-Type','text/plain;charset="utf-8"')
+  res.end(`
+    登陆:/login\n
+    注册:/register\n
+    个人:/personal\n
+    官方图:/offpaint\n
+    上传图:/perpaint\n
+    社区:/releases\n
+    收藏:/collection\n
+    作品:/work\n
+    用户名校验:/usrcnki\n
+    图片获取:/img\n
+    个人信息设置:/setall\n
+    添加收藏:/addcollect`);
 });
 
 /**
@@ -29,6 +44,8 @@ app.get('/', function(req, res) {
  * 作品:/work
  * 用户名校验:/usrcnki
  * 图片获取:/img
+ * 个人信息设置:/setall
+ * 添加收藏:/addcollect
  */
 
 app.use('/login', loginRouter);
@@ -41,5 +58,7 @@ app.use('/collection', collectionRouter);
 app.use('/work', workRouter);
 app.use('/usrcnki', usrcnkiRouter);
 app.use('/img', imgRouter);
+app.use('/setall', setallRouter);
+app.use('/addcollect', addcollectRouter);
 
 app.listen(8080);

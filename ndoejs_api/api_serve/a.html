@@ -14,16 +14,13 @@
     </form>
 </body>
 <script>
-    fetch('http://xiawx.top:8080/register'
-    ,{   
+    fetch('http://xiawx.top:8080/addcollect',{   
         method:'POST',
         body:JSON.stringify({
-            userid:'lipeilun',
-            pwd:'123456789',
-            email:'122@qq.com'
+            userid:'w',
+            paintid:'admin1574836977001'
         })
-    }
-    )
+    })
     .then(res=>res.json())
     .then((data)=>{
         console.log(data);

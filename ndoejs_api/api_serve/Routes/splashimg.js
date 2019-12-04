@@ -1,3 +1,8 @@
+/**
+ * 闪屏图片接口：(get)
+ * 返回随机img
+ */
+
 const express = require('express');
 const fs = require('fs');
 const router = express.Router();

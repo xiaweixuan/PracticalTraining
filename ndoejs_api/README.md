@@ -17,3 +17,4 @@
 | /usrcnki  | 用户名查重   | get  | userid | { state: '', message: '', content: true or false } |
 | /img      | 闪屏随机图片 | get  | 无    | 图片 |
 | /setall   | 个人信息设置 | post  | olduserid,userid,pwd,email,avatarurl,motto    | { state: '', message: '', content: true or false } |
+| /addcollect | 添加收藏   | post  | userid,paintid    | { state: '', message: '', content: true or false } |
