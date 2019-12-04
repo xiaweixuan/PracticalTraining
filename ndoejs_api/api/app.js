@@ -10,6 +10,7 @@ var releasesRouter = require('./Routes/releases');
 var collectionRouter = require('./Routes/collections');
 var workRouter = require('./Routes/works');
 var usrcnkiRouter = require('./Routes/usrcnki');
+var imgRouter = require('./Routes/splashimg');
 
 app.get('/', function(req, res) {
   res.end('hello world');
@@ -26,6 +27,8 @@ app.get('/', function(req, res) {
  * 社区:/releases
  * 收藏:/collection
  * 作品:/work
+ * 用户名校验:/usrcnki
+ * 图片获取:/img
  */
 
 app.use('/login', loginRouter);
@@ -37,5 +40,6 @@ app.use('/releases', releasesRouter);
 app.use('/collection', collectionRouter);
 app.use('/work', workRouter);
 app.use('/usrcnki', usrcnkiRouter);
+app.use('/img', imgRouter);
 
 app.listen(8080);

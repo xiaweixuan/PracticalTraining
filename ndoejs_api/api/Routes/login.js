@@ -22,13 +22,12 @@ router.post('/',(req,res)=>{
     });
     req.on('end',()=>{
         // data = JSON.parse(JSON.stringify(qs.parse(data)));
-        // console.log(user);
-        // console.log(data);
 
         data = JSON.parse(data);
-        
+        // console.log(data.userid);
         user.userid = data.userid;
         user.pwd = data.pwd;
+        console.log(user);
 
         connection.query(sql, (error,results,fields)=> {
         //error,results,fields:错误对象，json数组，数据信息数组

@@ -22,7 +22,7 @@ router.post('/',(req,res)=>{
     let user = {
         userid:'',
         pwd:'',
-        phonenum:'',
+        email:'',
         avatarurl:'',
         motto:''
     }
@@ -36,12 +36,12 @@ router.post('/',(req,res)=>{
         // data = JSON.parse(JSON.stringify(qs.parse(data)));
 
         data = JSON.parse(data);
-        
+
         // console.log(user);
         // console.log(data);
         user.userid = data.userid;
         user.pwd = data.pwd;
-        user.phonenum = data.phonenum;
+        user.email = data.email;
         // console.log(user);
         // console.log(data);
         connection.query(selectsql, (error,results,fields)=> {

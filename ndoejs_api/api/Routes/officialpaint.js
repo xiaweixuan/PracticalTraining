@@ -10,6 +10,7 @@ const showdata = require('./showdata');
 var userName = 'admin';
 
 router.get('/',(req,res)=>{
+    res.header("Access-Control-Allow-Origin","*");
     let selectsql = 'select * from paint_table where userid="'+userName+'"';
     showdata(res,selectsql);
 })

@@ -4,13 +4,14 @@
  * 在数据库中查找对应信息并显示
  */
 const connection = require('./usemysql');
+const qs = require('querystring');
 
 function showdata (res,sql){
     connection.query(sql, (error,results,fields)=> {
         if (error) console.log(error.message);
         // console.log(sql);
         // console.log(results);
-        //对象解析为json字符串// results = JSON.stringify(results);
+        //对象解析为json字符串// results = JSON.stringify(results);        
         var db = { state: 200, message: '获取成功', content: results };
         var data = JSON.stringify(db);
         // console.log(data);
