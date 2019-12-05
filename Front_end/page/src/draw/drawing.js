@@ -12,6 +12,7 @@ export default function Drawing(props) {
     var pic = new window.Picture();
     var [color, setColor] = useState(true);
     var [tool, setTool] = useState(true);
+    var [win, setW] = useState(true);
     function Changefree(){
         setColor(false);  
     }
@@ -23,6 +24,9 @@ export default function Drawing(props) {
     }
     function Tool(){
         setTool(false); 
+    }
+    function WSide(){
+        setW(true);  
     }
     useEffect(() => {
         // setPicdata("#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff")
@@ -71,6 +75,8 @@ export default function Drawing(props) {
     }
 
     function finishDraw(){
+        setW(false); 
+        console.log(win);
         obj.clearCanvas(obj.context);
         obj.draw(obj.context);
         // obj.automaticPainting(obj.context);
@@ -81,9 +87,9 @@ export default function Drawing(props) {
     }
     var aa;
         var w=window.outerWidth;
-        if(w<700){aa=300}
-        else if(700<w&&w<900){aa=500}
-        else if(900<w){aa=700}
+        if(w<600){aa=300}
+        else if(600<w&&w<1000){aa=500}
+        else if(1000<w){aa=700}
     return (
     <div className="drawing">
         <div className="" style={{ width: "95%", margin: "auto" }}>
@@ -91,12 +97,9 @@ export default function Drawing(props) {
                 <canvas id="canvas" width={aa} height={aa}>您的浏览器版本过低</canvas>
             </div>
         </div>
-        <div className="drawing_show" id="show" style={{float:'left',marginTop:"10vw"}}>
-            <p style={{display:'none'}} className="drawing_word">生成图片保存</p>
-        </div>
         <div className="drawing_shezhi_no1"  onClick={Tool}>
             <div className="drawing_btn">
-                <button onClick={showNumber}>
+                <button>
                     工具
                 </button>
             </div>
@@ -154,6 +157,12 @@ export default function Drawing(props) {
                     </div>
                 </div>
             </div>
+        </div>
+        <div className="drawing_show" style={{display:win?"none":"block"}}>
+            <div className="drawing_x"onClick={WSide}>X</div> 
+            <div id="show">
+            </div>
+            <button className="drawing_Preservation" onClick={WSide}>保存图片到本地</button>
         </div>
     </div>
     )

@@ -20,7 +20,7 @@ export default class Register extends Component {
         console.log(this.state.valuee)
         console.log(this.state.valueee);
         fetch('http://xiawx.top:8080/register', {
-            body: JSON.stringify({userid:this.state.value,pwd:this.state.valueee,phonenum:this.state.valuee}),
+            body: JSON.stringify({userid:this.state.value,pwd:this.state.valueee,email:this.state.valuee}),
             method: 'POST',
         })
         .then(res=>res.json())
@@ -100,7 +100,7 @@ export default class Register extends Component {
                                 type="text" placeholder=" 请输入用户名：" ></input>
                                 <div className="register_user" style={{display:this.state.jugde?"block":"none"}}>用户名不可用</div>
                                 <WhiteSpace size="lg"/>
-                                <input className="register_content_name" name="phonenum" 
+                                <input className="register_content_name" name="email" 
                                 type="email" placeholder=" 请输入邮箱号：" onChange={this.handleChangeee}></input>
                                 
                                 <WhiteSpace size="lg"/>

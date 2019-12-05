@@ -43,13 +43,13 @@ export default class Denglu extends Component {
         })
         .then(res=>res.json())
         .then((data)=>{
-            console.log(data);
+            // console.log(data);
             if(data.content == true){
                 this.setState({
                     flag:true
                 })
                 store.dispatch(loginstateflag(this.state.flag));
-                console.log(this.props);
+                // console.log(this.props);
                 this.props.history.push('/mine');
             }
             else{

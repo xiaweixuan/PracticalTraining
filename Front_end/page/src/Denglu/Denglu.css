@@ -1,8 +1,8 @@
 .denglu_header{
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
-    line-height: 16vw;
-    font-size: 7vw;
+    line-height: 13vw;
+    font-size: 5vw;
     color:#fff;
     font-family: "YouYuan"; 
 }
@@ -97,7 +97,7 @@
     font-size: 3vw;
     width: 16vw;
     height: 6vw;
-    background-color: #FF7414;
+    background-color: rgb(110,199,194);
     font-family: "YouYuan"; 
     float: left;
     border: 0px;

@@ -6,9 +6,9 @@ import Undertab from '../undertab/Undertab';
 import DatabaseBuju from'./DatabaseBuju';
 const tabs = [
     { title: '推荐'},
-    { title: '动物' },
     { title: '植物' },
-    { title: '人' },
+    { title: '动物' },
+    { title: '其他' },
 ];
 
 export default function Database(){
@@ -27,7 +27,7 @@ export default function Database(){
             </div>
             <div className="database_font"></div>
             <div className='database_tab'>
-                <Tabs tabs={tabs} initialPage={0}>
+                <Tabs tabs={tabs} initialPage={2}>
                     <div>
                         <DatabaseBuju/>
                     </div>

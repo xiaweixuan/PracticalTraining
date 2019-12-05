@@ -12,33 +12,34 @@
         height: 100%;
     }
     .drawing_right{
-        margin-left: 1vw;
-        width: 900px;
-        height: 90px;
+        width: 80%;
+        height: 100%;
         overflow-x: auto;
     }
     .drawing_choose{
         width: 2000px;
     }
     .drawing_color_div{
-        line-height: 70px;
-        cursor: pointer;
-        width: 70px;
-        height: 70px;
-        text-align: center;
-        color: grey;
+        border-radius: 1vw;
         font-size:4vw;
+        line-height: 9vw;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: #FF7414;
     }
     .drawing_color{
-        box-shadow: 2px 2px 2px 2px grey;
-        border-radius: 15px;
-        width: 70px;
-        height: 70px;
+        box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+        width: 9vw;
+        height: 9vw;
         display: inline-block;
         float: left;
-        margin-top:15px;
-        margin-left: 5vw;
+        margin-top:1vw;
+        margin-left: 2vw;
+        border-radius: 1vw;
     }
+
     .drawing_palette{
         background-color:#ffffff;
         margin-left: 15px;
@@ -68,8 +69,8 @@
     .drawing_shezhi{
         position:fixed;
         height:80px;
-        left:0;
-        bottom:140px;
+        left:12vw;
+        bottom:110px;
         width:800px;
         overflow-x: auto;
     }
@@ -77,7 +78,7 @@
         position:fixed;
         height:40px;
         left:80vw;
-        bottom:180px;
+        bottom:150px;
     }
     .drawing_shezhi_no2{
         width:2000px;
@@ -91,58 +92,87 @@
         font-size:3vw;
     }
     .drawing_btn button{
-        box-shadow: 2px 2px 2px 2px grey;
+        box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+        background:
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left top,
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right top,
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left bottom,
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right bottom,
+        rgb(196, 195, 195);
+        background-size:1.2vw 1.2vw;
         text-align: center;
         height: 100%;
         width: 100%;
-        border-radius: 8px;
         border: 0;
-        background-color: rgb(197, 195, 194);
+        line-height: 8vw;
     }  
     .palette_btn{
-        box-shadow: 2px 2px 2px 2px grey;
-        /* border:none; */
-        line-height:70px;
-        height: 70px;
-        width: 70px;
-        border-radius: 15px;
+        box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+        border-radius: 1vw;
+        height: 9vw;
+        width: 9vw;
         float:left;
     }
     .pelette_color{
         position:absolute;
         top:-350px;
     }
-    .drawing_show{
-        float: left;
-    }
     .drawing_bottom{
         position:fixed;
         background-color:#fff;
-        height:90px;
+        height:10vw;
         width:100%;
-        left:0;
         bottom:0;
+        left: 0;
     }
     .drawing_left{
         float:left;
     }
     .drawing_tuijian{
+        float: left;
+        width: 2.5vw;
+        margin-left: 2vw;
         font-size:2vw;
-        margin-top:15px;
-    }
-    .drawing_tuijian:hover{
-        font-size:2vw;
-        margin-top:15px;
-        color:rgb(110,199,194);
+        margin-top:1vw;
     }
     .drawing_free{
+        float: left;
+        width: 2.5vw;
+        margin-left: 2vw;
         font-size:2vw;
-        margin-top:15px;
+        margin-top:1vw;
+    }
+    .drawing_tuijian:hover{
+        font-size:2.5;
+        margin-top:1vw;
+        color:rgb(110,199,194);
     }
     .drawing_free:hover{
-        font-size:2vw;
-        margin-top:15px;
+        font-size:2.5;
+        margin-top:1vw;
         color:rgb(110,199,194);
+    }
+    .drawing_show{
+        position:fixed;
+        top:20%;
+        left:5%;
+        background-color:#fff;
+        border:1px solid #000;
+        width:90%;
+        height:60%;
+    }
+    .drawing_x{
+        float:right;
+        font-size:5vw;
+    }
+    .drawing_Preservation{
+        margin-left:35%;
+        background-color:rgb(110,199,194);
+        color:#000;
+        border:0;
+        padding:4px;
+        border-radius:6px; 
+        font-size:25px;
     }
 }
 @media (max-width: 1000px) and (min-width: 600px) {
@@ -151,40 +181,41 @@
         height: 500px;
         margin-left:100px;
         background-color: white;
-        /* overflow: hidden; */
     }
     .drawing_canvas_div_canvas{
         width: 100%;
         height: 100%;
     }
     .drawing_right{
-        margin-left: 1vw;
-        width: 650px;
-        height: 60px;
+        width: 80%;
+        height: 100%;
         overflow-x: auto;
     }
     .drawing_choose{
         width: 2000px;
     }
     .drawing_color_div{
-        line-height: 50px;
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        text-align: center;
-        color: grey;
+        border-radius: 1vw;
         font-size:4vw;
+        line-height: 11vw;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: #FF7414;
     }
     .drawing_color{
-        box-shadow: 2px 2px 2px 2px grey;
-        border-radius: 10px;
-        width: 50px;
-        height: 50px;
+        box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+        width: 11vw;
+        height: 11vw;
         display: inline-block;
         float: left;
-        margin-top:10px;
-        margin-left: 5vw;
+        margin-top:1vw;
+        margin-left: 2vw;
+        border-radius: 1vw;
     }
+
+
     .drawing_palette{
         background-color:#ffffff;
         margin-left: 15px;
@@ -214,7 +245,7 @@
     .drawing_shezhi{
         position:fixed;
         height:80px;
-        left:0;
+        left:10vw;
         bottom:100px;
         width:600px;
         overflow-x: auto;
@@ -237,57 +268,87 @@
         font-size:3vw;
     }
     .drawing_btn button{
-        box-shadow: 2px 2px 2px 2px grey;
+        box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+        background:
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left top,
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right top,
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left bottom,
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right bottom,
+        rgb(196, 195, 195);
+        background-size:1.2vw 1.2vw;
         text-align: center;
         height: 100%;
         width: 100%;
-        border-radius: 8px;
         border: 0;
-        background-color: rgb(197, 195, 194);
+        line-height: 8vw;
     }  
     .palette_btn{
-        box-shadow: 2px 2px 2px 2px grey;
-        border-radius: 10px;
-        line-height:50px;
-        height: 50px;
-        width: 50px;
+        box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+        border-radius: 1vw;
+        height: 11vw;
+        width: 11vw;
         float:left;
     }
     .pelette_color{
         position:absolute;
         top:-350px;
     }
-    .drawing_show{
-        float: left;
-    }
     .drawing_bottom{
         position:fixed;
         background-color:#fff;
-        height:70px;
+        height:13vw;
         width:100%;
-        left:0;
         bottom:0;
+        left: 0;
     }
     .drawing_left{
         float:left;
     }
     .drawing_tuijian{
-        font-size:3vw;
+        float: left;
+        width: 2vw;
+        margin-left: 2vw;
+        font-size:2.5vw;
         margin-top:1vw;
     }
     .drawing_free{
-        font-size:3vw;
+        float: left;
+        width: 2vw;
+        margin-left: 2vw;
+        font-size:2.5vw;
         margin-top:1vw;
     }
     .drawing_tuijian:hover{
-        font-size:3vw;
+        font-size:2.5vw;
         margin-top:1vw;
         color:rgb(110,199,194);
     }
     .drawing_free:hover{
-        font-size:3vw;
+        font-size:2.5vw;
         margin-top:1vw;
         color:rgb(110,199,194);
+    }
+    .drawing_show{
+        position:fixed;
+        top:20%;
+        left:5%;
+        background-color:#fff;
+        border:1px solid #000;
+        width:90%;
+        height:60%;
+    }
+    .drawing_x{
+        float:right;
+        font-size:4vw;;
+    }
+    .drawing_Preservation{
+        margin-left:35%;
+        background-color:rgb(110,199,194);
+        color:#000;
+        border:0;
+        width:20%;
+        height:10%;
+        border-radius:4px; 
     }
 }
 @media only screen and (max-width: 600px) {
@@ -296,24 +357,23 @@
         height: 300px;
         margin: auto;
         background-color: white;
-        /* overflow: hidden; */
     }
     .drawing_canvas_div_canvas{
         width: 100%;
         height: 100%;
     }
     .drawing_right{
-        width: 300px;
+        width: 80%;
         height: 100%;
         overflow-x: auto;
     }
     .drawing_choose{
-        width: 1000px;
+        width: 1500px;
     }
     .drawing_color_div{
         border-radius: 1vw;
-        font-size:9vw;
-        line-height: 18vw;
+        font-size:7vw;
+        line-height: 14vw;
         cursor: pointer;
         width: 100%;
         height: 100%;
@@ -322,29 +382,26 @@
     }
     .drawing_color{
         box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
-        width: 20vw;
-        height: 20vw;
+        width: 15vw;
+        height: 15vw;
         display: inline-block;
         float: left;
-        margin-top:5vw;
-        margin-left: 5vw;
+        margin-top:3vw;
+        margin-left: 3vw;
         border-radius: 1vw;
-        height: 20vw;
-        width: 20vw;
     }
 
     .drawing_shezhi{
-        /* background-color: red; */
         position:fixed;
-        left:0;
-        bottom:60vw;
+        left:0vw;
+        bottom:40vw;
         width:82vw;
         overflow-x: auto;
     }
     .drawing_shezhi_no1{
         position:fixed;
         right:2vw;
-        bottom:60vw;
+        bottom:40vw;
     }
     .drawing_btn{
         width:16vw;
@@ -363,29 +420,25 @@
         background-size:1.2vw 1.2vw;
         text-align: center;
         height: 100%;
-        width: 100%;
+        width: 120%;
         border: 0;
         line-height: 8vw;
     }  
     .palette_btn{
         box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
         border-radius: 1vw;
-        /* line-height:50px; */
-        height: 20vw;
-        width: 20vw;
+        height: 15vw;
+        width: 15vw;
         float:left;
     }
     .pelette_color{
         position:absolute;
         top:-300px;
     }
-    .drawing_show{
-        float: left;
-    }
     .drawing_bottom{
         position:fixed;
         background-color:#fff;
-        height:30vw;
+        height:20vw;
         width:100%;
         bottom:0;
         left: 0;
@@ -394,23 +447,43 @@
         float:left;
     }
     .drawing_tuijian{
-        margin-left: 5vw;
+        margin-left: 3.5vw;
         float: left;
-        width: 5vw;
-        font-size:5vw;
-        margin-top:2vw;
+        width: 3.5vw;
+        font-size:3.5vw;
+        margin-top:1vw;
     }
     .drawing_free{
         float: left;
-        width: 5vw;
-        margin-left: 5vw;
-        font-size:5vw;
-        margin-top:2vw;
+        width: 3.5vw;
+        margin-left: 3.5vw;
+        font-size:3.5vw;
+        margin-top:1vw;
     }
     .drawing_tuijian:hover{
         color:rgb(110,199,194);
     }
     .drawing_free:hover{
         color:rgb(110,199,194);
+    }
+    .drawing_show{
+        position:fixed;
+        top:20%;
+        left:5%;
+        background-color:#fff;
+        border:1px solid #000;
+        width:90%;
+        height:50%;
+    }
+    .drawing_x{
+        float:right
+    }
+    .drawing_Preservation{
+        margin-left:35%;
+        background-color:rgb(110,199,194);
+        color:#000;
+        border:0;
+        padding:4px;
+        border-radius:4px; 
     }
 }

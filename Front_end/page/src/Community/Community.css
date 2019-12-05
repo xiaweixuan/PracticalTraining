@@ -2,24 +2,24 @@
 .community_navbar{
     box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
     font-family: "YouYuan"; 
-    font-weight: 600; 
+    font-weight: 500; 
     top:0px ;
     background-color:rgb(110,199,194);
     color:#fff;
     position: fixed;
     z-index: 10;
     width: 100%;
-    height:18vw;
-    font-size: 8vw;
-    line-height: 18vw;
+    height:13vw;
+    font-size: 5vw;
+    line-height: 13vw;
     float: left;
     text-align: center;
 }
 .community_img_add{
     color:#fff;
     float: right;
-    height:10vw;
-    margin-top: -14vw;
+    height:6vw;
+    margin-top: -9.5vw;
     margin-right: 5vw;
     box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
 }

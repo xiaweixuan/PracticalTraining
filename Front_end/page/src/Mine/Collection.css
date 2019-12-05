@@ -2,30 +2,29 @@
     box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
     font-family: "YouYuan";
     position: fixed;
-    font-weight: 600;
+    font-weight: 500;
     top:0px ;
     background-color:rgb(110,199,194);
-    height:18vw;
+    height:13vw;
     color:#fff;
     width: 100%;
-    line-height: 18vw;
+    line-height: 13vw;
     float: left;
     z-index: 100;
 }
 .collection_navbar_no1 p{
-    font-size: 6vw;
+    font-size: 5vw;
 }
 .iconfont::before{
-    font-size: 6vw;
+    font-size: 5vw;
 }
 .icon-fanhui{
     color: #fff;
-    margin-top: -5vw;
     margin-right: 2vw;
 }
 .collection_navbar_link{
     float: left;
-    margin-top:1vw;
+    margin-top:0.5vw;
     margin-left:3vw;
 }
 .collection_content_canvas{

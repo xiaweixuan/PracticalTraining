@@ -18,7 +18,9 @@ export default class Mine extends Component {
             // 用户的信息
             user_data:"",
             // 用户作品，收藏，发布的信息
-            offpaint_data:[]
+            offpaint_data:[],
+            // 用户没有作品时显示
+            judge1:0
         }
     }
     componentDidMount() {
@@ -41,9 +43,24 @@ export default class Mine extends Component {
             var arr = [];
             if(res.content.length>4){
                 arr = res.content.slice(0,4);
+                this.setState({
+                    judge1:0
+                })
+                // console.log(this.state.judge1);
+            }
+            else if(res.content.length==0){
+                arr = res.content;
+                this.setState({
+                    judge1:1
+                })
+                console.log(this.state.judge1);
             }
             else{
                 arr = res.content;
+                this.setState({
+                    judge1:0
+                })
+                console.log(this.state.judge1);
             }
             this.setState({
                  offpaint_data:arr
@@ -88,11 +105,27 @@ export default class Mine extends Component {
         .then(res=>res.json())
         .then(res=>{
             var arr = [];
+            var arr = [];
             if(res.content.length>4){
                 arr = res.content.slice(0,4);
+                this.setState({
+                    judge1:0
+                })
+                console.log(this.state.judge1);
+            }
+            else if(res.content.length==0){
+                arr = res.content;
+                this.setState({
+                    judge1:1
+                })
+                console.log(this.state.judge1);
             }
             else{
                 arr = res.content;
+                this.setState({
+                    judge1:0
+                })
+                console.log(this.state.judge1);
             }
             this.setState({
                  offpaint_data:arr
@@ -116,8 +149,10 @@ export default class Mine extends Component {
         return (
         <div className="mine">
             <div className="mine_navbar_div">
-                <p className="mine_navbar">我&nbsp;&nbsp;的</p>
-                <i className="iconfont icon-set"></i>
+                <p className="mine_navbar">我 的</p>
+                <Link to="/setup">
+                    <i className="iconfont icon-set"></i>
+                </Link>
                 <div className="mine_clearfloat"></div>
             </div>
             {/* 个人信息 */}
@@ -158,22 +193,22 @@ export default class Mine extends Component {
                         <Flex>
                             <Flex.Item>
                                 <div className="mine_works" onClick={this.change0}>
-                                    <i className="iconfont icon-zuopin"></i>
-                                    <p>我的作品</p>
+                                    <i className="iconfont icon-zuopin" style={{color:this.state.judge==1?"#FF7414":"black"}}></i>
+                                    <p style={{color:this.state.judge==1?"#FF7414":"black"}}>我的作品</p>
                                 </div>
                             </Flex.Item>
 
                             <Flex.Item>
                                 <div className="mine_works" onClick={this.change1}>
-                                    <i className="iconfont icon-shoucang"></i>
-                                    <p>我的收藏</p>
+                                    <i className="iconfont icon-shoucang" style={{color:this.state.judge==2?"#FF7414":"black"}}></i>
+                                    <p style={{color:this.state.judge==2?"#FF7414":"black"}}>我的收藏</p>
                                 </div>
                             </Flex.Item>
                             
                             <Flex.Item>
                                 <div className="mine_works" onClick={this.change2}>
-                                    <i className="iconfont icon-fabu"></i>
-                                    <p>我的发布</p>
+                                    <i className="iconfont icon-fabu" style={{color:this.state.judge==3?"#FF7414":"black"}}></i>
+                                    <p style={{color:this.state.judge==3?"#FF7414":"black"}}>我的发布</p>
                                 </div>
                             </Flex.Item>
                         </Flex>
@@ -241,6 +276,14 @@ export default class Mine extends Component {
                     }
                 </div>
             </WingBlank>
+            </div>
+            <Link to="/database">
+                <div className="mine_show_nologin" style={{display:this.state.judge1==1?"block":"none"}}>
+                    什么都没有，快去看看吧
+                </div>
+            </Link>
+            <div className="mine_show_nologin" style={{display:this.state.flag?"none":"block"}}>
+                您尚未<Link to="/denglu">登录</Link>
             </div>
             <div className="mine_hight"></div>
             <Undertab flag="3"/>

@@ -31,9 +31,9 @@ export default function Palette(props){
 
     var aa;
     var w=window.outerWidth;
-    if(w<700){aa=200}
-    else if(700<w<1000){aa=300}
-    else if(w<1000){aa=300}
+    if(w<600){aa=200}
+    else if(600<w<1000){aa=300}
+    else if(w>1000){aa=300}
 
     return (<div className="palette">
         <div className="palette_btn" onClick ={showPalette} style={{background:color}}></div>

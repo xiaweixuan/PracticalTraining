@@ -66,8 +66,9 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 	)
 }
 
-export default function HomeBuju (){
+export default function HomeBuju (props){
 	let [data,setData]=useState([]);
+	console.log(props);
     useEffect(()=>{
         fetch('http://xiawx.top:8080/offpaint')
         .then(res=>res.json())
