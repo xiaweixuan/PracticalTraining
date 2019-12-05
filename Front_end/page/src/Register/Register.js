@@ -12,7 +12,10 @@ export default class Register extends Component {
             value: store.getState().changeValue,
             valuee: store.getState().changeValuee,
             valueee: store.getState().changeValueee,
-            jugde:false
+            jugde:false,
+            btnText:'获取验证码',
+            seconds: 60,
+            liked: true
         }
     }
     addItem = ()=>{
@@ -32,8 +35,8 @@ export default class Register extends Component {
                 this.props.history.push('/denglu')
             }
         })
-
     }
+    
     onblur=()=>{
         fetch('http://xiawx.top:8080/usrcnki?userid='+this .state.value, {
             method: 'GET',
@@ -51,10 +54,37 @@ export default class Register extends Component {
                 this.setState({
                     jugde:false
                 })
-            }
-            
+            } 
         })
     }
+
+    //倒计时，验证码组件
+    sendCode = () => {
+        var aka = document.getElementsByClassName('register_content_span');
+        aka[0].style.display="inline"
+        console.log(aka[0].style.cursor)
+        let url = 'http://47.97.90.172:8019/'
+        fetch(url,{method:'get'})
+        .then((res)=>res.json())
+        .then((res)=>{
+            console.log(res);
+        })
+        let siv = setInterval(() => {
+            this.setState({
+                liked:false,
+                seconds:this.state.seconds - 1,  
+            },()=>{
+                if(this.state.seconds == 0){
+                    clearInterval(siv);
+                    this.setState({
+                        liked:true,
+                        secounds:60
+                    })
+                }
+            })
+        },1000)
+    }
+    
     componentDidMount() {
         store.subscribe(()=>{  
             this.setState({
@@ -62,10 +92,9 @@ export default class Register extends Component {
                 valuee: store.getState().changeValuee,
                 valueee: store.getState().changeValueee
             })
-            
-        })
-        
+        })   
     }
+    
     handleChange = (e)=>{
         store.dispatch(changeValue(e.target.value))
     }
@@ -109,9 +138,17 @@ export default class Register extends Component {
                                 type="password" placeholder=" 请输入密码："></input>
                                 <WhiteSpace size="lg"/>
                                 <div>
+                                    
                                     <input className="register_content_code"
                                      type="text" placeholder=" 验证码："></input>
-                                    <div className="register_content_getcode">获取验证码</div>
+                                     
+                                     <div onClick={this.sendCode} 
+                                    className="register_content_getcode">获取验证码
+                                    <span className='register_content_span' 
+                                    style={{display:'none'}}>({this.state.seconds})</span>
+                                    </div>
+                                    
+                                    
                                     <div className="mine_clearfloat"></div>
                                 </div>
                                 <WhiteSpace size="lg"/>

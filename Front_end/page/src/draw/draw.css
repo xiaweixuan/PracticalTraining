@@ -352,6 +352,27 @@
     }
 }
 @media only screen and (max-width: 600px) {
+
+
+    #touch {
+        text-align: center;
+        background:
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left top,
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right top,
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left bottom,
+        linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right bottom,
+        rgb(196, 195, 195);
+        background-size:1.2vw 1.2vw;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        z-index: 99999;
+        line-height: 60px;
+    }
+
+
     .drawing_canvas_div{
         width: 300px;
         height: 300px;
@@ -391,23 +412,25 @@
         border-radius: 1vw;
     }
 
-    .drawing_shezhi{
+    /* .drawing_shezhi{
         position:fixed;
         left:0vw;
         bottom:40vw;
         width:82vw;
         overflow-x: auto;
-    }
+    } */
     .drawing_shezhi_no1{
         position:fixed;
         right:2vw;
         bottom:40vw;
     }
-    .drawing_btn{
-        width:16vw;
-        height: 8vw;
-        display: inline-block;
-        margin-left: 4vw;
+    /* .drawing_btn{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        z-index: 99999;
     }
     .drawing_btn button{
         box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
@@ -423,7 +446,7 @@
         width: 120%;
         border: 0;
         line-height: 8vw;
-    }  
+    }   */
     .palette_btn{
         box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
         border-radius: 1vw;

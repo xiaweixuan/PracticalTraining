@@ -34,11 +34,13 @@ export default function Community(){
         <div className="community_div_no1">
             <div className="community_navbar">
                 <p>社 区</p>
-                <img className='community_img_add' src='img/add.png'></img>
+                <Link to="/addition">
+                    <img className='community_img_add' src='img/add.png'></img>
+                </Link>
             </div>
             
             <Carousel
-            style={{marginTop:'20vw'}}
+            style={{marginTop:'14vw'}}
           autoplay={true}
           infinite
           beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
@@ -59,8 +61,6 @@ export default function Community(){
             
           ))}
         </Carousel>
-
-
 
 
             <WingBlank className="community_wingblank">
