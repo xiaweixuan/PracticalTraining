@@ -29,16 +29,16 @@ export default function Database(){
             <div className='database_tab'>
                 <Tabs tabs={tabs} initialPage={0}>
                     <div>
-                        <DatabaseBuju/>
+                        <DatabaseBuju type={tabs[0].title}/>
                     </div>
                     <div>
-                        <DatabaseBuju/>
+                        <DatabaseBuju type={tabs[1].title}/>
                     </div>
                     <div>
-                        <DatabaseBuju/>
+                        <DatabaseBuju type={tabs[2].title}/>
                     </div>
                     <div>
-                        <DatabaseBuju/>
+                        <DatabaseBuju type={tabs[3].title}/>
                     </div>
                 </Tabs>
             </div>
