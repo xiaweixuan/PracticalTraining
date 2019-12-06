@@ -15,7 +15,7 @@
     background-color:#fff;
 }
 
-span,canvas{
+div,span,canvas{
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
