@@ -12,7 +12,7 @@ var userName = '';
 router.get('/',(req,res)=>{
     //获取前端传入的userid
     userName = req.query.userid;
-    console.log(userName);
+    // console.log(userName);
     let selectsql = 'select * from user_table where userid="'+userName+'"';
     // let selectsql = 'select * from user_table';
     showdata(res,selectsql);

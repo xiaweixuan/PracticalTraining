@@ -32,7 +32,7 @@ router.post('/',(req,res)=>{
             paint[data[i][0]]=data[i][1];
         }
         // console.log(data);
-        console.log(paint);
+        // console.log(paint);
 
         isupdata = true;
         // if (error) {console.log(error.message);isupdata = false;};
