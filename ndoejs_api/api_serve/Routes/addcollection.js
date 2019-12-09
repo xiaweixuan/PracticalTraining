@@ -16,7 +16,8 @@ router.post('/',(req,res)=>{
         data = JSON.parse(data);
         // console.log(data);
         var selectsql = 'select paintid from collections_table where userid="'+data.userid+'"';
-        var insertsql = 'insert into collections_table set ?'
+        var insertsql = 'insert into collections_table set ?';
+        var deletesql = 'delete from collections_table where userid="'+data.userid+'" and paintid="'+data.paintid+'"';
         connection.query(selectsql,(error,results,fields)=>{
             // console.log(results);
             // console.log(results[0]);
@@ -32,8 +33,9 @@ router.post('/',(req,res)=>{
                 }
             }
             if(!iscollect){
-                console.log('已经收藏');
-                db = { state: 200, message: '该作品已收藏', content: iscollect };
+                connection.query(deletesql);
+                console.log('取消收藏');
+                db = { state: 200, message: '取消收藏', content: iscollect };
             }else{
                 connection.query(insertsql,data);
                 console.log('收藏成功');
