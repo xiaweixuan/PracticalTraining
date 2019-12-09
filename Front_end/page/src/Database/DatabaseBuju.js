@@ -35,6 +35,17 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 		for(var i=0;i<props.data.length;i++){
 			if(props.data[i].type==props.type.type){
 				var canvas = can[i];
+				// console.log(can[i]);
+				var context=canvas.getContext("2d");
+				var a = new window.Picture;	
+				a.prase(props.data[i].paintdata);
+				a.drawDataMatrix=a.prase(props.data[i].paintdata);
+				a.initWH(canvas.width,canvas.height);
+				a.draw(context)
+			}
+			else if(props.type.type == "推荐"){
+				var canvas = can[i];
+				// console.log(can[i]);
 				var context=canvas.getContext("2d");
 				var a = new window.Picture;	
 				a.prase(props.data[i].paintdata);
@@ -86,16 +97,20 @@ export default function HomeBuju (props){
 	let [data1,setData1]=useState([]);
 	var data2=0;
 	let type=props;
-	console.log(props);
+	// console.log(props);
     useEffect(()=>{
         fetch('http://xiawx.top:8080/offpaint')
         .then(res=>res.json())
         .then(res=>{
 			for(var i=0;i<res.content.length;i++){
-				console.log(res.content[i].type);
-				console.log(type.type);
+				// console.log(res.content[i].type);
+				// console.log(type.type);
 				if(res.content[i].type==type.type){
-					data1[data2]=res.content[i]
+					data1[data2]=res.content[i];
+					data2++;
+				}
+				else if(type.type == "推荐"){
+					data1[data2]=res.content[i];
 					data2++;
 				}
 			}
@@ -103,7 +118,6 @@ export default function HomeBuju (props){
 			setData(data1);
 			 
 		})
-		console.log(12);
 	},[])
 	return(
 		<div className="databaseBuju_root">
