@@ -1,0 +1,81 @@
+import React, { Component,useState,useEffect } from 'react'
+import {HashRouter as Link} from 'react-router-dom'
+import store from '../store';
+import './Community.css'
+
+export default function CommunityMine(){
+    let [data,setData]=useState([]);
+    let [data1,setData1]=useState([]);
+	var data2=0;
+    let [userid,setData2]=useState(store.getState().LoginchangeValueName);
+    useEffect(()=>{
+        fetch('http://xiawx.top:8080/releases')
+        .then(res=>res.json())
+        .then(res=>{
+            setData(res.content);
+
+            console.log(res.content.length);
+            for(var i=0;i<res.content.length;i++){
+                if(res.content[i].userid==userid){
+                    data1[data2]=res.content[i]
+					data2++; 
+                }
+            }
+            setData1(data1);
+            setData(data1);
+            console.log(data1);
+            if(data1.length==0){ 
+                setData2('name');
+                return 0;
+                
+            }
+            else{
+                for(var i=0;i<data1.length;i++){
+                 
+                    var canvas =document.getElementById('canvas1'+i);
+                    console.log(canvas);
+                    var context=canvas.getContext("2d");
+                    var a = new window.Picture;
+                
+                    a.prase(data1[i].paintdata);
+                    a.drawDataMatrix=a.prase(data1[i].paintdata);
+                    a.initWH(canvas.width,canvas.height);
+                    a.draw(context)
+                    // a.inittable(context)
+                }
+                
+            }
+             
+        })
+    },[])
+    return(
+        <div >
+            
+            
+                    {
+                        data.map((item,idx)=>
+                        <div className="community_chat_mine" style={{display:userid=='name'?"none":"block"}}>
+                            <div className='community_chat_mine_headpic_box'>
+                                <img className='community_chat_mine_headpic' 
+                                src='img/mine_message_img.png'></img>
+                            </div>
+                            <p className='community_chat_mine_id'>{userid}</p>
+                            <div className='community_chat_mine_talk'>
+                                <p className='community_chat_mine_word'>{data[idx].paintid}</p>
+                                <div className='community_chat_mine_talk_pic_box' id='canvas'>
+                                    <Link to="/xiangqing">
+                                        <canvas className='community_chat_talk_canvas'
+                                        id={"canvas1"+idx} >
+                                            
+                                        </canvas>
+                                    </Link>
+                                </div>
+                                <p className='community_chat_mine_time'>五分钟前</p>
+                            </div>
+                        </div>
+                        )
+                    }
+                </div>
+            
+    )
+}
