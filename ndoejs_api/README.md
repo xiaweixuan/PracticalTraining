@@ -11,7 +11,7 @@
 | /personal | 个人信息    | get  | userid | { state: '', message: '', content: json对象 } |
 | /offpaint | 官方发布图片 | get  | 无    | { state: '', message: '', content: json对象 } |
 | /perpaint | 发布作品 | post | paintid,userid,paintdata,type,describe | { state: '', message: '', content: json对象 } |
-| /releases | 社区 (用户发布图片) | get  | userid | { state: '', message: '', content: json对象 } |
+| /releases | 社区 (用户发布图片) | get  | 无 | { state: '', message: '', content: json对象 } |
 | /collection | 收藏      | get  | userid | { state: '', message: '', content: json对象 } |
 | /work     | 作品        | get  | userid | { state: '', message: '', content: json对象 } |
 | /usrcnki  | 用户名查重   | get  | userid | { state: '', message: '', content: true or false } |
