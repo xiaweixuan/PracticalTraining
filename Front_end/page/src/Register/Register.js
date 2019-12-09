@@ -23,7 +23,7 @@ export default class Register extends Component {
         console.log(this.state.valuee)
         console.log(this.state.valueee);
         fetch('http://xiawx.top:8080/register', {
-            body: JSON.stringify({userid:this.state.value,pwd:this.state.valueee,email:this.state.valuee}),
+            body: JSON.stringify({userid:this.state.value,pwd:this.state.valuee,email:this.state.valueee}),
             method: 'POST',
         })
         .then(res=>res.json())
