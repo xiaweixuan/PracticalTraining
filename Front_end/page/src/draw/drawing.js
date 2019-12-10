@@ -1,15 +1,15 @@
-import React, { useState, useEffect,useWindowWidth } from 'react'
+import React, { useState, useEffect, useWindowWidth } from 'react'
 import Palette from './palette'
 
 import './draw.css'
 export default function Drawing(props) {
-    // var [context, setContext] = useState({})
-    console.log(props.data)
+    // // var [context, setContext] = useState({})
+    // console.log(props.data)
     var [picdata, setPicdata] = useState(props.data);
     // var [color, setColor] = useState("#ffffff")
     var [colorlist, setColorlist] = useState([])
-    var [obj, setObj] = useState(pic)
-    var pic = new window.Picture();
+    var [obj, setObj] = useState({})
+
     var [color, setColor] = useState(true);
     var [tool, setTool] = useState(true);
     var [win, setW] = useState(true);
@@ -32,18 +32,18 @@ export default function Drawing(props) {
         // setPicdata("#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff")
         var canvas = document.getElementById("canvas");
         var context = canvas.getContext("2d");
-        // setContext(ct)
-        pic.context=context;
-        pic.drawDataMatrix = pic.prase(picdata)
-        pic.produceColorList()
-        pic.createNumberData()
-        pic.initWH(canvas.width, canvas.height);
-        // pic.drawWhite(context);
+        var pic = new window.Picture({ col: picdata.col, row: picdata.raw, width: canvas.width, height: canvas.height, context: context });
+        // console.log(picdata)
+        pic.drawDataMatrix = pic.prase(picdata.paintdata);
+        pic.toColorList();
+        pic.toNumberDataMatrix();
+        // console.log(pic)
         pic.drawNumber(context)
         pic.initdata();
         pic.inittable(context);
-        pic.todraw(context)
-        console.log(pic)
+
+
+        pic.allowDraw(context)
 
         setColorlist(pic.colorList);
         setObj(pic);
@@ -60,30 +60,31 @@ export default function Drawing(props) {
 
     function showNumber(){
         // console.log(obj.drawDataMatrix);
-        obj.clearCanvas(obj.context);
-        
+        obj.initbackground(obj.context);
+
         obj.inittable(obj.context);
         obj.draw(obj.context);
         obj.drawNumber(obj.context);
-        
+
     }
     function recall(){
-        obj.clearCanvas(obj.context);
-        obj.inittable(obj.context);
-        obj.drawNumber(obj.context);
-        obj.drawRecall(obj.context);
+        // obj.clearCanvas(obj.context);
+        // obj.inittable(obj.context);
+        // obj.drawNumber(obj.context);
+        // obj.drawRecall(obj.context);
+        console.log("该操作即将删除")
     }
 
     function finishDraw(){
         setW(false); 
         console.log(win);
-        obj.clearCanvas(obj.context);
-        obj.draw(obj.context);
-        // obj.automaticPainting(obj.context);
+        obj.initbackground(obj.context);
+        // obj.draw(obj.context);
+        obj.automaticPainting(obj.context)
         console.log(obj)
         console.log(obj.toString())
-        var img=obj.convertCanvasToImage(obj.context);
-        document.getElementById("show").appendChild(img)
+        // var img=obj.convertCanvasToImage(obj.context);
+        // document.getElementById("show").appendChild(img)
     }
 
 
@@ -109,10 +110,10 @@ export default function Drawing(props) {
             e.preventDefault();
             // 判断手指数量
             if (e.originalEvent.targetTouches.length == 1) {
-    
+
                 // 将元素放在滑动位置
                 var touch = e.originalEvent.targetTouches[0];  
-                
+
                 console.log(touch.pageX)
                 // console.log(touch.pageY)
                 a=touch.pageX
@@ -121,7 +122,7 @@ export default function Drawing(props) {
                     'top': touch.pageY + 'px'});
             }
         });
-        
+
         $('#touch').on('touchend', function(e) {
             // 阻止其他事件
 
@@ -141,7 +142,7 @@ export default function Drawing(props) {
             $("#touch").css({'left': a + 'px',
                     'top': b + 'px'});
         })
-    
+
 
 
     var aa;
@@ -150,23 +151,18 @@ export default function Drawing(props) {
         else if(600<w&&w<1000){aa=500}
         else if(1000<w){aa=700}
     return (
-    <div className="drawing">
-        <div className="" style={{ width: "95%", margin: "auto" }}>
-            <div className="drawing_canvas_div">
-                <canvas id="canvas" width={aa} height={aa}>您的浏览器版本过低</canvas>
+        <div className="drawing">
+            <div className="" style={{ width: "100%", margin: "auto", backgroundColor: "#ffffff" }}>
+                <div className="drawing_canvas_div">
+                    <canvas id="canvas" width={aa} height={aa}>您的浏览器版本过低</canvas>
+                </div>
             </div>
-        </div>
-        <div id="touch" className="drawing_shezhi_no1" onClick={but}>
+            <div id="touch" className="drawing_shezhi_no1" onClick={but}>
             <b>工具</b>
             
             
             <div id="aka" className="drawing_shezhi" style={{marginTop:"40px",display:"none"}}>
             <div className="drawing_shezhi_no2">
-                {/* <div className="drawing_btn">
-                    <button onClick={ToolSide}>
-                        收回
-                    </button>
-                </div> */}
                 <div className="drawing_btn">
                     <button className="drawing_btn_no1" onClick={showNumber} >
                             显示数字
@@ -187,15 +183,9 @@ export default function Drawing(props) {
              
         </div>
         </div>
-        
 
-        {/* <div className="touch" id="touch">
-            <img src="img/on.png" onClick={but} />
-            <p id="aka" style={{marginTop: "10px",display: "none"}}>asdas</p>
-        </div> */}
 
-        
-        <div className="drawing_bottom">
+            <div className="drawing_bottom">
             <div className="drawing_left">
                 <div className="drawing_tuijian" onClick={Changetuijian} style={{color:color?"rgb(110,199,194)":"black"}}>推荐配色</div>
                 <div className="drawing_free" onClick={Changefree}>自由配色</div>
@@ -224,12 +214,12 @@ export default function Drawing(props) {
                 </div>
             </div>
         </div>
-        <div className="drawing_show" style={{display:win?"none":"block"}}>
+            {/* <div className="drawing_show" style={{display:win?"none":"block"}}>
             <div className="drawing_x"onClick={WSide}>X</div> 
             <div id="show">
             </div>
             <button className="drawing_Preservation" onClick={WSide}>保存图片到本地</button>
+        </div> */}
         </div>
-    </div>
     )
 }

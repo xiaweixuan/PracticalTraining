@@ -7,7 +7,7 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 	var can=[];
 	$(function () {
 		var offset = $("#end").offset();
-		console.log()
+		// console.log()
 		$(".icon-shoucang1").click(function (e) {
 			// i++;
 			var img = $(this).parent().find("i");
@@ -32,25 +32,25 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 		});
 	});
 	useEffect(()=>{
+		// console.log(props.data)
 		for(var i=0;i<props.data.length;i++){
 			if(props.data[i].type==props.type.type){
 				var canvas = can[i];
 				// console.log(can[i]);
 				var context=canvas.getContext("2d");
-				var a = new window.Picture;	
-				a.prase(props.data[i].paintdata);
+				console.log(props.data[i].col,props.data[i].row)
+				var a = new window.Picture({col:props.data[i].col,row:props.data[i].raw,width:canvas.width,height:canvas.height,context:context});	
+				// a.prase(props.data[i].paintdata);
 				a.drawDataMatrix=a.prase(props.data[i].paintdata);
-				a.initWH(canvas.width,canvas.height);
 				a.draw(context)
 			}
 			else if(props.type.type == "推荐"){
 				var canvas = can[i];
 				// console.log(can[i]);
 				var context=canvas.getContext("2d");
-				var a = new window.Picture;	
+				var a = new window.Picture({col:props.data[i].col,row:props.data[i].raw,width:canvas.width,height:canvas.height,context:context});	
 				a.prase(props.data[i].paintdata);
 				a.drawDataMatrix=a.prase(props.data[i].paintdata);
-				a.initWH(canvas.width,canvas.height);
 				a.draw(context)
 			}
 		}
@@ -103,8 +103,7 @@ export default function HomeBuju (props){
         .then(res=>res.json())
         .then(res=>{
 			for(var i=0;i<res.content.length;i++){
-				// console.log(res.content[i].type);
-				// console.log(type.type);
+				// console.log(res.content)
 				if(res.content[i].type==type.type){
 					data1[data2]=res.content[i];
 					data2++;
