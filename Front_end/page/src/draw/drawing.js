@@ -201,6 +201,7 @@ export default function Drawing(props) {
                                 style={{ backgroundColor: item }} 
                                 key={item} >
                                     <p>{idx}</p>
+                                    {console.log(item)}
                                 </div>
                             </div>
                             )
