@@ -57,14 +57,36 @@ var showuser = require('./BackManage/showuser');
 app.use('/showuser', showuser);
 var adduser = require('./BackManage/adduser');
 app.use('/adduser', adduser);
+var updateuser = require('./BackManage/updateuser');
+app.use('/updateuser', updateuser);
+// var deleteuser = require('./BackManage/deleteuser');
+// app.use('/deleteuser', deleteuser);
 
 var showpaint = require('./BackManage/showpaint');
 app.use('/showpaint', showpaint);
+var addpaint = require('./BackManage/addpaint');
+app.use('/addpaint', addpaint);
+var updatepaint = require('./BackManage/updatepaint');
+app.use('/updatepaint', updatepaint);
+// var deletepaint = require('./BackManage/deletepaint');
+// app.use('/deletepaint', deletepaint);
 
 var showwork = require('./BackManage/showwork');
 app.use('/showwork', showwork);
+var addwork = require('./BackManage/addwork');
+app.use('/addwork', addwork);
+var updatework = require('./BackManage/updatework');
+app.use('/updatework', updatework);
+// var deletework = require('./BackManage/deletework');
+// app.use('/deletework', deletework);
 
 var showcollect = require('./BackManage/showcollect');
 app.use('/showcollect', showcollect);
+var addcollects = require('./BackManage/addcollect');
+app.use('/addcollects', addcollects);
+var updatecollect = require('./BackManage/updatecollect');
+app.use('/updatecollect', updatecollect);
+// var deletecollect = require('./BackManage/deletecollect');
+// app.use('/deletecollect', deletecollect);
 
 app.listen(8080);
