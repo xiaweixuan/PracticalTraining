@@ -60,7 +60,7 @@ export default class Mine extends Component {
                 this.setState({
                     judge1:0
                 })
-                console.log(this.state.judge1);
+                // console.log(this.state.judge1);
             }
             this.setState({
                  offpaint_data:arr
@@ -96,54 +96,13 @@ export default class Mine extends Component {
             this.sendrequest('collection',this.state.user_data.userid,1);
         }
     }
-    // 没有发布的接口还没改
     change2=()=>{
         this.setState({
             judge:3
         })
-        fetch('http://xiawx.top:8080/offpaint')
-        .then(res=>res.json())
-        .then(res=>{
-            var arr = [];
-            var arr = [];
-            if(res.content.length>4){
-                arr = res.content.slice(0,4);
-                this.setState({
-                    judge1:0
-                })
-                console.log(this.state.judge1);
-            }
-            else if(res.content.length==0){
-                arr = res.content;
-                this.setState({
-                    judge1:1
-                })
-                console.log(this.state.judge1);
-            }
-            else{
-                arr = res.content;
-                this.setState({
-                    judge1:0
-                })
-                console.log(this.state.judge1);
-            }
-            this.setState({
-                 offpaint_data:arr
-            })
-            // console.log(this.state.offpaint_data);
-            // console.log(typeof this.state.offpaint_data);
-            for(var i=0;i<this.state.offpaint_data.length;i++){
-                var canvas = document.getElementById('canvas2'+i);
-                var context=canvas.getContext("2d");
-                var a = new window.Picture;
-                
-                a.prase(this.state.offpaint_data[i].paintdata);
-                a.drawDataMatrix=a.prase(this.state.offpaint_data[i].paintdata);
-                a.initWH(canvas.width,canvas.height);
-                a.draw(context)
-                // a.inittable(context)
-            }
-        })
+        if(this.state.flag == true){
+            this.sendrequest('perput',this.state.user_data.userid,2);
+        }
     }
     render(){
         return (

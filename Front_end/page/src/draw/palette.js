@@ -25,7 +25,6 @@ export default function Palette(props){
     }
     function changeColor(value){
         setColor(value.hex)
-        setDisplayColorPicker("none")
         props.change(value.hex)
     }
 

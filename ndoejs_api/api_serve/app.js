@@ -13,22 +13,11 @@ var usrcnkiRouter = require('./Routes/usrcnki');
 var imgRouter = require('./Routes/splashimg');
 var setallRouter = require('./Routes/setall');
 var addcollectRouter = require('./Routes/addcollection');
+var perputRouter = require('./Routes/perput');
 
 app.get('/', function(req, res) {
   res.setHeader('Content-Type','text/plain;charset="utf-8"')
-  res.end(`
-    登陆:/login\n
-    注册:/register\n
-    个人:/personal\n
-    官方图:/offpaint\n
-    上传图:/perpaint\n
-    社区:/releases\n
-    收藏:/collection\n
-    作品:/work\n
-    用户名校验:/usrcnki\n
-    图片获取:/img\n
-    个人信息设置:/setall\n
-    添加收藏:/addcollect`);
+  res.end(`hello word！`);
 });
 
 /**
@@ -46,6 +35,7 @@ app.get('/', function(req, res) {
  * 图片获取:/img
  * 个人信息设置:/setall
  * 添加收藏:/addcollect
+ * 发布:/perput
  */
 
 app.use('/login', loginRouter);
@@ -60,5 +50,21 @@ app.use('/usrcnki', usrcnkiRouter);
 app.use('/img', imgRouter);
 app.use('/setall', setallRouter);
 app.use('/addcollect', addcollectRouter);
+app.use('/perput', perputRouter);
+
+//后台接口
+var showuser = require('./BackManage/showuser');
+app.use('/showuser', showuser);
+var adduser = require('./BackManage/adduser');
+app.use('/adduser', adduser);
+
+var showpaint = require('./BackManage/showpaint');
+app.use('/showpaint', showpaint);
+
+var showwork = require('./BackManage/showwork');
+app.use('/showwork', showwork);
+
+var showcollect = require('./BackManage/showcollect');
+app.use('/showcollect', showcollect);
 
 app.listen(8080);

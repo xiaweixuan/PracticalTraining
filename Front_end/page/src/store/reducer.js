@@ -35,9 +35,9 @@ import {LOGIN_INPUT,
                 return state;
         }
     }
-    let inputValue = 'todolist';
-    let inputValuee = 'todolistt';
-    let inputValueee = 'todolisttt';
+    let inputValue = '';
+    let inputValuee = '';
+    let inputValueee = '';
     function changeValuee(state=inputValuee,action){
         switch(action.type){
             case CHANGE_INPUT_VALUEE :
