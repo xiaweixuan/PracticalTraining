@@ -70,13 +70,9 @@ export default class Mine extends Component {
             for(var i=0;i<this.state.offpaint_data.length;i++){
                 var canvas = document.getElementById('canvas'+id+i);
                 var context=canvas.getContext("2d");
-                var a = new window.Picture;
-                
-                a.prase(this.state.offpaint_data[i].paintdata);
+                var a = new window.Picture({col:this.state.offpaint_data[i].col,row:this.state.offpaint_data[i].raw,width:canvas.width,height:canvas.height,context:context});
                 a.drawDataMatrix=a.prase(this.state.offpaint_data[i].paintdata);
-                a.initWH(canvas.width,canvas.height);
-                a.draw(context)
-                // a.inittable(context)
+				a.draw(context)
             }
         })
     }

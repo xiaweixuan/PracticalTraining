@@ -28,14 +28,16 @@ router.post('/',(req,res)=>{
       data += chunk;
     });
     req.on('end',()=>{
+        data = JSON.parse(data);
 
-        data = data.split('&');
-        for(let i= 0 ;i<data.length;i++){
-            data[i]=data[i].split('=');
-            paint[data[i][0]]=data[i][1];
-        }
-        // console.log(data);
-        // console.log(paint);
+        paint.userid = data.userid;
+        paint.paintid = data.paintid;
+        paint.paintdata = data.paintdata;
+        paint.type = data.type;
+        paint.describe = data.describe;
+        paint.history = data.history;
+        paint.col = data.col;
+        paint.raw = data.raw;
 
         isupdata = true;
         // if (error) {console.log(error.message);isupdata = false;};

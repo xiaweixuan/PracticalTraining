@@ -1,10 +1,12 @@
 import React, { useState,useEffect } from 'react'
 import {HashRouter as Router,Link} from 'react-router-dom';
 import './fly.css';
-
+import store from '../store';
 function PlaceHolder(props,{ className = '', ...restProps }){
 	var $ = window.$;
 	var can=[];
+	let [paintid,setPaint]=useState(null);
+	let str='';
 	$(function () {
 		var offset = $("#end").offset();
 		// console.log()
@@ -32,28 +34,39 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 		});
 	});
 	useEffect(()=>{
-		// console.log(props.data)
 		for(var i=0;i<props.data.length;i++){
 			if(props.data[i].type==props.type.type){
+				for(var j=0;j<props.add.length;j++){
+					if(props.add[j].paintid==props.data[i].paintid){
+						console.log(props.data[i].paintid);
+						str+=props.data[i].paintid;
+					}
+				}
+				console.log(str);
+				var canvas = can[i];
+				var context=canvas.getContext("2d");
+				console.log(props.data[i].col,props.data[i].row)
+				var a = new window.Picture({col:props.data[i].col,row:props.data[i].raw,width:canvas.width,height:canvas.height,context:context});			 
+				a.drawDataMatrix=a.prase(props.data[i].paintdata);
+				a.draw(context)
+			}
+			else if(props.type.type == "推荐"){
+				for(var j=0;j<props.add.length;j++){
+					if(props.add[j].paintid==props.data[i].paintid){
+						str+=props.data[i].paintid;
+					}
+				}
 				var canvas = can[i];
 				// console.log(can[i]);
 				var context=canvas.getContext("2d");
-				console.log(props.data[i].col,props.data[i].row)
+
 				var a = new window.Picture({col:props.data[i].col,row:props.data[i].raw,width:canvas.width,height:canvas.height,context:context});	
 				// a.prase(props.data[i].paintdata);
 				a.drawDataMatrix=a.prase(props.data[i].paintdata);
 				a.draw(context)
 			}
-			else if(props.type.type == "推荐"){
-				var canvas = can[i];
-				// console.log(can[i]);
-				var context=canvas.getContext("2d");
-				var a = new window.Picture({col:props.data[i].col,row:props.data[i].raw,width:canvas.width,height:canvas.height,context:context});	
-				a.prase(props.data[i].paintdata);
-				a.drawDataMatrix=a.prase(props.data[i].paintdata);
-				a.draw(context)
-			}
 		}
+		setPaint(str);
 		 
 
 	})
@@ -73,7 +86,7 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 				</div>
 				
 				<div className="databaseBuju_name">xx官方</div>
-				<a><i className='iconfont icon-shoucang1'></i></a>
+				<a><i className='iconfont icon-shoucang1' style={{color:paintid.indexOf(item.paintid)!=-1?"orange":'#000'}}></i></a>
 
 				<div className="m-sidebar">
 					<div className="cart">
@@ -94,7 +107,9 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 
 export default function HomeBuju (props){
 	let [data,setData]=useState([]);
+	let [add,setAdd]=useState([]);
 	let [data1,setData1]=useState([]);
+	let [userid,setUser]=useState(store.getState().LoginchangeValueName);
 	var data2=0;
 	let type=props;
 	// console.log(props);
@@ -117,13 +132,19 @@ export default function HomeBuju (props){
 			setData(data1);
 			 
 		})
+		fetch('http://xiawx.top:8080/collection?userid='+userid)
+        .then(res=>res.json())
+        .then(res=>{
+			setAdd(res.content);
+			console.log(res.content);
+        })
 	},[])
 	return(
 		<div className="databaseBuju_root">
 			<div className="databaseBuju_root_no2">
 				<div>
 					<div>
-						<PlaceHolder data={data} type={type}/>
+						<PlaceHolder data={data} type={type} userid={userid} add={add}/>
 					</div>
 				</div>
 			</div>
