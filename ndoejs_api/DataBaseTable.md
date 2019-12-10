@@ -6,7 +6,7 @@
 ## 画
 | 画名（归属账号+timestarp） | 归属账号 | 图 | 类别 | 描述 | 历史记录 | 列(默认20) | 行(默认20) |
 | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| paintid varchar(24) | userid varchar(12) | paintdata text | type varchar(12) | describe varchar(50) | int(4) | int(4) |
+| paintid varchar(24) | userid varchar(12) | paintdata text | type varchar(12) | describe varchar(50) | history text | int(4) | int(4) |
 
 ## 作品
 | 账号  | 画名  |
