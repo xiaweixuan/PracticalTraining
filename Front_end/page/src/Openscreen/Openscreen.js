@@ -5,17 +5,19 @@ import './Openscreen.css'
 
 export default class Openscreen extends Component {
     componentDidMount(){
-        setTimeout(() => {
+        this.time= setTimeout(() => {
             this.props.history.push('/database');
         }, 3000);
-        // this.props.history.push('/database');
+    }
+    jump=()=>{
+        clearTimeout(this.time);
     }
     render() {
         return (
             <div className="openscreen">
-                <img className="openscreen_img" src="img/openscreen.png"/>
+                <img className="openscreen_img" src="http://xiawx.top:8080/img"/>
                 <div className="openscreen_img_jump">
-                    <Link to="/database"><p>跳过</p></Link>
+                    <Link to="/database" onClick={this.jump}><p>跳过</p></Link>
                 </div>
             </div>
         )
