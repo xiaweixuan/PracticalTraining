@@ -10,7 +10,7 @@ const connection = require('./usemysql');
 var isupdata = false;
 var db={};
 
-let insertsql = 'INSERT into paint_table SET ?';
+let insertsql = 'INSERT into paint_table_new SET ?';
 
 router.post('/',(req,res)=>{
     let paint = {
@@ -18,7 +18,10 @@ router.post('/',(req,res)=>{
         userid:'',
         paintdata:'',
         type:'',
-        describe:''
+        describe:'',
+        history:'',
+        col:20,
+        raw:20
     }
     var data = '';
     req.on('data',(chunk)=>{
