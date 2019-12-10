@@ -4,7 +4,7 @@ import './App.css';
 import Routes from './routes';
 import Drawing from './draw/drawing'
 
-import ColorSelect from './draw/toRelease'
+import ToRelease from './draw/toRelease'
 
 class App extends Component {
 	constructor(props) {
@@ -14,7 +14,8 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Routes />
+				<ToRelease/>
+				{/* <Routes /> */}
 				{/* <Drawing /> */}
 				{/* <ColorSelect
 					style={{ verticalAlign: "middle" }}

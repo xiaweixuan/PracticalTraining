@@ -530,3 +530,32 @@
         border-radius:2vw; 
     }
 }
+
+
+/*torelease.js样式*/
+
+/* 
+.torelease{
+    width: 100%;
+}
+.torelease_canvas_div{
+    width: 95%;
+    margin: auto;
+}
+.release_submit{
+    position: absolute;
+    z-index: 9000;
+    background-color: rgb(197, 247, 230);
+    opacity: 0.8;
+    border-radius: 15px;
+    width: 80%;
+    height: 90%;
+}
+.release_submit textarea{
+    border-radius: 15px;
+    padding: 5px;
+    resize:none;
+} */
+
+
+
