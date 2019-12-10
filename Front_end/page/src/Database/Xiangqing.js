@@ -4,7 +4,7 @@ import Drawing from '../draw/drawing';
 
 export default function Xiangqing(props){
 
-    var a = props.location.state.item.paintdata;
+    var a = props.location.state.item ;
     // console.log(a)
         return (
             <div className="database">
