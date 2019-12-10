@@ -15,17 +15,14 @@ export default function Community(){
         .then(res=>{
             setData(res.content);
 
-            console.log(res.content.length);
+            // console.log(res.content.length);
             for(var i=0;i<res.content.length;i++){
                 var canvas = document.getElementById('canvas'+i);
                 var context=canvas.getContext("2d");
-                var a = new window.Picture;
-            
-                a.prase(res.content[i].paintdata);
+                // console.log(res.content[i])
+                var a = new window.Picture({col:res.content[i].col,row:res.content[i].raw,width:canvas.width,height:canvas.height,context:context});
                 a.drawDataMatrix=a.prase(res.content[i].paintdata);
-                a.initWH(canvas.width,canvas.height);
-                a.draw(context)
-                console.log(res.content[i].userid)
+				a.draw(context)
             }
         })
     },[])
