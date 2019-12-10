@@ -11,7 +11,7 @@ var userName = '';
 
 router.get('/',(req,res)=>{
     userName = req.query.userid;
-    let selectsql = 'select * from paint_table where userid="'+userName+'"';
+    let selectsql = 'select * from paint_table_new where userid="'+userName+'"';
     showdata(res,selectsql);
 })
 

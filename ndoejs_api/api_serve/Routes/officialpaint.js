@@ -11,7 +11,7 @@ var userName = 'admin';
 
 router.get('/',(req,res)=>{
     res.header("Access-Control-Allow-Origin","*");
-    let selectsql = 'select * from paint_table where userid="'+userName+'"';
+    let selectsql = 'select * from paint_table_new where userid="'+userName+'"';
     showdata(res,selectsql);
 })
 
