@@ -1,62 +1,53 @@
 .collection_navbar{
-    top: 0px;
-    width: 100%;
-    height: 10vw;
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    font-family: "YouYuan";
     position: fixed;
-    background-color: #FF7414;
-}
-.collection_navbar_link{
+    font-weight: 500;
+    top:0px ;
+    background-color:rgb(110,199,194);
+    height:13vw;
+    color:#fff;
+    width: 100%;
+    line-height: 13vw;
     float: left;
-    margin-top:1vw;
-    margin-left:3vw;
+    z-index: 100;
+}
+.collection_navbar_no1 p{
+    font-size: 5vw;
+}
+.iconfont::before{
+    font-size: 5vw;
 }
 .icon-fanhui{
-    font-size: 4vw;
     color: #fff;
     margin-right: 2vw;
 }
-.collection_navbar_no1{
-    color: #fff;
-    font-size: 4vw;
-}
-.collection_navbar_no1 p{
-    font-family: "YouYuan"; 
-    margin-top: 2.8vw;
-}
-.collection_navbar{
-    top: 0px;
-    width: 100%;
-    height: 10vw;
-    position: fixed;
-    background-color: #FF7414;
-}
 .collection_navbar_link{
     float: left;
-    margin-top:1vw;
+    margin-top:0.5vw;
     margin-left:3vw;
-}
-.icon-fanhui{
-    font-size: 4vw;
-    color: #fff;
-    margin-right: 2vw;
-}
-
-.collection_navbar_no1{
-    color: #fff;
-    font-size: 4vw;
-}
-.collection_navbar_no1 p{
-    font-family: "YouYuan"; 
-    margin-top: 2.8vw;
 }
 .collection_content_canvas{
-    background:white;
+    background:
+    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat left top,
+    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat right top,
+    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat left bottom,
+    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat right bottom,
+    #fff;
+    background-size:2vw 2vw;
+    box-shadow: 0px 3vw 3vw -3vw #5E5E5E;
     width: 43vw;
     height: 43vw;
-    margin-left: 2vw;
-    margin-top: 2vw;
+    margin-left: 2.5vw;
+    margin-top: 4vw;
     float: left;
 }
 .collection_content_div{
+    margin-top: 17vw;
+}
+.none_div{
+    float: left;
+    width: 100%;
+    height: 2vw;
     margin-top: 10vw;
 }

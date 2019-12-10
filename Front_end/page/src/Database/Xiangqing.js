@@ -3,24 +3,6 @@ import {HashRouter as Router,Link} from 'react-router-dom';
 import Drawing from '../draw/drawing';
 
 export default function Xiangqing(props){
-    // let [data,setData]=useState([]);
-    // useEffect(()=>{
-    //     console.log(new window.Picture);
-        
-    //     fetch('http://localhost:8080/releases')
-    //     .then(res=>res.json())
-    //     .then(res=>{
-    //         setData(res.content);
-    //         var canvas = document.getElementById('canvas');
-    //             var context=canvas.getContext("2d");
-    //             var a = new window.Picture;
-                
-    //             a.prase(res.content[1].paintdata);
-    //             a.drawDataMatrix=a.prase(res.content[1].paintdata);
-    //             a.initWH(canvas.width,canvas.height);
-    //             a.draw(context)
-    //         })
-    //     },[])
 
     var a = props.location.state.item.paintdata;
     // console.log(a)
@@ -28,16 +10,13 @@ export default function Xiangqing(props){
             <div className="database">
                 <div>
                     <div className="xiangqing_header">
-                        <Link to='/' className="xiangqing_header_i">
+                        <Link to='/database' className="xiangqing_header_i">
                             <i className="iconfont icon-fanhui"></i>
                         </Link>
                         
                         <div className="xiangqing_header_i_no2">
                             <i className="iconfont icon-shoucang1"></i>
                         </div>
-                        {/* <div>
-                            <button className="xiangqing_header_done">完 成</button>
-                        </div> */}
                     </div>
                 </div>
                 <div className="xiangqing_zhong">

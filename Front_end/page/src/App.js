@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,useState } from 'react';
 
 import './App.css';
 import Routes from './routes';
@@ -14,8 +14,8 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Routes />
-				{/* <ColorSelect/> */}
+				<BtnToLxx/>
+				{/* <Routes /> */}
 				{/* <Drawing /> */}
 				{/* <ColorSelect
 					style={{ verticalAlign: "middle" }}
@@ -26,5 +26,21 @@ class App extends Component {
 			</div>
 		)
 	}
+}
+
+
+
+
+function BtnToLxx(){
+	const [btnState,setBtnState]=useState(false)
+	var changeBtnState=()=>{
+		if(!btnState){
+			setBtnState(true);
+			
+		}else{
+			setBtnState(false);
+		}
+	}
+	return (<div className="database_search" onClick={changeBtnState}>搜索</div>)
 }
 export default App;

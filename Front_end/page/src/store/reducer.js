@@ -3,14 +3,15 @@ import {CHANGE_INPUT_VALUE,
     CHANGE_INPUT_VALUEE} from '../actions/actionTypes';
 import {LOGIN_INPUT,
     CHANGE_LOGINNAME_INPUT_VALUE,
-    CHANGE_LOGINPASSWORD_INPUT_VALUE} from '../actions/actionTypes'
+    CHANGE_LOGINPASSWORD_INPUT_VALUE,
+    LOGIN_FLAG,CHANGE_PHONE_VALUE} from '../actions/actionTypes'
     
     let logininput = {"useid":"zhangsan","pwd":"123"};
     function login(state=logininput,action){
         switch (action.type) {
             case LOGIN_INPUT:
-                state.name = action.name;
-                state.password = action.password;
+                state.useid = action.name;
+                state.pwd = action.password;
                 return state;
             default:
                 return state;
@@ -36,7 +37,7 @@ import {LOGIN_INPUT,
     }
     let inputValue = 'todolist';
     let inputValuee = 'todolistt';
-    
+    let inputValueee = 'todolisttt';
     function changeValuee(state=inputValuee,action){
         switch(action.type){
             case CHANGE_INPUT_VALUEE :
@@ -45,7 +46,14 @@ import {LOGIN_INPUT,
                 return state;
         }
     }
-    
+    function changeValueee(state=inputValueee,action){
+        switch(action.type){
+            case CHANGE_PHONE_VALUE :
+                return action.value;
+            default :
+                return state;
+        }
+    }
     function changeValue(state=inputValue,action){
         switch(action.type){
             case CHANGE_INPUT_VALUE :
@@ -68,9 +76,20 @@ let userInfor = {
 //             return state;
 //     }
 // }
+// 登录状态 已登录：true 未登录：false
+    var loginflag = false;
+    function loginstateflag(state=loginflag,action){
+        switch (action.type) {
+            case LOGIN_FLAG:
+                return action.value;
+            default:
+                return state;
+        }
+    }
 let reducer = combineReducers({
-    changeValue,login,changeValuee,
+    changeValue,login,changeValuee,changeValueee,
     LoginchangeValueName,
-    LoginchangeValuePassword
+    LoginchangeValuePassword,
+    loginstateflag
 })
 export default reducer;

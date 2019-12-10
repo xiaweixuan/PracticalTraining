@@ -11,10 +11,8 @@ import { SketchPicker } from 'react-color';
 
  
 export default function Palette(props){
-    // console.log();
-    // props.change()
     var [displayColorPicker,setDisplayColorPicker]=useState("none");
-    var [color,setColor]=useState("#ffffff")
+    var [color,setColor]=useState("#000")
 
     function showPalette(){
         console.log("改变颜色")
@@ -33,14 +31,14 @@ export default function Palette(props){
 
     var aa;
     var w=window.outerWidth;
-    if(w<700){aa=200}
-    else if(700<w<1000){aa=650}
-    else if(w<1000){aa=800}
+    if(w<600){aa=200}
+    else if(600<w<1000){aa=300}
+    else if(w>1000){aa=300}
 
     return (<div className="palette">
-        <div className="palette_btn" onClick={showPalette} style={{background:color}}></div>
+        <div className="palette_btn" onClick ={showPalette} style={{background:color}}></div>
         {displayColorPicker=="block"?
-        <div style={{position:"absolute"}}>
+        <div className="pelette_color">
             <SketchPicker width={aa} color={color} onChange={changeColor} />
         </div>
         :null

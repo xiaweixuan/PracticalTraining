@@ -4,7 +4,7 @@
 const db = require('mysql');
  
 let connection = db.createConnection({
-    host:'localhost',
+    host:'47.94.174.80',
     user:'xwx',
     password:'123456',
     database:'practical_tarining'

@@ -14,10 +14,3 @@
     float: left;
     background-color:#fff;
 }
-
-div,span,canvas{
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
- }

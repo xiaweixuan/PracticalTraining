@@ -8,26 +8,26 @@ export default class Undertab extends Component {
 			<div className='Undertab_div'>
 				<header>
 					<div>
-						<Link to='/'>
-							<div style={{color:this.props.flag=="1"?"#FF7414":"black"}} 
+						<Link to='/database'>
+							<div style={{color:this.props.flag=="1"?"rgb(110,199,194)":"black"}} 
 							className='Undertab_link_content' onClick={this.changeColor_1}>
-								<i className="iconfont icon-ziliaoku1"></i>
+								<i id="icon" className="iconfont icon-ziliaoku1"></i>
 								<p className='ziliao'>资料库</p>
 							</div>
 						</Link>
 						
 						<Link to='/community'>
-							<div style={{color:this.props.flag=="2"?"#FF7414":"black"}} 
+							<div style={{color:this.props.flag=="2"?"rgb(110,199,194)":"black"}} 
 							className='Undertab_link_content' onClick={this.changeColor_2}>
-								<i className="iconfont icon-shequxianxing"></i>
+								<i id="icon" className="iconfont icon-shequxianxing"></i>
 								<p className='ziliao'>社区</p>
 							</div>
 						</Link>
 
 						<Link to='/mine'>
-							<div style={{color:this.props.flag=="3"?"#FF7414":"black"}} 
+							<div style={{color:this.props.flag=="3"?"rgb(110,199,194)":"black"}} 
 							className='Undertab_link_content' onClick={this.changeColor_3}>
-								<i className="iconfont icon-wode"></i>
+								<i id="icon" className="iconfont icon-wode"></i>
 								<p className='ziliao'>我的</p>
 							</div>
 						</Link>

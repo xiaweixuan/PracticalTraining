@@ -2,15 +2,18 @@ import React, { Component,useState,useEffect } from 'react'
 import { WingBlank, WhiteSpace } from 'antd-mobile';
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 import './Collection.css'
+import store from '../store';
 
 export default function Opus(){
     let [data,setData]=useState([]);
+    let userid = store.getState().LoginchangeValueName;
     useEffect(()=>{
-        fetch('http://xiawx.top:8080/offpaint')
+        let url = 'http://xiawx.top:8080/work?userid='+userid;
+        fetch(url)
         .then(res=>res.json())
         .then(res=>{
             setData(res.content);
-            console.log(res.content.length);
+            // console.log(res.content.length);
             for(var i=0;i<res.content.length;i++){
                 var canvas = document.getElementById('canvas'+i);
                 var context=canvas.getContext("2d");
@@ -27,6 +30,7 @@ export default function Opus(){
 
     return(
         <div className="collection">
+            <div>
             <div className="collection_navbar">
                 <Link to="/mine" className="collection_navbar_link">
                     <i className="iconfont icon-fanhui"></i>
@@ -50,6 +54,8 @@ export default function Opus(){
                     }
                 </WingBlank>
             </div>
+            </div>
+            <div className="none_div"></div>
         </div>
     )
 }

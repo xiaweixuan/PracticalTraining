@@ -1,53 +1,51 @@
-.register_navbar{
-    height: 10vw;
-    background-color: #FF7414;
-}
 .register_navbar_link{
     margin-left:5vw;
 }
 .icon-fanhui{
     float: left;
-    margin-top: 2.5vw;
+    margin-top: 0vw;
     margin-left: 4vw;
     font-size: 4vw;
     color: #fff;
 }
-.register_navbar_no1{
-    color: #fff;
-    /* text-align: center; */
-    font-size: 5vw;
-    font-family: "YouYuan";
-}
 .register_content_div{
-    margin-top: 10vw;
+    margin-top: 20vw;
 }
 .register_content_name{
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    border-radius: 2vw;
     font-family: "YouYuan";
     font-size: 4vw;
     width: 90vw;
-    height: 10vw;
-    border: 1px solid #FF7414;
+    height: 14vw;
+    margin-bottom:2vw;
+    border: 1px solid rgb(110,199,194);
 }
 .register_content_code{
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    border-radius: 2vw;
     font-family: "YouYuan";
     font-size: 4vw;
     float: left;
     width: 55vw;
-    height: 10vw;
-    border: 1px solid #FF7414;
+    height: 14vw;
+    border: 1px solid rgb(110,199,194);
 }
 .register_content_getcode{
+    text-align: center;
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    border-radius: 2vw;
     font-family: "YouYuan";
     font-size: 4vw;
     float: left;
     margin-left: 3vw;
-    height: 7vw;
-    width: 22vw;
-    padding-left: 10vw;
+    height: 11vw;
+    width: 30vw;
+    /* padding-left: 7.5vw; */
     padding-top:3vw;
-    background-color: rgb(207, 218, 218);
+    background-color: rgb(82, 103, 224);
     color:#fff;
-    font-size: 3vw;
+    font-size: 4vw;
 }
 .mine_clearfloat{
     clear:both;
@@ -57,11 +55,22 @@
     margin-top:-1vw;
 }
 .register_content_finish{
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    border-radius: 2vw;
     font-family: "YouYuan";
-    font-size: 4vw;
-    height: 10vw;
+    font-size: 5vw;
+    height: 12vw;
     width: 100%;
-    background-color: #FF7414;
+    background-color: rgb(110,199,194);
     color:#fff;
     border: 0px;
 }
+.register_user{
+    font-size:3vw;
+    color:red;
+}
+
+
+
+
+/* 获取验证码 */
