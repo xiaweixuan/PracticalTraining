@@ -19,3 +19,5 @@
 | /setall   | 个人信息设置 | post  | olduserid,userid,pwd,email,avatarurl,motto    | { state: '', message: '', content: true or false } |
 | /addcollect | 添加/取消 收藏   | post  | userid,paintid    | { state: '', message: '', content: true or false } |
 | /perput | 发布   | get  | userid    | { state: '', message: '', content: json对象 } |
+| /avatar | 设置头像地址 | post  | userid,avatarurl    | { state: '', message: '', content: true or false } |
+| /motto | 设置个性签名   | post  | userid,motto    | { state: '', message: '', content: true or false } |

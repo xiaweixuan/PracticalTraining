@@ -14,6 +14,8 @@ var imgRouter = require('./Routes/splashimg');
 var setallRouter = require('./Routes/setall');
 var addcollectRouter = require('./Routes/addcollection');
 var perputRouter = require('./Routes/perput');
+var avatarRouter = require('./Routes/avatarurl');
+var mottoRouter = require('./Routes/motto');
 
 app.get('/', function(req, res) {
   res.setHeader('Content-Type','text/plain;charset="utf-8"')
@@ -51,6 +53,8 @@ app.use('/img', imgRouter);
 app.use('/setall', setallRouter);
 app.use('/addcollect', addcollectRouter);
 app.use('/perput', perputRouter);
+app.use('/avatar', avatarRouter);
+app.use('/motto', mottoRouter);
 
 //后台接口
 var showuser = require('./BackManage/showuser');

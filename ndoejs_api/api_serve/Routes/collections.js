@@ -13,7 +13,7 @@ var userName = '';
 router.get('/',(req,res)=>{
     //获取前端传入的userid
     userName = req.query.userid;
-    let selectsql = 'select * from paint_table where paintid in( select distinct paintid from collections_table where userid="'+userName+'")';
+    let selectsql = 'select * from paint_table_new where paintid in( select distinct paintid from collections_table where userid="'+userName+'")';
     showdata(res,selectsql);
 })
 
