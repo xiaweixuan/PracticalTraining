@@ -62,13 +62,15 @@ export default function CommunityOther() {
                             </div>
                             <p className='community_chat_another_id'>{data[idx].userid}</p>
                             <div className='community_chat_talk'>
-                    <p className='community_chat_another_word'>{data[idx].paintid}</p>
+                    <p className='community_chat_another_word'>{data[idx].describe}</p>
                                 <div className='community_chat_talk_pic_box'>
+                                    <Link to={{pathname:"/xiangqing",state:{item}}}>
                                         <canvas className='community_chat_talk_canvas' 
                                         
                                         id={"canvas2"+idx}>
                                             
                                         </canvas>
+                                    </Link>
                               
                                 </div>
                                 <p className='community_chat_another_time'>{timestampToTime(item.paintid.slice(item.paintid.length-13))}</p>

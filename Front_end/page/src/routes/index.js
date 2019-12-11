@@ -24,6 +24,7 @@ class Routes extends Component {
 				<Switch>
 					<Route exact path='/' component={Openscreen}/>
 					<Route exact path="/database" component={Database}/>
+					<Route exact path="/addition" component={Addition}/>
 					<Route exact path="/xiangqing" component={Xiangqing}/>
 					<Route exact path="/community" component={Community}/>
 					<Route exact path="/mine" component={Mine}/>
