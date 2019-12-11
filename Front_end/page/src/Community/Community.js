@@ -27,6 +27,20 @@ export default function Community(){
             }
         })
     },[])
+    useEffect(()=>{
+        fetch('http://xiawx.top:8080/offpaint')
+        .then(res=>res.json())
+        .then(res=>{
+            for(var i=0;i<3;i++){
+                var canvas = document.getElementById('canvasimg'+i);
+                var context=canvas.getContext("2d");
+                var a = new window.Picture({col:res.content[i].col,row:res.content[i].raw,width:canvas.width,height:canvas.height,context:context});
+                a.drawDataMatrix=a.prase(res.content[i].paintdata);
+                a.draw(context);
+                
+            }
+        })
+    },[])
     function timestampToTime(timestamp) {
         return new Date(parseInt(timestamp)).toLocaleString().replace(/:d{1,2}$/,' '); 
    
@@ -47,11 +61,10 @@ export default function Community(){
           beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
           afterChange={index => console.log('slide to', index)}
         >
-          {[1,2,3].map(val => (
+          {[1,2,3].map((val,idx) => (
             
-              <img
-                src="img/tui.png"
-                alt=""
+              <canvas
+              id={'canvasimg'+idx}
                 style={{ width: '100%', height:'250px',verticalAlign: 'top' }}
                 onLoad={() => {
                   // fire window resize event to change height
@@ -79,9 +92,7 @@ export default function Community(){
                     <p className='community_chat_another_word'>{data[idx].paintid}</p>
                                 <div className='community_chat_talk_pic_box'>
                                         <canvas className='community_chat_talk_canvas' 
-                                        
-                                        id={"canvas"+idx}>
-                                            
+                                        id={"canvas"+idx}>    
                                         </canvas>
                               
                                 </div>
