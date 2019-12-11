@@ -3,24 +3,26 @@ import { WingBlank, WhiteSpace } from 'antd-mobile';
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 import './Collection.css'
 import store from '../store';
-import {LoginchangeValueName} from '../actions';
+import {LoginchangeValueName,changeValuee} from '../actions';
 export default function Edit(){
     let [data,setData]=useState([]);
     let [userid,setUser] = useState(store.getState().LoginchangeValueName);
-    // let [pwd,setPwd]=useState(store.getState().changeValuee);
+    let [pwd,setPwd]=useState(store.getState().changeValuee);
     function useridChange(e){
         store.dispatch(LoginchangeValueName(e.target.value))
     }
-    // function pwdChange(e){
-    //     store.dispatch(changeValuee(e.target.value))
-    // }
+    function pwdChange(e){
+        store.dispatch(changeValuee(e.target.value))
+    }
     useEffect(()=>{
         store.subscribe(()=>{
             setUser(store.getState().LoginchangeValueName);
+            setPwd(store.getState().changeValuee);
         })
     },[])
     function add(){
         console.log(store.getState().LoginchangeValueName);
+        console.log(store.getState().changeValuee);
     }
     return(
         <div className="edit">
@@ -47,7 +49,7 @@ export default function Edit(){
                 <WhiteSpace size="md"/>
                 <div className="edit_middle_content">
                     <p>密码：</p>
-                    <input type="password" name="ispwd" value={'密码'}></input>
+                    <input type="password" name="ispwd" value={pwd} onChange={pwdChange}></input>
                 </div>
                 <WhiteSpace size="md"/>
                 <div className="edit_middle_content">

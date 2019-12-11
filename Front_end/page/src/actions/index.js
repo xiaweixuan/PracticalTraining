@@ -66,6 +66,12 @@ export const log = (value)=>(
         value
     }
 )
+export const Motto = (value)=>(
+    {
+        type: types.CHANGE_MOTTO,
+        value
+    }
+)
 // 异步action
 export const logFetch = (value)=>{
     return (dispatch)=>{
