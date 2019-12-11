@@ -105,7 +105,7 @@ export default class Mine extends Component {
         <div className="mine">
             <div className="mine_navbar_div">
                 <p className="mine_navbar">我 的</p>
-                <Link to="/setup">
+                <Link to={this.state.flag?"/setup":'/denglu'}>
                     <i className="iconfont icon-set"></i>
                 </Link>
                 <div className="mine_clearfloat"></div>

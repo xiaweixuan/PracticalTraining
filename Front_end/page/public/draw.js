@@ -412,6 +412,7 @@ Picture.prototype.convertCanvasToImage = function (context) {
     var image = new Image();
     image.src = context.canvas.toDataURL("image/png");
     return image;
+    // return context.canvas.toDataURL("image/png");
 }
 
 

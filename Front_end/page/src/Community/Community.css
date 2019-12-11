@@ -119,9 +119,9 @@
 .community_chat_another_time{
     color:coral;
     font-family: "YouYuan";
-    font-size: 3.5vw;
+    font-size: 3vw;
     float: right;
-    margin-top: 5vw;
+    margin-top: 8vw;
     margin-right: 2vw;
 }
 
@@ -206,9 +206,9 @@
 .community_chat_mine_time{
     color:coral;
     font-family: "YouYuan";
-    font-size: 3.5vw;
+    font-size: 3vw;
     float: left;
-    margin-top: 5vw;
+    margin-top: 8vw;
     margin-left: 2vw;
 }
 
