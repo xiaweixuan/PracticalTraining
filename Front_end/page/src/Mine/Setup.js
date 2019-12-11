@@ -3,11 +3,12 @@ import { WingBlank, WhiteSpace } from 'antd-mobile';
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 import './Collection.css'
 import store from '../store';
-import {loginstateflag} from '../actions';
+import {loginstateflag,LoginchangeValueName} from '../actions';
 
 export default function Setup(props){
     function signout(){
         store.dispatch(loginstateflag(false));
+        store.dispatch(LoginchangeValueName('name'));
         props.history.push('/mine');
     }
     return(

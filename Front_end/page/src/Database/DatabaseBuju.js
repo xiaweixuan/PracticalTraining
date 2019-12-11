@@ -9,7 +9,6 @@ function PlaceHolder(props,{ className = '', ...restProps }){
 	let str='';
 	$(function () {
 		var offset = $("#end").offset();
-		// console.log()
 		$(".icon-shoucang1").click(function (e) {
 			// i++;
 			var img = $(this).parent().find("i");

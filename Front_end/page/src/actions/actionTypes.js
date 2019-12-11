@@ -8,3 +8,4 @@ export const LOGIN_SUCCESS = 'login_success';
 export const LOGIN_INPUT = 'LOGIN_INPUT';
 export const LOGIN_FLAG = 'LOGIN_FLAG';
 export const CHANGE_PHONE_VALUE='CHANGE_PHONE_VALUE';
+export const SEARCH_VALUE ='SEARCH_VALUE';
