@@ -14,8 +14,8 @@ import Release from '../Mine/Release';
 import Drawing from '../draw/drawing';
 import Openscreen from '../Openscreen/Openscreen';
 import Setup from '../Mine/Setup';
+import Edit from '../Mine/Edit';
 import Addition from '../Community/Addition';
-import Search from '../Database/Search';
 
 class Routes extends Component {
 	render() {
@@ -24,7 +24,6 @@ class Routes extends Component {
 				<Switch>
 					<Route exact path='/' component={Openscreen}/>
 					<Route exact path="/database" component={Database}/>
-					<Route exact path="/addition" component={Addition}/>
 					<Route exact path="/xiangqing" component={Xiangqing}/>
 					<Route exact path="/community" component={Community}/>
 					<Route exact path="/mine" component={Mine}/>
@@ -37,7 +36,8 @@ class Routes extends Component {
 					<Route exact path='/nomatch' component={Nomatch}/>
 					<Route exact path='/setup' component={Setup}/>
 					<Route exact path='/addition' component={Addition}/>
-					<Route exact path='/search' component={Search}/>
+					<Route exact path='/edit' component={Edit}/>
+
 					
 					<Redirect to='/nomatch'/> 
 				</Switch>

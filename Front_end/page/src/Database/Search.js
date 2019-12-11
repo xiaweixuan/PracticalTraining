@@ -3,8 +3,8 @@ import { WingBlank, WhiteSpace } from 'antd-mobile';
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 import '../Mine/Collection.css'
 import store from '../store';
-
-export default function Search(){
+import {Search} from '../actions';
+export default function Search1(){
     let [value,setValue]=useState(store.getState().Search);
     console.log(value);
     let [data,setData]=useState([]);
@@ -16,13 +16,14 @@ export default function Search(){
         .then(res=>{
             setData(res.content);
             for(var i=0;i<res.content.length;i++){
-                if(res.content[i].describe.indexOf(value)!=-1){
+                console.log(value);
+                if(res.content[i].describe.indexOf(value)!=-1&&value!=''){
                     console.log(res.content[i].describe);
 					data1[data2]=res.content[i];
                     data2++;
-				}
+                }
             }
-            setData(data1);
+            setData1(data1);
             console.log(data1);
         })
     },[])
@@ -35,13 +36,19 @@ export default function Search(){
             a.draw(context)
         }
         setData(data1);
+        // store.subscribe(()=>{  
+        //     setValue(value);
+        // })
     })
+    function clear(){
+        store.dispatch(Search(''));
+    }
     return(
         <div className="collection">
             <div>
             <div className="collection_navbar">
                 <Link to="/database" className="collection_navbar_link">
-                    <i className="iconfont icon-fanhui"></i>
+                    <i className="iconfont icon-fanhui" onClick={clear}></i>
                 </Link>
                 
                 <div className="collection_navbar_no1"><p>搜索</p></div>

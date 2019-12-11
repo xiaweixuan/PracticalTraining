@@ -1,5 +1,5 @@
 import React, { Component,useState,useEffect } from 'react'
-import {HashRouter as Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { WingBlank, WhiteSpace } from 'antd-mobile';
 import Undertab from '../undertab/Undertab';
 import { Carousel } from 'antd-mobile';
