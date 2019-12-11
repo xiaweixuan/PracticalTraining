@@ -16,6 +16,7 @@ import Openscreen from '../Openscreen/Openscreen';
 import Setup from '../Mine/Setup';
 import Edit from '../Mine/Edit';
 import Addition from '../Community/Addition';
+import Search from '../Database/Search';
 
 class Routes extends Component {
 	render() {
@@ -37,7 +38,7 @@ class Routes extends Component {
 					<Route exact path='/setup' component={Setup}/>
 					<Route exact path='/addition' component={Addition}/>
 					<Route exact path='/edit' component={Edit}/>
-
+					<Route exact path='/search' component={Search}/>
 					
 					<Redirect to='/nomatch'/> 
 				</Switch>
