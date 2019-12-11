@@ -54,6 +54,12 @@ export const changeValueee = value=>(
         value
     }
 )
+export const changeValueeee = value=>(
+    {
+        type: types.CHANGE_PHONE_VALUE,
+        value
+    }
+)
 export const log = (value)=>(
     {
         type: types.LOGIN_SUCCESS,

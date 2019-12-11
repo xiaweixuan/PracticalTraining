@@ -58,7 +58,7 @@ export default function Edit(){
                 <WhiteSpace size="md"/>
                 <WhiteSpace size="md"/>
                 <div className="edit_button">
-                    <input className="edit_button_save" type="submit" value="保存"></input>
+                    <input className="edit_button_save" type="submit" value="保存" onClick={add}></input>
                     <button className="edit_button_return">取消</button>
                 </div>
             </div>
