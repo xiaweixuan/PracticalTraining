@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useWindowWidth } from 'react'
 import Palette from './palette'
+import store from '../store/index'
 
 export default function ToRelease() {
     var [obj, setObj] = useState({})
     var [win, setW] = useState(true);
     var [release, setRelease] = useState(false);
-    var [paintImg, setPaintImg] = useState(<div></div>)
-    
+    var [paintImg, setPaintImg] = useState()
+
     useEffect(() => {
         var canvas = document.getElementById("canvas");
         var context = canvas.getContext("2d");
@@ -44,22 +45,27 @@ export default function ToRelease() {
         obj.automaticPainting(obj.context)
         console.log(obj)
         console.log(obj.toString())
-        var img=obj.convertCanvasToImage(obj.context);
-        setPaintImg(img)
-        // document.getElementById("show").appendChild(img)
+        // var img=obj.convertCanvasToImage(obj.context);
+        // setPaintImg(img)
+        // document.getElementsByClassName("release_submit")[0].appendChild(img)
         setRelease(true);
+
+    }
+    let textInput = React.createRef();
+    function upload() {
+        var id=store.getState().LoginchangeValueName;
+        
         var subData = {
-            paintid: "",
-            userid: "",
-            paintdata: "",
+            paintid: id+Date.parse(new Date()),
+            userid: id,
+            paintdata: obj.toString(obj.drawDataMatrix),
             type: "person",
-            describle: "",
+            describle: textInput.current.value,
             history: "",
             col: 20,
             raw: 20
         }
     }
-
 
     function but() {
         console.log(1)
@@ -175,8 +181,10 @@ export default function ToRelease() {
             </div>
             {
                 release ? <div className="release_submit">
-                    {/* <img src={}/> */}
-                    {/* <textarea placeholder="描述一下你的图画吧" maxlength="50" draggable="false"></textarea> */}
+                    {/* <img src={paintImg} /> */}
+                    <textarea ref={textInput} placeholder="描述一下你的图画吧" maxlength="50" draggable="false"></textarea>
+                    <button onClick={upload}>上传</button>
+                    <button>保存到本地</button>
                 </div> : null
             }
         </div>
