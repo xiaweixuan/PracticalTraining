@@ -4,9 +4,7 @@ import {CHANGE_INPUT_VALUE,
 import {LOGIN_INPUT,
     CHANGE_LOGINNAME_INPUT_VALUE,
     CHANGE_LOGINPASSWORD_INPUT_VALUE,
-    LOGIN_FLAG,CHANGE_PHONE_VALUE,
-    SEARCH_VALUE
-} from '../actions/actionTypes'
+    LOGIN_FLAG,CHANGE_PHONE_VALUE} from '../actions/actionTypes'
     
     let logininput = {"useid":"zhangsan","pwd":"123"};
     function login(state=logininput,action){
@@ -40,6 +38,7 @@ import {LOGIN_INPUT,
     let inputValue = '';
     let inputValuee = '';
     let inputValueee = '';
+    let inputValueeee = '';
     function changeValuee(state=inputValuee,action){
         switch(action.type){
             case CHANGE_INPUT_VALUEE :
@@ -56,17 +55,17 @@ import {LOGIN_INPUT,
                 return state;
         }
     }
-    function changeValue(state=inputValue,action){
+    function changeValueeee(state=inputValueeee,action){
         switch(action.type){
-            case CHANGE_INPUT_VALUE :
+            case CHANGE_PHONE_VALUE :
                 return action.value;
             default :
                 return state;
         }
     }
-    function Search(state=inputValue,action){
+    function changeValue(state=inputValue,action){
         switch(action.type){
-            case SEARCH_VALUE :
+            case CHANGE_INPUT_VALUE :
                 return action.value;
             default :
                 return state;
@@ -97,10 +96,9 @@ let userInfor = {
         }
     }
 let reducer = combineReducers({
-    changeValue,login,changeValuee,changeValueee,
+    changeValue,login,changeValuee,changeValueee,changeValueeee,
     LoginchangeValueName,
     LoginchangeValuePassword,
-    loginstateflag,
-    Search
+    loginstateflag
 })
 export default reducer;
