@@ -25,12 +25,8 @@ export default function Drawing(props) {
     function Tool(){
         setTool(false); 
     }
-    function load(){
-        obj.initbackground(obj.context);
-        obj.automaticPainting(obj.context)
-    }
     function WSide(){
-        setW(true);
+        setW(true);  
     }
     useEffect(() => {
         // setPicdata("#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff")
@@ -83,66 +79,85 @@ export default function Drawing(props) {
         setW(false); 
         console.log(win);
         obj.initbackground(obj.context);
+        // obj.draw(obj.context);
         obj.automaticPainting(obj.context)
         console.log(obj)
         console.log(obj.toString())
+        // var img=obj.convertCanvasToImage(obj.context);
+        // document.getElementById("show").appendChild(img)
     }
 
 
-    function but(){
-        console.log(1)
-        var a = document.getElementById('aka')
-        if(a.style.display=="none"){
-            a.style.display="inline"
-            console.log(a.style.display);
-        }
-        else{
-            a.style.display="none"
-            console.log(a.style.display);
-        }
-        console.log(11)
-    }
+    // function but(){
+    //     console.log(1)
+    //     var a = document.getElementById('aka')
+    //     if(a.style.display=="none"){
+    //         a.style.display="inline"
+    //         console.log(a.style.display);
+    //     }
+    //     else{
+    //         a.style.display="none"
+    //         console.log(a.style.display);
+    //     }
+    //     console.log(11)
+    // }
 
     var $=window.$;
+    var bottom = document.getElementsByClassName('bottom')
+    var bottom2 = document.getElementsByClassName('bottom2')
+    var bottom3 = document.getElementsByClassName('bottom3')
     var a;
-        var b;
-        $('#touch').on('touchmove', function(e) {
-            // 阻止其他事件
-            e.preventDefault();
-            // 判断手指数量
-            if (e.originalEvent.targetTouches.length == 1) {
+    var b;
+    function but(){
+        if(bottom[0].style.margin==""){
+            bottom[0].style.margin="70px 0px 0px 5px"
+            bottom2[0].style.margin="120px 0px 0px 5px"
+            bottom3[0].style.margin="170px 0px 0px 5px"
+        }
+        else if(bottom[0].style.margin=="0px"){
+            bottom[0].style.margin="70px 0px 0px 5px"
+            bottom2[0].style.margin="120px 0px 0px 5px"
+            bottom3[0].style.margin="170px 0px 0px 5px"
+        }
+        else{
+            bottom[0].style.margin="0px 0px 0px 0px"
+            bottom2[0].style.margin="0px 0px 0px 0px"
+            bottom3[0].style.margin="0px 0px 0px 0px"
+        }
+        console.log(bottom[0].style.margin)
+        console.log(bottom[0].style.margin == "70px 0px 0px 5px")
+    }
+    $('#touch').on('touchmove', function(e) {
+        // 阻止其他事件
+        e.preventDefault();
+        // 判断手指数量
+        if (e.originalEvent.targetTouches.length == 1) {
+            // 将元素放在滑动位置
+            var touch = e.originalEvent.targetTouches[0]; 
+            console.log(touch.pageX)
+            // console.log(touch.pageY)
+            a=touch.pageX
+            b=touch.pageY
+            $("#touch").css({'left': touch.pageX + 'px','top': touch.pageY + 'px'});
+        }
+    });
 
-                // 将元素放在滑动位置
-                var touch = e.originalEvent.targetTouches[0];  
-
-                console.log(touch.pageX)
-                // console.log(touch.pageY)
-                a=touch.pageX
-                b=touch.pageY
-                $("#touch").css({'left': touch.pageX + 'px',
-                    'top': touch.pageY + 'px'});
-            }
-        });
-
-        $('#touch').on('touchend', function(e) {
-            // 阻止其他事件
-
-                if(a>window.outerWidth-60){
-                    a=window.outerWidth-60
-                }
-                else if(a<60){
-                    a=0
-                }
-                else if(b>window.outerHeight-120){
-                    b=window.outerHeight-120
-                }
-                else if(b<60){
-                    b=0
-                }
-                // console.log(outerHeight)
-            $("#touch").css({'left': a + 'px',
-                    'top': b + 'px'});
-        })
+    $('#touch').on('touchend', function(e) {
+        // 阻止其他事件
+        if(a>window.outerWidth-120){
+            a=window.outerWidth-60
+        }
+        else if(a<60){
+            a=0
+        }
+        else if(b>window.outerHeight-120){
+            b=window.outerHeight-120
+        }
+        else if(b<60){
+            b=0
+        }
+        $("#touch").css({'left': a + 'px','top': b + 'px'});
+    })
 
 
 
@@ -158,38 +173,47 @@ export default function Drawing(props) {
                     <canvas id="canvas" width={aa} height={aa}>您的浏览器版本过低</canvas>
                 </div>
             </div>
-            <div id="touch" className="drawing_shezhi_no1" onClick={but}>
-            <b>工具</b>
             
-            
-            <div id="aka" className="drawing_shezhi" style={{marginTop:"40px",display:"none"}}>
-            <div className="drawing_shezhi_no2">
-                <div className="drawing_btn">
-                    <button className="drawing_btn_no1" onClick={showNumber} >
-                            显示数字
-                            
-                        </button>
-                </div>
-                <div className="drawing_btn">
-                    <button className="drawing_btn_no1" onClick={recall}>
-                        撤回
-                    </button>
-                </div>
-                <div className="drawing_btn">
-                    <button className="drawing_btn_no1" onClick={finishDraw}>
-                        完成
-                    </button>
-                </div>
+            <div id="touch" class="bt-box" >
+                <a onClick={but} class="xiaoA bg-3">工具</a>
+                <p onClick={showNumber} class="bottom bt-box-p">显示数字</p>
+                <p onClick={recall} class="bottom2 bt-box-p">撤回</p>
+                <p onClick={finishDraw} class="bottom3 bt-box-p">完成</p>
             </div>
-             
-        </div>
-        </div>
+
+
+
+
+
+
+            {/* <div id="touch" className="drawing_shezhi_no1" onClick={but}>
+                <b>工具</b>
+                <div id="aka" className="drawing_shezhi" style={{marginTop:"40px",display:"none"}}>
+                    <div className="drawing_shezhi_no2">
+                        <div className="drawing_btn">
+                            <button className="drawing_btn_no1" onClick={showNumber} >
+                                显示数字
+                            </button>
+                        </div>
+                        <div className="drawing_btn">
+                            <button className="drawing_btn_no1" onClick={recall}>
+                                撤回
+                            </button>
+                        </div>
+                        <div className="drawing_btn">
+                            <button className="drawing_btn_no1" onClick={finishDraw}>
+                                完成
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
 
 
             <div className="drawing_bottom">
             <div className="drawing_left">
                 <div className="drawing_tuijian" onClick={Changetuijian} style={{color:color?"rgb(110,199,194)":"black"}}>推荐配色</div>
-                <div className="drawing_free" onClick={Changefree} style={{color:color?"black":"rgb(110,199,194)"}}>自由配色</div>
+                <div className="drawing_free" onClick={Changefree}>自由配色</div>
             </div>
             <div className="drawing_right">
                 <div style={{display:color?"block":"none"}}>
@@ -220,8 +244,8 @@ export default function Drawing(props) {
             <div className="drawing_x"onClick={WSide}>X</div> 
             <div id="show">
             </div>
-                <button className="drawing_Preservation" onClick={WSide}>保存图片到本地</button>
-            </div> */}
+            <button className="drawing_Preservation" onClick={WSide}>保存图片到本地</button>
+        </div> */}
         </div>
     )
 }
