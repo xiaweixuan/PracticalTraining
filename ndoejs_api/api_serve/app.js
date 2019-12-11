@@ -16,29 +16,13 @@ var addcollectRouter = require('./Routes/addcollection');
 var perputRouter = require('./Routes/perput');
 var avatarRouter = require('./Routes/avatarurl');
 var mottoRouter = require('./Routes/motto');
+var iscollectRouter = require('./Routes/iscollect');
+var ispwdRouter = require('./Routes/ispwd');
 
 app.get('/', function(req, res) {
   res.setHeader('Content-Type','text/plain;charset="utf-8"')
   res.end(`hello word！`);
 });
-
-/**
- * 接口
- * 
- * 登陆:/login
- * 注册:/register
- * 个人:/personal
- * 官方图:/offpaint
- * 上传图:/perpaint
- * 社区:/releases
- * 收藏:/collection
- * 作品:/work
- * 用户名校验:/usrcnki
- * 图片获取:/img
- * 个人信息设置:/setall
- * 添加收藏:/addcollect
- * 发布:/perput
- */
 
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
@@ -55,6 +39,8 @@ app.use('/addcollect', addcollectRouter);
 app.use('/perput', perputRouter);
 app.use('/avatar', avatarRouter);
 app.use('/motto', mottoRouter);
+app.use('/iscollect', iscollectRouter);
+app.use('/ispwd', ispwdRouter);
 
 //后台接口
 var showuser = require('./BackManage/showuser');
