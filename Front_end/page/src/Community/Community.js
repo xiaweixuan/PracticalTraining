@@ -65,11 +65,9 @@ export default function Community(){
             
               <canvas
               id={'canvasimg'+idx}
-                style={{ width: '100%', height:'250px',verticalAlign: 'top' }}
+                style={{ width: '100%', height:'50vw',verticalAlign: 'top' }}
                 onLoad={() => {
-                  // fire window resize event to change height
                   window.dispatchEvent(new Event('resize'));
-                //   this.setState({ imgHeight: 'auto' });
                 }}
               />
             
