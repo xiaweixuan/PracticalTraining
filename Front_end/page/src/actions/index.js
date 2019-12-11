@@ -42,6 +42,12 @@ export const changeValuee = value=>(
         value
     }
 )
+export const Search = value=>(
+    {
+        type: types.CHANGE_INPUT_VALUE,
+        value
+    }
+)
 export const changeValueee = value=>(
     {
         type: types.CHANGE_PHONE_VALUE,
