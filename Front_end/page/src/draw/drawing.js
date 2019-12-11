@@ -213,7 +213,7 @@ export default function Drawing(props) {
             <div className="drawing_bottom">
             <div className="drawing_left">
                 <div className="drawing_tuijian" onClick={Changetuijian} style={{color:color?"rgb(110,199,194)":"black"}}>推荐配色</div>
-                <div className="drawing_free" onClick={Changefree}>自由配色</div>
+                <div className="drawing_free" onClick={Changefree} style={{color:color?"black":"rgb(110,199,194)"}}>自由配色</div>
             </div>
             <div className="drawing_right">
                 <div style={{display:color?"block":"none"}}>

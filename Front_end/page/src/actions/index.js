@@ -44,7 +44,7 @@ export const changeValuee = value=>(
 )
 export const Search = value=>(
     {
-        type: types.CHANGE_INPUT_VALUE,
+        type: types.CHANGE_SEARCH,
         value
     }
 )

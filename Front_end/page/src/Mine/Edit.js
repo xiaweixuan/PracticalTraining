@@ -7,9 +7,13 @@ import {LoginchangeValueName} from '../actions';
 export default function Edit(){
     let [data,setData]=useState([]);
     let [userid,setUser] = useState(store.getState().LoginchangeValueName);
+    // let [pwd,setPwd]=useState(store.getState().changeValuee);
     function useridChange(e){
         store.dispatch(LoginchangeValueName(e.target.value))
     }
+    // function pwdChange(e){
+    //     store.dispatch(changeValuee(e.target.value))
+    // }
     useEffect(()=>{
         store.subscribe(()=>{
             setUser(store.getState().LoginchangeValueName);
