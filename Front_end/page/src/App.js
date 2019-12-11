@@ -14,8 +14,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<ToRelease/>
-				{/* <Routes /> */}
+				<Routes />
 				{/* <Drawing /> */}
 				{/* <ColorSelect
 					style={{ verticalAlign: "middle" }}

@@ -5,10 +5,10 @@ import Undertab from '../undertab/Undertab';
 import { Carousel } from 'antd-mobile';
 import './Community.css'
 import CommunityMine from './CommunityMine';
+import CommunityOther from './CommunityOther';
 
 export default function Community(){
     let [data,setData]=useState([]);
-  
     useEffect(()=>{
         fetch('http://xiawx.top:8080/offpaint')
         .then(res=>res.json())
@@ -22,10 +22,15 @@ export default function Community(){
                 // console.log(res.content[i])
                 var a = new window.Picture({col:res.content[i].col,row:res.content[i].raw,width:canvas.width,height:canvas.height,context:context});
                 a.drawDataMatrix=a.prase(res.content[i].paintdata);
-				a.draw(context)
+                a.draw(context);
+                
             }
         })
     },[])
+    function timestampToTime(timestamp) {
+        return new Date(parseInt(timestamp)).toLocaleString().replace(/:d{1,2}$/,' '); 
+   
+    }
     return(
         <div className="community_div_no1">
             <div className="community_navbar">
@@ -80,12 +85,14 @@ export default function Community(){
                                         </canvas>
                               
                                 </div>
-                                <p className='community_chat_another_time'>五分钟前</p>
+                                <p className='community_chat_another_time'>{timestampToTime(item.paintid.slice(item.paintid.length-13))}</p>
                             </div>
                         </div>
                         )
                     }
-                    
+                    {
+                    <CommunityOther/>
+                    }
                     {/* 我的发布 */}
                     {
                     <CommunityMine/>

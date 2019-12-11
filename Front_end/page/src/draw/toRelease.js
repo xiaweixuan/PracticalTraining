@@ -58,11 +58,6 @@ export default function ToRelease() {
             col: 20,
             raw: 20
         }
-
-        // fetch("http://xiawx.top:8080/perpaint",{
-        //     method:"POST",
-        //     body:JSON.stringify(subData)
-        // })
     }
 
 
