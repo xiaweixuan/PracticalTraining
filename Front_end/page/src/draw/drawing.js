@@ -30,20 +30,11 @@ export default function Drawing(props) {
         pic.drawDataMatrix_abiding=[...pic.drawDataMatrix];
         pic.toColorList();
         pic.toNumberDataMatrix();
-<<<<<<< HEAD
-        pic.colorList_abiding=[...pic.colorList];
-        pic.drawNumber(context)
-        pic.initdata();
-        pic.inittableOl(context);
-
-
-=======
         pic.numberDataMatrix_abiding=[...pic.numberDataMatrix];
         // console.log(pic)
         pic.drawNumber(context)
         pic.initdata();
         pic.inittableOl(context);
->>>>>>> e04bb3f2b782a7109f5d85e50981004a779cb4d9
         pic.allowDraw(context)
         setColorlist(pic.colorList);
         setObj(pic);      
@@ -55,24 +46,14 @@ export default function Drawing(props) {
     }, [])
 
     function changeColor(item,idx) {
-<<<<<<< HEAD
-
-        // obj.color = item;
-        // obj.showNowColor(obj.context,idx)
-=======
         // obj.color = item;
 
 
->>>>>>> e04bb3f2b782a7109f5d85e50981004a779cb4d9
         obj.initbackground(obj.context)
         obj.inittableOl(obj.context);
         obj.draw(obj.context)
         obj.drawNumber(obj.context)
-<<<<<<< HEAD
-        // obj.allowDraw(obj.context)
-=======
         console.log(item)
->>>>>>> e04bb3f2b782a7109f5d85e50981004a779cb4d9
         obj.color = item;
         obj.showNowColor(obj.context,idx)
     }
@@ -189,11 +170,8 @@ export default function Drawing(props) {
                 <p onClick={recall} class="bottom2 bt-box-p">撤回</p>
                 <p onClick={finishDraw} class="bottom3 bt-box-p">完成</p>
             </div>
-<<<<<<< HEAD
-=======
 
 
->>>>>>> e04bb3f2b782a7109f5d85e50981004a779cb4d9
             <div className="drawing_bottom">
             <div className="drawing_left">
                 <div className="drawing_tuijian" onClick={Changetuijian} style={{color:color?"rgb(110,199,194)":"black"}}>推荐配色</div>

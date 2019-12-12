@@ -77,12 +77,6 @@ export const Motto = (value)=>(
         value
     }
 )
-export const oldPwd = value=>(
-    {
-        type: types.CHANGE_OLD_PWD,
-        value
-    }
-)
 // 异步action
 export const logFetch = (value)=>{
     return (dispatch)=>{
