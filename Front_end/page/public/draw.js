@@ -177,9 +177,9 @@ Picture.prototype.drawCell = function (ex, ey, context) {
         context.fillStyle = this.color;
         context.fillRect(row * this.cellW, col * this.cellH, this.cellW, this.cellH);
         //已知n，求出j和i
-        var i=Math.floor(n/this.col);
-        var j=n-i*this.col;
-        console.log(i,j,this.numberDataMatrix_abiding[n])
+        var i = Math.floor(n / this.col);
+        var j = n - i * this.col;
+        console.log(i, j, this.numberDataMatrix_abiding[n])
         context.fillStyle = "rgb(119, 110, 110)";
         context.fillText(this.numberDataMatrix_abiding[n], j * this.cellW + 1 / 4 * this.cellW, i * this.cellH + 3 / 4 * this.cellH);
         this.addToHistory();
@@ -287,6 +287,19 @@ Picture.prototype.automaticPainting = function (context) {
         n++;
     }, 50)
 }
+Picture.prototype.correctColor = function (context) {
+    for (let i = 0; i < this.drawDataMatrix_abiding.length; i++) {
+        if (this.drawDataMatrix[i] === this.drawDataMatrix_abiding[i]) continue
+        this.drawDataMatrix[i] = "#ffffff";
+    }
+    this.initbackground(context)
+    this.drawNumber(context)
+    this.inittableOl(context);
+    this.draw(context)
+}
+
+
+
 
 /*操作长时属性，一幅已完成的画才可使用,即需要具有长时属性*/
 Picture.prototype.showNowColor = function (context, now) {

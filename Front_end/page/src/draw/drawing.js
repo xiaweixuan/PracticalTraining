@@ -47,8 +47,6 @@ export default function Drawing(props) {
 
     function changeColor(item,idx) {
         // obj.color = item;
-
-
         obj.initbackground(obj.context)
         obj.inittableOl(obj.context);
         obj.draw(obj.context)
@@ -91,7 +89,9 @@ export default function Drawing(props) {
         // var img=obj.convertCanvasToImage(obj.context);
         // document.getElementById("show").appendChild(img)
     }
-
+    function correctColor(){
+        obj.correctColor(obj.context);
+    }
     var $=window.$;
     var bottom = document.getElementsByClassName('bottom')
     var bottom2 = document.getElementsByClassName('bottom2')
@@ -167,7 +167,7 @@ export default function Drawing(props) {
             <div id="touch" class="bt-box" >
                 <a onClick={but} class="xiaoA bg-3">工具</a>
                 <p onClick={showNumber} class="bottom bt-box-p">显示数字</p>
-                <p onClick={recall} class="bottom2 bt-box-p">撤回</p>
+                <p onClick={correctColor} class="bottom2 bt-box-p">配色纠正</p>
                 <p onClick={finishDraw} class="bottom3 bt-box-p">完成</p>
             </div>
 
