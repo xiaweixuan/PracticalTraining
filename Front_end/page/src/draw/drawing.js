@@ -47,11 +47,13 @@ export default function Drawing(props) {
     }, [])
 
     function changeColor(item,idx) {
+        // obj.color = item;
+
+
         obj.initbackground(obj.context)
         obj.inittableOl(obj.context);
         obj.draw(obj.context)
         obj.drawNumber(obj.context)
-        obj.allowDraw(obj.context)
         console.log(item)
         obj.color = item;
         obj.showNowColor(obj.context,idx)
