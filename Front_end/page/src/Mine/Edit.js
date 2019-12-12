@@ -82,7 +82,7 @@ export default function Edit(props) {
     function oldblur() {
         fetch('http://xiawx.top:8080/ispwd', {
             body: JSON.stringify({
-                userid: userid,pwd:pwdold1
+                userid: olduserid,pwd:pwdold1
             }),
             method: 'POST',
         })

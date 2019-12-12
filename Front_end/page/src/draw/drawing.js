@@ -172,36 +172,37 @@ export default function Drawing(props) {
             </div>
 
 
-            <div className="drawing_bottom">
-            <div className="drawing_left">
-                <div className="drawing_tuijian" onClick={Changetuijian} style={{color:color?"rgb(110,199,194)":"black"}}>推荐配色</div>
-                <div className="drawing_free" onClick={Changefree} style={{color:color?"black":"rgb(110,199,194)"}}>自由配色</div>
-            </div>
-            <div className="drawing_right">
-                <div style={{display:color?"block":"none"}}>
-                    <div className="drawing_choose">
-                        {
-                            colorlist.map((item, idx) =>
-                            <div key={idx} className="drawing_color">
-                                <div className="drawing_color_div" 
-                                onClick={() => { changeColor(item,idx) }} 
-                                style={{ backgroundColor: item }} 
-                                key={item} >
-                                    <p>{idx}</p>
-                                    {console.log(item)}
+            <div className="drawing_bottom" style={{display:win?'block':'none'}}> 
+                <div className="drawing_left">
+                    <div className="drawing_tuijian" onClick={Changetuijian} style={{color:color?"rgb(110,199,194)":"black"}}>推荐配色</div>
+                    <div className="drawing_free" onClick={Changefree} style={{color:color?"black":"rgb(110,199,194)"}}>自由配色</div>
+                </div>
+                <div className="drawing_right">
+                    <div style={{display:color?"block":"none"}}>
+                        <div className="drawing_choose">
+                            {
+                                colorlist.map((item, idx) =>
+                                <div key={idx} className="drawing_color">
+                                    <div className="drawing_color_div" 
+                                    onClick={() => { changeColor(item,idx) }} 
+                                    style={{ backgroundColor: item }} 
+                                    key={item} >
+                                        <p>{idx}</p>
+                                        {console.log(item)}
+                                    </div>
                                 </div>
-                            </div>
-                            )
-                         }
+                                )
+                            }
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div className="drawing_color" style={{display:color?"none":"block"}}>
-                        <Palette change={changeColorFree} />
+                    <div>
+                        <div className="drawing_color" style={{display:color?"none":"block"}}>
+                            <Palette change={changeColorFree} />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div className='drawing_bottom_no1'style={{display:win?'none':'block'}}>保存在本地</div>
         </div>
     )
 }

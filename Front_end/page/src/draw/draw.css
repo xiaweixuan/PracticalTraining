@@ -580,4 +580,12 @@
     .bottom123 {
         margin: 70px 0 0 5px;
     }
+    .drawing_bottom_no1{
+        position:fixed;
+        bottom:0;
+        left:35%;
+        padding:5vw;
+        border-radius: 4vw;
+        background-color: rgb(43, 199, 108);
+    }
 }
