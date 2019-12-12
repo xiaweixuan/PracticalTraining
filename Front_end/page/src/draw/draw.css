@@ -529,33 +529,55 @@
         padding:2vw;
         border-radius:2vw; 
     }
+
+    #touch {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        z-index: 99999;
+    }
+	.bt-box .bg-3{
+        background:#a851fa;
+    }
+	.bt-box .xiaoA{
+		display:block;
+		width:60px;
+		height:60px;
+		position: absolute;
+		z-index: 2;
+		color: white;
+		font: 17px/60px Helvetica, Verdana, sans-serif;
+		text-decoration: none;
+		text-align: center;
+    }
+    .bt-box-p{
+        float: left;
+        margin-top:10px;
+    }
+	.bt-box .xiaoA, .bt-box-p {
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        /* -webkit-box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        -moz-box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.2); */
+    }
+    .bt-box .bt-box-p{
+        background: #222 ;
+        display: block;
+        height: 40px;
+        width: 50px; 
+        margin: 0 0 0 10px;
+        text-align: center;
+        font: 12px/40px Helvetica, Verdana, sans-serif;
+        color:#fff;
+        position: absolute;
+        z-index: 1;
+        transition: margin 0.5s ease;
+    }
+    .bottom123 {
+        margin: 70px 0 0 5px;
+    }
 }
-
-
-/*torelease.js样式*/
-
-
-.torelease{
-    width: 100%;
-}
-.torelease_canvas_div{
-    width: 95%;
-    margin: auto;
-}
-.release_submit{
-    position: absolute;
-    z-index: 9000;
-    background-color: rgb(197, 247, 230);
-    /* opacity: 0.8; */
-    border-radius: 15px;
-    width: 80%;
-    height: 90%;
-}
-.release_submit textarea{
-    border-radius: 15px;
-    padding: 5px;
-    resize:none;
-}
-
-
-

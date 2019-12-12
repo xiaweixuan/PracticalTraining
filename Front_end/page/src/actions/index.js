@@ -35,16 +35,16 @@ export const changeValue = value=>(
         value
     }
 )
-export const Search = value=>(
-    {
-        type: types.SEARCH_VALUE,
-        value
-    }
-)
 
 export const changeValuee = value=>(
     {
         type: types.CHANGE_INPUT_VALUEE,
+        value
+    }
+)
+export const Search = value=>(
+    {
+        type: types.CHANGE_SEARCH,
         value
     }
 )
@@ -54,9 +54,21 @@ export const changeValueee = value=>(
         value
     }
 )
+export const changeValueeee = value=>(
+    {
+        type: types.CHANGE_PHONE_VALUE,
+        value
+    }
+)
 export const log = (value)=>(
     {
         type: types.LOGIN_SUCCESS,
+        value
+    }
+)
+export const Motto = (value)=>(
+    {
+        type: types.CHANGE_MOTTO,
         value
     }
 )

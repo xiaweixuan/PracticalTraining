@@ -1,5 +1,5 @@
 import React, { Component,useState,useEffect } from 'react'
-import {HashRouter as Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { WingBlank, WhiteSpace } from 'antd-mobile';
 import Undertab from '../undertab/Undertab';
 import { Carousel } from 'antd-mobile';
@@ -65,11 +65,9 @@ export default function Community(){
             
               <canvas
               id={'canvasimg'+idx}
-                style={{ width: '100%', height:'250px',verticalAlign: 'top' }}
+                style={{ width: '100%', height:'50vw',verticalAlign: 'top' }}
                 onLoad={() => {
-                  // fire window resize event to change height
                   window.dispatchEvent(new Event('resize'));
-                //   this.setState({ imgHeight: 'auto' });
                 }}
               />
             

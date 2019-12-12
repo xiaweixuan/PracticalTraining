@@ -121,13 +121,14 @@ export default class Mine extends Component {
                         <div className="mine_message_right">
                             <div className="mine_message_name">{this.state.user_data.userid}</div>
                             <div className="mine_message_sign">TA还没有个性签名</div>
+                            <div className="mine_message_sign"><Link to="/edit">编辑个人信息</Link></div>
                         </div>
                         <div className="mine_clearfloat"></div>
                     </div>
                     {/* 未登录状态 */}
                     <div className="mine_message" style={{display:this.state.flag?"none":"block"}}>
                     <div id="user-photo">
-                            <img className="mine_message_left" src={this.state.filePhoto || "img/mine_message_img.png"}/>
+                        <img className="mine_message_left" src={this.state.filePhoto || "img/mine_message_img.png"}/>
                         </div>
                         <div className="mine_message_right">
                             <div className="mine_message_name" onClick={this.handle}>未登录</div>

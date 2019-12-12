@@ -79,6 +79,7 @@ export default class Denglu extends Component {
                         <input type="text" className="denglu_name"
                          onChange={this.handleChangeName} 
                          name="userid"
+                         value={this.state.valueName}
                          placeholder="用户名">   
                         </input>
                         <WhiteSpace size="lg"/>
