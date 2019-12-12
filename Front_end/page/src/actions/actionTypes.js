@@ -9,5 +9,7 @@ export const LOGIN_INPUT = 'LOGIN_INPUT';
 export const LOGIN_FLAG = 'LOGIN_FLAG';
 export const CHANGE_PHONE_VALUE='CHANGE_PHONE_VALUE';
 export const CHANGE_SEARCH='CHANGE_SEARCH';
+//编辑个人信息
 export const CHANGE_MOTTO='CHANGE_MOTTO';
 export const CHANGE_USERID='CHANGE_USERID';
+export const CHANGE_OLD_PWD='CHANGE_OLD_PWD';

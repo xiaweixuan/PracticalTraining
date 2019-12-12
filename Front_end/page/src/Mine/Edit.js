@@ -3,7 +3,7 @@ import { WingBlank, WhiteSpace } from 'antd-mobile';
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 import './Collection.css'
 import store from '../store';
-import {LoginchangeValueName,LoginchangeValuePassword,Motto,ChangeUserid} from '../actions';
+import {LoginchangeValueName,LoginchangeValuePassword,Motto,ChangeUserid,oldPwd} from '../actions';
 export default function Edit(props){
     let [olduserid,setOld]=useState(store.getState().LoginchangeValueName);
     let [userid,setUser] = useState(store.getState().ChangeUserid);
@@ -12,7 +12,7 @@ export default function Edit(props){
     let [judge,setJudge]=useState(1);
     let [pwdold,setPwdold]=useState(true);
     let [pwdold1,setPwdold1]=useState('');
-    let [pwdold2,setPwdold2]=useState(true);
+    let [pwdold2,setPwdold2]=useState(store.getState().oldPwd);
     console.log(motto);
     function useridChange(e){
         store.dispatch(ChangeUserid(e.target.value))
@@ -35,10 +35,12 @@ export default function Edit(props){
         })
     },[])
     function add(){
-        if(pwdold1==motto&&judge==2){
-            fetch('http://xiawx.top:8080/setall', {
+        console.log(store.getState().ChangeUserid);
+        console.log(store.getState().changeValuee);
+        console.log(store.getState().Motto);
+        fetch('http://xiawx.top:8080/setall', {
             body: JSON.stringify({
-                olduserid:olduserid,userid:userid,pwd:pwd,email:'2916244782@qq.com',avatarurl:'url',motto:motto.motto}),
+                olduserid:olduserid,userid:userid,pwd:pwd,email:'2916244782@qq.com',avatarurl:'url',motto:motto}),
                 method: 'POST',
             })
             .then(res=>res.json())
@@ -46,14 +48,10 @@ export default function Edit(props){
                 var data=res.content;
                 console.log(data);
                 if(data==true){
-                     props.history.push('/mine')
+                     
+                    props.history.push('/mine')
                 }
             })
-            store.dispatch(LoginchangeValueName(userid));
-        }
-        else{
-            alert('错误');
-        }
         store.dispatch(LoginchangeValueName(userid));
     }
     function onblur(){
@@ -107,7 +105,7 @@ export default function Edit(props){
                 </div>
                 <div className="edit_middle_content">
                     <p>个性签名：</p>
-                    <input type="text" name="motto" value={'个性签名'} value={motto.motto} onChange={mottoChange} name='motto'></input>
+                    <input type="text" name="motto" value={'个性签名'} value={motto} onChange={mottoChange} name='motto'></input>
                 </div>
                  
                 <div className="edit_middle_content">
@@ -119,7 +117,7 @@ export default function Edit(props){
                     <p>旧密码：</p>
                     <input type="password" onChange={oldPwd} onBlur={oldblur}></input>
                     <div className="edit_middle_userid" 
-                        style={{display: pwdold2?"none":"black"}}>
+                        style={{display: pwdold1==pwdold2?"none":"black"}}>
                         旧密码不正确
                     </div>
                 </div>

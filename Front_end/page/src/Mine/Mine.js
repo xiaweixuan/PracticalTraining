@@ -31,7 +31,7 @@ export default class Mine extends Component {
                 this.setState({
                     user_data:res.content[0]
                 })
-                store.dispatch(Motto(res.content[0]));
+                store.dispatch(Motto(res.content[0].motto));
                 console.log(store.getState().Motto);
             })
             this.sendrequest('work',this.state.userid,0);

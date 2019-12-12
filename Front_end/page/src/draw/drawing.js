@@ -33,14 +33,14 @@ export default function Drawing(props) {
         var canvas = document.getElementById("canvas");
         var context = canvas.getContext("2d");
         var pic = new window.Picture({ col: picdata.col, row: picdata.raw, width: canvas.width, height: canvas.height, context: context });
-        // console.log(picdata)
         pic.drawDataMatrix = pic.prase(picdata.paintdata);
+        pic.drawDataMatrix_abiding=[...pic.drawDataMatrix];
         pic.toColorList();
         pic.toNumberDataMatrix();
-        // console.log(pic)
+        pic.colorList_abiding=[...pic.colorList];
         pic.drawNumber(context)
         pic.initdata();
-        pic.inittable(context);
+        pic.inittableOl(context);
 
 
         pic.allowDraw(context)
@@ -49,8 +49,17 @@ export default function Drawing(props) {
         setObj(pic);
     }, [])
 
-    function changeColor(item) {
+    function changeColor(item,idx) {
+
+        // obj.color = item;
+        // obj.showNowColor(obj.context,idx)
+        obj.initbackground(obj.context)
+        obj.inittableOl(obj.context);
+        obj.draw(obj.context)
+        obj.drawNumber(obj.context)
+        // obj.allowDraw(obj.context)
         obj.color = item;
+        obj.showNowColor(obj.context,idx)
     }
 
     function changeColorFree(color) {
@@ -62,7 +71,7 @@ export default function Drawing(props) {
         // console.log(obj.drawDataMatrix);
         obj.initbackground(obj.context);
 
-        obj.inittable(obj.context);
+        obj.inittableOl(obj.context);
         obj.draw(obj.context);
         obj.drawNumber(obj.context);
 
@@ -192,7 +201,7 @@ export default function Drawing(props) {
                             colorlist.map((item, idx) =>
                             <div key={idx} className="drawing_color">
                                 <div className="drawing_color_div" 
-                                onClick={() => { changeColor(item) }} 
+                                onClick={() => { changeColor(item,idx) }} 
                                 style={{ backgroundColor: item }} 
                                 key={item} >
                                     <p>{idx}</p>
