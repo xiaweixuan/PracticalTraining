@@ -3,15 +3,13 @@ import Palette from './palette'
 
 import './draw.css'
 export default function Drawing(props) {
-    // // var [context, setContext] = useState({})
-    // console.log(props.data)
+
     var [picdata, setPicdata] = useState(props.data);
-    // var [color, setColor] = useState("#ffffff")
+    var [showColor,setShowColor]=useState(1);
     var [colorlist, setColorlist] = useState([])
     var [obj, setObj] = useState({})
 
     var [color, setColor] = useState(true);
-    var [tool, setTool] = useState(true);
     var [win, setW] = useState(true);
     function Changefree(){
         setColor(false);  
@@ -19,45 +17,62 @@ export default function Drawing(props) {
     function Changetuijian(){
         setColor(true); 
     }
-    function ToolSide(){
-        setTool(true);  
-    }
-    function Tool(){
-        setTool(false); 
-    }
-    function WSide(){
-        setW(true);  
-    }
+
     useEffect(() => {
         // setPicdata("#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff")
         var canvas = document.getElementById("canvas");
+        // canvas.addEventListener("touchstart",()=>{
+        //     setShowColor(obj.scale)
+        // })
         var context = canvas.getContext("2d");
         var pic = new window.Picture({ col: picdata.col, row: picdata.raw, width: canvas.width, height: canvas.height, context: context });
         pic.drawDataMatrix = pic.prase(picdata.paintdata);
         pic.drawDataMatrix_abiding=[...pic.drawDataMatrix];
         pic.toColorList();
         pic.toNumberDataMatrix();
+<<<<<<< HEAD
         pic.colorList_abiding=[...pic.colorList];
         pic.drawNumber(context)
         pic.initdata();
         pic.inittableOl(context);
 
 
+=======
+        pic.numberDataMatrix_abiding=[...pic.numberDataMatrix];
+        // console.log(pic)
+        pic.drawNumber(context)
+        pic.initdata();
+        pic.inittableOl(context);
+>>>>>>> e04bb3f2b782a7109f5d85e50981004a779cb4d9
         pic.allowDraw(context)
-
         setColorlist(pic.colorList);
-        setObj(pic);
+        setObj(pic);      
+        console.log(pic.drawDataMatrix_abiding)
+        // if(obj.scale<1.2&&obj.scale===1.2){
+        //     console.log(1)
+        //     obj.drawGreyShadow(obj.context)
+        // }
     }, [])
 
     function changeColor(item,idx) {
+<<<<<<< HEAD
 
         // obj.color = item;
         // obj.showNowColor(obj.context,idx)
+=======
+        // obj.color = item;
+
+
+>>>>>>> e04bb3f2b782a7109f5d85e50981004a779cb4d9
         obj.initbackground(obj.context)
         obj.inittableOl(obj.context);
         obj.draw(obj.context)
         obj.drawNumber(obj.context)
+<<<<<<< HEAD
         // obj.allowDraw(obj.context)
+=======
+        console.log(item)
+>>>>>>> e04bb3f2b782a7109f5d85e50981004a779cb4d9
         obj.color = item;
         obj.showNowColor(obj.context,idx)
     }
@@ -95,21 +110,6 @@ export default function Drawing(props) {
         // var img=obj.convertCanvasToImage(obj.context);
         // document.getElementById("show").appendChild(img)
     }
-
-
-    // function but(){
-    //     console.log(1)
-    //     var a = document.getElementById('aka')
-    //     if(a.style.display=="none"){
-    //         a.style.display="inline"
-    //         console.log(a.style.display);
-    //     }
-    //     else{
-    //         a.style.display="none"
-    //         console.log(a.style.display);
-    //     }
-    //     console.log(11)
-    // }
 
     var $=window.$;
     var bottom = document.getElementsByClassName('bottom')
@@ -189,6 +189,11 @@ export default function Drawing(props) {
                 <p onClick={recall} class="bottom2 bt-box-p">撤回</p>
                 <p onClick={finishDraw} class="bottom3 bt-box-p">完成</p>
             </div>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e04bb3f2b782a7109f5d85e50981004a779cb4d9
             <div className="drawing_bottom">
             <div className="drawing_left">
                 <div className="drawing_tuijian" onClick={Changetuijian} style={{color:color?"rgb(110,199,194)":"black"}}>推荐配色</div>
@@ -219,12 +224,6 @@ export default function Drawing(props) {
                 </div>
             </div>
         </div>
-            {/* <div className="drawing_show" style={{display:win?"none":"block"}}>
-            <div className="drawing_x"onClick={WSide}>X</div> 
-            <div id="show">
-            </div>
-            <button className="drawing_Preservation" onClick={WSide}>保存图片到本地</button>
-        </div> */}
         </div>
     )
 }

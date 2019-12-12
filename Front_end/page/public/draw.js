@@ -123,8 +123,9 @@ Picture.prototype.initbackground = function (context) {
     for (let i = 0; i < this.row; i++) {
         for (let j = 0; j < this.col; j++) {
             context.beginPath();
-            context.fillStyle = "#ffffff";
-            context.fillRect(j * this.cellW, i * this.cellH, this.cellW, this.cellH)
+            // context.fillStyle = "#ffffff";
+            // context.fillRect(j * this.cellW, i * this.cellH, this.cellW, this.cellH)
+            context.clearRect(j * this.cellW, i * this.cellH, this.cellW, this.cellH)
             context.closePath();
         }
     }
@@ -145,7 +146,23 @@ Picture.prototype.initAbiding = function (abidingObj) {
     this.strData_abiding = abidingObj.strData_abiding || "";
 
 }
-
+Picture.prototype.inittableOl = function (context) {
+    // console.log(1)
+    // console.log(this.col,this.cellW,this.row,this.cellH)
+    // context.strokeRect(this.col*this.cellW,this.row*this.cellH,this.cellW,this.cellH);
+    var n = 0;
+    for (let i = 0; i < this.col; i++) {
+        for (let j = 0; j < this.row; j++) {
+            n = i * this.row + j;
+            // console.log(this.drawDataMatrix[n])
+            if (this.drawDataMatrix_abiding[n] == '#ffffff') continue
+            context.beginPath();
+            context.strokeStyle = 'grey';
+            context.strokeRect(j * this.cellW, i * this.cellH, this.cellW, this.cellH);
+            context.closePath();
+        }
+    }
+}
 
 
 //绘图操作方法
@@ -154,6 +171,20 @@ Picture.prototype.drawCell = function (ex, ey, context) {
     var row = Math.floor((ex) / this.cellW);//列
     var col = Math.floor((ey) / this.cellH);//排
     var n = col * this.row + row;
+    if (this.drawDataMatrix_abiding[n] === '#ffffff') return;
+    if (this.color === '#ffffff') {
+        this.drawDataMatrix[n] = this.color;
+        context.fillStyle = this.color;
+        context.fillRect(row * this.cellW, col * this.cellH, this.cellW, this.cellH);
+        //已知n，求出j和i
+        var i=Math.floor(n/this.col);
+        var j=n-i*this.col;
+        console.log(i,j,this.numberDataMatrix_abiding[n])
+        context.fillStyle = "rgb(119, 110, 110)";
+        context.fillText(this.numberDataMatrix_abiding[n], j * this.cellW + 1 / 4 * this.cellW, i * this.cellH + 3 / 4 * this.cellH);
+        this.addToHistory();
+        return;
+    }
     this.drawDataMatrix[n] = this.color;
     context.fillStyle = this.color;
     context.fillRect(row * this.cellW, col * this.cellH, this.cellW, this.cellH);
@@ -182,6 +213,7 @@ Picture.prototype.allowDraw = function (context) {
         el.addEventListener("touchmove", this.drageAnimate)
         el.removeEventListener("touchmove", this.moveToDraw)
         clearTimeout(this.timer)
+
     })
 
     el.picture = this;
@@ -259,10 +291,12 @@ Picture.prototype.automaticPainting = function (context) {
 /*操作长时属性，一幅已完成的画才可使用,即需要具有长时属性*/
 Picture.prototype.showNowColor = function (context, now) {
     //展示现在选中的颜色有哪些图片
+    if (now === 0) return
     var n = 0;
     for (let i = 0; i < this.row; i++) {
         for (let j = 0; j < this.col; j++) {
             if (this.numberDataMatrix_abiding[n] == now && this.drawDataMatrix[n] == "#ffffff") {
+                console.log(1111)
                 n++;
                 context.beginPath();
                 context.fillStyle = '#c0c0c0';
@@ -298,9 +332,11 @@ Picture.prototype.drawGreyShadow = function (context) {
         greyColorList[i] = '#' + x + x + x;
     }
     //已经完成颜色列表greyColorList，根据不同列表颜色进行上色
+    // console.log(greyColorList)
     var n = 0;
     for (let i = 0; i < this.row; i++) {
         for (let j = 0; j < this.col; j++) {
+
             if (this.drawDataMatrix[n] !== "#ffffff") {
                 n++;
                 continue;
