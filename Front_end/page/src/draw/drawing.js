@@ -168,7 +168,7 @@ export default function Drawing(props) {
         else if(1000<w){aa=700}
     return (
         <div className="drawing">
-            <div className="" style={{ width: "100%", margin: "auto", backgroundColor: "#ffffff" }}>
+            <div>
                 <div className="drawing_canvas_div">
                     <canvas id="canvas" width={aa} height={aa}>您的浏览器版本过低</canvas>
                 </div>
@@ -180,36 +180,6 @@ export default function Drawing(props) {
                 <p onClick={recall} class="bottom2 bt-box-p">撤回</p>
                 <p onClick={finishDraw} class="bottom3 bt-box-p">完成</p>
             </div>
-
-
-
-
-
-
-            {/* <div id="touch" className="drawing_shezhi_no1" onClick={but}>
-                <b>工具</b>
-                <div id="aka" className="drawing_shezhi" style={{marginTop:"40px",display:"none"}}>
-                    <div className="drawing_shezhi_no2">
-                        <div className="drawing_btn">
-                            <button className="drawing_btn_no1" onClick={showNumber} >
-                                显示数字
-                            </button>
-                        </div>
-                        <div className="drawing_btn">
-                            <button className="drawing_btn_no1" onClick={recall}>
-                                撤回
-                            </button>
-                        </div>
-                        <div className="drawing_btn">
-                            <button className="drawing_btn_no1" onClick={finishDraw}>
-                                完成
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-
-
             <div className="drawing_bottom">
             <div className="drawing_left">
                 <div className="drawing_tuijian" onClick={Changetuijian} style={{color:color?"rgb(110,199,194)":"black"}}>推荐配色</div>

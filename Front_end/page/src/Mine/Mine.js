@@ -5,7 +5,7 @@ import { Flex} from 'antd-mobile';
 import './Mine.css'
 import store from '../store';
 import Undertab from '../undertab/Undertab'
-
+import {LoginchangeValueName,LoginchangeValuePassword,Motto,ChangeUserid} from '../actions';
 export default class Mine extends Component {
     constructor(){
         super();
@@ -31,6 +31,8 @@ export default class Mine extends Component {
                 this.setState({
                     user_data:res.content[0]
                 })
+                store.dispatch(Motto(res.content[0]));
+                console.log(store.getState().Motto);
             })
             this.sendrequest('work',this.state.userid,0);
         }
@@ -120,7 +122,7 @@ export default class Mine extends Component {
                         </div>
                         <div className="mine_message_right">
                             <div className="mine_message_name">{this.state.user_data.userid}</div>
-                            <div className="mine_message_sign">TA还没有个性签名</div>
+                            <div className="mine_message_sign">{this.state.user_data.motto}</div>
                             <div className="mine_message_sign"><Link to="/edit">编辑个人信息</Link></div>
                         </div>
                         <div className="mine_clearfloat"></div>

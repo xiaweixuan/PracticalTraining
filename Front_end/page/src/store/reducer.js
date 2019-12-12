@@ -6,7 +6,9 @@ import {LOGIN_INPUT,
     CHANGE_LOGINPASSWORD_INPUT_VALUE,
     LOGIN_FLAG,CHANGE_PHONE_VALUE,
     CHANGE_SEARCH,
-    CHANGE_MOTTO} from '../actions/actionTypes'
+    CHANGE_MOTTO,
+    CHANGE_USERID,
+    } from '../actions/actionTypes'
     
     let logininput = {"useid":"zhangsan","pwd":"123"};
     function login(state=logininput,action){
@@ -23,6 +25,14 @@ import {LOGIN_INPUT,
     function LoginchangeValueName(state=loginname,action){
         switch (action.type) {
             case CHANGE_LOGINNAME_INPUT_VALUE:
+                return action.value;
+            default:
+                return state;
+        }
+    }
+    function ChangeUserid(state=loginname,action){
+        switch (action.type) {
+            case CHANGE_USERID:
                 return action.value;
             default:
                 return state;
@@ -89,20 +99,6 @@ import {LOGIN_INPUT,
                 return state;
         }
     }
-let userInfor = {
-    loginname: '',
-    score: 0
-}
-// function login(state=userInfor,action){
-
-//     switch (action.type) {
-//         case LOGIN_SUCCESS:
-//             console.log(action)
-//             return action.value;
-//         default:
-//             return state;
-//     }
-// }
 // 登录状态 已登录：true 未登录：false
     var loginflag = false;
     function loginstateflag(state=loginflag,action){
@@ -119,6 +115,7 @@ let reducer = combineReducers({
     LoginchangeValuePassword,
     loginstateflag,
     Search,
-    Motto
+    Motto,
+    ChangeUserid
 })
 export default reducer;

@@ -14,7 +14,12 @@ export const LoginchangeValueName = value=>(
         value
     }
 )
-
+export const ChangeUserid = value=>(
+    {
+        type: types.CHANGE_USERID,
+        value
+    }
+)
 export const LoginchangeValuePassword = value=>(
     {
         type: types.CHANGE_LOGINPASSWORD_INPUT_VALUE,

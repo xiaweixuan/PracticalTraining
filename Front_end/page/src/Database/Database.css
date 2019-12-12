@@ -245,8 +245,10 @@
 }
 .xiangqing_zhong{
     margin-top: 15vw;
-    padding:2.5vw;
+    /* padding:2.5vw; */
     padding-top:5vw;
+    height:200vw;
+    background-color: #fff;
 }
 .xiangqing_touxiang{
     float:left;
@@ -266,9 +268,8 @@
     font-size: 5vw;
 }
 .xiangqing_zuoping{
-    padding:2.5vw;
+    /* padding:2.5vw; */
     margin-top:19vw;
-    width:90%;
     height:80vw;
 }
 .xiangqing_zuoping_canvas{

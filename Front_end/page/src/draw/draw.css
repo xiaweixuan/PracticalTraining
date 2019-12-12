@@ -475,7 +475,7 @@
     }
     .drawing_bottom{
         position:fixed;
-        background-color:#fff;
+        background-color:rgba(34, 38, 243, 0.747);
         height:20vw;
         width:100%;
         bottom:0;
