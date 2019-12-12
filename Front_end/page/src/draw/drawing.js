@@ -3,15 +3,13 @@ import Palette from './palette'
 
 import './draw.css'
 export default function Drawing(props) {
-    // // var [context, setContext] = useState({})
-    // console.log(props.data)
+
     var [picdata, setPicdata] = useState(props.data);
-    // var [color, setColor] = useState("#ffffff")
+    var [showColor,setShowColor]=useState(1);
     var [colorlist, setColorlist] = useState([])
     var [obj, setObj] = useState({})
 
     var [color, setColor] = useState(true);
-    var [tool, setTool] = useState(true);
     var [win, setW] = useState(true);
     function Changefree(){
         setColor(false);  
@@ -19,38 +17,44 @@ export default function Drawing(props) {
     function Changetuijian(){
         setColor(true); 
     }
-    function ToolSide(){
-        setTool(true);  
-    }
-    function Tool(){
-        setTool(false); 
-    }
-    function WSide(){
-        setW(true);  
-    }
+
     useEffect(() => {
         // setPicdata("#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff")
         var canvas = document.getElementById("canvas");
+        // canvas.addEventListener("touchstart",()=>{
+        //     setShowColor(obj.scale)
+        // })
         var context = canvas.getContext("2d");
         var pic = new window.Picture({ col: picdata.col, row: picdata.raw, width: canvas.width, height: canvas.height, context: context });
         // console.log(picdata)
         pic.drawDataMatrix = pic.prase(picdata.paintdata);
+        pic.drawDataMatrix_abiding=[...pic.drawDataMatrix];
         pic.toColorList();
         pic.toNumberDataMatrix();
+        pic.numberDataMatrix_abiding=[...pic.numberDataMatrix];
         // console.log(pic)
         pic.drawNumber(context)
         pic.initdata();
-        pic.inittable(context);
-
-
+        pic.inittableOl(context);
         pic.allowDraw(context)
-
         setColorlist(pic.colorList);
-        setObj(pic);
+        setObj(pic);      
+        console.log(pic.drawDataMatrix_abiding)
+        // if(obj.scale<1.2&&obj.scale===1.2){
+        //     console.log(1)
+        //     obj.drawGreyShadow(obj.context)
+        // }
     }, [])
 
-    function changeColor(item) {
+    function changeColor(item,idx) {
+        obj.initbackground(obj.context)
+        obj.inittableOl(obj.context);
+        obj.draw(obj.context)
+        obj.drawNumber(obj.context)
+        obj.allowDraw(obj.context)
+        console.log(item)
         obj.color = item;
+        obj.showNowColor(obj.context,idx)
     }
 
     function changeColorFree(color) {
@@ -62,7 +66,7 @@ export default function Drawing(props) {
         // console.log(obj.drawDataMatrix);
         obj.initbackground(obj.context);
 
-        obj.inittable(obj.context);
+        obj.inittableOl(obj.context);
         obj.draw(obj.context);
         obj.drawNumber(obj.context);
 
@@ -86,21 +90,6 @@ export default function Drawing(props) {
         // var img=obj.convertCanvasToImage(obj.context);
         // document.getElementById("show").appendChild(img)
     }
-
-
-    // function but(){
-    //     console.log(1)
-    //     var a = document.getElementById('aka')
-    //     if(a.style.display=="none"){
-    //         a.style.display="inline"
-    //         console.log(a.style.display);
-    //     }
-    //     else{
-    //         a.style.display="none"
-    //         console.log(a.style.display);
-    //     }
-    //     console.log(11)
-    // }
 
     var $=window.$;
     var bottom = document.getElementsByClassName('bottom')
@@ -182,34 +171,6 @@ export default function Drawing(props) {
             </div>
 
 
-
-
-
-
-            {/* <div id="touch" className="drawing_shezhi_no1" onClick={but}>
-                <b>工具</b>
-                <div id="aka" className="drawing_shezhi" style={{marginTop:"40px",display:"none"}}>
-                    <div className="drawing_shezhi_no2">
-                        <div className="drawing_btn">
-                            <button className="drawing_btn_no1" onClick={showNumber} >
-                                显示数字
-                            </button>
-                        </div>
-                        <div className="drawing_btn">
-                            <button className="drawing_btn_no1" onClick={recall}>
-                                撤回
-                            </button>
-                        </div>
-                        <div className="drawing_btn">
-                            <button className="drawing_btn_no1" onClick={finishDraw}>
-                                完成
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-
-
             <div className="drawing_bottom">
             <div className="drawing_left">
                 <div className="drawing_tuijian" onClick={Changetuijian} style={{color:color?"rgb(110,199,194)":"black"}}>推荐配色</div>
@@ -222,7 +183,7 @@ export default function Drawing(props) {
                             colorlist.map((item, idx) =>
                             <div key={idx} className="drawing_color">
                                 <div className="drawing_color_div" 
-                                onClick={() => { changeColor(item) }} 
+                                onClick={() => { changeColor(item,idx) }} 
                                 style={{ backgroundColor: item }} 
                                 key={item} >
                                     <p>{idx}</p>
@@ -240,12 +201,6 @@ export default function Drawing(props) {
                 </div>
             </div>
         </div>
-            {/* <div className="drawing_show" style={{display:win?"none":"block"}}>
-            <div className="drawing_x"onClick={WSide}>X</div> 
-            <div id="show">
-            </div>
-            <button className="drawing_Preservation" onClick={WSide}>保存图片到本地</button>
-        </div> */}
         </div>
     )
 }
