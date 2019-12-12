@@ -145,7 +145,23 @@ Picture.prototype.initAbiding = function (abidingObj) {
     this.strData_abiding = abidingObj.strData_abiding || "";
 
 }
-
+Picture.prototype.inittableOl=function(context){
+    // console.log(1)
+    // console.log(this.col,this.cellW,this.row,this.cellH)
+    // context.strokeRect(this.col*this.cellW,this.row*this.cellH,this.cellW,this.cellH);
+    var n = 0;
+    for(let i=0;i<this.col;i++){
+        for(let j=0;j<this.row;j++){
+            n = i * this.row + j;
+            // console.log(this.drawDataMatrix[n])
+            if(this.drawDataMatrix[n]=='#ffffff')  continue
+            context.beginPath();
+            context.strokeStyle = '#c0c0c0';
+            context.strokeRect(j*this.cellW,i*this.cellH,this.cellW,this.cellH);
+            context.closePath();
+        }
+    }
+}
 
 
 //绘图操作方法
