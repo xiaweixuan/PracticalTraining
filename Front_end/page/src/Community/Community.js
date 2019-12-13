@@ -55,7 +55,7 @@ export default function Community(){
             </div>
             
             <Carousel
-            style={{marginTop:'14vw'}}
+            style={{height:'70vw',marginTop:'14vw'}}
           autoplay={true}
           infinite
           beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
@@ -65,7 +65,7 @@ export default function Community(){
             
               <canvas
               id={'canvasimg'+idx}
-                style={{ width: '100%', height:'60vw',verticalAlign: 'top' }}
+                style={{ marginLeft:'16vw',width: '70%', height:'70vw',verticalAlign: 'top' }}
                 onLoad={() => {
                   window.dispatchEvent(new Event('resize'));
                 }}
