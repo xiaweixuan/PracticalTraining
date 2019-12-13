@@ -38,6 +38,11 @@ router.post('/',(req,res)=>{
         user.email = data.email;
         user.avatarurl = data.avatarurl;
         user.motto = data.motto;
+
+        let updatepaintsql = 'UPDATE paint_table_new SET userid="'+user.userid+'" where userid="'+olduserid+'"';
+        let updateworksql = 'UPDATE works_table SET userid="'+user.userid+'" where userid="'+olduserid+'"';
+        let updatecollectsql = 'UPDATE collections_table SET userid="'+user.userid+'" where userid="'+olduserid+'"';
+
         connection.query(selectsql, (error,results,fields)=> {
             // console.log(typeof results);
             // console.log(typeof JSON.stringify(results));
@@ -52,6 +57,9 @@ router.post('/',(req,res)=>{
                 console.log("set failed");
                 db = { state: 200, message: '修改失败', content: isset };
             }else{
+                connection.query(updatepaintsql);
+                connection.query(updateworksql);
+                connection.query(updatecollectsql);
                 connection.query(updatesql,user);
                 console.log("set successfully");
                 db = { state: 200, message: '修改成功', content: isset };

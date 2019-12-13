@@ -1,8 +1,6 @@
 import {combineReducers} from 'redux';
 import {CHANGE_INPUT_VALUE,
-    CHANGE_INPUT_VALUEE,
-    CHANGE_INPUT_VALUEEE,
-    CHANGE_INPUT_VALUEEEE} from '../actions/actionTypes';
+    CHANGE_INPUT_VALUEE} from '../actions/actionTypes';
 import {LOGIN_INPUT,
     CHANGE_LOGINNAME_INPUT_VALUE,
     CHANGE_LOGINPASSWORD_INPUT_VALUE,
@@ -54,14 +52,6 @@ import {LOGIN_INPUT,
     let inputValuee = '';
     let inputValueee = '';
     let inputValueeee = '';
-    function changeValue(state=inputValue,action){
-        switch(action.type){
-            case CHANGE_INPUT_VALUE :
-                return action.value;
-            default :
-                return state;
-        }
-    }
     function changeValuee(state=inputValuee,action){
         switch(action.type){
             case CHANGE_INPUT_VALUEE :
@@ -72,7 +62,7 @@ import {LOGIN_INPUT,
     }
     function changeValueee(state=inputValueee,action){
         switch(action.type){
-            case CHANGE_INPUT_VALUEEE :
+            case CHANGE_PHONE_VALUE :
                 return action.value;
             default :
                 return state;
@@ -80,7 +70,15 @@ import {LOGIN_INPUT,
     }
     function changeValueeee(state=inputValueeee,action){
         switch(action.type){
-            case CHANGE_INPUT_VALUEEEE :
+            case CHANGE_PHONE_VALUE :
+                return action.value;
+            default :
+                return state;
+        }
+    }
+    function changeValue(state=inputValue,action){
+        switch(action.type){
+            case CHANGE_INPUT_VALUE :
                 return action.value;
             default :
                 return state;

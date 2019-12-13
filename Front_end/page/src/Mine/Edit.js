@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect } from 'react'
 import { WingBlank, WhiteSpace } from 'antd-mobile';
-import {Link} from 'react-router-dom'
+import { HashRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom'
 import './Collection.css'
 import store from '../store';
 import { LoginchangeValueName, LoginchangeValuePassword, Motto, ChangeUserid,Email} from '../actions';

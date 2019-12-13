@@ -1,0 +1,90 @@
+.user_root{
+    background-color:#333573;
+    width: 85%;
+    height: 1000px;
+    float: left;
+}
+.user_table{
+    background-color:#fff;
+    width: 90%;
+    height: 400px;
+}
+.user_div{
+    float: left;
+}
+.user_div p{
+    float: left;
+    width: 150px;
+    height: 30px;
+    overflow: hidden;
+    line-height: 30px;
+    border:1px solid #000;
+    text-align: center;
+}
+.user_div input{
+    border: none;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}
+.user_div input:focus {
+    outline: none;
+    /* 去除input框聚焦时样式 */
+}
+.user_div input:disabled {
+    color:#000;
+    cursor: default;
+    background-color: #fff;
+    /* 去除input框disabled样式 */
+}
+.user_hover{
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top:0;
+    background-color: rgba(95, 89, 89, 0.4);
+}
+.user_hover div{
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    position: relative;
+    top:100px;
+    left: 35%;
+}
+.user_hover table{
+    padding: 20px 0 0 25px;
+}
+.user_hover th{
+    font-weight: normal;
+    font-size: 14px;
+}
+.user_hover button{
+    background-color: salmon;
+    border:none;
+    border-radius: 10px;
+    width: 50px;
+    height: 30px;
+    font-weight: bolder;
+}
+.user_addhover{
+    display: none;
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.user_addhover div{
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    position: relative;
+    top:100px;
+    left: 35%;
+}
+.user_updatehover{
+    
+}
