@@ -123,7 +123,7 @@ export default class Mine extends Component {
                         <div className="mine_message_right">
                             <div className="mine_message_name">{this.state.user_data.userid}</div>
                             <div className="mine_message_sign">{this.state.user_data.motto}</div>
-                            <div className="mine_message_edit"><Link to="/edit"><i className="iconfont icon-iconset0137"></i></Link></div>
+                            <div className="mine_message_sign"><Link to="/edit">编辑个人信息</Link></div>
                         </div>
                         <div className="mine_clearfloat"></div>
                     </div>
