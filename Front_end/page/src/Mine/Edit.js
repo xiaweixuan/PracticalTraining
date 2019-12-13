@@ -3,16 +3,17 @@ import { WingBlank, WhiteSpace } from 'antd-mobile';
 import {Link} from 'react-router-dom'
 import './Collection.css'
 import store from '../store';
-import { LoginchangeValueName, LoginchangeValuePassword, Motto, ChangeUserid} from '../actions';
+import { LoginchangeValueName, LoginchangeValuePassword, Motto, ChangeUserid,Email} from '../actions';
 export default function Edit(props) {
     let [olduserid, setOld] = useState(store.getState().LoginchangeValueName);
     let [userid, setUser] = useState(store.getState().ChangeUserid);
     let [pwd, setPwd] = useState(store.getState().LoginchangeValuePassword);
     let [motto, setMotto] = useState(store.getState().Motto);
+    let [email, setEmail] = useState(store.getState().Email);
     let [judge, setJudge] = useState(1);
     let [pwdold, setPwdold] = useState(true);
     let [pwdold1, setPwdold1] = useState('');
-    const [pwdold3, setPwdold3] = useState(false);
+    const [pwdold3, setPwdold3] = useState(true);
     console.log(motto);
     function useridChange(e) {
         store.dispatch(ChangeUserid(e.target.value))
@@ -23,6 +24,9 @@ export default function Edit(props) {
     function mottoChange(e) {
         store.dispatch(Motto(e.target.value))
     }
+    function emailChange(e) {
+        store.dispatch(Email(e.target.value))
+    }
     function oldPwd(e) {
         setPwdold1(e.target.value);
         console.log(pwdold1);
@@ -32,16 +36,20 @@ export default function Edit(props) {
             setUser(store.getState().ChangeUserid);
             setPwd(store.getState().LoginchangeValuePassword);
             setMotto(store.getState().Motto);
+            setEmail(store.getState().Email );
         })
     }, [])
     function add() {
         if(pwdold3==false&&pwdold==false){
             return ;
         }
+        if(pwdold1==''&&pwdold==false){
+            return ;
+        }
         else{
             fetch('http://xiawx.top:8080/setall', {
             body: JSON.stringify({
-                olduserid: olduserid, userid: userid, pwd: pwd, email: '2916244782@qq.com', avatarurl: 'url', motto: motto
+                olduserid: olduserid, userid: userid, pwd: pwd, email: email, avatarurl: 'url', motto: motto
             }),
             method: 'POST',
         })
@@ -135,23 +143,23 @@ export default function Edit(props) {
                 <div className="edit_middle_content" style={{ display: pwdold ? 'none' : 'block' }}>
                     <p>旧密码：</p>
                     <input type="password" onChange={oldPwd} onBlur={oldblur}></input>
-                    {
-                        pwdold3 ? (
+                </div>
+                {
+                        pwdold3? (
                             <div className="edit_middle_userid"
                                 style={{ display: "none" }}>
                                 旧密码不正确
-                    </div>
+                            </div>
                         ) : (
-                                <div className="edit_middle_userid"
-                                    style={{ display: "block" }}>
+                            <div className="edit_middle_userid"
+                                style={{ display: "block" }}>
                                     旧密码不正确
-                    </div>
-                            )
+                            </div>
+                        )
                     }
-                </div>
                 <div className="edit_middle_content">
                     <p>邮箱：</p>
-                    <input type="email" name="email" value={'邮箱'}></input>
+                    <input type="email" name="email" value={email} onChange={emailChange}></input>
                 </div>
                 <WhiteSpace size="md" />
                 <WhiteSpace size="md" />

@@ -5,7 +5,7 @@ import { Flex} from 'antd-mobile';
 import './Mine.css'
 import store from '../store';
 import Undertab from '../undertab/Undertab'
-import {LoginchangeValueName,LoginchangeValuePassword,Motto,ChangeUserid} from '../actions';
+import {Motto,Email} from '../actions';
 export default class Mine extends Component {
     constructor(){
         super();
@@ -32,6 +32,7 @@ export default class Mine extends Component {
                     user_data:res.content[0]
                 })
                 store.dispatch(Motto(res.content[0].motto));
+                store.dispatch(Email(res.content[0].email));
                 console.log(store.getState().Motto);
             })
             this.sendrequest('work',this.state.userid,0);

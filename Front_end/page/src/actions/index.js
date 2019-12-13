@@ -76,6 +76,12 @@ export const Motto = (value)=>(
         value
     }
 )
+export const Email = (value)=>(
+    {
+        type: types.CHANGE_EMAIL,
+        value
+    }
+)
 // 异步action
 export const logFetch = (value)=>{
     return (dispatch)=>{

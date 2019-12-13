@@ -283,7 +283,7 @@ export default class Register extends Component {
                                 type="text" placeholder=" 验证码："></input>
 
                                 <button type="primary" 
-                                className="btn" inline 
+                                className={this.state.btnDisable==false?"btn":"btn_false"} inline 
                                 onClick={sendCode}
                                 disabled={this.state.btnDisable}>
                                     {this.state.btnContent}

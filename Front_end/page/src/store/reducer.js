@@ -10,6 +10,7 @@ import {LOGIN_INPUT,
     CHANGE_SEARCH,
     CHANGE_MOTTO,
     CHANGE_USERID,
+    CHANGE_EMAIL
     } from '../actions/actionTypes'
     
     let logininput = {"useid":"zhangsan","pwd":"123"};
@@ -101,6 +102,14 @@ import {LOGIN_INPUT,
                 return state;
         }
     }
+    function Email(state=inputValue,action){
+        switch(action.type){
+            case CHANGE_EMAIL :
+                return action.value;
+            default :
+                return state;
+        }
+    }
 // 登录状态 已登录：true 未登录：false
     var loginflag = false;
     function loginstateflag(state=loginflag,action){
@@ -119,5 +128,6 @@ let reducer = combineReducers({
     Search,
     Motto,
     ChangeUserid,
+    Email
 })
 export default reducer;

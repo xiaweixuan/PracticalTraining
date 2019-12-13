@@ -13,3 +13,4 @@ export const CHANGE_SEARCH='CHANGE_SEARCH';
 //编辑个人信息
 export const CHANGE_MOTTO='CHANGE_MOTTO';
 export const CHANGE_USERID='CHANGE_USERID';
+export const CHANGE_EMAIL='CHANGE_EMAIL';
