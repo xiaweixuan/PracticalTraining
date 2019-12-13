@@ -59,7 +59,7 @@
     <button id="automaticPainting">automaticPainting【过程演示】</button>
     <button id="showNowColor">showNowColor【指出数字为2的颜色】</button>
     <button id="drawGreyShadow">drawGreyShadow</button>
-    <button id=""></button>
+    <button id="">出</button>
     <button id=""></button>
     <button id=""></button>
 
@@ -475,13 +475,13 @@
             // var canvas2 = document.getElementById("canvas2");
             // var context2 = canvas0.getContext("2d");
             var btn = document.getElementsByTagName("button");
-            var a = new Picture({ col: 20, row: 20, width: context1.canvas.width, height: context1.canvas.height, context: context1 })
+            var a = new Picture({ col: 30, row: 30, width: context1.canvas.width, height: context1.canvas.height, context: context1 })
             btn[0].onclick = () => { a.color = document.getElementById("color").value; console.log(a) }
-            btn[1].onclick = () => { a.initcanvas({ col: 20, row: 20, width: context1.canvas.width, height: context1.canvas.height, context: context1 }) }
+            btn[1].onclick = () => { a.initcanvas({ col: 30, row: 30, width: context1.canvas.width, height: context1.canvas.height, context: context1 }) }
             btn[2].onclick = () => { a.inittable(context1) }
             btn[3].onclick = () => { a.initdata() }
             btn[4].onclick = () => { a.initbackground(context1) }
-            btn[5].onclick = () => { a.init({ col: 20, row: 20, width: context1.canvas.width, height: context1.canvas.height, context: context1 }) }
+            btn[5].onclick = () => { a.init({ col: 30, row: 30, width: context1.canvas.width, height: context1.canvas.height, context: context1 }) }
             btn[6].onclick = () => { a.allowdraw(context1) }
             btn[7].onclick = () => { a.unallowdraw(context1) }
             btn[8].onclick = () => {
@@ -530,7 +530,7 @@
                 console.log(a.drawGreyShadow(context1));
             }
             btn[16].onclick = () => {
-
+                console.log(a.toString())
             }
             btn[17].onclick = () => {
 
