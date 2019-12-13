@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 import {WingBlank,WhiteSpace} from "antd-mobile"
-import {LoginchangeValueName,LoginchangeValuePassword,loginInput,loginstateflag} from '../actions';
+import {LoginchangeValueName,LoginchangeValuePassword,loginInput,loginstateflag, ChangeUserid} from '../actions';
 
 import store from '../store';
 import './Denglu.css'
@@ -24,10 +24,11 @@ export default class Denglu extends Component {
         })
     }
     handleChangeName = (e)=>{
-        store.dispatch(LoginchangeValueName(e.target.value))
+        store.dispatch(LoginchangeValueName(e.target.value));
+        store.dispatch(ChangeUserid(e.target.value))
     }
     handleChangePassword = (e)=>{
-        store.dispatch(LoginchangeValuePassword(e.target.value))
+        store.dispatch(LoginchangeValuePassword(e.target.value));
     }
     loginInput = ()=>{
         // var that = this;

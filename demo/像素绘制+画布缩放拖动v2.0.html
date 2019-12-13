@@ -109,7 +109,7 @@
         <button id="automaticPainting">automaticPainting【过程演示】</button>
         <button id="showNowColor">showNowColor【指出数字为2的颜色】</button>
         <button id="drawGreyShadow">drawGreyShadow</button>
-        <button id=""></button>
+        <button id="inittableol">初始化表格</button>
         <button id=""></button>
         <button id=""></button>
     </div>
@@ -213,7 +213,6 @@
         }
         Picture.prototype.inittable = function (context) {
             //绘制表格
-            // console.log(this.col,this.row)
             for (var i = 0; i <= this.col; i++) {
                 context.beginPath();
                 context.moveTo(this.cellW * i, 0);
@@ -266,7 +265,23 @@
             this.strData_abiding = abidingObj.strData_abiding || "";
 
         }
-
+        Picture.prototype.inittableOl=function(context){
+            // console.log(1)
+            // console.log(this.col,this.cellW,this.row,this.cellH)
+            // context.strokeRect(this.col*this.cellW,this.row*this.cellH,this.cellW,this.cellH);
+            var n = 0;
+            for(let i=0;i<this.col;i++){
+                for(let j=0;j<this.row;j++){
+                    n = i * this.row + j;
+                    // console.log(this.drawDataMatrix[n])
+                    if(this.drawDataMatrix[n]=='#ffffff')  continue
+                    context.beginPath();
+                    context.strokeStyle = '#c0c0c0';
+                    context.strokeRect(j*this.cellW,i*this.cellH,this.cellW,this.cellH);
+                    context.closePath();
+                }
+            }
+        }
 
 
         //绘图操作方法
@@ -784,7 +799,7 @@
             btn[6].onclick = () => { console.log(a) ;a.allowDraw(context1)}
             btn[7].onclick = () => { a.unallowdraw(context1) }
             btn[8].onclick = () => {
-                var str = "#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#f8e71c#f8e71c#f8e71c#000000#000000#ffffff#ffffff#000000#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#000000#bd10e0#000000#f8e71c#7ed321#7ed321#7ed321#7ed321#f8e71c#000000#000000#d2152c#d2152c#d2152c#d2152c#000000#ffffff#ffffff#ffffff#000000#bd10e0#000000#f8e71c#7ed321#7ed321#7ed321#ffffff#ffffff#7ed321#f8e71c#000000#d2152c#f60c29#d2152c#d2152c#d2152c#000000#ffffff#ffffff#000000#000000#7ed321#7ed321#7ed321#7ed321#7ed321#ffffff#ffffff#ffffff#7ed321#000000#f60c29#f60c29#d2152c#d2152c#d2152c#000000#ffffff#ffffff#000000#000000#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#ffffff#ffffff#7ed321#f8e71c#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#4a90e2#000000#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#bd10e0#4a90e2#417505#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#ffffff#ffffff#7ed321#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#bd10e0#bd10e0#000000#417505#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#bd10e0#bd10e0#4a90e2#000000#417505#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#000000#f60c29#f60c29#d2152c#d2152c#f60c29#000000#ffffff#ffffff#000000#4a90e2#bd10e0#000000#7ed321#417505#417505#7ed321#7ed321#417505#417505#000000#f60c29#f60c29#f60c29#f60c29#000000#ffffff#ffffff#ffffff#000000#bd10e0#4a90e2#4a90e2#000000#7ed321#417505#417505#417505#417505#000000#f60c29#f60c29#f60c29#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#000000#bd10e0#bd10e0#4a90e2#000000#417505#417505#417505#000000#ffffff#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#000000#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#7ed321#7ed321#f8e71c#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff";
+                var str = '#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#f8e71c#f8e71c#f8e71c#000000#000000#ffffff#ffffff#000000#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#000000#bd10e0#000000#f8e71c#7ed321#7ed321#7ed321#7ed321#f8e71c#000000#000000#d2152c#d2152c#d2152c#d2152c#000000#ffffff#ffffff#ffffff#000000#bd10e0#000000#f8e71c#7ed321#7ed321#7ed321#ffffff#ffffff#7ed321#f8e71c#000000#d2152c#f60c29#d2152c#d2152c#d2152c#000000#ffffff#ffffff#000000#000000#7ed321#7ed321#7ed321#7ed321#7ed321#ffffff#ffffff#ffffff#7ed321#000000#f60c29#f60c29#d2152c#d2152c#d2152c#000000#ffffff#ffffff#000000#000000#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#ffffff#ffffff#7ed321#f8e71c#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#4a90e2#000000#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#bd10e0#4a90e2#417505#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#ffffff#ffffff#7ed321#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#bd10e0#bd10e0#000000#417505#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#bd10e0#bd10e0#4a90e2#000000#417505#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#000000#f60c29#f60c29#d2152c#d2152c#f60c29#000000#ffffff#ffffff#000000#4a90e2#bd10e0#000000#7ed321#417505#417505#7ed321#7ed321#417505#417505#000000#f60c29#f60c29#f60c29#f60c29#000000#ffffff#ffffff#ffffff#000000#bd10e0#4a90e2#4a90e2#000000#7ed321#417505#417505#417505#417505#000000#f60c29#f60c29#f60c29#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#000000#bd10e0#bd10e0#4a90e2#000000#417505#417505#417505#000000#ffffff#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#000000#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#7ed321#7ed321#f8e71c#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff'                
                 a.drawDataMatrix = a.prase(str)
                 a.draw(context1)
             }
@@ -829,10 +844,12 @@
                 console.log(a.drawGreyShadow(context1));
             }
             btn[16].onclick = () => {
-
+                var str = "#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#f8e71c#f8e71c#f8e71c#000000#000000#ffffff#ffffff#000000#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#000000#bd10e0#000000#f8e71c#7ed321#7ed321#7ed321#7ed321#f8e71c#000000#000000#d2152c#d2152c#d2152c#d2152c#000000#ffffff#ffffff#ffffff#000000#bd10e0#000000#f8e71c#7ed321#7ed321#7ed321#ffffff#ffffff#7ed321#f8e71c#000000#d2152c#f60c29#d2152c#d2152c#d2152c#000000#ffffff#ffffff#000000#000000#7ed321#7ed321#7ed321#7ed321#7ed321#ffffff#ffffff#ffffff#7ed321#000000#f60c29#f60c29#d2152c#d2152c#d2152c#000000#ffffff#ffffff#000000#000000#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#ffffff#ffffff#7ed321#f8e71c#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#4a90e2#000000#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#bd10e0#4a90e2#417505#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#ffffff#ffffff#7ed321#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#bd10e0#bd10e0#000000#417505#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#000000#f60c29#d2152c#d2152c#d2152c#000000#ffffff#000000#bd10e0#bd10e0#4a90e2#000000#417505#7ed321#7ed321#7ed321#7ed321#7ed321#7ed321#000000#f60c29#f60c29#d2152c#d2152c#f60c29#000000#ffffff#ffffff#000000#4a90e2#bd10e0#000000#7ed321#417505#417505#7ed321#7ed321#417505#417505#000000#f60c29#f60c29#f60c29#f60c29#000000#ffffff#ffffff#ffffff#000000#bd10e0#4a90e2#4a90e2#000000#7ed321#417505#417505#417505#417505#000000#f60c29#f60c29#f60c29#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#000000#bd10e0#bd10e0#4a90e2#000000#417505#417505#417505#000000#ffffff#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#000000#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#7ed321#7ed321#f8e71c#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#000000#000000#000000#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#000000#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff";
+                a.drawDataMatrix=a.prase(str)
+                a.inittableOl(context1)
             }
             btn[17].onclick = () => {
-
+                
             }
             btn[18].onclick = () => {
 

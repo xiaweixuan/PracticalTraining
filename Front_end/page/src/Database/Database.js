@@ -14,6 +14,7 @@ const tabs = [
 ];
 
 export default function Database(props){
+    let [value,setValue]=useState(store.getState().Search);
     function handleChange(e){
         store.dispatch(Search(e.target.value));
     }
@@ -27,7 +28,7 @@ export default function Database(props){
                         <img className="database_camera" src="img/xiang.png"></img>
                         <div className="database_input_no1">
                             <img className="database_sousou" src="img/so.png"></img>
-                            <input className="database_input_no2" onChange={handleChange}  type="text" placeholder="搜索：" name="search" ></input>
+                            <input className="database_input_no2" onChange={handleChange}  type="text" placeholder="搜索：" name="search"></input>
                             <input className="database_search" type='submit' value="搜 索" style={{border:0}} onClick={addItem}></input> 
                         </div>
                     </div>

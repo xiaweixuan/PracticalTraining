@@ -14,7 +14,37 @@ export const LoginchangeValueName = value=>(
         value
     }
 )
+export const changeValue = value=>(
+    {
+        type: types.CHANGE_INPUT_VALUE,
+        value
+    }
+)
 
+export const changeValuee = value=>(
+    {
+        type: types.CHANGE_INPUT_VALUEE,
+        value
+    }
+)
+export const changeValueee = value=>(
+    {
+        type: types.CHANGE_INPUT_VALUEEE,
+        value
+    }
+)
+export const changeValueeee = value=>(
+    {
+        type: types.CHANGE_INPUT_VALUEEEE,
+        value
+    }
+)
+export const ChangeUserid = value=>(
+    {
+        type: types.CHANGE_USERID,
+        value
+    }
+)
 export const LoginchangeValuePassword = value=>(
     {
         type: types.CHANGE_LOGINPASSWORD_INPUT_VALUE,
@@ -28,35 +58,21 @@ export const loginstateflag = value=>(
         value
     }
 )
-
-export const changeValue = value=>(
-    {
-        type: types.CHANGE_INPUT_VALUE,
-        value
-    }
-)
 export const Search = value=>(
     {
-        type: types.SEARCH_VALUE,
-        value
-    }
-)
-
-export const changeValuee = value=>(
-    {
-        type: types.CHANGE_INPUT_VALUEE,
-        value
-    }
-)
-export const changeValueee = value=>(
-    {
-        type: types.CHANGE_PHONE_VALUE,
+        type: types.CHANGE_SEARCH,
         value
     }
 )
 export const log = (value)=>(
     {
         type: types.LOGIN_SUCCESS,
+        value
+    }
+)
+export const Motto = (value)=>(
+    {
+        type: types.CHANGE_MOTTO,
         value
     }
 )

@@ -70,6 +70,13 @@
     overflow: hidden; 
     text-overflow: ellipsis; 
 }
+.mine_message_edit{
+    margin-top: 3vw;
+    margin-left: 35vw;
+}
+.icon-iconset0137{
+    color: #FF7414;
+}
 .mine_message_sign a{
     color: black;
 }
