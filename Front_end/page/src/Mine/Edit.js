@@ -14,7 +14,7 @@ export default function Edit(props) {
     let [pwdold, setPwdold] = useState(true);
     let [pwdold1, setPwdold1] = useState('');
     const [pwdold3, setPwdold3] = useState(true);
-    console.log(motto);
+    console.log(email);
     function useridChange(e) {
         store.dispatch(ChangeUserid(e.target.value))
     }

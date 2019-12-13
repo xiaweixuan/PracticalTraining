@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from 'react'
-import { HashRouter as Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import store from '../store';
 import './Community.css'
 
@@ -64,7 +64,7 @@ export default function CommunityOther() {
                             <div className='community_chat_talk'>
                     <p className='community_chat_another_word'>{data[idx].describe}</p>
                                 <div className='community_chat_talk_pic_box'>
-                                    <Link to={{pathname:"/xiangqing",state:{item}}}>
+                                    <Link to={{pathname:"/xiangqing2",state:{item}}}>
                                         <canvas className='community_chat_talk_canvas' 
                                         
                                         id={"canvas2"+idx}>

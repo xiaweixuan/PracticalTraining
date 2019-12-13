@@ -49,9 +49,9 @@ export default function Community(){
         <div className="community_div_no1">
             <div className="community_navbar">
                 <p>社 区</p>
-                <Link to="/addition">
+                {/* <Link to="/addition">
                     <img className='community_img_add' src='img/add.png'></img>
-                </Link>
+                </Link> */}
             </div>
             
             <Carousel
@@ -89,7 +89,7 @@ export default function Community(){
                             <div className='community_chat_talk'>
                     <p className='community_chat_another_word'>{data[idx].describe}</p>
                                 <div className='community_chat_talk_pic_box'>
-                                    <Link to={{pathname:"/xiangqing",state:{item}}}>
+                                    <Link to={{pathname:"/xiangqing2",state:{item}}}>
                                         <canvas className='community_chat_talk_canvas' 
                                         id={"canvas"+idx}>    
                                         </canvas>

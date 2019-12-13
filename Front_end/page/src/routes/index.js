@@ -18,7 +18,9 @@ import Edit from '../Mine/Edit';
 import Addition from '../Community/Addition';
 import Search from '../Database/Search';
 import Aaa from '../Aaa/Aaa';
-
+// import Add from '../draw/add';
+import Torelease from '../draw/toRelease';
+import Xiangqing2 from '../Community/Xiangqing2';
 class Routes extends Component {
 	render() {
 		return (
@@ -41,7 +43,8 @@ class Routes extends Component {
 					<Route exact path='/edit' component={Edit}/>
 					<Route exact path='/search' component={Search}/>
 					<Route exact path='/aaa' component={Aaa}/>
-					
+					<Route exact path='/torelease' component={Torelease}/>
+					<Route exact path="/xiangqing2" component={Xiangqing2}/>
 					<Redirect to='/nomatch'/> 
 				</Switch>
 			</Router>

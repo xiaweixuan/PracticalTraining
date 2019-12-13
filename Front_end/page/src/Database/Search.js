@@ -60,10 +60,12 @@ export default function Search1(){
                     {
                         data.map((item,idx)=>
                         <div className="collection_content">
-                            <canvas className="collection_content_canvas" 
-                            id={"canvas"+idx} width='400px'height='400px'>
-                                
-                            </canvas>
+                            <Link to={{pathname:"/xiangqing",state:{item}}}>
+                                <canvas className="collection_content_canvas" 
+                                id={"canvas"+idx} width='400px'height='400px'>
+                                    
+                                </canvas>
+                            </Link>
                         </div>
                         )
                     }

@@ -5,7 +5,8 @@ import store from '../store';
 function PlaceHolder(props, { className = '', ...restProps }) {
 	// var $ = window.$;
 	var can = [];
-	let userid = store.getState().LoginchangeValueName
+	let userid = store.getState().LoginchangeValueName;
+	let flag = store.getState().loginstateflag;
 	var [data, setData] = useState([]);
 	// var coll = new Array(props.data.length).fill(0);
 	// $(function () {
@@ -37,7 +38,7 @@ function PlaceHolder(props, { className = '', ...restProps }) {
 	useEffect(() => {
 		setData(props.data);
 		for (var i = 0; i < data.length; i++) {
-			if (data[i].type == props.type.type) {
+			if (data[i].type == props.type) {
 				var canvas = can[i];
 				var context = canvas.getContext("2d");
 				// console.log(props.data[i].col,props.data[i].row)
@@ -50,7 +51,7 @@ function PlaceHolder(props, { className = '', ...restProps }) {
 				a.initdata()
 				a.drawGreyShadow(context)
 			}
-			else if (props.type.type == "推荐") {
+			else if (props.type == "推荐") {
 				var canvas = can[i];
 				var context = canvas.getContext("2d");
 
@@ -66,24 +67,26 @@ function PlaceHolder(props, { className = '', ...restProps }) {
 		}
 	})
 	function judgecollection(item, idx) {
-		fetch('http://xiawx.top:8080/addcollect', {
-			method: 'POST',
-			body: JSON.stringify({
-				userid: userid,
-				paintid: item.paintid
+		if(flag){
+			fetch('http://xiawx.top:8080/addcollect', {
+				method: 'POST',
+				body: JSON.stringify({
+					userid: userid,
+					paintid: item.paintid
+				})
 			})
-		})
 			.then(res => res.json())
 			.then(res => {
-				if (res.content == true) {
-					var aka = document.getElementsByClassName('icon-shoucang1')
-					aka[idx].style.color = "yellow"
-				}
-				else {
-					var aka = document.getElementsByClassName('icon-shoucang1')
-					aka[idx].style.color = "black"
-				}
+				var d = data.map((item,i)=>{
+					if(i === idx){
+						item.iscollect = !item.iscollect;
+						return item;
+					}
+					return item
+				})
+				setData(d);
 			})
+		}
 
 	}
 	return (
@@ -123,59 +126,15 @@ function PlaceHolder(props, { className = '', ...restProps }) {
 
 export default function HomeBuju(props) {
 	let [data, setData] = useState([]);
-	// let [collection,setCollection]=useState([]);
 	let [data1, setData1] = useState([]);
-	let userid = store.getState().LoginchangeValueName;
-	let flag = store.getState().loginstateflag;
+	
 	var data2 = 0;
-	let type = props;
-	useEffect(() => {
-		if (flag == false) {
-			fetch('http://xiawx.top:8080/offpaint')
-				.then(res => res.json())
-				.then(res => {
-					for (var i = 0; i < res.content.length; i++) {
-						// console.log(res.content)
-						if (res.content[i].type == type.type) {
-							data1[data2] = res.content[i];
-							data2++;
-						}
-						else if (type.type == "推荐") {
-							data1[data2] = res.content[i];
-							data2++;
-						}
-					}
-					setData1(data1);
-					setData(data1);
-				})
-		}
-		else {
-			fetch('http://xiawx.top:8080/iscollect?userid=' + userid)
-				.then(res => res.json())
-				.then(res => {
-					for (var i = 0; i < res.content.length; i++) {
-						// console.log(res.content)
-						if (res.content[i].type == type.type) {
-							data1[data2] = res.content[i];
-							data2++;
-						}
-						else if (type.type == "推荐") {
-							data1[data2] = res.content[i];
-							data2++;
-						}
-					}
-					setData1(data1);
-					setData(data1);
-				})
-		}
-
-	}, [])
 	return (
 		<div className="databaseBuju_root">
 			<div className="databaseBuju_root_no2">
 				<div>
 					<div>
-						<PlaceHolder data={data} type={type} />
+						<PlaceHolder data={props.data} type={props.type} />
 					</div>
 				</div>
 			</div>

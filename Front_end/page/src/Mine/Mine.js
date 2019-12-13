@@ -33,7 +33,7 @@ export default class Mine extends Component {
                 })
                 store.dispatch(Motto(res.content[0].motto));
                 store.dispatch(Email(res.content[0].email));
-                console.log(store.getState().Motto);
+                console.log(res.content[0]);
             })
             this.sendrequest('work',this.state.userid,0);
         }
@@ -245,7 +245,7 @@ export default class Mine extends Component {
                 您尚未<Link to="/denglu">登录</Link>
             </div>
             <div className="mine_hight"></div>
-            <Undertab flag="3"/>
+            <Undertab flag="5"/>
         </div>
         )
     
