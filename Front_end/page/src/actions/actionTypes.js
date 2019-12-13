@@ -1,6 +1,7 @@
 export const CHANGE_INPUT_VALUE = 'change_input_value';
 export const CHANGE_INPUT_VALUEE = 'change_input_valuee';
-
+export const CHANGE_INPUT_VALUEEE = 'change_input_valueee';
+export const CHANGE_INPUT_VALUEEEE = 'change_input_valueeee';
 export const CHANGE_LOGINNAME_INPUT_VALUE = 'CHANGE_LOGINNAME_INPUT_VALUE';
 export const CHANGE_LOGINPASSWORD_INPUT_VALUE = 'CHANGE_LOGINPASSWORD_INPUT_VALUE';
 

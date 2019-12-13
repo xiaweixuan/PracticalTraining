@@ -65,7 +65,7 @@ export default function Community(){
             
               <canvas
               id={'canvasimg'+idx}
-                style={{ width: '100%', height:'50vw',verticalAlign: 'top' }}
+                style={{ width: '100%', height:'60vw',verticalAlign: 'top' }}
                 onLoad={() => {
                   window.dispatchEvent(new Event('resize'));
                 }}

@@ -14,6 +14,31 @@ export const LoginchangeValueName = value=>(
         value
     }
 )
+export const changeValue = value=>(
+    {
+        type: types.CHANGE_INPUT_VALUE,
+        value
+    }
+)
+
+export const changeValuee = value=>(
+    {
+        type: types.CHANGE_INPUT_VALUEE,
+        value
+    }
+)
+export const changeValueee = value=>(
+    {
+        type: types.CHANGE_INPUT_VALUEEE,
+        value
+    }
+)
+export const changeValueeee = value=>(
+    {
+        type: types.CHANGE_INPUT_VALUEEEE,
+        value
+    }
+)
 export const ChangeUserid = value=>(
     {
         type: types.CHANGE_USERID,
@@ -33,35 +58,9 @@ export const loginstateflag = value=>(
         value
     }
 )
-
-export const changeValue = value=>(
-    {
-        type: types.CHANGE_INPUT_VALUE,
-        value
-    }
-)
-
-export const changeValuee = value=>(
-    {
-        type: types.CHANGE_INPUT_VALUEE,
-        value
-    }
-)
 export const Search = value=>(
     {
         type: types.CHANGE_SEARCH,
-        value
-    }
-)
-export const changeValueee = value=>(
-    {
-        type: types.CHANGE_PHONE_VALUE,
-        value
-    }
-)
-export const changeValueeee = value=>(
-    {
-        type: types.CHANGE_PHONE_VALUE,
         value
     }
 )
