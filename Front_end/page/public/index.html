@@ -4,13 +4,28 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, 
 		initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 		<title>React App</title>
-		<link rel="stylesheet" href="https://at.alicdn.com/t/font_1529704_g2awhmc73fr.css">
+		<link rel="stylesheet" href="https://at.alicdn.com/t/font_1529704_yd5v8yxghvi.css">
 		<script src="./draw.js"></script>
 		<script src="./jquery-1.10.2.min.js"></script>
 		<script src="./jquery.fly.min.js"></script>
 	</head>
+	<script>
+		~ function(){
+			let event = 'onorientationchange' in window?'orientationchange':'resize';
+			let computed = ()=>{
+				let HTML = document.documentElement,
+				deviceW = HTML.clientWidth,
+				designW = 750,
+				ratio = deviceW/designW*100;
+				if(deviceW>=designW) ratio = 100;
+				HTML.style.fontSize = ratio+'px';
+				window.ratio = ratio;
+			}
+			computed();
+			window.addEventListener(event,computed);
+		}();
+	</script>
 	<body>
 		<div id="root"></div>
 	</body>

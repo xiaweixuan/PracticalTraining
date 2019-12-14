@@ -29,7 +29,7 @@ export default class Undertab extends Component {
 								{/* <p className='ziliao'>发布</p> */}
 							</div>
 						</Link>
-						<Link to='/'>
+						<Link to='/shop'>
 							<div style={{color:this.props.flag=="4"?"rgb(110,199,194)":"black"}} 
 							className='Undertab_link_content' onClick={this.changeColor_4}>
 								<i id="icon" className="iconfont icon-shangcheng"></i>

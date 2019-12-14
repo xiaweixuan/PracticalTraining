@@ -21,6 +21,8 @@ import Aaa from '../Aaa/Aaa';
 // import Add from '../draw/add';
 import Torelease from '../draw/toRelease';
 import Xiangqing2 from '../Community/Xiangqing2';
+import Shop from '../Shop/Shop';
+
 class Routes extends Component {
 	render() {
 		return (
@@ -45,6 +47,7 @@ class Routes extends Component {
 					<Route exact path='/aaa' component={Aaa}/>
 					<Route exact path='/torelease' component={Torelease}/>
 					<Route exact path="/xiangqing2" component={Xiangqing2}/>
+					<Route exact path="/shop" component={Shop}/>
 					<Redirect to='/nomatch'/> 
 				</Switch>
 			</Router>
