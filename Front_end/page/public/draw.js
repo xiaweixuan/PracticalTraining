@@ -1,4 +1,3 @@
-
 /**
  * 
  * 一个Picture实例对应着一个canvas对象
@@ -691,6 +690,3 @@ Picture.prototype.elAnimate = function (e) {
 
     }
 }
-
-
-
