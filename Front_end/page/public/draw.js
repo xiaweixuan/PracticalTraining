@@ -278,10 +278,11 @@ Picture.prototype.automaticPainting = function (context) {
     var n = 0;
     var timer = setInterval(() => {
         // console.log("画了一次");
-        if (n == this.history.length) {
+        if (n == this.history.length-1) {
             clearInterval(timer);
         }
         this.drawDataMatrix = [...this.history[n]];
+        this.initbackground(context);
         this.draw(context);
         n++;
     }, 50)
@@ -294,7 +295,8 @@ Picture.prototype.correctColor = function (context) {
     this.initbackground(context)
     this.drawNumber(context)
     this.inittableOl(context);
-    this.draw(context)
+    this.draw(context);
+    this.addToHistory();
 }
 
 
