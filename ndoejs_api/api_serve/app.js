@@ -18,6 +18,7 @@ var avatarRouter = require('./Routes/avatarurl');
 var mottoRouter = require('./Routes/motto');
 var iscollectRouter = require('./Routes/iscollect');
 var ispwdRouter = require('./Routes/ispwd');
+var saveworkRouter = require('./Routes/savework');
 
 app.get('/', function(req, res) {
   res.setHeader('Content-Type','text/plain;charset="utf-8"')
@@ -41,6 +42,7 @@ app.use('/avatar', avatarRouter);
 app.use('/motto', mottoRouter);
 app.use('/iscollect', iscollectRouter);
 app.use('/ispwd', ispwdRouter);
+app.use('/savework', saveworkRouter);
 
 //后台接口
 var showuser = require('./BackManage/showuser');
