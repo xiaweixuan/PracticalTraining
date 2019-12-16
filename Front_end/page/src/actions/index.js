@@ -47,21 +47,21 @@ export const changeValuee = value=>(
         value
     }
 )
-export const Search = value=>(
-    {
-        type: types.CHANGE_SEARCH,
-        value
-    }
-)
 export const changeValueee = value=>(
     {
-        type: types.CHANGE_PHONE_VALUE,
+        type: types.CHANGE_INPUT_VALUEEE,
         value
     }
 )
 export const changeValueeee = value=>(
     {
-        type: types.CHANGE_PHONE_VALUE,
+        type: types.CHANGE_INPUT_VALUEEEE,
+        value
+    }
+)
+export const Search = value=>(
+    {
+        type: types.CHANGE_SEARCH,
         value
     }
 )

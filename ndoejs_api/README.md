@@ -23,3 +23,4 @@
 | /motto | 设置个性签名   | post  | userid,motto    | { state: '', message: '', content: true or false } |
 | /iscollect | 官方图是否收藏 | get  | userid   | { state: '', message: '', content: json对象 } |
 | /ispwd | 密码校验   | post  | userid,pwd    | { state: '', message: '', content: true or false } |
+| /savework | 保存作品   | post  | paintid,userid,paintdata,history | { state: '', message: '', content: true or false } |
