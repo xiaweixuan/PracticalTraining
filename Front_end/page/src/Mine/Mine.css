@@ -3,7 +3,7 @@
     font-weight: 500;
     top:0px ;
     background:
-    linear-gradient(to left,rgb(111,200,250),rgb(65, 156, 235));
+    linear-gradient(to left,rgb(145, 210, 248),rgb(65, 156, 235));
     height:13vw;
     color:#fff;
     width: 100%;
@@ -16,24 +16,22 @@
     font-size: 9vw;
     color:#fff;
     float: right;
-    margin-top: -13vw;
+    margin-top: -12vw;
     margin-right: 5vw;
 }
 .mine_message{
+    margin-top: 2vw;
     background:
     linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left top,
     linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right top,
     linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left bottom,
     linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right bottom,
     #fff;
-    background-size:2vw 2vw;
-    /* background-color: #fff; */
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
-    /* border-radius:0vw 0vw 5vw 5vw; */
+    background-size:1vw 1vw;
 }
 .mine_message_left{
     float: left;
-    width: 30vw;
+    width: 25vw;
     margin-top: 5vw;
     margin-left: 5vw;
     margin-bottom: 5vw;
@@ -42,29 +40,20 @@
 .mine_message_right{
     float: left;
     width: 40vw;
-    margin-top: 12vw;
-    margin-left: 10vw;
+    margin-top: 10vw;
+    margin-left: 11vw;
 }
-.mine_clearfloat{
-    clear:both;
-    height:4vw;
-    width:100%; 
-    overflow:hidden; 
-    margin-top:-1vw;
-}
+
 .mine_message_name{
-    color: black;
-    font-family: "YouYuan";
-    font-size:5.3vw; 
+    color: rgb(94, 92, 92);
+    font-size:5.5vw; 
     font-weight: 600;
 }
 .mine_message_sign{
-    font-family: "YouYuan";
-    color: black;
+    color: rgb(94, 92, 92);
     margin-top: 5vw;
     max-width: 100%;
-    font-size:4vw; 
-    /* display: inline-block; */
+    font-size:4.2vw;
     white-space: nowrap;
     overflow: hidden; 
     text-overflow: ellipsis; 
@@ -79,10 +68,8 @@
     linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left bottom,
     linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right bottom,
     #fff;
-    background-size:2vw 2vw;
+    background-size:1vw 1vw;
     padding-bottom:3vw;
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
-    /* border-radius:5vw; */
 }
 /* 图标 */
 .iconfont{
@@ -90,15 +77,15 @@
 }
 .icon-zuopin{
     margin: 12vw;
-    color: black;
+    color: rgb(94, 92, 92);
 }
 .icon-shoucang{
     margin: 12vw;
-    color: black;
+    color: rgb(94, 92, 92);
 }
 .icon-fabu{
     margin: 12vw;
-    color: black;
+    color: rgb(94, 92, 92);
 }
 .mine_works{
     font-size: 4vw;
@@ -107,50 +94,47 @@
     font-size: 11vw;
 }
 .mine_works p{
-    font-weight: 550;
-    color: black;
-    font-family: "YouYuan";
+    color: rgb(94, 92, 92);
     margin-top: 2vw;
     margin-left: 7vw;
 }
 .mine_show_no1{
     line-height: 8vw;
-    color: #000;
+    color: rgb(94, 92, 92);
 }
 .mine_show_word_no1{
-    font-size: 4vw;
-    margin-left: 4vw;
+    font-size: 4.5vw;
+    margin-left: 3vw;
     float: left;
     margin-top: 1vw;
 }
 .mine_show_word_no2{
-    font-size: 3.5vw;
-    margin-right: 4vw;
+    font-size: 4.5vw;
+    margin-right: 3vw;
     float: right;
     color: #5E5E5E;
     margin-top: 1vw;
 }
 .mine_content_canvas{
-    box-shadow: 0px 3vw 3vw -3vw #5E5E5E;
-    /* border-radius: 5vw; */
+    box-shadow: 0px 1vw 1vw -1vw rgb(26, 25, 25);
     background:
-    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left top,
-    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right top,
-    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat left bottom,
-    linear-gradient(to left,rgb(245,245,249),rgb(245,245,249)) no-repeat right bottom,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat left top,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat right top,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat left bottom,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat right bottom,
     #fff;
-    background-size:2vw 2vw;
-    width: 43vw;
-    height: 43vw;
-    margin-left: 2.5vw;
-    margin-top: 2vw;
+    background-size:1vw 1vw;
+    width: 42vw;
+    height: 42vw;
+    margin-left: 4vw;
+    margin-top: 5vw;
     float: left;
 }
 .mine_show_nologin{
     color:#5E5E5E;
     line-height: 20vw;
     text-align: center;
-    font-size: 3.5vw;
+    font-size: 4.2vw;
 }
 .mine_hight{
     float: left;

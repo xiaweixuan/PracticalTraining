@@ -4,47 +4,42 @@
     line-height: 13vw;
     font-size: 5vw;
     color:#fff;
-    font-family: "YouYuan"; 
 }
 .denglu_name{
     margin-top: 20vw;
-    font-family: "YouYuan";
     padding-left:2vw;
     font-size: 4vw;
     width: 97%;
     height: 13vw;
-    border: 1px solid rgb(110,199,194);
-    border-radius: 2vw;
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    /* border: 1px solid rgb(65, 156, 235); */
+    border: none;
+    border-radius: 3vw;
 }
 .denglu_psw{
-    font-family: "YouYuan";
     padding-left:2vw;
     font-size: 4vw;
     width: 97%;
     height: 13vw;
-    border: 1px solid rgb(110,199,194);
-    border-radius: 2vw;
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    /* border: 1px solid rgb(65, 156, 235); */
+    border: none;
+    border-radius: 3vw;
 }
 .denglu_login{
     border-radius: 2vw;
     width:100%;
     font-size:5vw;
-    background-color: rgb(110,199,194);
+    background:
+    linear-gradient(to left,rgb(145, 210, 248),rgb(65, 156, 235));
     height:11vw;
     margin-top:4vw;
     border:0;
     color:#fff;
-    font-family: "YouYuan"; 
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
 }
 .denglu_zhuce{
     font-size:4vw;
     margin-top:5vw;
     float: right;
     margin-right: 1vw;
-    font-family: "YouYuan"; 
 }
 .denglu_zhuce_no2{
     color:black;
@@ -77,7 +72,6 @@
 }
 .denglu_false p{
     font-size: 4vw;
-    font-family: "YouYuan"; 
     margin-top: 15vw;
     text-align: center;
 }
@@ -92,17 +86,16 @@
     margin-top: 15vw;
 }
 .denglu_false_but_no1{
-    margin-left: 9vw;
-    margin-right: 9vw;
+    margin-left: 8vw;
+    margin-right: 5vw;
     font-size: 3vw;
-    width: 16vw;
-    height: 6vw;
-    background-color: rgb(110,199,194);
-    font-family: "YouYuan"; 
+    width: 17vw;
+    height: 7vw;
+    background:linear-gradient(to left,rgb(238, 216, 146),rgb(235, 191, 48));
     float: left;
     border: 0px;
-    color: #fff;
-    border-radius: 4vw;
+    color: rgb(255, 255, 255);
+    border-radius: 2vw;
 }
 .denglu_false_but_no2{
     margin-left: 9vw;
@@ -110,8 +103,7 @@
     font-size: 3vw;
     width: 16vw;
     height: 6vw;
-    background-color: rgb(182, 182, 182);
-    font-family: "YouYuan"; 
+    background-color: rgb(182, 182, 182); 
     float: left;
     border: 0px;
     color: #fff;

@@ -1,0 +1,47 @@
+.collection_navbar{
+    position: fixed;
+    font-weight: 500;
+    top:0px ;
+    background:
+    linear-gradient(to left,rgb(145, 210, 248),rgb(65, 156, 235));
+    height:13vw;
+    color:#fff;
+    width: 100%;
+    line-height: 13vw;
+    float: left;
+    z-index: 100;
+    font-size: 5vw;
+}
+.iconfont::before{
+    font-size: 5vw;
+}
+.icon-fanhui{
+    color: #fff;
+    margin-right: 4vw;
+}
+.collection_navbar_link{
+    float: left;
+    margin-top:0.5vw;
+    margin-left:3vw;
+}
+.collection_content_canvas{
+    width: 42vw;
+    height: 42vw;
+    float: left;
+}
+.collection_content1{
+    background:
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat left top,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat right top,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat left bottom,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat right bottom,
+    #fff;
+    background-size:1vw 1vw;
+    box-shadow: 0px 1vw 1vw -1vw rgb(26, 25, 25);
+    margin-left: 3vw;
+    margin-top: 5vw;
+    width:43vw;
+    height:43vw;
+    position: relative;
+    float:left;
+}

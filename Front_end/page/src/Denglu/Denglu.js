@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
 import {WingBlank,WhiteSpace} from "antd-mobile"
 import {LoginchangeValueName,LoginchangeValuePassword,loginInput,loginstateflag, ChangeUserid} from '../actions';
-
 import store from '../store';
 import './Denglu.css'
+
 export default class Denglu extends Component {
     constructor(){
         super();
@@ -31,10 +31,7 @@ export default class Denglu extends Component {
         store.dispatch(LoginchangeValuePassword(e.target.value));
     }
     loginInput = ()=>{
-        // var that = this;
         store.dispatch(loginInput(this.state.valueName,this.state.valuePassword));
-        console.log(this.state.valueName);
-        console.log(this.state.valuePassword);
         fetch('http://xiawx.top:8080/login',{   
             method:'POST',
             body:JSON.stringify({
@@ -44,13 +41,11 @@ export default class Denglu extends Component {
         })
         .then(res=>res.json())
         .then((data)=>{
-            // console.log(data);
             if(data.content == true){
                 this.setState({
                     flag:true
                 })
                 store.dispatch(loginstateflag(this.state.flag));
-                // console.log(this.props);
                 this.props.history.push('/mine');
             }
             else{
@@ -101,6 +96,7 @@ export default class Denglu extends Component {
                             </Link>
                         </div>
                 </WingBlank>
+                
                 <div className="denglu_false" style={{display:this.state.jugde?"block":"none"}}>
                     <p>用户名密码不正确</p>
                     <div className="denglu_false_but">

@@ -1,29 +1,20 @@
 .btn {
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
     display: inline-block;
     width: 33vw;
     height: 14vw;
-    background-color: rgb(110,199,194);
+    background:
+    linear-gradient(to left,rgb(145, 210, 248),rgb(65, 156, 235));
     color: #fff;
     margin-left: 2vw;
     font-size: 4vw;
     font-weight: normal;
     line-height: 1.42857143;
     text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    background-image: none;
+
     border: 1px solid transparent;
     border-radius: 2vw;
 }
 .btn_false{
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
     display: inline-block;
     width: 33vw;
     height: 14vw;

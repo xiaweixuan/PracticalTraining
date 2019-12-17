@@ -15,10 +15,8 @@ import Drawing from '../draw/drawing';
 import Openscreen from '../Openscreen/Openscreen';
 import Setup from '../Mine/Setup';
 import Edit from '../Mine/Edit';
-import Addition from '../Community/Addition';
 import Search from '../Database/Search';
 import Aaa from '../Aaa/Aaa';
-// import Add from '../draw/add';
 import Torelease from '../draw/toRelease';
 import Xiangqing2 from '../Community/Xiangqing2';
 import Shop from '../Shop/Shop';
@@ -41,7 +39,6 @@ class Routes extends Component {
 					<Route exact path='/draw' component={Drawing}/>
 					<Route exact path='/nomatch' component={Nomatch}/>
 					<Route exact path='/setup' component={Setup}/>
-					<Route exact path='/addition' component={Addition}/>
 					<Route exact path='/edit' component={Edit}/>
 					<Route exact path='/search' component={Search}/>
 					<Route exact path='/aaa' component={Aaa}/>

@@ -9,41 +9,36 @@
     color: #fff;
 }
 .register_content_div{
-    margin-top: 20vw;
+    margin-top: 15vw;
 }
 .register_content_name{
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
     border-radius: 2vw;
-    font-family: "YouYuan";
     font-size: 4vw;
     width: 90vw;
     height: 14vw;
     margin-bottom:2vw;
-    border: 1px solid rgb(110,199,194);
+    border:none;
 }
 .register_content_code{
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
     border-radius: 2vw;
     font-family: "YouYuan";
     font-size: 4vw;
     float: left;
     width: 55vw;
     height: 14vw;
-    border: 1px solid rgb(110,199,194);
+    border:none;
 }
 .register_content_getcode{
     text-align: center;
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
     border-radius: 2vw;
-    font-family: "YouYuan";
     font-size: 4vw;
     float: left;
     margin-left: 3vw;
     height: 11vw;
     width: 30vw;
-    /* padding-left: 7.5vw; */
     padding-top:3vw;
-    background-color: rgb(82, 103, 224);
+    background:
+    linear-gradient(to left,rgb(145, 210, 248),rgb(65, 156, 235));
     color:#fff;
     font-size: 4vw;
 }
@@ -55,13 +50,12 @@
     margin-top:-1vw;
 }
 .register_content_finish{
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
     border-radius: 2vw;
-    font-family: "YouYuan";
     font-size: 5vw;
     height: 12vw;
     width: 100%;
-    background-color: rgb(110,199,194);
+    background:
+    linear-gradient(to left,rgb(145, 210, 248),rgb(65, 156, 235));
     color:#fff;
     border: 0px;
 }
@@ -69,9 +63,6 @@
     font-size:3vw;
     color:red;
 }
-
-
-
 
 /* 获取验证码 */
 .asdasd{

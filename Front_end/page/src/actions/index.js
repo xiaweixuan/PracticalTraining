@@ -94,12 +94,10 @@ export const logFetch = (value)=>{
                     loginname: res.data.loginname,
                     score: res.data.score
                 }
-                // dispatch(log(userInfor))
                 dispatch({
                     type: types.LOGIN_SUCCESS,
                     value:userInfor
                 })
-                // props.history.push('/');
-        })
+            })
+        }
     }
-}

@@ -1,7 +1,7 @@
 import React, { Component,useState,useEffect } from 'react'
 import { WingBlank, WhiteSpace } from 'antd-mobile';
 import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom'
-import './Collection.css'
+import './coll.css'
 import store from '../store';
 
 export default function Collection(){
@@ -39,7 +39,7 @@ export default function Collection(){
                 <WingBlank>
                     {
                         data.map((item,idx)=>
-                        <div className="collection_content">
+                        <div className="collection_content1">
                             <canvas className="collection_content_canvas" 
                             id={"canvas"+idx} width='400px'height='400px'>
                                 

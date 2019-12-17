@@ -50,9 +50,7 @@ export default function Opus(){
              }
         })
     }
-    function blur(){
 
-    }
     return(
         <div className="collection">
             <div>
