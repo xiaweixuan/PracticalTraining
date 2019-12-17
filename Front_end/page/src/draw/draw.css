@@ -415,7 +415,7 @@
     }
     .drawing_bottom{
         position:fixed;
-        background-color:rgba(34, 38, 243, 0.747);
+        background-color:rgba(240, 240, 240,240);
         height:20vw;
         width:100%;
         bottom:0;
@@ -517,20 +517,85 @@
     }
     .drawing_bottom_no1{
         position:fixed;
-        bottom:0;
-        left:35%;
-        padding:5vw;
-        border-radius: 4vw;
-        background-color: rgb(43, 199, 108);
+        bottom:5vw;
+        left:40%;
+        padding:3vw;
+        border-radius: 2vw;
+        background-color: rgb(211, 236, 235);
+        font-size:3vw;
     }
     .drawing_canvas_div1{
-        width: 100%;
-        height: 200vw;
+        height: 135vw;
         margin: auto;
         margin-top:10vw;
+        padding-top:25vw;
+        padding-left:11vw;
         background-color: white;
     }
-    .torelease_text{
+    .torelease{
+        position: absolute;
+        top:45vw;
+        left:15vw;
+        z-index: 200;
+        width: 70vw;
+        height: 45vw;
+        float: left;
+        border-radius:10px;
+        background-color: white;
+    }
+    .torelease_text_type{
+        margin-top: 5vw;
+        height: 7vw;
+    }
+    .torelease_text_type p{
+        line-height: 7vw;
+        margin-left: 3vw;
+        float: left;
+    }
+    .torelease_text_type input{
+        margin-left: 3vw;
+        margin-top:1.5vw;
+    }
+    .torelease_text p{
+        line-height: 7vw;
+        margin-left: 3vw;
+    }
+    .torelease_text input{
+        margin-top: 1vw;
+        margin-left: 4vw;
+        width: 60vw;
+        border: 1px solid rgb(230, 230, 230);
+        margin-bottom: 2vw;
+    }
+    .torelease_false_but_no1{
+        margin-left: 9vw;
+        margin-right: 9vw;
+        margin-top: 8vw;
+        font-size: 3vw;
+        width: 16vw;
+        height: 6vw;
+        background-color: rgb(110,199,194);
+        font-family: "YouYuan"; 
+        float: left;
+        border: 0px;
+        color: #fff;
+        border-radius: 4vw;
+    }
+    .torelease_false_but_no2{
+        margin-left: 9vw;
+        margin-right: 9vw;
+        margin-top: 8vw;
+        font-size: 3vw;
+        width: 16vw;
+        height: 6vw;
+        background-color: rgb(182, 182, 182);
+        font-family: "YouYuan"; 
+        float: left;
+        border: 0px;
+        color: #fff;
+        border-radius: 4vw;
+    }
+    /* .torelease_text{
         width: 100%;
         height: 100px;
         margin: auto;
@@ -547,7 +612,7 @@
     .torelease_text_miaoshu{
         font-size:5vw;
         color:#000;
-    }
+    } */
 }
 
 .palette_choose{

@@ -2,20 +2,38 @@ import React, { useState, useEffect, useWindowWidth } from 'react'
 import Palette from './palette'
 import {Link} from 'react-router-dom'
 import './draw.css'
-export default function Drawing() {
 
+import store from '../store';
+import { LoginchangeValueName, LoginchangeValuePassword, Motto, ChangeUserid,Email,changeValueeee} from '../actions';
+import { func } from 'prop-types';
+export default function Drawing(props) {
+    let [userid, setUser] = useState(store.getState().ChangeUserid);
+    let [paintid, setPaintid] = useState(store.getState().ChangeUserid+new Date().getTime());
     var [colorlist, setColorlist] = useState([])
     var [obj, setObj] = useState({})
 
     var [color, setColor] = useState(true);
     var [win, setW] = useState(true);
+    var [type,setType]=useState('');
+    var [describe,setDes]=useState('');
+    let flag = store.getState().loginstateflag;
+    var [jugdetor,setJugdetor]=useState(false);
+    let [jugde,setJugde] = useState(store.getState().loginstateflag);
+    function displayjudge(){
+        setJugde(true);
+    }
     function Changefree() {
         setColor(false);
     }
     function Changetuijian() {
         setColor(true);
     }
-
+    // function handletype(e){
+    //     setType(e.target.value);
+    // }
+    function handledes(e){
+        setDes(e.target.value);
+    }
     useEffect(() => {
         var canvas = document.getElementById("canvas");
 
@@ -23,9 +41,12 @@ export default function Drawing() {
         var pic = new window.Picture({ col: 20, row: 20, width: canvas.width, height: canvas.height, context: context });
 
         pic.initdata();
-        pic.allowDraw(context)
+        pic.allowDraw(context);
+        pic.inittable(context);
+        pic.color='#ffffff';
         setColorlist(pic.colorList);
         setObj(pic);
+        
 
     }, [])
 
@@ -44,17 +65,16 @@ export default function Drawing() {
 
     }
     function recall() {
-        // obj.clearCanvas(obj.context);
-        // obj.inittable(obj.context);
-        // obj.drawNumber(obj.context);
-        // obj.drawRecall(obj.context);
-        console.log("该操作即将删除")
+        obj.clearCanvas(obj.context);
+        obj.inittable(obj.context);
+        obj.drawRecall(obj.context);
     }
 
     function finishDraw() {
         setW(false);
         console.log(win);
         obj.initbackground(obj.context);
+        
         // obj.draw(obj.context);
         obj.automaticPainting(obj.context)
         console.log(obj)
@@ -64,6 +84,50 @@ export default function Drawing() {
     }
     function correctColor() {
         obj.correctColor(obj.context);
+    }
+    function choosetype(e){
+        // console.log(e.target.value);
+        setType(e.target.value);
+    }
+    function per(){
+        setJugdetor(true);
+    }
+    function choosetrue(){
+        console.log(type,describe);
+        fetch('http://xiawx.top:8080/perpaint', {
+            body: JSON.stringify({
+                paintid:paintid,userid: userid,paintdata:obj.toString(),type:type,describe:describe,history:null,col:'20',raw:'20'
+            }),
+            method: 'POST',
+        })
+        .then(res => res.json())
+        .then(res => {
+            var data = res.content;
+            console.log(data);
+            if (data == true) {
+                props.history.push('/database')
+            }
+        })
+    }
+    function choosefalse(){
+        setJugdetor(false);
+    }
+    function perput(){
+        fetch('http://xiawx.top:8080/perpaint', {
+            body: JSON.stringify({
+                paintid:paintid,userid: userid,paintdata:obj.toString(),type:type,describe:describe,history:null,col:'20',raw:'20'
+            }),
+            method: 'POST',
+        })
+            .then(res => res.json())
+            .then(res => {
+                var data = res.content;
+                console.log(data);
+                if (data == true) {
+
+                    props.history.push('/community')
+                }
+            })
     }
     var $ = window.$;
     var bottom = document.getElementsByClassName('bottom')
@@ -75,17 +139,10 @@ export default function Drawing() {
         if (bottom[0].style.margin == "") {
             bottom[0].style.margin = "70px 0px 0px 5px"
             bottom2[0].style.margin = "120px 0px 0px 5px"
-            bottom3[0].style.margin = "170px 0px 0px 5px"
         }
-        else if (bottom[0].style.margin == "0px") {
+        if (bottom[0].style.margin == "0px") {
             bottom[0].style.margin = "70px 0px 0px 5px"
             bottom2[0].style.margin = "120px 0px 0px 5px"
-            bottom3[0].style.margin = "170px 0px 0px 5px"
-        }
-        else {
-            bottom[0].style.margin = "0px 0px 0px 0px"
-            bottom2[0].style.margin = "0px 0px 0px 0px"
-            bottom3[0].style.margin = "0px 0px 0px 0px"
         }
         console.log(bottom[0].style.margin)
         console.log(bottom[0].style.margin == "70px 0px 0px 5px")
@@ -142,11 +199,8 @@ export default function Drawing() {
                     </div>
                 </div>
             </div>
-            <div className="torelease_text">
-                <div classNmae="torelease_text_miaoshu">详情描述</div>
-                <input type='text'></input>
-            </div>
-            <div>
+           
+            <div className="drawing_canvas_div1_no1">
                 <div className="drawing_canvas_div1">
                     <canvas id="canvas" width={aa} height={aa}>您的浏览器版本过低</canvas>
                 </div>
@@ -154,9 +208,8 @@ export default function Drawing() {
 
             <div id="touch" class="bt-box" >
                 <a onClick={but} class="xiaoA bg-3">工具</a>
-                <p  class="bottom bt-box-p">显示数字</p>
-                <p  class="bottom2 bt-box-p">配色纠正</p>
-                <p onClick={finishDraw} class="bottom3 bt-box-p">完成</p>
+                <p  class="bottom bt-box-p" onClick={recall}>撤回</p>
+                <p onClick={finishDraw} class="bottom2 bt-box-p">完成</p>
             </div>
             <div className="drawing_bottom" style={{ display: win ? 'block' : 'none' }}>
                 <div className="drawing_left">
@@ -170,7 +223,38 @@ export default function Drawing() {
                     </div>
                 </div>
             </div>
-            <div className='drawing_bottom_no1' style={{ display: win ? 'none' : 'block' }}>发布</div>
+            <div className='drawing_bottom_no1' style={{ display: win ? 'none' : 'block' }} onClick={per}>发布</div>
+            
+            <div className="torelease" style={{display:jugdetor?"block":"none"}}>
+                <div className="torelease_text_no1">
+                    <div className="torelease_text_type" onClick={choosetype}>
+                        <p>类型：</p>
+                        <input type="radio" name="sex" value="植物" />植物
+                        <input type="radio" name="sex" value="动物" />动物
+                        <input type="radio" name="sex" value="其他" />其他
+                    </div>
+                </div>
+                <div className="torelease_text">
+                    <p>详情描述：</p>
+                    <input type='text' onChange={handledes}></input>
+                </div>
+                <div>
+                    <button className="torelease_false_but_no1" onClick={choosetrue} onClick={perput}>确定</button>
+                    <button className="torelease_false_but_no2" onClick={choosefalse}>返回</button>
+                </div>
+            </div> 
+            <div className="denglu_shadow" style={{display:jugdetor?"block":"none"}}></div>
+            
+            <div className="denglu_false" style={{display:jugde?"none":"block"}}>
+                <p>请先登录</p>
+                <div className="denglu_false_but">
+                    <button className="denglu_false_but_no1" onClick={displayjudge}>确定</button>
+                    <button className="denglu_false_but_no2" onClick={displayjudge}>返回</button>
+                    <div className="denglu_clearfloat"></div>
+                </div>  
+            </div>
+            <div className="denglu_shadow" style={{display:jugde?"none":"block"}}></div> 
+            
         </div>
     )
 }

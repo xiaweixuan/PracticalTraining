@@ -1,15 +1,3 @@
-
-.msds{
-    z-index: 1000;
-    position: fixed;
-    float: left;
-    top: 70vw;
-    right: 0;
-    width: 70vw;
-    height: 10vw;
-    line-height: 10vw;
-    font-size: 5vw;
-    text-align: center;
-    color: #fff;
-    background: green;
+body{
+    background-color: rgb(241,241,241);
 }
