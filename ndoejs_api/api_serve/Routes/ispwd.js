@@ -1,3 +1,8 @@
+/**
+ * 密码校验：(post)
+ * 传入userid,pwd
+ * 返回密码是否正确
+ */
 const express = require('express');
 const router = express.Router();
 const connection = require('./usemysql');

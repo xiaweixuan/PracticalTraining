@@ -5,7 +5,7 @@ import Routes from './routes';
 import Drawing from './draw/drawing'
 
 import ToRelease from './draw/toRelease'
-
+import Npc from './npc/npc'
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -14,8 +14,8 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Routes />
-				{/* <ToRelease/> */}
+				{/* <Routes /> */}
+				<Npc/>
 			</div>
 		)
 	}

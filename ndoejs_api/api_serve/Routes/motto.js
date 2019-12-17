@@ -1,3 +1,8 @@
+/**
+ * 修改个性签名接口：(post)
+ * 传入userid、motto
+ * 返回是否修改成功
+ */
 const express = require('express');
 const router = express.Router();
 const connection = require('./usemysql');
