@@ -1,3 +1,8 @@
+/**
+ * 官方图是否收藏：(get)
+ * 传入userid
+ * 返回官方画作信息及是否被用户收藏
+ */
 const express = require('express');
 const router = express.Router();
 const connection = require('./usemysql');

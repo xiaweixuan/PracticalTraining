@@ -1,3 +1,8 @@
+/**
+ * 修改头像接口：(post)
+ * 传入userid、avatarurl
+ * 返回是否修改成功
+ */
 const express = require('express');
 const router = express.Router();
 const connection = require('./usemysql');
