@@ -6,24 +6,21 @@ import './Mine.css'
 import store from '../store';
 import Undertab from '../undertab/Undertab'
 import Npc from '../npc/Npc'
+import Npcsay from '../npcsay/Npcsay'
 import {Motto,Email} from '../actions';
 export default class Mine extends Component {
     constructor(){
         super();
         this.state={
-            // 判断用户是否登录
             flag:store.getState().loginstateflag,
             userid: store.getState().LoginchangeValueName,
-            // 判断作品，收藏，发布哪一个显示
             judge:1,
-            // 用户的信息
             user_data:"",
-            // 用户作品，收藏，发布的信息
             offpaint_data:[],
-            // 用户没有作品时显示
             judge1:0
         }
     }
+    
     componentDidMount() {
         if(this.state.flag == true){
             fetch('http://xiawx.top:8080/personal?userid='+this.state.userid)
@@ -50,27 +47,22 @@ export default class Mine extends Component {
                 this.setState({
                     judge1:0
                 })
-                // console.log(this.state.judge1);
             }
             else if(res.content.length==0){
                 arr = res.content;
                 this.setState({
                     judge1:1
                 })
-                console.log(this.state.judge1);
             }
             else{
                 arr = res.content;
                 this.setState({
                     judge1:0
                 })
-                // console.log(this.state.judge1);
             }
             this.setState({
                  offpaint_data:arr
             })
-            // console.log(this.state.offpaint_data);
-            // console.log(typeof this.state.offpaint_data);
             for(var i=0;i<this.state.offpaint_data.length;i++){
                 var canvas = document.getElementById('canvas'+id+i);
                 var context=canvas.getContext("2d");
@@ -246,6 +238,7 @@ export default class Mine extends Component {
                 您尚未<Link to="/denglu">登录</Link>
             </div>
             <div className="mine_hight"></div>
+            <Npcsay/>
             <Npc />
             <Undertab flag="5"/>
         </div>

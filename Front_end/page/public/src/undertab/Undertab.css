@@ -1,0 +1,23 @@
+.Undertab_div{
+    z-index: 200;
+    position:fixed;
+    bottom:-2px;
+    width:100%;
+    text-align: center;
+    background-color: #fff;
+}
+.Undertab_link_content{
+    width:20%;
+    height: 17vw;
+    float: left;
+}
+#icon{
+    line-height: 11vw;
+    font-size: 6vw;
+}
+#icon1{
+    line-height: 17vw;
+}
+.ziliao{
+    font-size: 4vw;
+}

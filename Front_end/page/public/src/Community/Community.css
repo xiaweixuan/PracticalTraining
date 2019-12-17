@@ -1,0 +1,201 @@
+/* community css */
+.community_navbar{
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    font-weight: 500; 
+    top:0px ;
+    background:
+    linear-gradient(to left,rgb(145, 210, 248),rgb(65, 156, 235));
+    color:#fff;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height:13vw;
+    font-size: 5vw;
+    line-height: 13vw;
+    float: left;
+    text-align: center;
+}
+.community_img_add{
+    color:#fff;
+    float: right;
+    height:6vw;
+    margin-top: -9.5vw;
+    margin-right: 5vw;
+    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+}
+.community_img_add:active{
+    box-shadow: none;
+    margin-top: -8.5vw;
+}
+.community_wingblank{
+    height: auto;
+}
+.community_div_no2{
+    position: relative;
+    margin-top:2vw;
+    width: 100%;
+    background-color: black;
+    height: auto;
+}
+.am-carousel-wrap{
+    display: none;
+}
+/* 他人发布 */
+.community_chat_another{
+    float: left;
+    width: 100%;
+}
+.community_chat_another_headpic_box{
+    float: left;
+    margin-top: 5vw;
+    width: 18vw;
+    height: 18vw;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.community_chat_another_headpic{
+    width: 100%;
+    height: 100%;
+}
+.community_chat_another_id{
+    color:rgb(88, 85, 85);
+    float: left;
+    margin-left: -15vw;
+    margin-top: 26vw;
+    font-size: 4vw;
+}
+.community_chat_talk{
+    float: left;
+    width: 63vw;
+    height: 25vw;
+    margin-left: 5vw;
+    margin-top: 5vw;
+    background:rgb(255,255,255);
+    color: rgb(88, 85, 85);
+    padding: 2vw 2vw 1vw 2vw;
+    border-radius: 4vw;
+    position: relative;
+    word-break: break-all;
+}
+.community_chat_talk:before{
+    content:'';
+    position:absolute;
+    right:100%;
+    bottom:6vw;
+    border-width:4vw;
+    border-style:solid;
+    border-color:transparent;
+    border-right-width:5vw;
+    border-right-color:currentColor;
+    color:rgb(255,255,255);
+}
+.community_chat_another_word{
+    float: left;
+    width: 35vw;
+    margin-left: 2vw;
+    margin-top: 1vw;
+    font-size: 5vw;
+    height: 10vw;
+}
+.community_chat_talk_pic_box{
+    float: right;
+    width: 22vw;
+    height: 21vw;
+    overflow: hidden;
+}
+.community_chat_talk_canvas{
+    width: 100%;
+    height: 100%;
+}
+.community_chat_another_time{
+    margin-top: 8vw;
+    height: 10vw;
+    width: 35vw;
+    color:rgb(240, 98, 47);
+    font-size: 3vw;
+    float: right;
+    margin-right: 2vw;
+}
+
+/* 我的发布 */
+.community_chat_mine{
+    float: right;
+    width: 100%;
+}
+.community_chat_mine_headpic_box{
+    float: right;
+    margin-top: 5vw;
+    width: 18vw;
+    height: 18vw;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.community_chat_mine_headpic{
+    width: 100%;
+    height: 100%;
+}
+.community_chat_mine_id{
+    color:rgb(88, 85, 85);
+    float: right;
+    margin-right: -10vw;
+    margin-top: 26vw;
+    font-size: 4vw;
+}
+.community_chat_mine_talk{
+    float: right;
+    width: 63vw;
+    height: 25vw;
+    margin-right: 5vw;
+    margin-top: 5vw;
+    background:rgb(255,255,255);
+    color: rgb(88, 85, 85);
+    padding: 2vw 2vw 1vw 2vw;
+    border-radius: 4vw;
+    position: relative;
+    word-break: break-all;
+}
+.community_chat_mine_talk:before{
+    content:'';
+    position:absolute;
+    left:100%;
+    bottom:6vw;
+    border-width:4vw;
+    border-style:solid;
+    border-color:transparent;
+    border-left-width:5vw;
+    border-left-color:currentColor;
+    color:rgb(255,255,255);
+}
+.community_chat_mine_word{
+    float: right;
+    width: 35vw;
+    margin-right: 2vw;
+    margin-top: 1vw;
+    font-size: 5vw;
+    height: 10vw;
+}
+.community_chat_mine_talk_pic_box{
+    float: left;
+    width: 22vw;
+    height: 21vw;
+    overflow: hidden;
+}
+.community_chat_mine_talk_canvas{
+    width: 100%;
+    height: 100%;
+}
+.community_chat_mine_time{
+    margin-top: 8vw;
+    height: 10vw;
+    width: 35vw;
+    color:rgb(240, 98, 47);
+    font-size: 3vw;
+    float: left;
+    margin-left: 2vw;
+}
+
+.community_hight{
+    float: left;
+    width: 100%;
+    height: 20vw;
+}

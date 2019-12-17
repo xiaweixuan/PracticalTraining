@@ -1,0 +1,70 @@
+/* .npcsay{
+    position: fixed;
+    bottom: 30vw;
+    left: 30vw;
+} */
+#npcsay_root{
+    font-size: 12px;
+    width: 65%;
+    height: 165px;
+    position: fixed;
+    bottom: 10vw;
+    left: 30vw;
+    /* background-color: brown; */
+    /* position: absolute;
+    top:30px;
+    left: 30px; */
+}
+#npcsay_root button{
+    /* float: right; */
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    /* position: absolute;
+    top: 0px;
+    right: 0px; */
+    border: none;
+    background: none;
+}
+#npcsay_div1{
+    /* background: url('img/4.png'); */
+    width: 90%;
+    height: 90px;
+    /* background-repeat:no-repeat;
+    background-size: 100% 100%; */
+    position: absolute;
+    top:10px;
+    left:30px;
+}
+#npcsay_div1 p{
+    width: 80%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+#npcsay_div2{
+    width: 10%;
+    height: 25px;
+    /* background: url('../../public/img/5.png'); */
+    /* background-repeat:no-repeat;
+    background-size: 100% 100%; */
+    position: absolute;
+    top:85px;
+    left:20px;
+}
+#npcsay_div3{
+    width: 5%;
+    height: 10px;
+    /* background: url('img/6.png'); */
+    /* background-repeat:no-repeat;
+    background-size: 100% 100%; */
+    position: absolute;
+    top:110px;
+    left:5px;
+}
+.npcsay_close{
+    z-index: 3;
+    position: absolute;
+    top:-5px;
+    left:230px;
+}
