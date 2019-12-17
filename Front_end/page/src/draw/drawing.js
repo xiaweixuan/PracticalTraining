@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useWindowWidth } from 'react'
 import Palette from './palette'
-
+import store from '../store';
+import { LoginchangeValueName, LoginchangeValuePassword, Motto, ChangeUserid,Email,changeValueeee} from '../actions';
 import './draw.css'
 export default function Drawing(props) {
-
+    let [userid, setUser] = useState(store.getState().ChangeUserid);
+    let [paintid, setPaintid] = useState(store.getState().ChangeUserid+new Date().getTime());
     var [picdata, setPicdata] = useState(props.data);
     var [showColor,setShowColor]=useState(1);
     var [colorlist, setColorlist] = useState([])
@@ -11,13 +13,34 @@ export default function Drawing(props) {
 
     var [color, setColor] = useState(true);
     var [win, setW] = useState(true);
+    let [jugde,setJugde] = useState(store.getState().loginstateflag);
+    function displayjudge(){
+        setJugde(true);
+    }
     function Changefree(){
         setColor(false);  
     }
     function Changetuijian(){
         setColor(true); 
     }
+    function work(){
+        fetch('http://xiawx.top:8080/savework', {
+            body: JSON.stringify({
+                paintid:paintid,userid: userid,paintdata:obj.toString(),history:null
+            }),
+            method: 'POST',
+        })
+            .then(res => res.json())
+            .then(res => {
+                var data = res.content;
+                console.log(data);
+                if (data == true) {
 
+                    // props.history.push('/database')
+                    alert('保存成功');
+                }
+            })
+    }
     useEffect(() => {
         // setPicdata("#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#eee00e#ffffff#ffffff#ffffff#eee00e#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff")
         var canvas = document.getElementById("canvas");
@@ -86,6 +109,7 @@ export default function Drawing(props) {
         obj.automaticPainting(obj.context)
         console.log(obj)
         console.log(obj.toString())
+        obj.unallowdraw(obj.context);
         // var img=obj.convertCanvasToImage(obj.context);
         // document.getElementById("show").appendChild(img)
     }
@@ -202,7 +226,18 @@ export default function Drawing(props) {
                     </div>
                 </div>
             </div>
-            <div className='drawing_bottom_no1'style={{display:win?'none':'block'}}>保存在本地</div>
+            <div className='drawing_bottom_no1'style={{display:win?'none':'block'}} onClick={work}>保存到我的作品</div>
+            <div className="denglu_false" style={{display:jugde?"none":"block"}}>
+                    <p>请先登录</p>
+                    <div className="denglu_false_but">
+                        <button className="denglu_false_but_no1" onClick={displayjudge}>确定</button>
+                        <button className="denglu_false_but_no1" onClick={displayjudge}>返回</button>
+                        <div className="denglu_clearfloat"></div>
+                    </div>
+                    
+                </div>
+                <div className="denglu_shadow" style={{display:jugde?"none":"block"}}></div>
+            <div className="none"></div>
         </div>
     )
 }

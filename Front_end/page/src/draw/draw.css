@@ -590,27 +590,47 @@
     }
     .drawing_canvas_div1{
         width: 100%;
-        height: 200vw;
+        height: 100vw;
         margin: auto;
         margin-top:10vw;
         background-color: white;
     }
     .torelease_text{
-        width: 100%;
+        width: 80%;
         height: 100px;
         margin: auto;
+        margin-top:10vw;
+        border-radius: 4vw;
+        background-color: rgb(110,199,194);
+        text-align: center;
+    }
+    .torelease_text_no1{
+        width: 80%;
+        height: 40px;
+        margin: auto;
+        border-radius: 1vw;
         margin-top:20vw;
+        background-color: rgb(110,199,194);
+        text-align: center;
+    }
+    .torelease_text_no1 input{
+        width: 79%;
+        height: 20px;
+        border:1px solid #000;
+        margin-left:6vw;
+        border-radius: 1vw;
         background-color: rgb(110,199,194);
     }
     .torelease_text input{
-        width: 99%;
-        height: 100px;
+        width: 79%;
+        height: 80px;
         border:1px solid #000;
+        margin-left:6vw;
         border-radius: 4vw;
         background-color: rgb(110,199,194);
     }
     .torelease_text_miaoshu{
-        font-size:5vw;
+        font-size:4vw;
         color:#000;
     }
 }

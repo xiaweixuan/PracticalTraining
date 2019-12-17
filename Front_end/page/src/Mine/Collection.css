@@ -42,6 +42,24 @@
     margin-top: 4vw;
     float: left;
 }
+.collection_content{
+    width:50%;
+    height:50vw;
+    position: relative;
+    float:left;
+}
+.collection_content_delete{
+    position: absolute;
+    top:80%;
+    left:76%;
+    font-size: 3vw;
+    border: 0px;
+    background-color:rgb(110,199,194);
+    color:#fff;
+    width: 10vw;
+    height: 7vw;
+    float: left;
+}
 .collection_content_div{
     margin-top: 17vw;
 }

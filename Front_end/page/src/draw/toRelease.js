@@ -2,20 +2,34 @@ import React, { useState, useEffect, useWindowWidth } from 'react'
 import Palette from './palette'
 import {Link} from 'react-router-dom'
 import './draw.css'
-export default function Drawing() {
-
+import store from '../store';
+import { LoginchangeValueName, LoginchangeValuePassword, Motto, ChangeUserid,Email,changeValueeee} from '../actions';
+export default function Drawing(props) {
+    let [userid, setUser] = useState(store.getState().ChangeUserid);
+    let [paintid, setPaintid] = useState(store.getState().ChangeUserid+new Date().getTime());
     var [colorlist, setColorlist] = useState([])
     var [obj, setObj] = useState({})
 
     var [color, setColor] = useState(true);
     var [win, setW] = useState(true);
+    var [type,setType]=useState('');
+    var [describe,setDes]=useState('');
+    let [jugde,setJugde] = useState(store.getState().loginstateflag);
+    function displayjudge(){
+        setJugde(true);
+    }
     function Changefree() {
         setColor(false);
     }
     function Changetuijian() {
         setColor(true);
     }
-
+    function handletype(e){
+        setType(e.target.value);
+    }
+    function handledes(e){
+        setDes(e.target.value);
+    }
     useEffect(() => {
         var canvas = document.getElementById("canvas");
 
@@ -64,6 +78,23 @@ export default function Drawing() {
     }
     function correctColor() {
         obj.correctColor(obj.context);
+    }
+    function per(){
+        fetch('http://xiawx.top:8080/perpaint', {
+            body: JSON.stringify({
+                paintid:paintid,userid: userid,paintdata:obj.toString(),type:type,describe:describe,history:null,col:'20',raw:'20'
+            }),
+            method: 'POST',
+        })
+            .then(res => res.json())
+            .then(res => {
+                var data = res.content;
+                console.log(data);
+                if (data == true) {
+
+                    props.history.push('/database')
+                }
+            })
     }
     var $ = window.$;
     var bottom = document.getElementsByClassName('bottom')
@@ -142,9 +173,13 @@ export default function Drawing() {
                     </div>
                 </div>
             </div>
+            <div className="torelease_text_no1">
+                <div classNmae="torelease_text_miaoshu">类型（植物/动物/其他）</div>
+                <input type='text' onChange={handletype}></input>
+            </div>
             <div className="torelease_text">
                 <div classNmae="torelease_text_miaoshu">详情描述</div>
-                <input type='text'></input>
+                <input type='text' onChange={handledes}></input>
             </div>
             <div>
                 <div className="drawing_canvas_div1">
@@ -170,7 +205,18 @@ export default function Drawing() {
                     </div>
                 </div>
             </div>
-            <div className='drawing_bottom_no1' style={{ display: win ? 'none' : 'block' }}>发布</div>
+            <div className='drawing_bottom_no1' style={{ display: win ? 'none' : 'block' }} onClick={per}>发布</div>
+            <div className="denglu_false" style={{display:jugde?"none":"block"}}>
+                    <p>请先登录</p>
+                    <div className="denglu_false_but">
+                        <button className="denglu_false_but_no1" onClick={displayjudge}>确定</button>
+                        <button className="denglu_false_but_no1" onClick={displayjudge}>返回</button>
+                        <div className="denglu_clearfloat"></div>
+                    </div>
+                    
+                </div>
+                <div className="denglu_shadow" style={{display:jugde?"none":"block"}}></div>
+            <div className="none"></div>
         </div>
     )
 }
