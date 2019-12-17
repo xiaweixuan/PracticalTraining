@@ -41,9 +41,12 @@ export default function Drawing(props) {
         var pic = new window.Picture({ col: 20, row: 20, width: canvas.width, height: canvas.height, context: context });
 
         pic.initdata();
-        pic.allowDraw(context)
+        pic.allowDraw(context);
+        pic.inittable(context);
+        pic.color='#ffffff';
         setColorlist(pic.colorList);
         setObj(pic);
+        
 
     }, [])
 
@@ -73,6 +76,7 @@ export default function Drawing(props) {
         setW(false);
         console.log(win);
         obj.initbackground(obj.context);
+        
         // obj.draw(obj.context);
         obj.automaticPainting(obj.context)
         console.log(obj)

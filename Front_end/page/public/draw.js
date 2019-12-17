@@ -1,16 +1,16 @@
- /**
- * 
- * 一个Picture实例对应着一个canvas对象
- * 
- * 必须条件：
- * 1、实例化输入option{col:col,row:row,width:width,height:height,context:context}
- * 2、如需拖动，画布必有属性position: absolute;
- * 3、如需画图，必须有的初始化：initcanvas initdata
- * 
- * 
- * 
- * 
- * 
+/**
+* 
+* 一个Picture实例对应着一个canvas对象
+* 
+* 必须条件：
+* 1、实例化输入option{col:col,row:row,width:width,height:height,context:context}
+* 2、如需拖动，画布必有属性position: absolute;
+* 3、如需画图，必须有的初始化：initcanvas initdata
+* 
+* 
+* 
+* 
+* 
 */
 
 
@@ -176,6 +176,7 @@ Picture.prototype.drawCell = function (ex, ey, context) {
         context.fillStyle = this.color;
         context.fillRect(row * this.cellW, col * this.cellH, this.cellW, this.cellH);
         //已知n，求出j和i
+        if (this.numberDataMatrix_abiding[n] === undefined) return;
         var i = Math.floor(n / this.col);
         var j = n - i * this.col;
         console.log(i, j, this.numberDataMatrix_abiding[n])
@@ -187,6 +188,15 @@ Picture.prototype.drawCell = function (ex, ey, context) {
     this.drawDataMatrix[n] = this.color;
     context.fillStyle = this.color;
     context.fillRect(row * this.cellW, col * this.cellH, this.cellW, this.cellH);
+
+    //测试
+    if (this.numberDataMatrix_abiding[n] === undefined) return;
+    var i = Math.floor(n / this.col);
+    var j = n - i * this.col;
+    console.log(i, j, this.numberDataMatrix_abiding[n])
+    context.fillStyle = "rgb(119, 110, 110)";
+    context.fillText(this.numberDataMatrix_abiding[n], j * this.cellW + 1 / 4 * this.cellW, i * this.cellH + 3 / 4 * this.cellH);
+    //测试结束
     this.addToHistory();
 }
 Picture.prototype.allowDraw = function (context) {
@@ -278,7 +288,7 @@ Picture.prototype.automaticPainting = function (context) {
     var n = 0;
     var timer = setInterval(() => {
         // console.log("画了一次");
-        if (n == this.history.length-1) {
+        if (n == this.history.length - 1) {
             clearInterval(timer);
         }
         this.drawDataMatrix = [...this.history[n]];
@@ -293,9 +303,9 @@ Picture.prototype.correctColor = function (context) {
         this.drawDataMatrix[i] = "#ffffff";
     }
     this.initbackground(context)
-    this.drawNumber(context)
     this.inittableOl(context);
     this.draw(context);
+    this.drawNumber(context);
     this.addToHistory();
 }
 

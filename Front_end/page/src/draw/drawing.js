@@ -93,13 +93,7 @@ export default function Drawing(props) {
         obj.drawNumber(obj.context);
 
     }
-    function recall(){
-        // obj.clearCanvas(obj.context);
-        // obj.inittable(obj.context);
-        // obj.drawNumber(obj.context);
-        // obj.drawRecall(obj.context);
-        console.log("该操作即将删除")
-    }
+
 
     function finishDraw(){
         setW(false); 
