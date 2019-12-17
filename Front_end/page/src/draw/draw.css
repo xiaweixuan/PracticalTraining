@@ -525,10 +525,11 @@
         font-size:3vw;
     }
     .drawing_canvas_div1{
-        width: 100%;
-        height: 167vw;
+        height: 135vw;
         margin: auto;
         margin-top:10vw;
+        padding-top:25vw;
+        padding-left:11vw;
         background-color: white;
     }
     .torelease{

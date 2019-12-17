@@ -66,8 +66,7 @@ export default function Drawing(props) {
     }
     function recall() {
         obj.clearCanvas(obj.context);
-        // obj.inittable(obj.context);
-        // obj.drawNumber(obj.context);
+        obj.inittable(obj.context);
         obj.drawRecall(obj.context);
     }
 
@@ -201,7 +200,7 @@ export default function Drawing(props) {
                 </div>
             </div>
            
-            <div>
+            <div className="drawing_canvas_div1_no1">
                 <div className="drawing_canvas_div1">
                     <canvas id="canvas" width={aa} height={aa}>您的浏览器版本过低</canvas>
                 </div>

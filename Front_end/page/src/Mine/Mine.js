@@ -5,7 +5,6 @@ import { Flex} from 'antd-mobile';
 import './Mine.css'
 import store from '../store';
 import Undertab from '../undertab/Undertab'
-import Npc from '../Npc/Npc'
 import {Motto,Email} from '../actions';
 export default class Mine extends Component {
     constructor(){
@@ -246,7 +245,6 @@ export default class Mine extends Component {
                 您尚未<Link to="/denglu">登录</Link>
             </div>
             <div className="mine_hight"></div>
-            <Npc/>
             <Undertab flag="5"/>
         </div>
         )
