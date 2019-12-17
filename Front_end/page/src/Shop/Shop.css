@@ -21,15 +21,9 @@
     margin-top: 5vw;
     position: relative;
     height:40vw;
-    background:
-    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat left top,
-    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat right top,
-    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat left bottom,
-    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat right bottom,
-    #fff;
-    background-size:1vw 1vw;
+    background:#fff;
     padding-bottom:8vw;
-    /* border-radius:2vw; */
+    border-radius:2vw;
     margin-left: 4vw;
     width: 45%;
     float: left;
@@ -62,12 +56,12 @@
 .none{
     float: left;
     width: 100%;
-    height: 20vw;
+    height: 53vw;
 }
 .denglu_shadow{
     width:100%;
     height:100%;
-    position:absolute;
+    position: fixed;
     left:0;
     top:0;
     z-index:2;
@@ -76,8 +70,8 @@
     display:block;
 }
 .denglu_false{
-    z-index:999;
-    position: absolute;
+    z-index:3;
+    position: fixed;
     background-color:rgb(243, 243, 243);
     border-radius: 2vw;
     width: 60vw;
@@ -118,7 +112,7 @@
     font-size: 3vw;
     width: 17vw;
     height: 7vw;
-    background: linear-gradient(to left,rgb(219, 217, 208)b(83, 83, 82));
+    background: linear-gradient(to left,rgb(219, 217, 208),rgb(83, 83, 82));
     float: left;
     border: 0px;
     color: #fff;
