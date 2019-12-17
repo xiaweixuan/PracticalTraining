@@ -5,7 +5,7 @@ import Routes from './routes';
 import Drawing from './draw/drawing'
 
 import ToRelease from './draw/toRelease'
-import Npc from './npc/npc'
+import Npc from './Npc/Npc'
 class App extends Component {
 	constructor(props) {
 		super(props);

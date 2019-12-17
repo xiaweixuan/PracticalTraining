@@ -1,3 +1,4 @@
+ 
 /**
 * 
 * 一个Picture实例对应着一个canvas对象
@@ -188,7 +189,7 @@ Picture.prototype.drawCell = function (ex, ey, context) {
     this.drawDataMatrix[n] = this.color;
     context.fillStyle = this.color;
     context.fillRect(row * this.cellW, col * this.cellH, this.cellW, this.cellH);
-
+    this.addToHistory();
     //测试
     if (this.numberDataMatrix_abiding[n] === undefined) return;
     var i = Math.floor(n / this.col);
@@ -197,7 +198,7 @@ Picture.prototype.drawCell = function (ex, ey, context) {
     context.fillStyle = "rgb(119, 110, 110)";
     context.fillText(this.numberDataMatrix_abiding[n], j * this.cellW + 1 / 4 * this.cellW, i * this.cellH + 3 / 4 * this.cellH);
     //测试结束
-    this.addToHistory();
+    // this.addToHistory();
 }
 Picture.prototype.allowDraw = function (context) {
     el = context.canvas;
@@ -702,3 +703,4 @@ Picture.prototype.elAnimate = function (e) {
 
     }
 }
+ 

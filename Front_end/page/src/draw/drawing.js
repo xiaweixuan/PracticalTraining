@@ -93,7 +93,11 @@ export default function Drawing(props) {
         obj.drawNumber(obj.context);
 
     }
-
+    function recall() {
+        obj.clearCanvas(obj.context);
+        obj.inittable(obj.context);
+        obj.drawRecall(obj.context);
+    }
 
     function finishDraw(){
         setW(false); 
@@ -120,17 +124,10 @@ export default function Drawing(props) {
         if(bottom[0].style.margin==""){
             bottom[0].style.margin="70px 0px 0px 5px"
             bottom2[0].style.margin="120px 0px 0px 5px"
-            bottom3[0].style.margin="170px 0px 0px 5px"
-        }
-        else if(bottom[0].style.margin=="0px"){
-            bottom[0].style.margin="70px 0px 0px 5px"
-            bottom2[0].style.margin="120px 0px 0px 5px"
-            bottom3[0].style.margin="170px 0px 0px 5px"
         }
         else{
             bottom[0].style.margin="0px 0px 0px 0px"
             bottom2[0].style.margin="0px 0px 0px 0px"
-            bottom3[0].style.margin="0px 0px 0px 0px"
         }
         console.log(bottom[0].style.margin)
         console.log(bottom[0].style.margin == "70px 0px 0px 5px")
@@ -184,9 +181,8 @@ export default function Drawing(props) {
             
             <div id="touch" class="bt-box" >
                 <a onClick={but} class="xiaoA bg-3">工具</a>
-                <p onClick={showNumber} class="bottom bt-box-p">显示数字</p>
-                <p onClick={correctColor} class="bottom2 bt-box-p">配色纠正</p>
-                <p onClick={finishDraw} class="bottom3 bt-box-p">完成</p>
+                <p onClick={correctColor} class="bottom bt-box-p">配色纠正</p>
+                <p onClick={finishDraw} class="bottom2 bt-box-p">完成</p>
             </div>
 
 
