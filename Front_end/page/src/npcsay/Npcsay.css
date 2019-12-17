@@ -1,0 +1,8 @@
+#npcsay_root{
+    width: 65%;
+    font-size: 12px;
+    border:1px dotted #000;
+    border-radius: 20px;
+    padding: 5px;
+    /* dotted:...dashed:---*/
+}

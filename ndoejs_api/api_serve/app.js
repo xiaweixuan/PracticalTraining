@@ -22,6 +22,7 @@ var saveworkRouter = require('./Routes/savework');
 var npcsayRouter = require('./Routes/npcsay');
 var deleworkRouter = require('./Routes/delework');
 var delefabuRouter = require('./Routes/delefabu');
+var renpcRouter = require('./Routes/renpc');
 
 app.get('/', function(req, res) {
   res.setHeader('Content-Type','text/plain;charset="utf-8"')
@@ -49,6 +50,7 @@ app.use('/savework', saveworkRouter);
 app.use('/npcsay', npcsayRouter);
 app.use('/delework', deleworkRouter);
 app.use('/delefabu', delefabuRouter);
+app.use('/renpc', renpcRouter);
 
 //后台接口
 var showuser = require('./BackManage/showuser');

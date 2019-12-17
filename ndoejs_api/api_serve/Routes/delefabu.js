@@ -1,3 +1,8 @@
+/**
+ * 删除发布接口：(get)
+ * 传入paintid
+ * 返回是否删除成功
+ */
 const connection = require('../Routes/usemysql');
 const express = require('express');
 const router = express.Router();
@@ -7,7 +12,6 @@ var db = {};
 var isOK = false;
 
 router.get('/',(req,res)=>{
-    userName = req.query.userid;
     paintName = req.query.paintid;
     let delepaintsql = 'delete from paint_table_new where paintid="'+paintName+'"';
 

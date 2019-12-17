@@ -1,3 +1,8 @@
+/**
+ * 添加/取消收藏接口：(post)
+ * 传入userid、paintid
+ * 返回 收藏成功/取消收藏
+ */
 const express = require('express');
 const router = express.Router();
 const connection = require('./usemysql');

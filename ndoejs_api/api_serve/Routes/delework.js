@@ -1,3 +1,8 @@
+/**
+ * 删除作品接口：(get)
+ * 传入userid、paintid
+ * 返回是否删除成功
+ */
 const connection = require('../Routes/usemysql');
 const express = require('express');
 const router = express.Router();
