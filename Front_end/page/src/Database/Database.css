@@ -19,14 +19,14 @@
     background:#fff;
     width:90vw;
     height:13vw;
-    border-radius: 2vw;
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    border-radius: 6vw;
+    /* box-shadow: 0px 1vw 1vw -1vw #5E5E5E; */
 }
 .database_sousou{
-    width:8vw;
+    width:6vw;
     float: left;
     margin-left: 3vw;
-    margin-top: 2vw;
+    margin-top: 3.3vw;
 }
 .database_input_no2{
     margin-top: 1vw;
@@ -36,14 +36,15 @@
     width: 50%;
 }
 .database_search{
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    /* box-shadow: 0px 1vw 1vw -1vw #5E5E5E; */
     background:
     linear-gradient(to left,rgb(228, 137, 196),rgb(198,96,162));
     line-height: 8vw;
     text-align: center;
     width: 22vw;
-    height: 9.5vw;
-    border-radius: 1vw;
+    height: 10vw;
+    border-bottom-right-radius: 6vw;
+    border-top-right-radius: 6vw;
     float:right;
     color:#fff;
     margin-top:1.5vw;
@@ -73,10 +74,13 @@
     position: fixed;
 }
 .am-tabs-default-bar-content{
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
+    /* box-shadow: 0px 1vw 1vw -1vw #5E5E5E; */
     height: 11vw;
     position: fixed;
     background-color: #fff;
+}
+.am-tabs-default-bar-tab{
+    color:rgb(116,116,116)
 }
 .am-tabs-default-bar-tab-active {
     color: rgb(237,143,68);
@@ -84,8 +88,9 @@
 .am-tabs-default-bar-underline{
     border-color: rgb(237,143,68);
 }
+
 .am-tabs-default-bar-tab{
-    font-size: 5vw;
+    font-size: 4.5vw;
     height: 11vw;
 }
 .databaseBuju_root{
@@ -103,10 +108,15 @@
     margin-top: 5vw;
     position: relative;
     height:45vw;
-    background:#fff;
-    background-size:2vw 2vw;
+    background:
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat left top,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat right top,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat left bottom,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat right bottom,
+    #fff;
+    background-size:1vw 1vw;
     padding-bottom:8vw;
-    border-Radius:2vw;
+    /* border-Radius:2vw; */
     padding-top:2vw;
 }
 .databaseBuju_views_canvas{
