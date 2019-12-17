@@ -1,60 +1,35 @@
 .database_header{
-    background:rgb(110,199,194);
-    width:100%;
-    height:18vw;
-    padding-top:1.2vw;
+    background:
+    linear-gradient(to left,rgb(111,200,250),rgb(65, 156, 235));
+    width:101%;
+    height:25vw;
     z-index: 20;
     position: fixed;
     top:0;
     font-size: 5vw;
 }
 .database_tab{
-    margin-top: 19vw;
-    /* z-index: 5; */
+    margin-top: 25vw;
     position: relative;
 }
 .database_input_no1{
-    background:
-    linear-gradient(to left,rgb(110,199,194),rgb(110,199,194)) no-repeat left top,
-    linear-gradient(to left,rgb(110,199,194),rgb(110,199,194)) no-repeat right top,
-    linear-gradient(to left,rgb(110,199,194),rgb(110,199,194)) no-repeat left bottom,
-    linear-gradient(to left,rgb(110,199,194),rgb(110,199,194)) no-repeat right bottom,
-    #fff;
-    background-size:1vw 1vw;
-    /* background-color:#fff; */
-    width:75%;
-    height:65%;
-    padding-top:1.5vw;
-}
-.database_camera{
+    float: left;
+    margin-top: 9vw;
+    margin-left: 5vw;
+    background:#fff;
+    width:90vw;
+    height:13vw;
+    border-radius: 2vw;
     box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
-    z-index:200;
-    width:11vw;
-    float: left;
-    margin-top: 3vw;
-    margin-left: 4vw;
-}
-.database_camera:active{
-    box-shadow: none;
-    z-index:200;
-    width:11vw;
-    float: left;
-    margin-top: 3.5vw;
-    margin-left: 4vw;
 }
 .database_sousou{
-    z-index:200;
     width:8vw;
     float: left;
     margin-left: 3vw;
-    margin-top: 1vw;
-}
-.database_input_no1{
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
     margin-top: 2vw;
-    margin-left: 20vw;
 }
 .database_input_no2{
+    margin-top: 1vw;
     margin-left: 2vw;
     height:80%;
     border:#fff;
@@ -63,61 +38,37 @@
 .database_search{
     box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
     background:
-    linear-gradient(to left,#fff,#fff) no-repeat left top,
-    linear-gradient(to left,#fff,#fff) no-repeat right top,
-    linear-gradient(to left,#fff,#fff) no-repeat left bottom,
-    linear-gradient(to left,#fff,#fff) no-repeat right bottom,
-    rgb(236, 234, 234);
-    background-size:1vw 1vw;
+    linear-gradient(to left,rgb(228, 137, 196),rgb(198,96,162));
     line-height: 8vw;
     text-align: center;
-    width: 19.5vw;
+    width: 22vw;
     height: 9.5vw;
-    /* border: #FF7414 solid 1px; */
-    font-family: "YouYuan";
+    border-radius: 1vw;
     float:right;
-    color:black;
-    margin-top:0vw;
+    color:#fff;
+    margin-top:1.5vw;
     margin-right:2vw;
-    font-size:6vw;
-    border-top:0;
-    border-left: 0;
-    /* border-right: 0; */
+    font-size:4.8vw;
 }
 .database_search:active{
-    box-shadow:none;
     background:
-    linear-gradient(to left,#fff,#fff) no-repeat left top,
-    linear-gradient(to left,#fff,#fff) no-repeat right top,
-    linear-gradient(to left,#fff,#fff) no-repeat left bottom,
-    linear-gradient(to left,#fff,#fff) no-repeat right bottom,
-    rgb(236, 234, 234);
-    background-size:1vw 1vw;
+    linear-gradient(to left,rgb(228, 137, 196),rgb(198,96,162));
     line-height: 9vw;
     text-align: center;
-    width: 19.5vw;
+    width: 22vw;
     height: 9.5vw;
-    /* border: #FF7414 solid 1px; */
-    font-family: "YouYuan";
+    border-radius: 1vw;
     float:right;
-    color:black;
-    margin-top:0vw;
+    color:#fff;
+    margin-top:1.5vw;
     margin-right:2vw;
-    font-size:6vw;
-    border-top:0;
-    border-left: 0;
-}
-.database_navbar{
-    color:#FF7414;
-}
-.database_hight{
-    height: 10vw;
+    font-size:4.8vw;
 }
 .database_font{
     float:left;
     width:100%;
     height:1vw;
-    background-color: rgb(245,245,249);
+    background-color: rgb(241,241,241);
     z-index: 20;
     position: fixed;
 }
@@ -128,22 +79,14 @@
     background-color: #fff;
 }
 .am-tabs-default-bar-tab-active {
-    color: #FF7414;
-}
-.am-tabs-default-bar-tab{
-    font-family: "YouYuan"; 
-    font-size: 5vw;
-    height: 11vw;
+    color: rgb(237,143,68);
 }
 .am-tabs-default-bar-underline{
-    border-color: #FF7414;
+    border-color: rgb(237,143,68);
 }
-.icon-shoucang1{
-    /* z-index: -10; */
+.am-tabs-default-bar-tab{
     font-size: 5vw;
-}
-*:after {
-    color: #FF7414;
+    height: 11vw;
 }
 .databaseBuju_root{
     width:100%;
@@ -153,38 +96,27 @@
     padding:2.5vw;
 }
 .databaseBuju_views{
-    box-shadow: 0px 3vw 3vw -3vw #5E5E5E;
-    margin-top: 4vw;
+    width:45%;
+    float:left;
+    margin-left:4vw;
+    box-shadow: 0px 1vw 1vw -1vw rgb(26, 25, 25);
+    margin-top: 5vw;
     position: relative;
-    height:55vw;
-    /* background-color:#fff; */
-    background:
-    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat left top,
-    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat right top,
-    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat left bottom,
-    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat right bottom,
-    #fff;
+    height:45vw;
+    background:#fff;
     background-size:2vw 2vw;
     padding-bottom:8vw;
-    /* border-Radius:2vw; */
+    border-Radius:2vw;
     padding-top:2vw;
 }
-.none{
-    float: left;
-    width: 100%;
-    height: 10vw;
-    /* background-color: black; */
-}
 .databaseBuju_views_canvas{
-    /* background-color: black; */
-    width:100%;
+    margin-left: 2vw;
+    width:90%;
     height:90%;
 }
 .databaseBuju_views_bottom{
     position: absolute;
     left: 3vw;
-    /* top: 50vw; */
-    color:#000 ;
 }
 .databaseBuju_views_bottom img{
     margin-left: 1vw;
@@ -193,27 +125,19 @@
     height:7vw;
     border-Radius:50% ;
 }
-.databaseBuju_name{
-    font-family: "YouYuan"; 
+.databaseBuju_name{ 
     position: absolute;
     left: 13vw;
     color:#000; 
     height:5vw;
-    font-size:5vw;
-    margin-top: 3vw;
-}
-.databaseBuju_views{
-    width:47%;
-    float:left;
-    margin-left:2vw;
+    font-size:3.5vw;
+    margin-top: 4vw;
 }
 .databaseBuju_views i{
     z-index: 10;
     position: absolute;
-    left: 35vw;
-    top: 45vw;
-    font-size: 7vw;
-    /* color:#FF7414;  */
+    left: 34vw;
+    top: 38vw;
     height:5vw;
     width:5vw;
 }
@@ -222,7 +146,7 @@
     font-family: "YouYuan"; 
     font-weight: 600; 
     top:0px ;
-    background-color:rgb(110,199,194);
+    background-color:rgb(233, 128, 42);
     color:#fff;
     position: fixed;
     z-index: 10;
@@ -275,4 +199,13 @@
 .xiangqing_zuoping_canvas{
     width:100%; 
     height:100%; 
+}
+
+.database_hight{
+    height: 5vw;
+}
+.none{
+    float: left;
+    width: 100%;
+    height: 10vw;
 }

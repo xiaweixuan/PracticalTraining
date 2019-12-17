@@ -118,11 +118,10 @@ export default function Database(props){
             <div className="database">
                 <div>
                     <div className="database_header">
-                        <img className="database_camera" src="img/xiang.png"></img>
                         <div className="database_input_no1">
                             <img className="database_sousou" src="img/so.png"></img>
                             <input className="database_input_no2" onChange={handleChange}  type="text" placeholder="搜索：" name="search"></input>
-                            <input className="database_search" type='submit' value="搜 索" style={{border:0}} onClick={addItem}></input> 
+                            <input className="database_search" type='submit' value="搜索" style={{border:0}} onClick={addItem}></input> 
                         </div>
                     </div>
                 </div>
