@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useWindowWidth } from 'react'
+import React, { useState, useEffect,push} from 'react'
 import Palette from './palette'
 import store from '../store';
 import { LoginchangeValueName, LoginchangeValuePassword, Motto, ChangeUserid,Email,changeValueeee} from '../actions';
@@ -36,8 +36,8 @@ export default function Drawing(props) {
                 console.log(data);
                 if (data == true) {
 
-                    // props.history.push('/database')
-                    alert('保存成功');
+                    props.history.push('/mine')
+                    // alert('保存成功');
                 }
             })
     }

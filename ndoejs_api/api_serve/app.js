@@ -19,6 +19,9 @@ var mottoRouter = require('./Routes/motto');
 var iscollectRouter = require('./Routes/iscollect');
 var ispwdRouter = require('./Routes/ispwd');
 var saveworkRouter = require('./Routes/savework');
+var npcsayRouter = require('./Routes/npcsay');
+var deleworkRouter = require('./Routes/delework');
+var delefabuRouter = require('./Routes/delefabu');
 
 app.get('/', function(req, res) {
   res.setHeader('Content-Type','text/plain;charset="utf-8"')
@@ -43,6 +46,9 @@ app.use('/motto', mottoRouter);
 app.use('/iscollect', iscollectRouter);
 app.use('/ispwd', ispwdRouter);
 app.use('/savework', saveworkRouter);
+app.use('/npcsay', npcsayRouter);
+app.use('/delework', deleworkRouter);
+app.use('/delefabu', delefabuRouter);
 
 //后台接口
 var showuser = require('./BackManage/showuser');

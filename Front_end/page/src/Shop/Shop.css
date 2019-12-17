@@ -114,3 +114,16 @@
     color: #fff;
     border-radius: 4vw;
 }
+.denglu_false_but_no2{
+    margin-left: 8vw;
+    margin-right: 5vw;
+    font-size: 3vw;
+    width: 16vw;
+    height: 6vw;
+    background-color: rgb(182, 182, 182);
+    font-family: "YouYuan"; 
+    float: left;
+    border: 0px;
+    color: #fff;
+    border-radius: 4vw;
+}

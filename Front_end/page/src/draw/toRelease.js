@@ -2,8 +2,10 @@ import React, { useState, useEffect, useWindowWidth } from 'react'
 import Palette from './palette'
 import {Link} from 'react-router-dom'
 import './draw.css'
+
 import store from '../store';
 import { LoginchangeValueName, LoginchangeValuePassword, Motto, ChangeUserid,Email,changeValueeee} from '../actions';
+import { func } from 'prop-types';
 export default function Drawing(props) {
     let [userid, setUser] = useState(store.getState().ChangeUserid);
     let [paintid, setPaintid] = useState(store.getState().ChangeUserid+new Date().getTime());
@@ -14,6 +16,8 @@ export default function Drawing(props) {
     var [win, setW] = useState(true);
     var [type,setType]=useState('');
     var [describe,setDes]=useState('');
+    let flag = store.getState().loginstateflag;
+    var [jugdetor,setJugdetor]=useState(false);
     let [jugde,setJugde] = useState(store.getState().loginstateflag);
     function displayjudge(){
         setJugde(true);
@@ -24,9 +28,9 @@ export default function Drawing(props) {
     function Changetuijian() {
         setColor(true);
     }
-    function handletype(e){
-        setType(e.target.value);
-    }
+    // function handletype(e){
+    //     setType(e.target.value);
+    // }
     function handledes(e){
         setDes(e.target.value);
     }
@@ -79,7 +83,34 @@ export default function Drawing(props) {
     function correctColor() {
         obj.correctColor(obj.context);
     }
+    function choosetype(e){
+        // console.log(e.target.value);
+        setType(e.target.value);
+    }
     function per(){
+        setJugdetor(true);
+    }
+    function choosetrue(){
+        console.log(type,describe);
+        fetch('http://xiawx.top:8080/perpaint', {
+            body: JSON.stringify({
+                paintid:paintid,userid: userid,paintdata:obj.toString(),type:type,describe:describe,history:null,col:'20',raw:'20'
+            }),
+            method: 'POST',
+        })
+        .then(res => res.json())
+        .then(res => {
+            var data = res.content;
+            console.log(data);
+            if (data == true) {
+                props.history.push('/database')
+            }
+        })
+    }
+    function choosefalse(){
+        setJugdetor(false);
+    }
+    function perput(){
         fetch('http://xiawx.top:8080/perpaint', {
             body: JSON.stringify({
                 paintid:paintid,userid: userid,paintdata:obj.toString(),type:type,describe:describe,history:null,col:'20',raw:'20'
@@ -92,7 +123,7 @@ export default function Drawing(props) {
                 console.log(data);
                 if (data == true) {
 
-                    props.history.push('/database')
+                    props.history.push('/community')
                 }
             })
     }
@@ -173,14 +204,7 @@ export default function Drawing(props) {
                     </div>
                 </div>
             </div>
-            <div className="torelease_text_no1">
-                <div classNmae="torelease_text_miaoshu">类型（植物/动物/其他）</div>
-                <input type='text' onChange={handletype}></input>
-            </div>
-            <div className="torelease_text">
-                <div classNmae="torelease_text_miaoshu">详情描述</div>
-                <input type='text' onChange={handledes}></input>
-            </div>
+           
             <div>
                 <div className="drawing_canvas_div1">
                     <canvas id="canvas" width={aa} height={aa}>您的浏览器版本过低</canvas>
@@ -206,17 +230,37 @@ export default function Drawing(props) {
                 </div>
             </div>
             <div className='drawing_bottom_no1' style={{ display: win ? 'none' : 'block' }} onClick={per}>发布</div>
-            <div className="denglu_false" style={{display:jugde?"none":"block"}}>
-                    <p>请先登录</p>
-                    <div className="denglu_false_but">
-                        <button className="denglu_false_but_no1" onClick={displayjudge}>确定</button>
-                        <button className="denglu_false_but_no1" onClick={displayjudge}>返回</button>
-                        <div className="denglu_clearfloat"></div>
+            
+            <div className="torelease" style={{display:jugdetor?"block":"none"}}>
+                <div className="torelease_text_no1">
+                    <div className="torelease_text_type" onClick={choosetype}>
+                        <p>类型：</p>
+                        <input type="radio" name="sex" value="植物" />植物
+                        <input type="radio" name="sex" value="动物" />动物
+                        <input type="radio" name="sex" value="其他" />其他
                     </div>
-                    
                 </div>
-                <div className="denglu_shadow" style={{display:jugde?"none":"block"}}></div>
-            <div className="none"></div>
+                <div className="torelease_text">
+                    <p>详情描述：</p>
+                    <input type='text' onChange={handledes}></input>
+                </div>
+                <div>
+                    <button className="torelease_false_but_no1" onClick={choosetrue} onClick={perput}>确定</button>
+                    <button className="torelease_false_but_no2" onClick={choosefalse}>返回</button>
+                </div>
+            </div> 
+            <div className="denglu_shadow" style={{display:jugdetor?"block":"none"}}></div>
+            
+            <div className="denglu_false" style={{display:jugde?"none":"block"}}>
+                <p>请先登录</p>
+                <div className="denglu_false_but">
+                    <button className="denglu_false_but_no1" onClick={displayjudge}>确定</button>
+                    <button className="denglu_false_but_no2" onClick={displayjudge}>返回</button>
+                    <div className="denglu_clearfloat"></div>
+                </div>  
+            </div>
+            <div className="denglu_shadow" style={{display:jugde?"none":"block"}}></div> 
+            
         </div>
     )
 }

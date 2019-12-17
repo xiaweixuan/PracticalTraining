@@ -5,6 +5,7 @@ import Drawing from '../draw/drawing';
 export default function Xiangqing(props){
 
     var a = props.location.state.item ;
+    var b=props.history;
     // console.log(a)
         return (
             <div className="database">
@@ -34,7 +35,7 @@ export default function Xiangqing(props){
                                 {/* <canvas className="xiangqing_zuoping_canvas" id={"canvas"} width='100%'height='100%'>
 
                                 </canvas> */}
-                                <Drawing data={a}/>
+                                <Drawing data={a} history={b}/>
                             </div>
                         </div>
                     </div>

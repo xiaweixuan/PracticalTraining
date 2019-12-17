@@ -62,7 +62,7 @@ export default function Database(props){
                     <p>请先登录</p>
                     <div className="denglu_false_but">
                         <button className="denglu_false_but_no1" onClick={displayjudge}>确定</button>
-                        <button className="denglu_false_but_no1" onClick={displayjudge}>返回</button>
+                        <button className="denglu_false_but_no2" onClick={displayjudge}>返回</button>
                         <div className="denglu_clearfloat"></div>
                     </div>
                     
