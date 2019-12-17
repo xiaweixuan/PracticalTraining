@@ -1,9 +1,9 @@
 .shop_navbar{
     box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
-    font-family: "YouYuan"; 
     font-weight: 500; 
     top:0px ;
-    background-color:rgb(110,199,194);
+    background:
+    linear-gradient(to left,rgb(111,200,250),rgb(65, 156, 235));
     color:#fff;
     position: fixed;
     z-index: 10;
@@ -11,53 +11,47 @@
     height:13vw;
     font-size: 5vw;
     line-height: 13vw;
-    float: left;
     text-align: center;
 }
 .shop_content{
     margin-top: 11vw;
 }
 .shop_views{
-    box-shadow: 0px 3vw 3vw -3vw #5E5E5E;
-    margin-top: 4vw;
+    box-shadow: 0px 1vw 1vw -1vw rgb(26, 25, 25);
+    margin-top: 5vw;
     position: relative;
-    height:50vw;
-    /* background-color:#fff; */
-    background:
-    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat left top,
-    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat right top,
-    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat left bottom,
-    linear-gradient(to left,#F5F5F9,#F5F5F9) no-repeat right bottom,
-    #fff;
-    background-size:2vw 2vw;
+    height:40vw;
+    background:#fff;
     padding-bottom:8vw;
-    /* border-Radius:2vw; */
-    padding-top:2vw;
-    margin-left: 2vw;
-    width: 47%;
+    border-radius:2vw;
+    margin-left: 4vw;
+    width: 45%;
     float: left;
 }
 .shop_views_canvas{
-    /* background-color: black; */
-    width:100%;
+    margin-top: 1vw;
+    margin-left: 2vw;
+    width:90%;
     height:90%;
 }
 .shop_money{
     font-size: 4vw;
     margin-top: 3vw;
-    margin-left: 3vw;
+    margin-left: 4vw;
     float: left;
 }
 .shop_buy{
     font-size: 3.5vw;
     border: 0px;
-    background-color:rgb(110,199,194);
+    background:
+    linear-gradient(to left,rgb(238, 216, 146),rgb(235, 191, 48));
     color:#fff;
     margin-top: 2vw;
-    margin-left: 18vw;
-    width: 15vw;
+    margin-right: 2vw;
+    width: 14vw;
     height: 7vw;
-    float: left;
+    float:right;
+    border-radius: 1vw;
 }
 .none{
     float: left;
@@ -79,15 +73,14 @@
     z-index:999;
     position: absolute;
     background-color:rgb(243, 243, 243);
-    border-radius: 4vw;
+    border-radius: 2vw;
     width: 60vw;
     height: 40vw;
     top: 50vw;
     left: 23vw;
 }
 .denglu_false p{
-    font-size: 4vw;
-    font-family: "YouYuan"; 
+    font-size: 5vw; 
     margin-top: 12vw;
     text-align: center;
 }
@@ -99,31 +92,29 @@
     margin-top:-1vw;
 }
 .denglu_false_but{
-    margin-top: 12vw;
+    margin-top: 10vw;
 }
 .denglu_false_but_no1{
     margin-left: 8vw;
     margin-right: 5vw;
     font-size: 3vw;
-    width: 16vw;
-    height: 6vw;
-    background-color: rgb(110,199,194);
-    font-family: "YouYuan"; 
+    width: 17vw;
+    height: 7vw;
+    background:linear-gradient(to left,rgb(238, 216, 146),rgb(235, 191, 48));
     float: left;
     border: 0px;
-    color: #fff;
-    border-radius: 4vw;
+    color: rgb(255, 255, 255);
+    border-radius: 2vw;
 }
 .denglu_false_but_no2{
     margin-left: 8vw;
     margin-right: 5vw;
     font-size: 3vw;
-    width: 16vw;
-    height: 6vw;
-    background-color: rgb(182, 182, 182);
-    font-family: "YouYuan"; 
+    width: 17vw;
+    height: 7vw;
+    background: linear-gradient(to left,rgb(219, 217, 208)b(83, 83, 82));
     float: left;
     border: 0px;
     color: #fff;
-    border-radius: 4vw;
+    border-radius: 2vw;
 }
