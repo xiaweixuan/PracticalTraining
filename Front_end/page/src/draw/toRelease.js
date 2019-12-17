@@ -248,8 +248,8 @@ export default function Drawing(props) {
             <div className="denglu_false" style={{display:jugde?"none":"block"}}>
                 <p>请先登录</p>
                 <div className="denglu_false_but">
-                    <button className="denglu_false_but_no1" onClick={displayjudge}>确定</button>
-                    <button className="denglu_false_but_no2" onClick={displayjudge}>返回</button>
+                    <Link to='/denglu'><button className="denglu_false_but_no1" onClick={displayjudge}>确定</button></Link>
+                    <Link to='/mine'><button className="denglu_false_but_no2" onClick={displayjudge}>返回</button></Link>
                     <div className="denglu_clearfloat"></div>
                 </div>  
             </div>

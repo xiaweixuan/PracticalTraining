@@ -1,6 +1,7 @@
 import React, { useState, useEffect,push} from 'react'
 import Palette from './palette'
 import store from '../store';
+import {Link} from 'react-router-dom'
 import { LoginchangeValueName, LoginchangeValuePassword, Motto, ChangeUserid,Email,changeValueeee} from '../actions';
 import './draw.css'
 export default function Drawing(props) {
@@ -220,8 +221,8 @@ export default function Drawing(props) {
             <div className="denglu_false" style={{display:jugde?"none":"block"}}>
                     <p>请先登录</p>
                     <div className="denglu_false_but">
-                        <button className="denglu_false_but_no1" onClick={displayjudge}>确定</button>
-                        <button className="denglu_false_but_no1" onClick={displayjudge}>返回</button>
+                        <Link to='/denglu'><button className="denglu_false_but_no1" onClick={displayjudge}>确定</button></Link>
+                        <Link to='/database'><button className="denglu_false_but_no1" onClick={displayjudge}>返回</button></Link>
                         <div className="denglu_clearfloat"></div>
                     </div>
                     
