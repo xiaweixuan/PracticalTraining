@@ -2,7 +2,7 @@ import React, { Component ,useState,useEffect} from 'react'
 import Undertab from '../undertab/Undertab';
 import './Shop.css';
 import store from '../store';
-import Npc from '../Npc/Npc'
+import Npc from '../npc/Npc'
 
 export default function Database(props){
     let [data, setData] = useState([]);
