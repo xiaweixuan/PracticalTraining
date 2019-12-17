@@ -21,9 +21,14 @@
     margin-top: 5vw;
     position: relative;
     height:40vw;
-    background:#fff;
+    background:
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat left top,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat right top,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat left bottom,
+    linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat right bottom,
+    #fff;
+    background-size:1vw 1vw;
     padding-bottom:8vw;
-    border-radius:2vw;
     margin-left: 4vw;
     width: 45%;
     float: left;
