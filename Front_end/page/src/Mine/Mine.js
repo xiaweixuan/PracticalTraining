@@ -5,7 +5,7 @@ import { Flex} from 'antd-mobile';
 import './Mine.css'
 import store from '../store';
 import Undertab from '../undertab/Undertab'
-import Npc from '../Npc/Npc'
+import Npc from '../npc/Npc'
 import {Motto,Email} from '../actions';
 export default class Mine extends Component {
     constructor(){
