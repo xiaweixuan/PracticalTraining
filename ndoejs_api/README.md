@@ -24,3 +24,6 @@
 | /iscollect | 官方图是否收藏 | get  | userid   | { state: '', message: '', content: json对象 } |
 | /ispwd | 密码校验   | post  | userid,pwd    | { state: '', message: '', content: true or false } |
 | /savework | 保存作品   | post  | paintid,userid,paintdata,history | { state: '', message: '', content: true or false } |
+| /npcsay | npc小知识   | get  | 无 | { state: '', message: '', content: string } |
+| /delework | 删除作品   | get  | userid,paintid | { state: '', message: '', content: true or false } |
+| /delefabu | 删除发布   | get  | paintid | { state: '', message: '', content: true or false } |

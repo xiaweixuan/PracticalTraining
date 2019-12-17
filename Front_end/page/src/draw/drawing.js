@@ -57,8 +57,8 @@ export default function Drawing(props) {
     }
 
     function changeColorFree(color) {
-        console.log("自由改颜色");
         obj.color = color;
+        console.log(obj.color);
     }
 
     function showNumber() {
@@ -224,11 +224,16 @@ export default function Drawing(props) {
                 <p onClick={finishDraw} class="bottom3 bt-box-p">完成</p>
             </div>
 
-
-            <div className="drawing_bottom" style={{ display: win ? 'block' : 'none' }}>
+            
+            <div className="drawing_bottom" style={{display:win?'block':'none'}}> 
                 <div className="drawing_left">
-                    <div className="drawing_tuijian" onClick={Changetuijian} style={{ color: color ? "rgb(110,199,194)" : "black" }}>推荐配色</div>
-                    <div className="drawing_free" onClick={Changefree} style={{ color: color ? "black" : "rgb(110,199,194)" }}>自由配色</div>
+                    <div className="drawing_tuijian" 
+                    onClick={Changetuijian} 
+                    style={{color:color?"rgb(110,199,194)":"black"}}>推荐配色</div>
+                    <div className="drawing_free" 
+                    onClick={Changefree} 
+                    style={{color:color?"black":"rgb(110,199,194)"}}>自由配色</div>
+                    
                 </div>
                 <div className="drawing_right">
                     <div style={{ display: color ? "block" : "none" }}>
@@ -249,8 +254,8 @@ export default function Drawing(props) {
                         </div>
                     </div>
                     <div>
-                        <div className="drawing_color" style={{ display: color ? "none" : "block" }}>
-                            <Palette change={changeColorFree} />
+                        <div className="drawing_color" style={{display:color?"none":"block"}}>
+                            <Palette color={obj.color} change={changeColorFree} />
                         </div>
                     </div>
                 </div>
