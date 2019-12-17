@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import './Npc.css'
 export default function Npc() {
     var actionFrame = [];
 
@@ -43,6 +44,6 @@ export default function Npc() {
         pic.initbackground(pic.context);
         pic.draw(pic.context);
     }
-    return (<canvas id='npc' width='200px' height='200px'></canvas>)
+    return (<canvas id='npc'></canvas>)
 }
 

@@ -1,0 +1,8 @@
+#npc{
+    z-index: 1000;
+    position:fixed;
+    bottom:13.5vw;
+    left:3vw;
+    width:40vw; 
+    height:40vw;
+}

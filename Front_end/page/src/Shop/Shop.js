@@ -2,6 +2,7 @@ import React, { Component ,useState,useEffect} from 'react'
 import Undertab from '../undertab/Undertab';
 import './Shop.css';
 import store from '../store';
+import Npc from '../Npc/Npc'
 
 export default function Database(props){
     let [data, setData] = useState([]);
@@ -84,6 +85,7 @@ export default function Database(props){
             <div className="denglu_shadow" 
             style={{display:jugde?"block":"none"}}></div>
             <div className="none"></div>
+            <Npc />
             <Undertab flag="4"/>
         </div>
     )

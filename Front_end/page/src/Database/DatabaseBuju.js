@@ -113,7 +113,7 @@ function PlaceHolder(props, { className = '', ...restProps }) {
 				)
 			}
 
-			<div className="none"></div>
+			<div className="none1"></div>
 		</div>
 
 	)

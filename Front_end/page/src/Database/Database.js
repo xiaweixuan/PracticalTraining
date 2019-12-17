@@ -2,6 +2,7 @@ import React, { Component ,useState,useEffect} from 'react'
 import {HashRouter as Router,Link} from 'react-router-dom';
 import { NavBar, Icon ,Tabs} from 'antd-mobile';
 import './Database.css';
+import Npc from '../Npc/Npc'
 import store from '../store';
 import {Search} from '../actions';
 import Undertab from '../undertab/Undertab';
@@ -144,6 +145,7 @@ export default function Database(props){
                     </Tabs>
                 </div>
                 <div className="database_hight"></div>
+                <Npc />
                 <Undertab flag="1"/>
             </div>
         )
