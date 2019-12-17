@@ -35,13 +35,13 @@ export default function Npcsay() {
     return (
         <div id="npcsay_root" style={{display:'block'}}>
             <button onClick={closesay}>×</button>
-            <div id="npcsay_div1">
+            <div id="npcsay_div1" style={{background:'url(img/4.png)',backgroundRepeat:'no-repeat',backgroundSize: '100% 100%'}}>
                 <p>
                     {data}
                 </p>
             </div>
-            <div id="npcsay_div2"></div>
-            <div id="npcsay_div3"></div>
+            <div id="npcsay_div2" style={{background:'url(img/5.png)',backgroundRepeat:'no-repeat',backgroundSize: '100% 100%'}}></div>
+            <div id="npcsay_div3" style={{background:'url(img/6.png)',backgroundRepeat:'no-repeat',backgroundSize: '100% 100%'}}></div>
         </div>
     )
 }
