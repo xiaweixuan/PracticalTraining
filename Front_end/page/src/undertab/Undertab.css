@@ -1,7 +1,7 @@
 .Undertab_div{
     z-index: 200;
     position:fixed;
-    bottom:0px;
+    bottom:-2px;
     width:100%;
     text-align: center;
     background-color: #fff;
@@ -10,17 +10,14 @@
     width:20%;
     height: 17vw;
     float: left;
-    font-size:3vw;
 }
 #icon{
     line-height: 11vw;
     font-size: 6vw;
 }
 #icon1{
-    line-height: 16vw;
-    font-size: 10vw;
+    line-height: 17vw;
 }
 .ziliao{
     font-size: 4vw;
-    font-family: "YouYuan";
 }

@@ -104,15 +104,10 @@ function PlaceHolder(props, { className = '', ...restProps }) {
 							<img src="img/mine_message_img.png" />
 						</div>
 
-						<div className="databaseBuju_name">xx官方</div>
+						<div className="databaseBuju_name">童画官方</div>
 						<a><i className='iconfont icon-shoucang1' onClick={() => judgecollection(item, idx)} style={{ color: item.iscollect ? "yellow" : "black" }}></i></a>
 
-						<div className="m-sidebar">
-							<div className="cart">
-								<i id="end"></i>
-								<span>我的收藏</span>
-							</div>
-						</div>
+					
 
 					</div>
 				)
