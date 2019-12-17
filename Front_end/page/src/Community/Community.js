@@ -55,7 +55,8 @@ export default function Community(){
             </div>
             
             <Carousel
-            style={{height:'70vw',marginTop:'14vw'}}
+            style={{background:'linear-gradient(to left,rgb(127, 250, 111),rgb(65, 153, 235))',
+            height:'55vw',marginTop:'14vw',border:'none'}}
           autoplay={true}
           infinite
           beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
@@ -65,7 +66,7 @@ export default function Community(){
             
               <canvas
               id={'canvasimg'+idx}
-                style={{ marginLeft:'16vw',width: '70%', height:'70vw',verticalAlign: 'top' }}
+                style={{ marginLeft:'25vw',width: '50%', height:'52vw',verticalAlign: 'top' }}
                 onLoad={() => {
                   window.dispatchEvent(new Event('resize'));
                 }}
@@ -87,7 +88,7 @@ export default function Community(){
                             </div>
                             <p className='community_chat_another_id'>{data[idx].userid}</p>
                             <div className='community_chat_talk'>
-                    <p className='community_chat_another_word'>{data[idx].describe}</p>
+                                <p className='community_chat_another_word'>{data[idx].describe}</p>
                                 <div className='community_chat_talk_pic_box'>
                                     <Link to={{pathname:"/xiangqing2",state:{item}}}>
                                         <canvas className='community_chat_talk_canvas' 
@@ -96,7 +97,9 @@ export default function Community(){
                                     </Link>
                               
                                 </div>
-                                <p className='community_chat_another_time'>{timestampToTime(item.paintid.slice(item.paintid.length-13))}</p>
+                                <div className='community_chat_another_time'>
+                                <p>{timestampToTime(item.paintid.slice(item.paintid.length-13))}</p>
+                                </div>
                             </div>
                         </div>
                         )
