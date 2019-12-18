@@ -57,7 +57,7 @@ export default function Database(props){
                         id={"canvas"+idx}>
                         
                         </canvas>
-                        <div className="shop_money">￥45</div>
+                        {/* <div className="shop_money">￥45</div> */}
 
                         <button className="shop_buy" 
                         onClick={()=>buynpc(idx,item)}>使用</button>
