@@ -20,6 +20,7 @@ import Aaa from '../Aaa/Aaa';
 import Torelease from '../draw/toRelease';
 import Xiangqing2 from '../Community/Xiangqing2';
 import Shop from '../Shop/Shop';
+import Modify from '../Mine/Modify';
 
 class Routes extends Component {
 	render() {
@@ -45,6 +46,7 @@ class Routes extends Component {
 					<Route exact path='/torelease' component={Torelease}/>
 					<Route exact path="/xiangqing2" component={Xiangqing2}/>
 					<Route exact path="/shop" component={Shop}/>
+					<Route exact path="/modify" component={Modify}/>
 					<Redirect to='/nomatch'/> 
 				</Switch>
 			</Router>

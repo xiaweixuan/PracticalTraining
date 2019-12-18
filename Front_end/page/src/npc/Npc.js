@@ -1,17 +1,21 @@
 import React, { useEffect,useState } from 'react'
 import './Npc.css'
-export default function Npc() {
+export default function Npc(props) {
     var actionFrame = [];
-    let [length,setLength]=useState(0);
+    let length=1;
+    let npcid=props.npcid;
+    let [change,setChange]=useState(true);
+    console.log(npcid);
     useEffect(() => {
         var canvas = document.getElementById("npc");
         var context = canvas.getContext("2d");
-        var pic = new window.Picture({ col: 30, row: 30, width: canvas.width, height: canvas.height, context: context });
-        fetch('http://xiawx.top:8080/renpc').then(res => res.json()).then((data) => {
-            setLength(data.content.length);
+        var pic = new window.Picture({ col: 80, row: 50, width: canvas.width, height: canvas.height, context: context });
+        console.log(npcid);
+        fetch('http://xiawx.top:8080/showanpc?npcid=you').then(res => res.json()).then((data) => {
+            length=data.length;
             actionFrame = data.content;
             actionRestore(pic);
-            console.log(data.content.length);
+            console.log(data);
         })
         // setTimeout(() => {
         //     npcAction(pic);
@@ -23,7 +27,7 @@ export default function Npc() {
             npcAction(pic);
         })
 
-    }, [])
+    },[change])
     function npcAction(pic) {
         //动作
         var n = 0;
@@ -32,7 +36,9 @@ export default function Npc() {
             pic.initbackground(pic.context);
             pic.draw(pic.context);
             n++;
-            if (n === 6) {
+            // var l=length;0
+            console.log(length)
+            if (n == length) {
                 clearInterval(timer)
                 setTimeout(() => {
                     actionRestore(pic)

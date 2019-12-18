@@ -12,9 +12,9 @@ export default function Database(props){
     var can = [];
     let userid = store.getState().LoginchangeValueName;
     let flag = store.getState().loginstateflag;
-
+    let [npcid,setN]=useState('');
     useEffect(()=>{
-        fetch('http://xiawx.top:8080/offpaint')
+        fetch('http://xiawx.top:8080/shownpc')
 		.then(res => res.json())
 		.then(res => {
             setData(res.content);
@@ -25,21 +25,18 @@ export default function Database(props){
         for(var i = 0; i < data.length; i++){
             var canvas = can[i];
             var context = canvas.getContext("2d");
-            var a = new window.Picture({ col: data[i].col, row: data[i].raw, width: canvas.width, height: canvas.height, context: context });
-            a.drawDataMatrix = a.prase(data[i].paintdata);
-            a.toColorList();
-            a.toNumberDataMatrix();
-            a.colorList_abiding=[...a.colorList];
-            a.numberDataMatrix_abiding = [...a.numberDataMatrix];
-            a.initdata()
-            a.drawGreyShadow(context)
+            var a = new window.Picture({col:data[i].col,row:data[i].raw,width:canvas.width,height:canvas.height,context:context});
+            a.drawDataMatrix=a.prase(data[i].paintdata);
+            a.draw(context);
         }
     })
     
-    function buynpc(idx){
-        if(flag == false){
-            setJugde(true);
-        }
+    function buynpc(idx,item){
+        console.log(item.npcid);
+        // if(flag == false){
+        //     setJugde(true);
+        // }
+        setN(item.npcid);
     }
     
     function displayjudge(){
@@ -64,7 +61,7 @@ export default function Database(props){
                         <div className="shop_money">￥45</div>
 
                         <button className="shop_buy" 
-                        onClick={()=>buynpc(idx)}>购买</button>
+                        onClick={()=>buynpc(idx,item)}>使用</button>
         
                     </div>
                     )
@@ -87,7 +84,7 @@ export default function Database(props){
             style={{display:jugde?"block":"none"}}></div>
             <div className="none"></div>
             <Npcsay/>
-            <Npc />
+            <Npc npcid={npcid}/>
             <Undertab flag="4"/>
         </div>
     )
