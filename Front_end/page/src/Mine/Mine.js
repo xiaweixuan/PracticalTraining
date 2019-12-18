@@ -17,11 +17,27 @@ export default class Mine extends Component {
             judge:1,
             user_data:"",
             offpaint_data:[],
-            judge1:0
+            judge1:0,
+            img:"http://47.97.90.172:8095/upload/1576668351926.png",
+            a:""
         }
     }
-    
+
     componentDidMount() {
+        console.log(11)
+        if(this.props.location.state){
+            fetch('http://47.97.90.172:8095/listt')
+            .then(res=>res.json())
+            .then(res=>{
+                console.log(res.content)
+                this.setState({img:"http://47.97.90.172:8095/upload/"+res.content+".png"})
+                this.setState({
+                    a:res.content
+                })
+            })
+            console.log(this.state.a)
+            
+        }
         if(this.state.flag == true){
             fetch('http://xiawx.top:8080/personal?userid='+this.state.userid)
             .then(res=>res.json())
@@ -110,14 +126,23 @@ export default class Mine extends Component {
             <div className="mine_message_div">
                 <WingBlank>
                     {/* 登录状态 */}
-                    <div className="mine_message" style={{display:this.state.flag?"block":"none"}}>
+                    {
+                        console.log(this.props.location.state)
+                    }
+                    <div className="mine_message" 
+                    style={{display:this.state.flag?"block":"none"}}>
                         <div id="user-photo">
-                            <img className="mine_message_left" src={this.state.filePhoto || "img/mine_message_img.png"}/>
+                            <img className="mine_message_left" 
+                            // src={this.state.filePhoto || "img/mine_message_img.png"}/>
+                            src={this.state.img}/>
                         </div>
                         <div className="mine_message_right">
                             <div className="mine_message_name">{this.state.user_data.userid}</div>
                             <div className="mine_message_sign">{this.state.user_data.motto || "TA很神秘，什么都没有留下"}</div>
-                            <div className="mine_message_edit"><Link to="/edit"><i className="iconfont icon-iconset0137"></i></Link></div>
+                            {
+                                console.log(this.state.a)
+                            }
+                            <div className="mine_message_edit"><Link to={{pathname:"/edit",state:this.state.a}}><i className="iconfont icon-iconset0137"></i></Link></div>
                         </div>
                         <div className="mine_clearfloat"></div>
                     </div>

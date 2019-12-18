@@ -1,0 +1,36 @@
+/* Imageclip */
+.canvasBox_div{
+    position: relative;
+  }
+  .canvasBox{
+    border:1px solid red;
+    float: left;
+  }
+  .mark{
+    position: absolute;
+    float: left;
+    border:1px solid red;
+  }
+  .file{
+    display: none;
+  }
+  /* app */
+  .imgBox{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border:1px solid red;
+  }
+  .Aaainput{
+    display: none;
+  }
+  .pick{
+    width: 30vw;
+    height: 8vw;
+    border: none;
+    border-radius: 2vw;
+    margin-left: 35vw;
+    margin-bottom: 5vw;
+    background:
+    linear-gradient(to left,rgb(238, 216, 146),rgb(235, 191, 48));
+  }

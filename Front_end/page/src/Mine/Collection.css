@@ -41,7 +41,7 @@
     margin-left: 3vw;
     margin-top: 4vw;
     width:45%;
-    height:52vw;
+    height:45vw;
     position: relative;
     float:left;
 }
@@ -74,7 +74,8 @@
 }
 .edit_middle_img{
     width: 30vw;
-    border-radius: 30vw;
+    height:30vw;
+    border-radius: 100%;
     margin-left: 34vw;
     margin-bottom: 5vw;
 }
@@ -100,9 +101,9 @@
     margin-left: 2vw;
 }
 .edit_button_save{
-    margin-left: 8vw;
+    margin-left: 10vw;
     border: 0vw;
-    width: 40vw;
+    width: 80vw;
     height: 10vw;
     float: left;
     color: #fff;
@@ -131,7 +132,7 @@
     width: 24vw;
     height: 9vw;
     background: 
-    linear-gradient(to left,rgb(238, 216, 146),rgb(235, 191, 48));;
+    linear-gradient(to left,rgb(238, 216, 146),rgb(235, 191, 48));
     color: #fff;
     margin-top:3vw;
     margin-left: -5vw;
@@ -140,25 +141,14 @@
     border-radius: 2vw;
 }
 .edit_middle_btn_false{
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
-    width: 14vw;
+    width: 24vw;
     height: 9vw;
-    background-color: rgb(153, 147, 144);
+    background: 
+    linear-gradient(to left,rgb(177, 176, 174),rgb(105, 105, 104));
     color: #fff;
-    margin-left: 2vw;
-    font-size: 1vw;
-    font-weight: normal;
-    line-height: 1.42857143;
+    margin-top:3vw;
+    margin-left: -5vw;
     text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    background-image: none;
     border: 1px solid transparent;
     border-radius: 2vw;
 }

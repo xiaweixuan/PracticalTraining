@@ -9,6 +9,7 @@ import {LoginchangeValueName,
     ChangeUserid,
     Email,
     changeValueeee} from '../actions';
+import Aaa from '../Aaa/Aaa';
     
 export default function Edit(props) {
     let [olduserid, setOld] = useState(store.getState().LoginchangeValueName);
@@ -174,6 +175,7 @@ function clock (){
         setBtnc("发送验证码");
     }
 }
+var aby = "http://localhost:8091/upload/aa.png";
 let aka="";
 function sendCode (){
     if(email==""){
@@ -200,18 +202,20 @@ return(
     <div className="edit">
         <div className="collection_navbar">
 
-            <Link to="/mine" className="collection_navbar_link">
+            <Link to={{pathname:"/mine", 
+            state:"http://localhost:8091/upload/bb.png"}} className="collection_navbar_link">
                 <i className="iconfont icon-fanhui"></i>
             </Link>
             
             <div className="collection_navbar_no1">
                 <p>编辑个人信息</p></div>
             </div>
-            
+            {
+                console.log(props.location.state)
+            }
             <div className="edit_middle">
-                <img className="edit_middle_img" 
-                src={"img/mine_message_img.png"} />
                 
+                <Aaa bbb={props.location.state}></Aaa>
                 <div className="edit_middle_content">
                     <p>昵称：</p>
                     <input type="text" 
@@ -320,11 +324,15 @@ return(
                     <WhiteSpace size="md" />
                     <WhiteSpace size="md" />
                     <div className="edit_button">
-                        <input className="edit_button_save" 
+                        <Link to={{pathname:"/mine", 
+                        state:"http://localhost:8091/upload/bb.png"}}><input className="edit_button_save" 
                         type="submit" 
                         value="保存" 
-                        onClick={add}></input>
-                        <Link to="/mine" className="edit_button_return">取消</Link>
+                        onClick={add}></input></Link>
+                        {
+                            console.log(aby)
+                        }
+                        {/* <Link to={{pathname:"/mine"}}  className="edit_button_return">取消</Link> */}
                     </div>
                 </div>
             </div>

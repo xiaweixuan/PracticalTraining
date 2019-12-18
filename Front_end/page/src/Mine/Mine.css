@@ -32,6 +32,7 @@
 .mine_message_left{
     float: left;
     width: 25vw;
+    height: 25vw;
     margin-top: 5vw;
     margin-left: 5vw;
     margin-bottom: 5vw;

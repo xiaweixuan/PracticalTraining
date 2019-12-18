@@ -238,7 +238,7 @@ export default function Edit(props) {
                     value="确定" 
                     onClick={determine}
                     ></input>
-                    <Link to="/denglu" className="edit_button_return">取消</Link>
+                    {/* <Link to="/denglu" className="edit_button_return">取消</Link> */}
                 </div>
             </div>
         </div>
