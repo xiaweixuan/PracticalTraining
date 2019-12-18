@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import './Npc.css'
 export default function Npc() {
     var actionFrame = [];
-
+    let [length,setLength]=useState(0);
     useEffect(() => {
         var canvas = document.getElementById("npc");
         var context = canvas.getContext("2d");
         var pic = new window.Picture({ col: 30, row: 30, width: canvas.width, height: canvas.height, context: context });
         fetch('http://xiawx.top:8080/renpc').then(res => res.json()).then((data) => {
+            setLength(data.content.length);
             actionFrame = data.content;
             actionRestore(pic);
+            console.log(data.content.length);
         })
         // setTimeout(() => {
         //     npcAction(pic);
