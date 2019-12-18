@@ -1,10 +1,10 @@
 /* community css */
 .community_navbar{
     box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
-    font-family: "YouYuan"; 
     font-weight: 500; 
     top:0px ;
-    background-color:rgb(110,199,194);
+    background:
+    linear-gradient(to left,rgb(145, 210, 248),rgb(65, 156, 235));
     color:#fff;
     position: fixed;
     z-index: 10;
@@ -37,20 +37,19 @@
     background-color: black;
     height: auto;
 }
-
+.am-carousel-wrap{
+    display: none;
+}
 /* 他人发布 */
 .community_chat_another{
     float: left;
     width: 100%;
-    background-color: #fff;
 }
 .community_chat_another_headpic_box{
     float: left;
     margin-top: 5vw;
-    margin-left: 1.5vw;
-    width: 19vw;
-    height: 19vw;
-    background-color: #fff;
+    width: 18vw;
+    height: 18vw;
     border-radius: 100%;
     overflow: hidden;
 }
@@ -59,69 +58,62 @@
     height: 100%;
 }
 .community_chat_another_id{
+    color:rgb(88, 85, 85);
     float: left;
-    margin-left: -18vw;
+    margin-left: -15vw;
     margin-top: 26vw;
-    font-size: 5vw;
-    font-family: "YouYuan";
+    font-size: 4vw;
 }
 .community_chat_talk{
     float: left;
-    width: 59vw;
+    width: 63vw;
     height: 25vw;
     margin-left: 5vw;
     margin-top: 5vw;
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
-    background:rgb(234,234,234);
-    /* background-size:2vw 2vw; */
-    border-bottom-color:rgb(234,234,234);
-    color: black;
-    font-size: 4vw;
+    background:rgb(255,255,255);
+    color: rgb(88, 85, 85);
     padding: 2vw 2vw 1vw 2vw;
-    border-radius: 2vw;
+    border-radius: 4vw;
     position: relative;
     word-break: break-all;
-    border:0px solid coral;
 }
 .community_chat_talk:before{
-    border:0px solid coral;
     content:'';
     position:absolute;
     right:100%;
-    bottom:2vw;
-    border-width:3vw;
+    bottom:6vw;
+    border-width:4vw;
     border-style:solid;
     border-color:transparent;
-    border-right-width:7vw;
+    border-right-width:5vw;
     border-right-color:currentColor;
-    color:rgb(234,234,234);
+    color:rgb(255,255,255);
 }
 .community_chat_another_word{
-    font-family: "YouYuan";
     float: left;
     width: 35vw;
-    margin-left: 1vw;
+    margin-left: 2vw;
     margin-top: 1vw;
     font-size: 5vw;
+    height: 10vw;
 }
 .community_chat_talk_pic_box{
     float: right;
-    width: 21vw;
-    height: 20vw;
-    background-color: #fff;
+    width: 22vw;
+    height: 21vw;
     overflow: hidden;
-    border-radius: 2vw;
 }
 .community_chat_talk_canvas{
     width: 100%;
     height: 100%;
 }
 .community_chat_another_time{
-    color:coral;
-    font-family: "YouYuan";
+    margin-top: 8vw;
+    height: 10vw;
+    width: 35vw;
+    color:rgb(240, 98, 47);
     font-size: 3vw;
     float: right;
-    margin-top: 8vw;
     margin-right: 2vw;
 }
 
@@ -129,15 +121,12 @@
 .community_chat_mine{
     float: right;
     width: 100%;
-    background-color: #fff;
 }
 .community_chat_mine_headpic_box{
     float: right;
     margin-top: 5vw;
-    margin-right: 1.5vw;
-    width: 19vw;
-    height: 19vw;
-    background-color: #fff;
+    width: 18vw;
+    height: 18vw;
     border-radius: 100%;
     overflow: hidden;
 }
@@ -146,74 +135,67 @@
     height: 100%;
 }
 .community_chat_mine_id{
+    color:rgb(88, 85, 85);
     float: right;
-    margin-right: -16vw;
+    margin-right: -10vw;
     margin-top: 26vw;
-    font-size: 5vw;
-    font-family: "YouYuan";
+    font-size: 4vw;
 }
 .community_chat_mine_talk{
     float: right;
-    width: 60vw;
+    width: 63vw;
     height: 25vw;
     margin-right: 5vw;
     margin-top: 5vw;
-    box-shadow: 0px 1vw 1vw -1vw #5E5E5E;
-    background:rgb(234,234,234);
-    /* background-size:2vw 2vw; */
-    border-bottom-color:rgb(234,234,234);
-    color: black;
-    font-size: 4vw;
+    background:rgb(255,255,255);
+    color: rgb(88, 85, 85);
     padding: 2vw 2vw 1vw 2vw;
-    border-radius: 2vw;
+    border-radius: 4vw;
     position: relative;
     word-break: break-all;
-    border:0px solid coral;
 }
 .community_chat_mine_talk:before{
-    border:0px solid coral;
     content:'';
     position:absolute;
     left:100%;
-    bottom:2vw;
-    border-width:3vw;
+    bottom:6vw;
+    border-width:4vw;
     border-style:solid;
     border-color:transparent;
-    border-left-width:7vw;
+    border-left-width:5vw;
     border-left-color:currentColor;
-    color:rgb(234,234,234);
+    color:rgb(255,255,255);
 }
 .community_chat_mine_word{
-    font-family: "YouYuan";
     float: right;
     width: 35vw;
-    margin-right: 1vw;
+    margin-right: 2vw;
     margin-top: 1vw;
     font-size: 5vw;
+    height: 10vw;
 }
 .community_chat_mine_talk_pic_box{
     float: left;
-    width: 21vw;
-    height: 20vw;
-    background-color: #fff;
+    width: 22vw;
+    height: 21vw;
     overflow: hidden;
-    border-radius: 2vw;
 }
-.community_chat_talk_canvas{
+.community_chat_mine_talk_canvas{
     width: 100%;
     height: 100%;
 }
 .community_chat_mine_time{
-    color:coral;
-    font-family: "YouYuan";
+    margin-top: 8vw;
+    height: 10vw;
+    width: 35vw;
+    color:rgb(240, 98, 47);
     font-size: 3vw;
     float: left;
-    margin-top: 8vw;
     margin-left: 2vw;
 }
 
 .community_hight{
     float: left;
     width: 100%;
-    height: 20vw;
+    height: 53vw;
 }
