@@ -25,6 +25,9 @@
 | /ispwd | 密码校验   | post  | userid,pwd    | { state: '', message: '', content: true or false } |
 | /savework | 保存作品   | post  | paintid,userid,paintdata,history | { state: '', message: '', content: true or false } |
 | /npcsay | npc小知识   | get  | 无 | { state: '', message: '', content: string } |
+| /renpc | npc   | get  | 无 | { state: '', message: '', content: json对象 } |
 | /delework | 删除作品   | get  | userid,paintid | { state: '', message: '', content: true or false } |
 | /delefabu | 删除发布   | get  | paintid | { state: '', message: '', content: true or false } |
 | /setpwd | 密码重置   | post  | userid,pwd | { state: '', message: '', content: true or false } |
+| /shownpc | 获取全部npc  | get  | 无 | { state: '', message: '', content: json对象 } |
+| /showanpc | 获取单个npc   | get  | npcid(duck,girl,man,you) | { state: '', message: '', content: json对象,length:  } |

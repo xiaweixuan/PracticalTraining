@@ -54,6 +54,12 @@ app.use('/delefabu', delefabuRouter);
 app.use('/renpc', renpcRouter);
 app.use('/setpwd', setpwdRouter);
 
+//npc
+var shownpc = require('./Routes/shownpc');
+app.use('/shownpc', shownpc);
+var showanpc = require('./Routes/showanpc');
+app.use('/showanpc', showanpc);
+
 //后台接口
 var showuser = require('./BackManage/showuser');
 app.use('/showuser', showuser);
