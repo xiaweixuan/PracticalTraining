@@ -5,6 +5,7 @@ import store from '../store';
 import Npc from '../npc/Npc'
 import Npcsay from '../npcsay/Npcsay'
 import {Npcid} from '../actions';
+import {Link} from 'react-router-dom'
 export default function Database(props){
     let [data, setData] = useState([]);
     let [jugde,setJugde] = useState(false);
@@ -71,10 +72,14 @@ export default function Database(props){
             style={{display:jugde?"block":"none"}}>
                 <p>请先登录</p>
                 <div className="denglu_false_but">
-                    <button className="denglu_false_but_no1" 
-                    onClick={displayjudge}>确定</button>
-                    <button className="denglu_false_but_no2" 
-                    onClick={displayjudge}>返回</button>
+                    <Link to="/denglu"> 
+                        <button className="denglu_false_but_no1" 
+                        onClick={displayjudge}>确定</button>
+                    </Link>
+                    <Link to="/mine">
+                        <button className="denglu_false_but_no2" 
+                        onClick={displayjudge}>返回</button>
+                    </Link>
                     <div className="denglu_clearfloat"></div>
                 </div>
             </div>
