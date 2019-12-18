@@ -23,6 +23,7 @@ var npcsayRouter = require('./Routes/npcsay');
 var deleworkRouter = require('./Routes/delework');
 var delefabuRouter = require('./Routes/delefabu');
 var renpcRouter = require('./Routes/renpc');
+var setpwdRouter = require('./Routes/setpwd');
 
 app.get('/', function(req, res) {
   res.setHeader('Content-Type','text/plain;charset="utf-8"')
@@ -51,6 +52,7 @@ app.use('/npcsay', npcsayRouter);
 app.use('/delework', deleworkRouter);
 app.use('/delefabu', delefabuRouter);
 app.use('/renpc', renpcRouter);
+app.use('/setpwd', setpwdRouter);
 
 //后台接口
 var showuser = require('./BackManage/showuser');
@@ -59,8 +61,8 @@ var adduser = require('./BackManage/adduser');
 app.use('/adduser', adduser);
 var updateuser = require('./BackManage/updateuser');
 app.use('/updateuser', updateuser);
-// var deleteuser = require('./BackManage/deleteuser');
-// app.use('/deleteuser', deleteuser);
+var deleteuser = require('./BackManage/deleteuser');
+app.use('/deleteuser', deleteuser);
 
 var showpaint = require('./BackManage/showpaint');
 app.use('/showpaint', showpaint);
@@ -68,8 +70,8 @@ var addpaint = require('./BackManage/addpaint');
 app.use('/addpaint', addpaint);
 var updatepaint = require('./BackManage/updatepaint');
 app.use('/updatepaint', updatepaint);
-// var deletepaint = require('./BackManage/deletepaint');
-// app.use('/deletepaint', deletepaint);
+var deletepaint = require('./BackManage/deletepaint');
+app.use('/deletepaint', deletepaint);
 
 var showwork = require('./BackManage/showwork');
 app.use('/showwork', showwork);
@@ -77,8 +79,8 @@ var addwork = require('./BackManage/addwork');
 app.use('/addwork', addwork);
 var updatework = require('./BackManage/updatework');
 app.use('/updatework', updatework);
-// var deletework = require('./BackManage/deletework');
-// app.use('/deletework', deletework);
+var deletework = require('./BackManage/deletework');
+app.use('/deletework', deletework);
 
 var showcollect = require('./BackManage/showcollect');
 app.use('/showcollect', showcollect);
@@ -86,7 +88,7 @@ var addcollects = require('./BackManage/addcollect');
 app.use('/addcollects', addcollects);
 var updatecollect = require('./BackManage/updatecollect');
 app.use('/updatecollect', updatecollect);
-// var deletecollect = require('./BackManage/deletecollect');
-// app.use('/deletecollect', deletecollect);
+var deletecollect = require('./BackManage/deletecollect');
+app.use('/deletecollect', deletecollect);
 
 app.listen(8080);
