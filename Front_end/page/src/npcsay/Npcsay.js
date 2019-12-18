@@ -22,7 +22,7 @@ export default function Npcsay() {
                 npcsay_root.style.display = 'none';
                 setIsok(true);
             }
-        },5000);//调节每次出现的间隔时间
+        },10000);//调节每次出现的间隔时间
         // settime(mytime);
     },[isok]);
 

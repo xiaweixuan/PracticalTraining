@@ -124,9 +124,9 @@
     linear-gradient(to left,rgb(241,241,241),rgb(241,241,241)) no-repeat right bottom,
     #fff;
     background-size:1vw 1vw;
-    width: 42vw;
-    height: 42vw;
-    margin-left: 4vw;
+    width: 40vw;
+    height: 40vw;
+    margin-left: 3vw;
     margin-top: 5vw;
     float: left;
 }

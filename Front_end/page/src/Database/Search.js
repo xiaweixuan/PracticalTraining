@@ -25,6 +25,17 @@ export default function Search1(){
             }
             setData1(data1);
         })
+        fetch('http://xiawx.top:8080/releases')
+        .then(res => res.json())
+        .then(res => {
+            for (var i = 0; i < res.content.length; i++) {
+                if (res.content[i].describe.indexOf(value) != -1 && value != ''){
+                    data1[data2] = res.content[i];
+                    data2++;
+                }
+            }
+            setData1(data1);
+        })
     }, [])
 
     useEffect(() => {
