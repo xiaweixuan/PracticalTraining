@@ -22,7 +22,6 @@ var saveworkRouter = require('./Routes/savework');
 var npcsayRouter = require('./Routes/npcsay');
 var deleworkRouter = require('./Routes/delework');
 var delefabuRouter = require('./Routes/delefabu');
-var renpcRouter = require('./Routes/renpc');
 var setpwdRouter = require('./Routes/setpwd');
 
 app.get('/', function(req, res) {
@@ -51,7 +50,6 @@ app.use('/savework', saveworkRouter);
 app.use('/npcsay', npcsayRouter);
 app.use('/delework', deleworkRouter);
 app.use('/delefabu', delefabuRouter);
-app.use('/renpc', renpcRouter);
 app.use('/setpwd', setpwdRouter);
 
 //npc
