@@ -8,7 +8,6 @@ import Npc from '../npc/Npc'
 import Npcsay from '../npcsay/Npcsay'
 import CommunityMine from './CommunityMine';
 import CommunityOther from './CommunityOther';
-
 export default function Community(){
     let [data,setData]=useState([]);
     useEffect(()=>{

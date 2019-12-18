@@ -160,7 +160,7 @@
     .bottom123 {
         margin: 70px 0 0 5px;
     }
-    .drawing_bottom_no1{
+    /* .drawing_bottom_no1{
         position:fixed;
         margin-top: 10vw;
         line-height: 15vw;
@@ -182,6 +182,30 @@
         margin-top:10vw;
         padding-top:25vw;
         padding-left:11vw;
+        background-color: white;
+    } */
+    .drawing_bottom_no1{
+        position:fixed;
+        line-height: 15vw;
+        top:158vw;
+        left:25vw;
+        text-align: center;
+        border-radius: 2vw;
+        background:
+        linear-gradient(to left,rgb(49, 128, 138),rgb(91, 173, 184));
+        font-size:3vw;
+        height: 15vw;
+        width: 50vw;
+        color: #fff;
+        font-size: 5vw;
+        font-weight: 600;
+    }
+    .drawing_canvas_div1{
+        height: 118vw;
+        margin: auto;
+        margin-top:10vw;
+        padding-top:25vw;
+        padding-left:7vw;
         background-color: white;
     }
     .torelease{

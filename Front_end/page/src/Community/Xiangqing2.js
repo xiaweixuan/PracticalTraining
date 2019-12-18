@@ -21,7 +21,7 @@ export default function Xiangqing(props){
                     </div>
                     
                     <div className="xiangqing_name">
-                        《童画》官方
+                         {props.location.state.item.userid}
                     </div>
                 </div>
                 

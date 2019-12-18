@@ -4,7 +4,7 @@ import './Shop.css';
 import store from '../store';
 import Npc from '../npc/Npc'
 import Npcsay from '../npcsay/Npcsay'
-
+import {Npcid} from '../actions';
 export default function Database(props){
     let [data, setData] = useState([]);
     let [jugde,setJugde] = useState(false);
@@ -12,7 +12,6 @@ export default function Database(props){
     var can = [];
     let userid = store.getState().LoginchangeValueName;
     let flag = store.getState().loginstateflag;
-    let [npcid,setN]=useState('');
     useEffect(()=>{
         fetch('http://xiawx.top:8080/shownpc')
 		.then(res => res.json())
@@ -20,7 +19,6 @@ export default function Database(props){
             setData(res.content);
         })
     },[])
-    
     useEffect(()=>{
         for(var i = 0; i < data.length; i++){
             var canvas = can[i];
@@ -32,11 +30,12 @@ export default function Database(props){
     })
     
     function buynpc(idx,item){
-        console.log(item.npcid);
-        // if(flag == false){
-        //     setJugde(true);
-        // }
-        setN(item.npcid);
+        console.log(item);
+        store.dispatch(Npcid(item))
+        console.log(store.getState());
+        if(flag==false){
+            setJugde(true);
+        }
     }
     
     function displayjudge(){
@@ -84,7 +83,7 @@ export default function Database(props){
             style={{display:jugde?"block":"none"}}></div>
             <div className="none"></div>
             <Npcsay/>
-            <Npc npcid={npcid}/>
+            <Npc />
             <Undertab flag="4"/>
         </div>
     )

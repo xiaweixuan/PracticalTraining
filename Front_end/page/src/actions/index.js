@@ -83,6 +83,12 @@ export const Email = (value)=>(
         value
     }
 )
+export const Npcid = (value)=>(
+    {
+        type: types.CHANGE_NPCID,
+        value
+    }
+)
 // 异步action
 export const logFetch = (value)=>{
     return (dispatch)=>{

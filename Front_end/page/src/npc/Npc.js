@@ -1,33 +1,37 @@
 import React, { useEffect,useState } from 'react'
 import './Npc.css'
+import store from '../store';
 export default function Npc(props) {
     var actionFrame = [];
     let length=1;
-    let npcid=props.npcid;
+    // let npcid=props.npcid;
     let [change,setChange]=useState(true);
+    let [npcid, setNpcid] = useState(store.getState().Npcid);
     console.log(npcid);
+    useEffect(() =>{
+        store.subscribe(() => {
+            setNpcid(store.getState().Npcid);
+        });
+    })
     useEffect(() => {
         var canvas = document.getElementById("npc");
         var context = canvas.getContext("2d");
-        var pic = new window.Picture({ col: 80, row: 50, width: canvas.width, height: canvas.height, context: context });
+        var pic = new window.Picture({ col: npcid.col || 30, row: npcid.raw || 30, width: canvas.width, height: canvas.height, context: context });
         console.log(npcid);
-        fetch('http://xiawx.top:8080/showanpc?npcid=you').then(res => res.json()).then((data) => {
+        fetch('http://xiawx.top:8080/showanpc?npcid='+ npcid.npcid).then(res => res.json()).then((data) => {
             length=data.length;
             actionFrame = data.content;
             actionRestore(pic);
             console.log(data);
         })
-        // setTimeout(() => {
-        //     npcAction(pic);
-        // }, 1000);
-        canvas.addEventListener('touchstart',()=>{
+        canvas.onTouchstart = () => {
             npcAction(pic);
-        })
-        canvas.addEventListener('click',()=>{
+        }
+        canvas.onclick = () => {
             npcAction(pic);
-        })
-
-    },[change])
+            // setChange(!change);
+        }
+    },[npcid])
     function npcAction(pic) {
         //动作
         var n = 0;

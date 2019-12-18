@@ -30,7 +30,7 @@ export default function Database(props){
 
     let userid = store.getState().LoginchangeValueName;
     let flag = store.getState().loginstateflag;
-    
+    // console.log(store.getState());
     useEffect(()=>{
         if(flag == false){
             fetch('http://xiawx.top:8080/offpaint')
