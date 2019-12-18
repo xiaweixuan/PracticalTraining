@@ -27,3 +27,4 @@
 | /npcsay | npc小知识   | get  | 无 | { state: '', message: '', content: string } |
 | /delework | 删除作品   | get  | userid,paintid | { state: '', message: '', content: true or false } |
 | /delefabu | 删除发布   | get  | paintid | { state: '', message: '', content: true or false } |
+| /setpwd | 密码重置   | post  | userid,pwd | { state: '', message: '', content: true or false } |
