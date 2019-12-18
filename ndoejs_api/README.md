@@ -28,3 +28,5 @@
 | /delework | 删除作品   | get  | userid,paintid | { state: '', message: '', content: true or false } |
 | /delefabu | 删除发布   | get  | paintid | { state: '', message: '', content: true or false } |
 | /setpwd | 密码重置   | post  | userid,pwd | { state: '', message: '', content: true or false } |
+| /shownpc | 获取全部npc  | get  | 无 | { state: '', message: '', content: json对象 } |
+| /showanpc | 获取单个npc   | get  | npcid(duck,girl,man,you) | { state: '', message: '', content: json对象,length:  } |
