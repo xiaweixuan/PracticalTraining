@@ -29,7 +29,7 @@ export default function CommunityOther() {
             }
             else{
                 for(var i=0;i<data1.length;i++){
-                    var canvas = document.getElementById('canvas2' + i);
+                    var canvas = document.getElementById('canvaso' + i);
                     var context = canvas.getContext("2d");
                     var a = new window.Picture({
                         col:data1[i].col,
@@ -66,7 +66,7 @@ export default function CommunityOther() {
                         <div className='community_chat_talk_pic_box'>
                             <Link to={{pathname:"/xiangqing2",state:{item}}}>
                                 <canvas className='community_chat_talk_canvas'
-                                id={"canvas2"+idx}>
+                                id={"canvaso"+idx}>
                                 
                                 </canvas>
                             </Link>
