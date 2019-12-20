@@ -30,7 +30,7 @@ export default function CommunityMine() {
                 
                 else{
                     for(var i = 0; i < data1.length; i++){
-                        var canvas = document.getElementById('canvas1' + i);
+                        var canvas = document.getElementById('canvasm' + i);
                         var context = canvas.getContext("2d");
                         var a = new window.Picture({col:data1[i].col,row:data1[i].raw,width:canvas.width,height:canvas.height,context:context});
                         a.drawDataMatrix=a.prase(data1[i].paintdata);
@@ -60,7 +60,7 @@ export default function CommunityMine() {
                         <div className='community_chat_mine_talk_pic_box' id='canvas'>
                             <Link to={{pathname:"/xiangqing2",state:{item}}}>
                                 <canvas className='community_chat_talk_canvas'
-                                id={"canvas1" + idx} >
+                                id={"canvasm" + idx} >
                                     
                                 </canvas>
                             </Link>
