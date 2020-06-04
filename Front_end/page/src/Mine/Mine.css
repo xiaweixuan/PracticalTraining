@@ -2,10 +2,10 @@
 .mine_navbar{
     font-weight: 500;
     top:0px ;
-    background:
-    linear-gradient(to left,rgb(145, 210, 248),rgb(65, 156, 235));
+    background-image: url('http://47.97.90.172:8095/29.gif');
     height:13vw;
-    color:#fff;
+    color:rgb(94, 91, 91);
+    font-weight: 900;
     width: 100%;
     font-size: 5vw;
     line-height: 13vw;
@@ -14,9 +14,9 @@
 }
 .mine_navbar_div i{
     font-size: 9vw;
-    color:#fff;
+    color:rgb(94, 91, 91);
     float: right;
-    margin-top: -12vw;
+    margin-top: -18vw;
     margin-right: 5vw;
 }
 .mine_message{

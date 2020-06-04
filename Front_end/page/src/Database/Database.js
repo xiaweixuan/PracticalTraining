@@ -129,7 +129,7 @@ export default function Database(props){
                         <input className="database_input_no2" 
                         onChange={handleChange}
                         type="text"
-                        placeholder="搜索："
+                        placeholder="输入你想搜索的图画"
                         name="search"></input>
                         <input className="database_search"
                         type='submit'

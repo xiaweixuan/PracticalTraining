@@ -18,7 +18,7 @@ export default function Xiangqing(props){
             <div className="xiangqing_zhong">
                 <div className="xiangqing_xinxi">
                     <div className="xiangqing_touxiang">
-                        <img src="img/mine_message_img.png"/>
+                        <img src="http://47.97.90.172:8095/x5.png"/>
                     </div>
                     <div className="xiangqing_name">
                         {props.location.state.item.userid}
