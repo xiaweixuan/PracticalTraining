@@ -60,12 +60,15 @@ export default function Community(){
                     <EllipsisOutlined key="ellipsis" />,
                 ]}
                 >
+                <a href="http://47.97.90.172:8088/service?cid=1&sid=1">
                     <Meta
                     avatar={
                     <Avatar src="http://47.97.90.172:8095/x5.png" />}
+                    
                     title={data[idx].userid}
                     description={data[idx].describe+'  '+timestampToTime(item.paintid.slice(item.paintid.length-13))}
                     />
+                    </a>
                     </Card>
                     )
                     }
