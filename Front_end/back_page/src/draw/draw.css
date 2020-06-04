@@ -1,0 +1,276 @@
+@media only screen and (max-width: 600px) {
+    .drawing_canvas_div{
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        background-color: white;
+    }
+    .drawing_canvas_div_canvas{
+        width: 100%;
+        height: 100%;
+    }
+    .drawing_right{
+        width: 80%;
+        height: 100%;
+        overflow-x: auto;
+    }
+    .drawing_choose{
+        width: 1500px;
+    }
+    .drawing_color_div{
+        border-radius: 1vw;
+        font-size:7vw;
+        line-height: 14vw;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: #FF7414;
+    }
+    .drawing_color{
+        width: 15vw;
+        height: 15vw;
+        display: inline-block;
+        margin-top:3vw;
+        margin-left: 3vw;
+        border-radius: 1vw;
+    }
+    .drawing_shezhi_no1{
+        position:fixed;
+        right:2vw;
+        bottom:40vw;
+    }
+    .drawing_btn_no1{
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        border: 0;
+        line-height: 8vw;
+    }
+    .palette_btn{
+        border-radius: 1vw;
+        height: 15vw;
+        width: 15vw;
+        float:left;
+    }
+    .pelette_color{
+        position:absolute;
+        top:-300px;
+    }
+    .drawing_bottom{
+        position:fixed;
+        background-color:rgba(240, 240, 240,240);
+        height:20vw;
+        width:100%;
+        bottom:0;
+        left: 0;
+    }
+    .drawing_left{
+        float:left;
+    }
+    .drawing_tuijian{
+        margin-left: 3.5vw;
+        float: left;
+        width: 3.5vw;
+        font-size:3.5vw;
+        margin-top:1vw;
+    }
+    .drawing_free{
+        float: left;
+        width: 3.5vw;
+        margin-left: 3.5vw;
+        font-size:3.5vw;
+        margin-top:1vw;
+    }
+    .drawing_tuijian:hover{
+        color:rgb(110,199,194);
+    }
+    .drawing_free:hover{
+        color:rgb(110,199,194);
+    }
+    .drawing_show{
+        position:fixed;
+        top:20%;
+        left:5%;
+        background-color:#fff;
+        border:1px solid rgb(128, 125, 125);
+        border-radius:2vw;
+        width:90%;
+        height:50%;
+    }
+    .drawing_x{
+        float:right;
+        margin-right:2vw;
+        margin-top:2vw;
+        font-size:5vw;
+        color:red;
+    }
+    .drawing_Preservation{
+        margin-left:32%;
+        background-color:rgb(110,199,194);
+        color:#fff;
+        border:0;
+        padding:2vw;
+        border-radius:2vw; 
+    }
+    #touch {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        z-index: 99999;
+    }
+	.bt-box .bg-3{
+        background:
+        linear-gradient(to left,rgb(238, 216, 146),rgb(235, 191, 48));
+    }
+	.bt-box .xiaoA{
+		display:block;
+		width:60px;
+		height:60px;
+		position: absolute;
+		z-index: 2;
+		color: white;
+		font: 17px/60px Helvetica, Verdana, sans-serif;
+		text-decoration: none;
+        text-align: center;
+    }
+    .bt-box-p{
+        float: left;
+        margin-top:10px;
+    }
+	.bt-box .xiaoA, .bt-box-p {
+        border-radius: 10px;
+    }
+    .bt-box .bt-box-p{
+        background:
+        linear-gradient(to left,rgb(49, 128, 138),rgb(91, 173, 184));
+        display: block;
+        height: 40px;
+        width: 50px; 
+        margin: 0 0 0 10px;
+        text-align: center;
+        font: 12px/40px Helvetica, Verdana, sans-serif;
+        color:#fff;
+        position: absolute;
+        z-index: 1;
+        transition: margin 0.5s ease;
+    }
+    .bottom123 {
+        margin: 70px 0 0 5px;
+    }
+    .drawing_bottom_no1{
+        position:fixed;
+        margin-top: 10vw;
+        line-height: 15vw;
+        left:20vw;
+        text-align: center;
+        border-radius: 2vw;
+        background:
+        linear-gradient(to left,rgb(49, 128, 138),rgb(91, 173, 184));
+        font-size:3vw;
+        height: 15vw;
+        width: 50vw;
+        color: #fff;
+        font-size: 5vw;
+        font-weight: 600;
+    }
+    .drawing_canvas_div1{
+        height: 135vw;
+        margin: auto;
+        margin-top:10vw;
+        padding-top:25vw;
+        padding-left:11vw;
+        background-color: white;
+    }
+    .torelease{
+        position: absolute;
+        top:45vw;
+        left:10vw;
+        z-index: 200;
+        width: 80vw;
+        height: 65vw;
+        float: left;
+        border-radius:10px;
+        background-color: white;
+    }
+    .torelease_text_type{
+        font-size: 5vw;
+        margin-top: 5vw;
+        height: 7vw;
+    }
+    .torelease_text_type p{
+        font-size: 5vw;
+        line-height: 7vw;
+        margin-left: 3vw;
+        float: left;
+    }
+    .torelease_text_type input{
+        margin-left: 3vw;
+        margin-top:2vw;
+    }
+    .torelease_text p{
+        font-size: 5vw;
+        line-height: 7vw;
+        margin-left: 3vw;
+        margin-top: 2vw;
+    }
+    .torelease_text input{
+        margin-top: 2vw;
+        margin-left: 4vw;
+        width: 70vw;
+        height: 20vw;
+        border: 1px solid rgb(230, 230, 230);
+        margin-bottom: 2vw;
+    }
+    .torelease_false_but_no1{
+        margin-left: 12vw;
+        margin-right: 9vw;
+        margin-top: 6vw;
+        font-size: 4vw;
+        width: 20vw;
+        height: 9vw;
+        background:
+        linear-gradient(to left,rgb(238, 216, 146),rgb(235, 191, 48));
+        float: left;
+        border: 0px;
+        color: #fff;
+        border-radius: 4vw;
+    }
+    .torelease_false_but_no2{
+        margin-left: 5vw;
+        margin-right: 9vw;
+        margin-top: 6vw;
+        font-size: 4vw;
+        width: 20vw;
+        height: 9vw;
+        background:
+        linear-gradient(to left,rgb(194, 193, 193),rgb(125,125,125));
+        float: left;
+        border: 0px;
+        color: #fff;
+        border-radius: 4vw;
+    }
+}
+
+.palette_choose{
+    width: 1500px;
+}
+.palette_color_div{
+    border-radius: 1vw;
+    font-size:7vw;
+    line-height: 14vw;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #FF7414;
+}
+.palette_color{
+    width: 15vw;
+    height: 15vw;
+    display: inline-block;
+    margin-left: 3vw;
+    border-radius: 1vw;
+}

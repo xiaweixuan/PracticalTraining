@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/',(req,res)=>{
-    let selectsql = 'select * from paint_table';
+    let selectsql = 'select * from paint_table_new';
     connection.query(selectsql,(error,results)=>{
         if (error) console.log(error.message);
         // console.log(results);

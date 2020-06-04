@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>童话镇-用户管理</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tooplate.css">
+</head>
+
+<body id="reportsPage" class="bg02">
+    <div class="" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="./img/logo.png" alt="" style="width: 50px;height: 50px;">
+                            <h1 class="tm-site-title mb-0">童话镇</h1>
+                        </a>
+                        <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">数据分析</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="products.html">用户管理</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="work.html">作品管理</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="collect.html">收藏管理</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="up.html">发布管理</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="admin.html">管理员管理</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex" href="login.html">
+                                        <i class="far fa-user mr-2 tm-logout-icon"></i>
+                                        <span>退出登陆</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- 添加列表 -->
+            <div class="row tm-mt-big" style="padding-bottom: 50px;">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="bg-white tm-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="tm-block-title d-inline-block">添加用户</h2>
+                            </div>
+                        </div>
+                        <div class="row mt-4 tm-edit-product-row">
+                            <div class="col-xl-7 col-lg-7 col-md-12">
+                                <!-- <form action="" class="tm-edit-product-form"> -->
+                                    <div class="input-group mb-3">
+                                        <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">用户名
+                                        </label>
+                                        <input id="name" name="name" type="text" class="myaddUser form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">密码
+                                        </label>
+                                        <input id="name" name="name" type="text" class="myaddUser form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">邮箱
+                                        </label>
+                                        <input id="name" name="name" type="text" class="myaddUser form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">个性签名
+                                        </label>
+                                        <input id="name" name="name" type="textarea" class="myaddUser form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="ml-auto col-xl-8 col-lg-8 col-md-8 col-sm-7 pl-0">
+                                            <button id="addUserBtn" type="submit" class="btn btn-primary"><a href="products.html" style="color: black;">确认添加</a>
+                                            </button>
+                                            <buttontype="submit" class="btn btn-primary"><a href="products.html" style="color: black;">返回</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                <!-- </form> -->
+                            </div>
+                            <!-- <div class="col-xl-4 col-lg-4 col-md-12 mx-auto mb-4">
+                                <div class="tm-product-img-dummy mx-auto">
+                                    <i class="fas fa-5x fa-cloud-upload-alt" onclick="document.getElementById('fileInput').click();"></i>
+                                </div>
+                                <div class="custom-file mt-3 mb-3">
+                                    <input id="fileInput" type="file" style="display:none;" />
+                                    <input type="button" class="btn btn-primary d-block mx-auto" value="Upload ..." onclick="document.getElementById('fileInput').click();"
+                                    />
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            
+        })
+        
+        document.getElementById('addUserBtn').onclick = function(){
+            console.log('添加！');
+            let myaddUser = document.getElementsByClassName('myaddUser');
+            fetch('http://xiawx.top:8080/adduser',{
+                method:'POST',
+                body:JSON.stringify({
+                    userid:myaddUser[0].value,
+                    pwd:myaddUser[1].value,
+                    email:myaddUser[2].value,
+                    avatarurl:'',
+                    motto:myaddUser[3].value
+                })
+            })
+            .then((res) => {return res.json();})
+            .then((res)=>{
+                console.log(res);
+            })
+        }
+</script>
+</body>
+
+</html>

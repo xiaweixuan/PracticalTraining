@@ -64,27 +64,66 @@ export default function User (){
         setChage(false);
     }
     function updateUser(idx,user){
-        // var user_adduser = document.getElementsByClassName('user_adduser');
+        var user_updateuser = document.getElementsByClassName('user_updateuser');
         var user_updatehover = document.getElementsByClassName('user_updatehover');
-        console.log(idx,user);
-        console.log(data[idx]);
+
+        user_updateuser[0].value = user.userid;
+        user_updateuser[1].value = user.pwd;
+        user_updateuser[2].value = user.email;
+        user_updateuser[3].value = user.avatarurl;
+        user_updateuser[4].value = user.motto;
+
+        // console.log(idx,user);
+        // console.log(data[idx]);
         user_updatehover[0].style.display = 'block';
         setChage(false);
     }
+    function updataUser(){
+        var user_updateuser = document.getElementsByClassName('user_updateuser');
+        var user_updatehover = document.getElementsByClassName('user_updatehover');
+        
+        fetch('http://xiawx.top:8080/updateuser',{
+            method:'POST',
+            body:JSON.stringify({
+                olduserid:user_updateuser[0].value,
+                userid:user_updateuser[0].value,
+                pwd:user_updateuser[1].value,
+                email:user_updateuser[2].value,
+                avatarurl:user_updateuser[3].value,
+                motto:user_updateuser[4].value
+            })
+        })
+        .then((res) => {return res.json();})
+        .then((res)=>{
+            console.log(res);
+        })
+        user_updatehover[0].style.display = 'none';
+        setChage(false);
+    }
+    function unupdataUser(){
+        var user_updatehover = document.getElementsByClassName('user_updatehover');
+        user_updatehover[0].style.display = 'none';
+    }
     return (
-        <div>
+        <div className='userMain'>
+            <div className='userImg'></div>
             <div  className='user_root'>
                 <div className="user_button">
-                    <button onClick={addhover}>添加</button>
+                    <button onClick={addhover}>添加用户</button>
                 </div>
                 <div id = 'user_table' className="user_table">
-                    <div className="user_div">
-                        <p>用户名</p>
-                        <p>密码</p>
-                        <p>邮箱</p>
-                        <p>头像</p>
-                        <p>个性签名</p>
-                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>用户名</th>
+                                <th>密码</th>
+                                <th>邮箱</th>
+                                <th>头像</th>
+                                <th>个性签名</th>
+                                <th>设置</th>
+                            </tr>
+                        </tbody>
+                    </table>
                     {
                         data.map((item,idx)=>(
                         <div className="user_div" key={idx}>
@@ -93,12 +132,13 @@ export default function User (){
                             <p><input type="text" value={item.email} disabled/></p>
                             <p><input type="text" value={item.avatarurl} disabled/></p>
                             <p><input type="text" value={item.motto} disabled/></p>
-                            <button onClick={()=>{updateUser(idx,item)}}>修改</button>
-                            <button onClick={()=>{deleteUser(item.userid)}}>删除</button>
+                            <p>
+                                <button onClick={()=>{updateUser(idx,item)}}>修改</button>
+                                <button onClick={()=>{deleteUser(item.userid)}}>删除</button>
+                            </p>
                         </div>)) 
                     }
                 </div>
-                
             </div>
             <div className="user_hover" >
                 <div>
@@ -142,7 +182,7 @@ export default function User (){
                         <tbody>
                             <tr>
                                 <th>用户名：</th>
-                                <th><input type="text" className="user_updateuser"/></th>
+                                <th><input type="text" className="user_updateuser" disabled/></th>
                             </tr>
                             <tr>
                                 <th>密码：</th>
@@ -162,8 +202,8 @@ export default function User (){
                             </tr>
                         </tbody>
                     </table>
-                    {/* <button onClick={addUser}>添加</button>    
-                    <button onClick={unaddUser}>取消</button> */}
+                    <button onClick={updataUser}>修改</button>    
+                    <button onClick={unupdataUser}>取消</button>
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@ export default function Sider() {
             <ul style ={{float:'left'}}>
                 <li id="home"><NavLink exact onClick={()=>{chageStyle('home','user','paint','work','collect')}} to = '/home'>系统首页</NavLink></li>
                 {/* <li><NavLink exact activeStyle={{background:'red'}} to = '/login'>Login</NavLink></li> */}
-                <li id="user"><NavLink exact onClick={()=>{chageStyle('user','home','paint','work','collect')}} to = '/user'>用户管理</NavLink></li>
+                <li id="user"  className = 'click'><NavLink exact onClick={()=>{chageStyle('user','home','paint','work','collect')}} to = '/user'>用户管理</NavLink></li>
                 <li id="paint"><NavLink exact onClick={()=>{chageStyle('paint','home','user','work','collect')}} to = '/paint'>画作管理</NavLink></li>
                 <li id="work"><NavLink exact onClick={()=>{chageStyle('work','home','user','paint','collect')}} to = '/work'>作品管理</NavLink></li>
                 <li id="collect"><NavLink exact onClick={()=>{chageStyle('collect','home','user','paint','work')}} to = '/collection'>收藏管理</NavLink></li>
