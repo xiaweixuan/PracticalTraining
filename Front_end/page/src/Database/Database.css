@@ -146,8 +146,7 @@
 }
 .xiangqing_header{
     top:0px ;
-    background:
-    linear-gradient(to left,rgb(145, 210, 248),rgb(65, 156, 235));
+    background-image: url('http://47.97.90.172:8095/13.gif');
     position: fixed;
     z-index: 10;
     width: 100%;

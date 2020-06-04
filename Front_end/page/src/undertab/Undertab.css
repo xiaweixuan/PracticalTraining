@@ -13,11 +13,12 @@
 }
 #icon{
     line-height: 11vw;
-    font-size: 6vw;
+    /* font-size: 8vw; */
 }
 #icon1{
     line-height: 17vw;
 }
 .ziliao{
-    font-size: 4vw;
+    margin-top: -3vw;
+    font-size: 3.7vw;
 }

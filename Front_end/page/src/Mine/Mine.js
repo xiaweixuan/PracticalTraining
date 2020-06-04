@@ -149,7 +149,7 @@ export default class Mine extends Component {
                     {/* 未登录状态 */}
                     <div className="mine_message" style={{display:this.state.flag?"none":"block"}}>
                     <div id="user-photo">
-                        <img className="mine_message_left" src={this.state.filePhoto || "img/mine_message_img.png"}/>
+                        <img className="mine_message_left" src={this.state.filePhoto || "http://47.97.90.172:8095/x5.png"}/>
                         </div>
                         <div className="mine_message_right">
                             <div className="mine_message_name" onClick={this.handle}>未登录</div>
