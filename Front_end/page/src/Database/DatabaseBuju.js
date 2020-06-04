@@ -83,7 +83,7 @@ function PlaceHolder(props, { className = '', ...restProps }) {
 								</canvas>
 							</Link>
 							<div className="databaseBuju_views_bottom">
-								<img src="img/mine_message_img.png" />
+								<img src="http://47.97.90.172:8095/x5.png" />
 							</div>
 							
 							<div className="databaseBuju_name">童画官方</div>

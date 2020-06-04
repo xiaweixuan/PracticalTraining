@@ -8,6 +8,12 @@ import Npc from '../npc/Npc'
 import Npcsay from '../npcsay/Npcsay'
 import CommunityMine from './CommunityMine';
 import CommunityOther from './CommunityOther';
+
+import "antd/dist/antd.css";
+import { Card, Avatar } from 'antd';
+import { EditOutlined, EllipsisOutlined, StarOutlined } from '@ant-design/icons';
+const { Meta } = Card;
+
 export default function Community(){
     let [data,setData]=useState([]);
     useEffect(()=>{
@@ -25,74 +31,43 @@ export default function Community(){
         })
     },[])
 
-    useEffect(()=>{
-        fetch('http://xiawx.top:8080/offpaint')
-        .then(res=>res.json())
-        .then(res=>{
-            for(var i=0;i<3;i++){
-                var canvas = document.getElementById('canvasimg'+i);
-                var context=canvas.getContext("2d");
-                var a = new window.Picture({col:res.content[i].col,row:res.content[i].raw,width:canvas.width,height:canvas.height,context:context});
-                a.drawDataMatrix=a.prase(res.content[i].paintdata);
-                a.draw(context);
-            }
-        })
-    },[])
-
     function timestampToTime(timestamp) {
         return new Date(parseInt(timestamp)).toLocaleString().replace(/:d{1,2}$/,' '); 
     }
     return(
         <div className="community_div_no1">
             <div className="community_navbar">
-                <p>社 区</p>
+                <p>社  区</p>
             </div>
-            
-            <Carousel
-            style={{background:'linear-gradient(to left,rgb(127, 250, 111),rgb(65, 153, 235))',
-            height:'55vw',
-            marginTop:'14vw',
-            border:'none'}}
-            autoplay={true}
-            infinite
-            beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-            afterChange={index => console.log('slide to', index)}>
-                {[1,2,3].map((val,idx) =>(
-                    <canvas id={'canvasimg'+idx}
-                    style={{ marginLeft:'25vw',width: '50%', height:'52vw',verticalAlign: 'top' }}
-                    onLoad={() => {
-                        window.dispatchEvent(new Event('resize'));}}/>
-                ))}
-            </Carousel>
+
             
             <WingBlank className="community_wingblank">
-                <div className="community_div_no2">
+                {/* <div className="community_div_no2"> */}
                     {/* 他人发布 */}
                     {
                         data.map((item,idx)=>
-                        <div className="community_chat_another">
-                            <div className='community_chat_another_headpic_box'>
-                                <img className='community_chat_another_headpic' 
-                                src='img/mine_message_img.png'></img>
-                            </div>
-
-                            <p className='community_chat_another_id'>{data[idx].userid}</p>
-
-                            <div className='community_chat_talk'>
-                                <p className='community_chat_another_word'>{data[idx].describe}</p>
-                                <div className='community_chat_talk_pic_box'>
-                                    <Link to={{pathname:"/xiangqing2",state:{item}}}>
-                                        <canvas className='community_chat_talk_canvas' 
-                                        id={"canvas"+idx}>    
-                                        </canvas>
-                                    </Link>
-                                </div>
-                                <div className='community_chat_another_time'>
-                                <p>{timestampToTime(item.paintid.slice(item.paintid.length-13))}</p>
-                                </div>
-                            </div>
-                        </div>
-                        )
+                        <Card className="card"
+                        style={{ width:'100%',marginTop:'3vw' }}
+                        cover={<Link to={{pathname:"/xiangqing2",state:{item}}}>
+                        <canvas className='community_chat_talk_canvas'
+                        id={"canvas"+idx}>
+                            </canvas>
+                    </Link>
+                }
+                actions={[
+                    <StarOutlined key="setting" />,
+                    <EditOutlined key="edit" />,
+                    <EllipsisOutlined key="ellipsis" />,
+                ]}
+                >
+                    <Meta
+                    avatar={
+                    <Avatar src="http://47.97.90.172:8095/x5.png" />}
+                    title={data[idx].userid}
+                    description={data[idx].describe+'  '+timestampToTime(item.paintid.slice(item.paintid.length-13))}
+                    />
+                    </Card>
+                    )
                     }
                     
                     {
@@ -103,7 +78,7 @@ export default function Community(){
                     {
                         <CommunityMine/>
                     }
-                </div>
+                {/* </div> */}
             </WingBlank>
             <div className="community_hight"></div>
             <Npcsay/>

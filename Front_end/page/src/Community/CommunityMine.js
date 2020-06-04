@@ -2,6 +2,10 @@ import React, { Component, useState, useEffect } from 'react'
 import {Link } from 'react-router-dom'
 import store from '../store';
 import './Community.css'
+import "antd/dist/antd.css";
+import { Card, Avatar } from 'antd';
+import { EditOutlined, EllipsisOutlined, StarOutlined } from '@ant-design/icons';
+const { Meta } = Card;
 
 export default function CommunityMine() {
     let [data, setData] = useState([]);
@@ -30,7 +34,7 @@ export default function CommunityMine() {
                 
                 else{
                     for(var i = 0; i < data1.length; i++){
-                        var canvas = document.getElementById('canvasm' + i);
+                        var canvas = document.getElementById('canvas1' + i);
                         var context = canvas.getContext("2d");
                         var a = new window.Picture({col:data1[i].col,row:data1[i].raw,width:canvas.width,height:canvas.height,context:context});
                         a.drawDataMatrix=a.prase(data1[i].paintdata);
@@ -47,28 +51,26 @@ export default function CommunityMine() {
         <div>
             {
                 data.map((item, idx) =>
-                <div className="community_chat_mine" 
-                style={{ display: flag== false ? "none" : "block" }}>
-                    <div className='community_chat_mine_headpic_box'>
-                        <img className='community_chat_mine_headpic'
-                        src='img/mine_message_img.png'></img>
-                    </div>
-                    
-                    <p className='community_chat_mine_id'>{userid}</p>
-                    <div className='community_chat_mine_talk'>
-                        <p className='community_chat_mine_word'>{data[idx].describe}</p>
-                        <div className='community_chat_mine_talk_pic_box' id='canvas'>
-                            <Link to={{pathname:"/xiangqing2",state:{item}}}>
-                                <canvas className='community_chat_talk_canvas'
-                                id={"canvasm" + idx} >
-                                    
-                                </canvas>
-                            </Link>
-                        </div>
-                        <p className='community_chat_mine_time'>{
-                        timestampToTime(item.paintid.slice(item.paintid.length-13))}</p>
-                    </div>
-                </div>
+                <Card style={{  width:'100%',marginTop:'3vw'  }}
+                        cover={<Link to={{pathname:"/xiangqing2",state:{item}}}>
+                        <canvas className='community_chat_talk_canvas'
+                        id={"canvas"+idx}>
+                            </canvas>
+                    </Link>
+                }
+                actions={[
+                    <StarOutlined key="setting" />,
+                    <EditOutlined key="edit" />,
+                    <EllipsisOutlined key="ellipsis" />,
+                ]}
+                >
+                    <Meta
+                    avatar={
+                    <Avatar src="http://47.97.90.172:8095/x5.png" />}
+                    title={data[idx].userid}
+                    description={data[idx].describe+'  '+timestampToTime(item.paintid.slice(item.paintid.length-13))}
+                    />
+                    </Card>
             )
         }
     </div>
